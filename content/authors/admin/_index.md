@@ -45,6 +45,8 @@ title: Felipe P.L. Melo
 user_groups: ["Principal Investigators"]
 ---
 
+![](public/media/ecoa_logo.png)
+
 Felipe Melo is an academic researcher dedicated to application of ecology as a way to solve real-world problems and intriguing knowledge gaps. I believe that science must be used as a tool to transform the world, and therefore cannot be neutral. 
 
 I try to keep my research team as much as plural and respectful to social, racial and gender diversity.

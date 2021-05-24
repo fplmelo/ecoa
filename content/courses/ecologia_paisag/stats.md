@@ -1,18 +1,20 @@
 ---
 date: "2021-01-01"
 math: true
-title: Statistics
+title: Instalação básica de R
 type: book
 weight: 40
 ---
 
-Introduction to statistics for data science.
+Para cursar uma discipina de Ecologia de Paisagens é necessário alguma prática em programação em R. Para isso, é preciso preparar seu computador, instalando programas necessários para esta disciplina.
 
 <!--more-->
 
-{{< icon name="clock" pack="fas" >}} 1-2 hours per week, for 8 weeks
+{{< icon name="clock" pack="fas" >}} 1-2 horas por semana, mínimo 8 semanas
 
-## Learn
+## Instalando R
+
+
 
 The general form of the **normal** probability density function is:
 

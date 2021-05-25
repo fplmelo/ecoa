@@ -25,6 +25,8 @@ Para responder essa pergunta precisaremos refletir sobre a natureza do *fazer* c
 
 ## Slides
 
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/slides01/aula01.html#1)
+
 ## Sobre aprender ciência
 
 Sempre gostei de entender como a ciência evolui como atividade humana. Seus erros são tão importantes quanto seus acertos e na biologia, nossa área de conhecimento, essa história é particularmente interessante. No entanto, sempre me fascinou a ciência como atividade humana mesmo. Lembro de na graduação em biologia, ter comprado o maravilhoso: ["O desenvolvimento do pensamento biológico"](https://www.estantevirtual.com.br/art-booking/ernst-mayr-o-desenvolvimento-do-pensamento-biologico-2798024510?show_suggestion=0) de Ernst Mayr. Neste livro, o famoso paleontólogo discorre sobre como o pensamento biológico estava presente desde os filósofos da Grécia antiga, que refletiam sobre a organização da natureza e até faziam taxonomia. 
@@ -46,6 +48,10 @@ Não há uma regra geral que sirva para todas as pessoas. Mas, como qualquer tre
 <img src="https://science.sciencemag.org/content/sci/326/5955/916/F2.medium.gif"> 
 
 Texto produzido como um [editorial da revista Sceince em 2009](https://science.sciencemag.org/content/326/5955/916.full) 
+
+### Liga Brasileira da Ciência Preta
+
+{{< icon name="instagram" pack="fab" >}} [IGTV com Dr. Rodrigo Carmo](https://www.instagram.com/tv/COgenPVJPin/?utm_source=ig_web_copy_link), que conta como é ser um cientista preto no Brasil
 
 
 

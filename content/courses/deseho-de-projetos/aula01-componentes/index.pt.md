@@ -53,6 +53,9 @@ Texto produzido como um [editorial da revista Sceince em 2009](https://science.s
 
 {{< icon name="instagram" pack="fab" >}} [IGTV com Dr. Rodrigo Carmo](https://www.instagram.com/tv/COgenPVJPin/?utm_source=ig_web_copy_link), que conta como é ser um cientista preto no Brasil
 
+### Blog Mulheres na Ciência
+
+[Um Blog irado](https://www.batepapocomnetuno.com/mulheres-na-ciencia), feito por e para mulheres cientistas
 
 
 

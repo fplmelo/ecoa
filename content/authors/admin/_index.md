@@ -45,10 +45,11 @@ title: Felipe P.L. Melo
 user_groups: ["Principal Investigators"]
 ---
 
-![](public/media/ecoa_logo.png)
+<img src="logo.png">
 
-Felipe Melo is an academic researcher dedicated to application of ecology as a way to solve real-world problems and intriguing knowledge gaps. I believe that science must be used as a tool to transform the world, and therefore cannot be neutral. 
 
-I try to keep my research team as much as plural and respectful to social, racial and gender diversity.
+This lab is the joint effort of many people that share a common principle: Ecology and Conservation must be political to address the real-world problems. We are interested in all kinds of human interventions on natural systems and how biotas respond to them. Functional ecology, landcape ecology, restoration, conservation sciences and political ecology move us. 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+Our research team is proud of all human diversity and we welcome all interest people to join and work with us. 
+
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "/cv_felipe_eng.pdf" "newtab" >}}CV{{< /staticref >}}.

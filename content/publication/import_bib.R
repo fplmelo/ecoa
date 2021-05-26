@@ -151,9 +151,9 @@ bibtex_2academic <- function(bibfile,
 }
 
 # Runnign the script
-# my_bibfile <- "/path/to/mybibtex.bib"
-# out_fold   <- "/path/to/myoutfolder"
+# my_bibfile <- "/home/felipe/Google Drive/github/ecoa/content/publication/scopus.bib"
+# out_fold   <- "/home/felipe/Google Drive/github/ecoa/content/publication"
 # 
-# bibtex_2academic(bibffile  = my_bibfile, 
-#                  outfold   = out_fold, 
-#                  abstract  = FALSE)
+bibtex_2academic(bibfile  = my_bibfile,
+                 outfold   = out_fold,
+                 abstract  = FALSE)

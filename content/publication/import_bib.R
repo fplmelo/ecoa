@@ -1,49 +1,34 @@
-#' @title bibtex_2academic
-#' @description import publications from a bibtex file to a hugo-academic website
-#' @author Lorenzo Busetto, phD (2017) <lbusett@gmail.com>
-#' @modified Peter Paul Pichler (2019) <pichler@pik-potsdam.de>
-
 bibtex_2academic <- function(bibfile,
                              outfold,
-                             abstract = FALSE,
+                             abstract = FALSE, 
                              overwrite = FALSE) {
   
   require(RefManageR)
   require(dplyr)
   require(stringr)
   require(anytime)
-  require(tibble)
   
   # Import the bibtex file and convert to data.frame
   mypubs   <- ReadBib(bibfile, check = "warn", .Encoding = "UTF-8") %>%
-    as.data.frame() %>%
-    rownames_to_column() %>% # retain rownames (as labels for bibtex re-export)
-    mutate_all(funs(str_remove_all(.,"[{}\"]"))) %>%   ### remove {}" from bibtext entries
-    mutate_all(funs(str_replace_all(.,'\\\\%', '%')))  ### some replace double escaped % for markdown
-  
-  
-  # make bibtype the name of the type column (default for WriteBib)
-  if (has_name(mypubs, "document_type") & !(has_name(mypubs, "bibtype"))) {
-    mypubs <- mypubs %>% rename(bibtype = document_type)
-  }
+    as.data.frame()
   
   # assign "categories" to the different types of publications
   mypubs   <- mypubs %>%
     dplyr::mutate(
-      pubtype = dplyr::case_when(bibtype == "Article" ~ "2",
-                                 bibtype == "Article in Press" ~ "2",
-                                 bibtype == "InProceedings" ~ "1",
-                                 bibtype == "Proceedings" ~ "1",
-                                 bibtype == "Conference" ~ "1",
-                                 bibtype == "Conference Paper" ~ "1",
-                                 bibtype == "MastersThesis" ~ "3",
-                                 bibtype == "PhdThesis" ~ "3",
-                                 bibtype == "Manual" ~ "4",
-                                 bibtype == "TechReport" ~ "4",
-                                 bibtype == "Book" ~ "5",
-                                 bibtype == "InCollection" ~ "6",
-                                 bibtype == "InBook" ~ "6",
-                                 bibtype == "Misc" ~ "0",
+      pubtype = dplyr::case_when(document_type == "Article" ~ "2",
+                                 document_type == "Article in Press" ~ "2",
+                                 document_type == "InProceedings" ~ "1",
+                                 document_type == "Proceedings" ~ "1",
+                                 document_type == "Conference" ~ "1",
+                                 document_type == "Conference Paper" ~ "1",
+                                 document_type == "MastersThesis" ~ "3",
+                                 document_type == "PhdThesis" ~ "3",
+                                 document_type == "Manual" ~ "4",
+                                 document_type == "TechReport" ~ "4",
+                                 document_type == "Book" ~ "5",
+                                 document_type == "InCollection" ~ "6",
+                                 document_type == "InBook" ~ "6",
+                                 document_type == "Misc" ~ "0",
                                  TRUE ~ "0"))
   
   # create a function which populates the md template based on the info
@@ -57,19 +42,14 @@ bibtex_2academic <- function(bibfile,
       x[["date"]] <- "2999-01-01"
     }
     
-    foldername <- paste(x[["date"]], x[["title"]] %>%
-                          str_replace_all(fixed(" "), "_") %>%
-                          str_remove_all(fixed(":")) %>%
-                          str_sub(1, 20), sep = "_")
-    
-    #folder = paste0(outfold, "/", foldername)
-    dir.create(file.path(outfold, foldername), showWarnings = FALSE)
-    filename = "index.md"
+    filename <- paste(x[["date"]], x[["title"]] %>%
+                        str_replace_all(fixed(" "), "_") %>%
+                        str_remove_all(fixed(":")) %>%
+                        str_sub(1, 20) %>%
+                        paste0(".md"), sep = "_")
     # start writing
-    outsubfold = paste(outfold, foldername, sep="/")
-    # start writing
-    if (!file.exists(file.path(outsubfold, filename)) | overwrite) {
-      fileConn <- file.path(outsubfold, filename)
+    if (!file.exists(file.path(outfold, filename)) | overwrite) {
+      fileConn <- file.path(outfold, filename)
       write("+++", fileConn)
       
       # Title and date
@@ -84,19 +64,19 @@ bibtex_2academic <- function(bibfile,
       # Publication type. Legend:
       # 0 = Uncategorized, 1 = Conference paper, 2 = Journal article
       # 3 = Manuscript, 4 = Report, 5 = Book,  6 = Book section
-      write(paste0("publication_types = [\"", x[["pubtype"]],"\"]"),
+      write(paste0("publication_types = [\"", x[["pubtype"]],"\"]"), 
             fileConn, append = T)
       
       # Publication details: journal, volume, issue, page numbers and doi link
       publication <- x[["journal"]]
-      if (!is.na(x[["volume"]])) publication <- paste0(publication,
+      if (!is.na(x[["volume"]])) publication <- paste0(publication, 
                                                        ", (", x[["volume"]], ")")
       if (!is.na(x[["number"]])) publication <- paste0(publication,
                                                        ", ", x[["number"]])
       if (!is.na(x[["pages"]])) publication <- paste0(publication,
                                                       ", _pp. ", x[["pages"]], "_")
       if (!is.na(x[["doi"]])) publication <- paste0(publication,
-                                                    ", ", paste0("https://doi.org/",
+                                                    ", ", paste0("https://doi.org/", 
                                                                  x[["doi"]]))
       
       write(paste0("publication = \"", publication,"\""), fileConn, append = T)
@@ -110,7 +90,7 @@ bibtex_2academic <- function(bibfile,
       }
       write(paste0("abstract_short = \"","\""), fileConn, append = T)
       
-      # other possible fields are kept empty. They can be customized later by
+      # other possible fields are kept empty. They can be customized later by 
       # editing the created md
       
       write("image_preview = \"\"", fileConn, append = T)
@@ -118,7 +98,7 @@ bibtex_2academic <- function(bibfile,
       write("projects = []", fileConn, append = T)
       write("tags = []", fileConn, append = T)
       #links
-      write(paste0("url_pdf = \"", x[["url"]],"\""), fileConn, append = T)
+      write("url_pdf = \"\"", fileConn, append = T)
       write("url_preprint = \"\"", fileConn, append = T)
       write("url_code = \"\"", fileConn, append = T)
       write("url_dataset = \"\"", fileConn, append = T)
@@ -137,12 +117,6 @@ bibtex_2academic <- function(bibfile,
       
       write("+++", fileConn, append = T)
     }
-    # convert entry back to data frame
-    df_entry = as.data.frame(as.list(x), stringsAsFactors=FALSE) %>%
-      column_to_rownames("rowname")
-    
-    # write cite.bib file to outsubfolder
-    WriteBib(as.BibEntry(df_entry[1,]), paste(outsubfold, "cite.bib", sep="/"))
   }
   # apply the "create_md" function over the publications list to generate
   # the different "md" files.
@@ -151,9 +125,7 @@ bibtex_2academic <- function(bibfile,
 }
 
 # Runnign the script
-# my_bibfile <- "/home/felipe/Google Drive/github/ecoa/content/publication/scopus.bib"
-# out_fold   <- "/home/felipe/Google Drive/github/ecoa/content/publication"
+ # my_bibfile <- "/home/felipe/Google Drive/github/ecoa/content/publication/pubs.bib"
+ # out_fold   <- "/home/felipe/Google Drive/github/ecoa/content/publication"
 # 
-bibtex_2academic(bibfile  = my_bibfile,
-                 outfold   = out_fold,
-                 abstract  = FALSE)
+# bibtex_2academic(bibfile  = my_bibfile, outfold = out_fold, abstract = FALSE)

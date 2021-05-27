@@ -5,14 +5,11 @@ image:
   caption: Photo by Felipe Melo
   focal_point: Smart
 links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/FelipePLMelo
-summary: Addressing water, energy, food and forest security in Brazilian Caatinga
+
+summary: This project aims to address the nexus among water, energy, food and forest security in the Brazilian Caatinga. We are uncovering and quantifying the relationship between forest and many ecosystem services involved on water, energy and food securities.
 tags:
-- Deep Learning
-title: Sustainable Caatinga
+- Sustainability
+title: Forest restoration and WEF-Nexus
 url_code: ""
 url_pdf: ""
 url_slides: ""

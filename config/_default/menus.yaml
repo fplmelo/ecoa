@@ -16,7 +16,7 @@ main:
   - name: Projects
     url: '#projects'
     weight: 40
-  - name: Talks
+  - name: Videos
     url: '#talks'
     weight: 50
   - name: Publications

@@ -10,7 +10,7 @@ main:
   - name: People
     url: '#people'
     weight: 20
-  - name: Posts
+  - name: Blog
     url: '#posts'
     weight: 30
   - name: Projects

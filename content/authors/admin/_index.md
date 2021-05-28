@@ -1,6 +1,5 @@
 ---
 bio: Biologist and eco-socialist, interested in another possible world
-  matter.
 education:
   courses:
   - course: PhD Biological Sciences

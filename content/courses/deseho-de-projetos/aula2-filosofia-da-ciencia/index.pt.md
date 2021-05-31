@@ -32,7 +32,7 @@ Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula2_sc
 
 A aula foi preparada com base no texto de [Silvio Seno Chibeni](https://www.unicamp.br/~chibeni/) do Depto de Filosofia da Unicamp. O texto [Algumas observações sobre o Métodos Científico](https://www.unicamp.br/~chibeni/textosdidaticos/metodocientifico.pdf) é também uma leitura obrigatória para todos neste módulo.
 
-Outro material importante para este módulo é a página [Wikiward](https://www.wikiwand.com/pt/Filosofia_da_ci%C3%AAncia) sobre filosofia da ciência que tem mais material detalhado porém introdutório a este assunto.
+Outro material importante para este módulo é a página [Wikiwand](https://www.wikiwand.com/pt/Filosofia_da_ci%C3%AAncia) sobre filosofia da ciência que tem mais material detalhado porém introdutório a este assunto.
 
 ## Objetivos deste módulo
 

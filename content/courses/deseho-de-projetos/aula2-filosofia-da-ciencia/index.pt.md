@@ -25,7 +25,7 @@ A ciência é uma das atividades humanas mais antigas e segunda alguns filósofo
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/slides01/aula02_sciphil.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula2_sciphil.html#1)
 
 ## Fontes principais desta aula
 

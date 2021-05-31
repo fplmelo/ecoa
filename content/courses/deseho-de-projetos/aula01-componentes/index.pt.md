@@ -25,7 +25,7 @@ Para responder essa pergunta precisaremos refletir sobre a natureza do *fazer* c
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/slides01/aula01.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula01.html#1)
 
 ## Sobre aprender ciência
 

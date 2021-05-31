@@ -27,6 +27,7 @@ A ciência é uma das atividades humanas mais antigas e segunda alguns filósofo
 
 Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula2_sciphil.html#1)
 
+
 ## Fontes principais desta aula
 
 A aula foi preparada com base no texto de [Silvio Seno Chibeni](https://www.unicamp.br/~chibeni/) do Depto de Filosofia da Unicamp. O texto [Algumas observações sobre o Métodos Científico](https://www.unicamp.br/~chibeni/textosdidaticos/metodocientifico.pdf) é também uma leitura obrigatória para todos neste módulo.

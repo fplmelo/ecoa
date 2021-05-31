@@ -25,7 +25,7 @@ Agora chegamos ao ponto chave desta disciplina, pelo menos para a maioria de voc
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula2_sciphil.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula3_plan.html#1)
 
 ## Tente manter a saude mental na pós-graduação
 

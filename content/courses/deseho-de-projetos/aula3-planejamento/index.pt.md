@@ -19,6 +19,7 @@ image:
 projects: []
 ---
 
+![](https://maureenmoz.files.wordpress.com/2019/06/phdplan.jpeg)
 
 Agora chegamos ao ponto chave desta disciplina, pelo menos para a maioria de vocês. Fazer uma pó-graduação é um momento bem diferente da vida. É totalmente diferente de fazer uma graduação (ou pelo menos deveria). A grande diferença aqui é que você é o principal responsável para que sua pós-graduação seja proveitosa, lhe renda um bom aprendizado e um bom momento de vida.
 

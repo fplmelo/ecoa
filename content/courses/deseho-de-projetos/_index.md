@@ -2,7 +2,7 @@
 date: "2021-01-24"
 linkTitle: Desenho de Projetos
 summary: Elaboração e planejamento de projetos de pesquisa em ecologia e conservação da biodiversidade 
-title: "\U0001F4CA Desenho de projetos"
+title: "\U0001F4D2 Desenho de projetos"
 type: book
 ---
 

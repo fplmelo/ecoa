@@ -1,9 +1,9 @@
 ---
-abstract: A lista de publicações a seguir é um pequeno e inconcluso apurado de textos científicos que oferecerão elementos para a recriação da Caatinga pelo leitor. Os trabalhos selecionados representam o estado atual do conhecimento sobre o bioma, junto com uma leitura clássica que solidificou sua definição. A tradição naturalista da botânica e o olhar analítico da ecologia estão presentes nas obras, bem como um caso de sucesso de um projeto de proteção ambiental que mistura futebol, política e conservação. O leitor encontrará, portanto, uma ampla base de informação que fornece uma boa ideia dessa invenção que é a Caatinga.
+abstract: Biliografia elaborada para série sobre a Caatinga para o portal Nexo notícias.
 
 authors:
 - admin
-date: "2021-04-21T00:00:00Z"
+date: "2021-06-04T00:00:00Z"
 featured: true
 image:
   caption: 'Image credit: [**BPBES**](https://www.bpbes.net.br/)'

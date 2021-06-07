@@ -1,5 +1,5 @@
 ---
-bio: Biologist and eco-socialist, interested in another possible world
+bio: Biologist and eco-socialist. Another world is possible!
 education:
   courses:
   - course: PhD Biological Sciences

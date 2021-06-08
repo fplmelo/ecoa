@@ -2,7 +2,7 @@
 title: Escrevendo o projeto
 author: Felipe Melo
 date: '2021-06-07'
-slug: planejamento
+slug: escrever projeto
 categories: []
 tags:
   - science

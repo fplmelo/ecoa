@@ -62,6 +62,6 @@ Suas primeira grande tarefa substancial é escrever seu projeto de mestrado/dout
 3) Especifique o "produto" que você vai gerar em cada fase
 4) Como vai se auto-monitorar?
 
-Envie tudo pelo Google Classrom
+Envie tudo pelo [Google Classrom](https://classroom.google.com/u/0/c/MzUyNzIzNDcxNjk5)
 
 

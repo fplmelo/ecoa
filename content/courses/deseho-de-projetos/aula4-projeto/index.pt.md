@@ -51,7 +51,7 @@ Os projetos não são uma novidade. Muita coisa no mundo é feita através da el
 
 ### Projeto de financiamento
 
-1) Baixe o formulário da [**Rufford Foundation**](https://www.rufford.org/) [aqui]{{< icon name="download" pack="fas" >}} Baixe aqui o {{< staticref "media/rsg.docx" "newtab" >}}Formulário{{< /staticref >}}.
+1) Baixe o formulário da [**Rufford Foundation**](https://www.rufford.org/) Baixe aqui o {{< staticref "media/rsg.docx" "newtab" >}}Formulário{{< /staticref >}} {{< icon name="download" pack="fas" >}}.
 2) Preencha valendo!!
 3) Você vão avaliar as propostas uns dos outros
 4) Seja justo e realista

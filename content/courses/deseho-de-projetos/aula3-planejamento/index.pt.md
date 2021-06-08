@@ -1,5 +1,5 @@
 ---
-title: Planejando sua Pós-graduação
+title: Aula 3 - Planejando sua Pós-graduação
 author: Felipe Melo
 date: '2021-05-25'
 slug: planejamento

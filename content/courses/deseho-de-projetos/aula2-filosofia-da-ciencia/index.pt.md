@@ -1,5 +1,5 @@
 ---
-title: Filosofia da Ciência
+title: Aula 2 - Filosofia da Ciência
 author: Felipe Melo
 date: '2021-05-25'
 slug: filosofia-da-ciencia

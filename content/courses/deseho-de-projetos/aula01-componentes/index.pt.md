@@ -1,5 +1,5 @@
 ---
-title: Componentes de uma pesquisa científica
+title: Aula 1 - Componentes de uma pesquisa científica
 author: Felipe Melo
 date: '2021-05-25'
 slug: componentes-de-uma-pesquisa-científica

@@ -1,7 +1,7 @@
 ---
-title: Escrevendo o projeto
+title: Aula 4 - Escrevendo o projeto
 author: Felipe Melo
-date: '2021-06-07'
+date: '2021-05-25'
 slug: escrever projeto
 categories: []
 tags:

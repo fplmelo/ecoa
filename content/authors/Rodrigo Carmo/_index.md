@@ -22,7 +22,7 @@ interests:
 organizations:
 - name: Universidade Federal de Pernambuco # não mudar
   url: "www.ufpe.br" # não mudar
-role: PostDoc; # Escolha um desses e apague o resto
+role: PostDoc # Escolha um desses e apague o resto
 
 social:
 - icon: envelope

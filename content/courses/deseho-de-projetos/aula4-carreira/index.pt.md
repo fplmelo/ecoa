@@ -30,7 +30,7 @@ Obviamente, esta disciplina sofre do mesmo problema. A maior parte da perspectiv
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula01.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula5_carreira.html#1)
 
 ## Escrever
 

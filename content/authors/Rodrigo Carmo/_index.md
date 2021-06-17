@@ -1,5 +1,4 @@
 ---
-
 bio: Rodrigo is a Ph.D. in Animal Biology with an emphasis on insect ecology by Universidade Federal de Pernambuco with a visiting scholar period at Texas A&M University, College Station
 education:
   courses:
@@ -41,6 +40,5 @@ superuser: false
 user_groups: ["Researchers"] # Não mexer
 title: Rodrigo Carmo
 ---
-
 
 Rodrigo is a Ph.D. in Animal Biology with an emphasis on insect ecology by Universidade Federal de Pernambuco with a visiting scholar period (12 months) at Texas A&M University, College Station. Nowadays, he is working on the NEXUS Caatinga program, in which acting on researcher collaborator understanding how biological invasion and nutrient availability affect the Caatinga multifuncionality and sustainability. In parallel, Rodrigo work on scientific popularization, producing a  Radio program called Laboratório FM, as well as given access and promoting autonomy to the young scientists through the webpage 'Da Ideia ao Papel' on Instagram.

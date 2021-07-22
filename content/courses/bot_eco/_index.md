@@ -29,6 +29,10 @@ madeireira; no reflorestamento, entre outros.
 1ª nota Módulo 1 (prova síncrona e atividades assíncronas) 2ª nota Módulo 2 (prova síncrona e atividades assíncronas)
 Avaliação Padrão da UFPE
 
+## Conteúdo programático
+
+{{< list_children >}}
+
 ## Professor responsável
 
 {{< mention "admin" >}}

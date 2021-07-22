@@ -19,7 +19,6 @@ image:
 projects: []
 ---
 
-
 ## Slides
 
 Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/ameaças_boteco.html#1)

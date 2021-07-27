@@ -58,7 +58,7 @@ Há inúmeras maneiras de valorar a diversidade de plantas mas, vamos examinar a
 
 ### Variedades silvestres de cultivares
 
-#### [O milho silvestre, conhecido como o tesointe](https://evosite.ib.usp.br/relevance/IIBcorn.shtml)
+#### [O milho silvestre, conhecido como o teosinte](https://evosite.ib.usp.br/relevance/IIBcorn.shtml)
 #### [A batata silvestre](https://www.embrapa.br/hortalicas/batata/origem-e-botanica)
 #### [Mandioca silvestre](https://www.embrapa.br/busca-de-noticias/-/noticia/21256255/pesquisadores-identificam-parentes-silvestres-da-mandioca)
 

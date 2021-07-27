@@ -64,7 +64,9 @@ Há inúmeras maneiras de valorar a diversidade de plantas mas, vamos examinar a
 
 ### Variedades crioulas de cultivares
 
-####
+[A importância das sementes crioulas](https://www.brasildefato.com.br/2020/05/24/saiba-o-que-e-semente-crioula-e-entenda-a-sua-importancia) é servir como um banco de germoplasma que guarda a variedade de espécies cultivadas que foram selecionadas de maneira tradicional, por genrações de populações humanas que adaptaram essas espécies aos diferentes climas. 
+
+#### Video: [Guardiões de Sementes](https://globoplay.globo.com/v/3813703/)´
 
 
 

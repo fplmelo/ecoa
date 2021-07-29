@@ -21,7 +21,7 @@ projects: []
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/ameaças_boteco.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/valoracao.html#1)
 
 
 ## Como valorar a biodiversidade?

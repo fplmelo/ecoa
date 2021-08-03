@@ -24,7 +24,7 @@ projects: []
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/ameaças_boteco.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/plant_med.html#1)
 
 
 ## Vamos ver um pequeno vídeo sobre a pesquisa em plantas medicinais n Unifesp
@@ -55,6 +55,10 @@ A resposta é não. Administrar plantas e/ou compostos derivados de plantas para
 ### O caso da homeopatia
 
 <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/james_randi_homeopathy_quackery_and_fraud" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+
+## A biodiversidade e as plantas medicinais
+
+Um conceito importante para ser tratado aqui é o de sociobiodiversidade. A diversidade cultural humana, que foi responsável pela acumulação do conhecimento sobre as plantas, está sendo erodida tão ou mais rapidamente que a diversidade de espécies. As mudanças provocadas pelas perturbações humanas estão transformando não só as paisagens naturais mas as sociais, eliminando práticas e métodos tradicionais de apreensão do conhecimento.
 
 
 

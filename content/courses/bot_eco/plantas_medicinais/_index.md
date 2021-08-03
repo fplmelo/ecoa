@@ -46,6 +46,17 @@ Note que todo esse arcabouço teórico e legal só muito recentemente foi reconh
 
 ## Compostos medicinais de origem vegetal
 
+O comércio de produtos oriundos de plantas vai somar em 2050 cerca de US$ 5 trilhões segundo uma estimativa recente publicada no jornal [Financial Express](https://www.financialexpress.com/archive/global-medicinal-plants-demand-may-touch-5-trillion-by-2050/102863/). Em países do [Sul Global]https://pt.wikipedia.org/wiki/Sul_global), entre 75-90% das pessoas dependem fortemente da medicina tradicional baseada em plantas. Há mais de 70 mil espécies de plantas sendo usadas globalmente para fins medicinais. Ainda, 25% de todos os medicamentos hoje fabricados por farmacêuticas têm sua origem em plantas.
+
+## Fitoterapia é pseudociência?
+
+A resposta é não. Administrar plantas e/ou compostos derivados de plantas para curar doenças é praticado tanto por populações tradicionais quanto por ramos especializados da medicina ocidental convencional. Agora, há muita pseudociência sendo praticada com "selo" de ciência. É importante não confundir o potencial das plantas para oferecer compostos com propriedades farmacológicas com a prática mística associada com diferentes culturas ao redor do mundo.
+
+### O caso da homeopatia
+
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/james_randi_homeopathy_quackery_and_fraud" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+
+
 
 
 

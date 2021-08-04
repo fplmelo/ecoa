@@ -21,13 +21,12 @@ projects: []
 
 
 
-
 ## Slides
 
 Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/plant_med.html#1)
 
 
-## Vamos ver um pequeno vídeo sobre a pesquisa em plantas medicinais n Unifesp
+## Vamos ver um pequeno vídeo sobre a pesquisa em plantas medicinais na Unifesp
 
 <iframe width="680" height="383" src="https://www.youtube.com/embed/YrX9ZmYfxq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -59,6 +58,18 @@ A resposta é não. Administrar plantas e/ou compostos derivados de plantas para
 ## A biodiversidade e as plantas medicinais
 
 Um conceito importante para ser tratado aqui é o de sociobiodiversidade. A diversidade cultural humana, que foi responsável pela acumulação do conhecimento sobre as plantas, está sendo erodida tão ou mais rapidamente que a diversidade de espécies. As mudanças provocadas pelas perturbações humanas estão transformando não só as paisagens naturais mas as sociais, eliminando práticas e métodos tradicionais de apreensão do conhecimento.
+
+## Para saber mais
+
+[Prof. Ulysses Paulino de Albuquerque - UFPE](https://scholar.google.com/citations?user=JnPswr0AAAAJ&hl=pt-BR)
+
+[Livro: Plantas Medicinais no Brasil](https://www.plantarum.com.br/livro-plantas-medicinais-no-brasil)
+
+[Política Nacional de Plantas Medicinais e Fitoterápicos](https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_fitoterapicos.pdf)
+
+[Las Plantas de lo Dioses](https://archive.org/details/PlantasDeLosDioses/page/n1/mode/2up)
+
+<img src=https://lapersianalibros.com/wp-content/uploads/2020/07/plantas-de-los-dioses.jpg>
 
 
 

@@ -55,46 +55,25 @@ Uma noção importante acerca do "desenvolvimento" é que este só é possível 
 ### [Açai](https://repositorio.ufpe.br/bitstream/123456789/33472/1/TESE%20Madson%20Ant%c3%b4nio%20Benjamin%20Freitas.pdf)
 ### [Umbu](https://ispn.org.br/umbu-boas-praticas-de-manejo-para-o-extrativismo-sustentavel/)
 ### [Palmito-juçara](https://www.scielo.br/j/rarv/a/9ZSNxBvw6jtdG8JWdHB4MXg/?lang=pt)
+### [Babaçu](https://www.scielo.br/j/bgoeldi/a/pTzRmXNGf5FVsH8WZjwyc5S/?lang=pt)
 
 
+## Chico Mendes - um ícone global de um novo modelo de desenvolvimento
 
-## Conhecimentos tradicionais
+<iframe width="500" height="281" src="https://www.youtube.com/embed/vGO_CZNavRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- Leia essa definição da [Organização Mundial de Propriedade Intelectual](https://www.wipo.int/tk/es/tk/index.html)
-- Leia também o verbete da Wikipédia sobre [conhecimento tradicional](https://en.wikipedia.org/wiki/Traditional_knowledge)
+Veja também esse filme maravilhoso chamado: Chico Mendes: eu quero viver! do Cienasta Adrian Colwel
 
-Note que todo esse arcabouço teórico e legal só muito recentemente foi reconhecido, após eras de exploração do conhecimento tradicional para fins comerciais capitalistas. Note que há uma diferença entre intercâmico cultural (sem fins lucrativos) e exploração comercial do conhecimento tradicional. 
+Parte -1 
 
-## Compostos medicinais de origem vegetal
+<iframe width="977" height="733" src="https://www.youtube.com/embed/cUr2t3Te8Jo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-O comércio de produtos oriundos de plantas vai somar em 2050 cerca de US$ 5 trilhões segundo uma estimativa recente publicada no jornal [Financial Express](https://www.financialexpress.com/archive/global-medicinal-plants-demand-may-touch-5-trillion-by-2050/102863/). Em países do [Sul Global]https://pt.wikipedia.org/wiki/Sul_global), entre 75-90% das pessoas dependem fortemente da medicina tradicional baseada em plantas. Há mais de 70 mil espécies de plantas sendo usadas globalmente para fins medicinais. Ainda, 25% de todos os medicamentos hoje fabricados por farmacêuticas têm sua origem em plantas.
+Parte - 2
 
-## Fitoterapia é pseudociência?
+<iframe width="977" height="733" src="https://www.youtube.com/embed/4kBLDzZEyrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-A resposta é não. Administrar plantas e/ou compostos derivados de plantas para curar doenças é praticado tanto por populações tradicionais quanto por ramos especializados da medicina ocidental convencional. Agora, há muita pseudociência sendo praticada com "selo" de ciência. É importante não confundir o potencial das plantas para oferecer compostos com propriedades farmacológicas com a prática mística associada com diferentes culturas ao redor do mundo.
+Parte - 3
 
-### O caso da homeopatia
-
-<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/james_randi_homeopathy_quackery_and_fraud" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
-
-## A biodiversidade e as plantas medicinais
-
-Um conceito importante para ser tratado aqui é o de sociobiodiversidade. A diversidade cultural humana, que foi responsável pela acumulação do conhecimento sobre as plantas, está sendo erodida tão ou mais rapidamente que a diversidade de espécies. As mudanças provocadas pelas perturbações humanas estão transformando não só as paisagens naturais mas as sociais, eliminando práticas e métodos tradicionais de apreensão do conhecimento.
-
-## Para saber mais
-
-[Prof. Ulysses Paulino de Albuquerque - UFPE](https://scholar.google.com/citations?user=JnPswr0AAAAJ&hl=pt-BR)
-
-[Livro: Plantas Medicinais no Brasil](https://www.plantarum.com.br/livro-plantas-medicinais-no-brasil)
-
-[Política Nacional de Plantas Medicinais e Fitoterápicos](https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_fitoterapicos.pdf)
-
-[Las Plantas de lo Dioses](https://archive.org/details/PlantasDeLosDioses/page/n1/mode/2up)
-
-<img src=https://lapersianalibros.com/wp-content/uploads/2020/07/plantas-de-los-dioses.jpg>
-
-
-
-
+<iframe width="977" height="733" src="https://www.youtube.com/embed/KukLSjKo5Ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 

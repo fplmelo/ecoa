@@ -22,7 +22,7 @@ projects: []
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/plant_med.html#1)
+Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/boteco/extrativismo.html#1)
 
 
 ## Produtos da biodiversidade

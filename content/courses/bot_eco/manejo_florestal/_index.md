@@ -1,7 +1,7 @@
 ---
 title: Aula 5 - Manejo Florestal
 author: Felipe Melo
-date: '2021-08-19'
+date: ''
 slug: 
 categories: []
 tags:

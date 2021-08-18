@@ -14,11 +14,11 @@ education:
 email: ""
 highlight_name: false
 interests:
-- Fucntional Ecology
+- Functional Ecology
 - Biodiversity Conservation
 - Landscape Ecology
 - Social-ecosystems
-- POlitical Ecology
+- Political Ecology
 organizations:
 - name: Universidade Federal de Pernambuco
   url: https://www.ufpe.br/

@@ -1,6 +1,7 @@
 ---
 title: Aula 4 - Cadeia produtiva de produtos da biodiversidade de plantas
 author: Felipe Melo
+date: '2021-07-27'
 slug: 
 categories: []
 tags:

@@ -6,7 +6,7 @@ slug:
 categories: []
 tags:
   - science
-  - projects
+  - classes
 subtitle: ''
 summary: ''
 authors: []

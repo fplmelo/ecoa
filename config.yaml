@@ -11,6 +11,8 @@ copyright: '' # Footer text, e.g. '© {year} Me'
 ############################
 ## LANGUAGE
 ############################
+defaultContentLanguage: en
+
 languages:
   en:
 	languageName: English
@@ -21,8 +23,6 @@ languages:
 	weight: 2
 	contentDir: content/pt
 
-	
-defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: true
 removePathAccents: true

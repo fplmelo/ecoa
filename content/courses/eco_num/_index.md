@@ -10,8 +10,6 @@ type: book
 
 {{< toc hide_on="xl" >}}
 
-# Site da disciplina [AQUI](https://fplmelo.github.io/eco_numerica/index.html)
-
 ## Plano de ensino de Ecologia Numérica
 ### Felipe Melo & José Roberto Botelho
 Carga horária
@@ -47,7 +45,7 @@ A avaliação será através de provas escritas e seminários em grupo com os es
 
 ### Bibliografia
 
-###Programação em R
+### Programação em R
 Adler, J. (2012). R in a nutshell: A desktop quick reference. O’Reilly Media, Inc.
 
 Allesina, S., & Wilmes, M. (2019). Computing Skills for Biologists: A Toolbox. Princeton University Press.

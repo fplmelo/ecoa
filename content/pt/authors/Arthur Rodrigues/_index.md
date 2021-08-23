@@ -2,18 +2,18 @@
 bio: Student at the end of graduation and intending to pursue an academic career
 education:
   courses:
-  - course: Graduation in Biological Sciences 
+  - course: BSc em Biologia
     institution: Universidade Federal de Pernambuco 
     year: 2017 – Atualmente
 email: "barros.arthur082@gmail.com" # mantenha as aspas
 interests:
-- Socioecology
+- Sistemas socioecológicos
 - R markdown and Xaringan
-- Spatial Ecology
+- Ecologia espacial
 organizations:
 - name: Universidade Federal de Pernambuco # não mudar
   url: "www.ufpe.br" # não mudar
-role: Undergrad Student; # Escolha um desses e apague o resto
+role: Graduação # Escolha um desses e apague o resto
 social:
 - icon: envelope
   icon_pack: fas
@@ -25,7 +25,7 @@ social:
   icon_pack: fab
   link: https://github.com/Barros082
 superuser: false
-user_groups: ["Undergrad Students"] # Não mexer
+user_groups: ["Graduação"] # Não mexer
 title: Arthur André de Barros Rodrigues
 ---
-Arthur is a scientist at the beginning of his career. His themes of interest are socioecology, restoration ecology and issues related to transformation of scientific knowledge. Presents skills developed in the use of R markdown, Git hub and Xaringan packpages. For more information, see
+Arthur está começando sua carreira como biólogo e tem interesse em sistemas socio-ecológicos e restauração ecológica e tudo que se relaciona com a trasformação do conhecimento científico. Tem habilidades em R, Github e SIG.

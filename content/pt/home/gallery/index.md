@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 66
 
-title: Gallery
+title: Fotos do campo
 subtitle:
 ---
 

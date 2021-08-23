@@ -41,7 +41,7 @@ social:
   link: https://github.com/fplmelo
 superuser: true
 title: Felipe P.L. Melo
-user_groups: ["Principal Investigators"]
+user_groups: ["Coordenador"]
 ---
 
 

@@ -19,7 +19,7 @@ interests:
 organizations:
 - name: Universidade Federal de Pernambuco # não mudar
   url: "www.ufpe.br" # não mudar
-role: PhD candidate # Escolha um desses e apague o resto
+role: Doutorando # Escolha um desses e apague o resto
 social:
 - icon: envelope
   icon_pack: fas
@@ -34,7 +34,7 @@ social:
   icon_pack: fab
   link: https://github.com/alenc09  #Se não tiver Github, deixe em branco
 superuser: false
-user_groups: ["Grad Students"] # Não mexer
+user_groups: ["Pós-graduação"] # Não mexer
 title: Lucas Alencar
 ---
 

@@ -8,19 +8,19 @@ main:
     url: '#about'
     weight: 10
   - name: People
-    url: '#people'
+    url: 'people/'
     weight: 20
   - name: Blog
     url: '#posts'
     weight: 30
   - name: Projects
-    url: '#projects'
+    url: 'project/'
     weight: 40
   - name: Videos
     url: '#videos'
     weight: 50
   - name: Publications
-    url: '#featured'
+    url: 'publication/'
     weight: 60
   - name: Courses
     url: courses/

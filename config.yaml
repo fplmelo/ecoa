@@ -11,10 +11,20 @@ copyright: '' # Footer text, e.g. '© {year} Me'
 ############################
 ## LANGUAGE
 ############################
+languages:
+  en:
+	languageName: English
+	weight: 1
+	contentDir: content/en
+  pt:
+	languageName: Português
+	weight: 2
+	contentDir: content/pt
 
+	
 defaultContentLanguage: en
 hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+defaultContentLanguageInSubdir: true
 removePathAccents: true
 
 ############################

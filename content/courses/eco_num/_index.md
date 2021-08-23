@@ -10,8 +10,6 @@ type: book
 
 {{< toc hide_on="xl" >}}
 
-# Site da disciplina [AQUI](https://fplmelo.github.io/eco_numerica/index.html)
-
 ## Plano de ensino de Ecologia Numérica
 ### Felipe Melo & José Roberto Botelho
 Carga horária

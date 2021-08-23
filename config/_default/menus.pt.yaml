@@ -14,13 +14,13 @@ main:
     url: '#posts'
     weight: 30
   - name: Projetos
-    url: 'project/'
+    url: 'pt/project/'
     weight: 40
   - name: Videos
     url: '#videos'
     weight: 50
   - name: Publicações
-    url: 'publication/'
+    url: 'pt/publication/'
     weight: 60
   - name: Cursos
     url: courses/

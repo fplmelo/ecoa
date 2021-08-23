@@ -1,28 +1,28 @@
 ---
-bio: Biologist and eco-socialist. Another world is possible!
+bio: Biólogo e ecossicialista. OUtro mundo é possível!
 education:
   courses:
-  - course: PhD Biological Sciences
+  - course: PhD Ciências Biológicas
     institution: Universidad Nacional Autónoma de México
     year: 2009
-  - course: MSc Ecology
+  - course: MSc Biologia Vegetal
     institution: Universidade Federal de Pernambuco (Brazil)
     year: 2004
-  - course: BSc Biology
+  - course: BSc Biologia
     institution: Universidade Federal de Pernambuco (Brazil)
     year: 2001
 email: ""
 highlight_name: false
 interests:
-- Functional Ecology
-- Biodiversity Conservation
-- Landscape Ecology
-- Social-ecosystems
-- Political Ecology
+- Ecologia Funcional
+- Conservação da Biodiversidade
+- Ecologia de Paisagens
+- Sistemas socio-ecológicos
+- PEcologia Política
 organizations:
 - name: Universidade Federal de Pernambuco
   url: https://www.ufpe.br/
-role: Associate Professor in Applied Ecology
+role: Professor associado 2
 social:
 - icon: envelope
   icon_pack: fas
@@ -47,8 +47,8 @@ user_groups: ["Principal Investigators"]
 
 <img src="logo.png" width=150>
 
-This lab is the joint effort of many people that share a common principle: Ecology and Conservation must be political to address the real-world problems. We are interested in all kinds of human interventions on natural systems and how biotas respond to them. Functional ecology, landcape ecology, restoration, conservation sciences and political ecology move us. 
+Este laboratório é o resultado de um esforço coletivo de muitas pessoas que compartilham o meso princípio: Ecologia e Conservação são ciências que precisam de engajamento político para resolver os problemas do mundo real. Estamos interessados em todos os tipos de interações entre pessoas e a biota que acontecem em paisagens modificadas pelo uso humano. Nossas ferramentas são a ecologia funcional, ecologia de paisagens, restauração ecológica, conservação da biodiversidade e ecologia política é o nosso motor!
 
-Our research team is proud of all human diversity and we welcome all interested people to join and work with us. 
+Mosso grupo de pesquisa tem muito orgulho de toda a diversidade humana e tod@s são bem vind@s 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/cv_felipe_eng.pdf" "newtab" >}}CV{{< /staticref >}}.

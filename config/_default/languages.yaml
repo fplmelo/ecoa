@@ -5,39 +5,18 @@
 # Default language
 en:
   languageCode: en-us
-# Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  contentDir: content/en
+  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
+  #contentDir: content/en
 
 # Uncomment the lines below to configure your website in a second language.
-pt:
-  languageCode: pt
-  contentDir: content/pt
-  title: Laboratório de Ecologia Aplicada
-  params:
-    description: Site description in Chinese...
-  menu:
-main:
-  - name: Início
-    url: '#about'
-    weight: 10
-  - name: Equipe
-    url: 'people/'
-    weight: 20
-  - name: Blog
-    url: '#posts'
-    weight: 30
-  - name: Projetos
-    url: 'project/'
-    weight: 40
-  - name: Videos
-    url: '#videos'
-    weight: 50
-  - name: Publicações
-    url: 'publication/'
-    weight: 60
-  - name: Cursos
-    url: courses/
-    weight: 70
-  - name: Contato
-    url: '#contact'
-    weight: 80
+#zh:
+#  languageCode: zh-Hans
+#  contentDir: content/zh
+#  title: Chinese website title...
+#  params:
+#    description: Site description in Chinese...
+#  menu:
+#    main:
+#      - name: 传
+#        url: '#about'
+#        weight: 1

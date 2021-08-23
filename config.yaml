@@ -12,20 +12,19 @@ copyright: '' # Footer text, e.g. '© {year} Me'
 ## LANGUAGE
 ############################
 defaultContentLanguage: en
-
 languages:
-  en:
-	languageName: English
-	weight: 1
-	contentDir: content/en
-  pt:
-	languageName: Português
-	weight: 2
-	contentDir: content/pt
+ en:
+  languageName: en
+  weight: 1
+  contentDir: content/en
+ pt:
+  languageName: pt
+  weight: 2
+  contentDir: content/pt
 
-hasCJKLanguage: false
+#hasCJKLanguage: false
 defaultContentLanguageInSubdir: true
-removePathAccents: true
+#removePathAccents: true
 
 ############################
 ## MODULES

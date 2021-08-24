@@ -44,11 +44,11 @@ title: Felipe P.L. Melo
 user_groups: ["Coordenador"]
 ---
 
+<img src="logo.png" width=100> <br>
 
-<img src="logo.png" width=150>
 
 Este laboratório é o resultado de um esforço coletivo de muitas pessoas que compartilham o meso princípio: Ecologia e Conservação são ciências que precisam de engajamento político para resolver os problemas do mundo real. Estamos interessados em todos os tipos de interações entre pessoas e a biota que acontecem em paisagens modificadas pelo uso humano. Nossas ferramentas são a ecologia funcional, ecologia de paisagens, restauração ecológica, conservação da biodiversidade e ecologia política é o nosso motor!
 
 Mosso grupo de pesquisa tem muito orgulho de toda a diversidade humana e tod@s são bem vind@s 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/cv_felipe_eng.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Baixe meu {{< staticref "media/cv_felipe_eng.pdf" "newtab" >}}CV{{< /staticref >}}.

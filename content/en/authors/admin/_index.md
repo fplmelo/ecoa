@@ -45,7 +45,8 @@ user_groups: ["Principal Investigators"]
 ---
 
 
-<img src="logo.png" width=150>
+<img src="logo.png" width=150> <br>
+
 
 This lab is the joint effort of many people that share a common principle: Ecology and Conservation must be political to address the real-world problems. We are interested in all kinds of human interventions on natural systems and how biotas respond to them. Functional ecology, landcape ecology, restoration, conservation sciences and political ecology move us. 
 

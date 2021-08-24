@@ -2,7 +2,7 @@
 date: "2021-01-24"
 linkTitle: Ecologia de Paisagens
 summary: Métodos, conceitos e ferramentas para entender e analisar como os diversos elementos da paisagem influenciam na persistência da biodiversidade
-title: "\U0001F4D2 Ecologia de Pasisagens"
+title: "\U0001F4D2 Ecologia de Paisagens"
 type: book
 ---
 

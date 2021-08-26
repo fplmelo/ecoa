@@ -18,7 +18,7 @@ interests:
 - Conservação da Biodiversidade
 - Ecologia de Paisagens
 - Sistemas socio-ecológicos
-- PEcologia Política
+- Ecologia Política
 organizations:
 - name: Universidade Federal de Pernambuco
   url: https://www.ufpe.br/

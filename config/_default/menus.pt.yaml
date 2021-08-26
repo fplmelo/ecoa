@@ -14,7 +14,7 @@ main:
     url: '#posts'
     weight: 30
   - name: Projetos
-    url: 'pt/project/'
+    url: project/
     weight: 40
   - name: Videos
     url: '#videos'

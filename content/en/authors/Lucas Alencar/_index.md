@@ -38,4 +38,10 @@ user_groups: ["Grad Students"] # Não mexer
 title: Lucas Alencar
 ---
 
-Sou graduado em Ciências Biológicas com ênfase em Ciências Ambientais pela Universidade Federal de Pernambuco. Conclui meu mestrado em Ecologia pelo Instituto Nacional de Pesquisas da Amazônia, trabalhando com ecologia de paisagens e padrões de desmatamento na Amazônia. Tenho interesse nas áreas de socioecologia, ecologia de paisagens, uso e cobertura da terra e sustentabilidade. Também me interesso pela utilização de ferramentas como o R e geotecnologias. Atualmente estou fazendo meu doutorado na Universidade Federal de Pernambuco e trabalho com uso da terra e sustentabilidade na Caatinga. Também sou produtor e comentarista do programa de divulgação e educação científica LaboratórioFM
+I graduated in Biological Sciences with an emphasis on Environmental Sciences at the Federal University of Pernambuco. I completed my Master's Degree in Ecology at the National Institute of Amazonian Research, working with landscape ecology and deforestation patterns in the Amazon. I am interested in the areas of socioecology, landscape ecology, land use and land cover and sustainability. I am also interested in using tools such as R and geotechnologies. I'm currently doing my PhD at the Federal University of Pernambuco and working with land use and sustainability in the Caatinga. I am also a producer and commentator for the LaboratoryFM science education and dissemination program 
+
+## Capítulo 1
+
+{{< figure src="map.png" >}}
+
+

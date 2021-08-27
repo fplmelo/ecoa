@@ -15,7 +15,7 @@ type: book
 
 ## Brief
 
-Esse é um exprimento controlado onde estamos avaliando o papel das espécies exóticas, disponibilidade de nutrientes, estresse hídrico e perturbação sobre a diversidade funcional e filogenética de plantas e invertebrados. Queremos entender também como a relação entre diversidade e função ecosssitêmica é afetadas por esses fatores de disturbio. Este experimento faz parte de uma rede mudnial de estudos em ecossistemas secos [NutNet-Dragnet](https://nutnet.org/dragnet). 
+This is a controlled experiment where we are evaluating the role of exotic species, nutrient availability, water stress and disturbance on the functional and phylogenetic diversity of plants and invertebrates. We also want to understand how the relationship between diversity and ecosystem function is affected by these disturbing factors. This experiment is part of a worldwide network of studies in dry ecosystems [NutNet-Dragnet](https://nutnet.org/dragnet). 
 
 {{< youtube C21RHdxeu3E >}}
 

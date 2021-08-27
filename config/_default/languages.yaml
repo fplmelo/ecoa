@@ -9,14 +9,35 @@ en:
   #contentDir: content/en
 
 # Uncomment the lines below to configure your website in a second language.
-#zh:
-#  languageCode: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+pt:
+  languageCode: pt
+  contentDir: content/pt
+  title: Ecologia Aplicada
+  params:
+    description: Site in Portuguese
+  menu:
+    main:
+      - name: Início
+        url: '#about'
+        weight: 10
+      - name: Equipe
+        url: 'people/'
+        weight: 20
+      - name: Blog
+        url: '#posts'
+        weight: 30
+      - name: Projetos
+        url: 'pt/project/'
+        weight: 40
+      - name: Videos
+        url: '#videos'
+        weight: 50
+      - name: Publicações
+        url: 'pt/publication/'
+        weight: 60
+      - name: Cursos
+        url: courses/
+        weight: 70
+      - name: Contato
+        url: '#contact'
+        weight: 80

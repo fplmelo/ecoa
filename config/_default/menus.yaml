@@ -11,7 +11,7 @@ main:
     url: 'people/'
     weight: 20
   - name: Blog
-    url: '#posts'
+    url: 'blog/'
     weight: 30
   - name: Projects
     url: 'en/project/'

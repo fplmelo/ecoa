@@ -1,24 +1,19 @@
 ---
 date: "2021-07-22"
-linkTitle: cDEEP - Caatina Dry Ecosystem Ecological Program
-summary: The present project aims to assess how human disturbance and changes in rainfall
-  regime affect the Caatinga ecosystem’s biota at different levels of biological organization
-  (i.e, from populations to ecosystem level), by correlating these aspects with the
-  theoretical reference shown in macro trends already documented in the tropics. The
-  LTER Catimbau is also part of the ILTER (International Long Term Ecological Research)
-  network joins several other long-lasting projects developed around the world.
-title: "cDEEP - Caatina Dry Ecosystem Ecological Program"
+linkTitle: Segurança forestal, hídrica, energética e alimentar na Caatinga
+summary: Este projeto visa compreender o papel das florestas como uma quarta dimensão do nexo água, energia e segurança alimentar (WEF-Nexus). Queremos saber como as desigualdades de posse da terra, os meios de subsistência humanos e a cobertura florestal estão associados.
+title: "Segurança forestal, hídrica, energética e alimentar na Caatinga"
 type: book
 ---
 
-{{< figure src="featured.jpg" >}}
+{{< figure src="1.png" >}}
+
+Clique para saber mais [aqui](https://www.nature.com/articles/s41893-020-00608-z)
 
 ## Resumo
 
-Esse é um exprimento controlado onde estamos avaliando o papel das espécies exóticas, disponibilidade de nutrientes, estresse hídrico e perturbação sobre a diversidade funcional e filogenética de plantas e invertebrados. Queremos entender também como a relação entre diversidade e função ecosssitêmica é afetadas por esses fatores de disturbio. Este experimento faz parte de uma rede mudnial de estudos em ecossistemas secos [NutNet-Dragnet](https://nutnet.org/dragnet). 
+Nesta proposta, apresentamos a restauração ecológica como uma ação transversal e unificadora para promover a abordagem Nexus (água, energia e segurança alimentar) e atingir os objetivos de desenvolvimento sustentável (ODS) na região do bioma Caatinga. Dividida em dois módulos, esta proposta apresenta duas frentes de ação para promover a sustentabilidade da Caatinga. Em primeiro lugar, combinando o que há de melhor em ciência, políticas públicas, análise socioeconômica e capacitação, esta proposta prevê o mapeamento das oportunidades e desafios da restauração ecológica na Caatinga com foco na promoção da segurança hídrica, alimentar e energética. Ainda, utilizando os conhecimentos tradicionais da população do semi-árido aliado às mais modernas técnicas de restauração para a Caatinga, esta proposta prevê a geração de protocolos de restauração in situ que promovam a resiliência e sustentabilidade de paisagens sócio-ecológicas produtivas, promovendo novamente o Nexus abordagem em uma escala de gestão local de paisagens produtivas. Esta proposta visa demonstrar que é possível aliar de forma natural e harmoniosa a pesquisa científica em Restauração Ecológica, uma das áreas mais importantes para o desenvolvimento de alternativas tecnológicas para a sustentabilidade, com a geração de políticas públicas alinhadas aos objetivos geopolíticos e ancorados em uma abordagem multidisciplinar (Nexus). Os produtos derivados, assim como o potencial inovador desta proposta, são abrangentes e atendem tanto ao planejamento no setor público, à implementação de experiências pela sociedade civil organizada e ao fortalecimento de uma importante linha de pesquisa, a restauração ecológica, para as TICs na Caatinga. bioma.
 
-{{< youtube C21RHdxeu3E >}}
+## Coordenador
 
-## Coordenadores
-
-[Thiago Gonçalves Souza](https://scholar.google.com.br/citations?hl=pt-BR&user=TjaP2l8AAAAJ) and [Felipe Melo](https://scholar.google.com.br/citations?user=ytoqEukAAAAJ&hl=pt-BR) 
+{{< mention "admin" >}}

@@ -26,7 +26,7 @@ Este curso tem o objetivo de apresentar conceitos de biologia da cnservação, s
 ## Avaliação
 Trabalhos divesos na forma escrita mas também como uso de midias alternativas, videos, audios, etc... 
 
-## Conteúdo programático
+## Aulas disponíveis
 
 {{< list_children >}}
 

@@ -12,12 +12,12 @@ headless: true
 # Order that this section appears on the page.
 weight: 80
 
-title: Press coverage
+title: Press coverage (mostly in Portuguese)
 subtitle: ""
 
 content:
   # Page type to display. E.g. post, talk, publication...
-  page_type: publication
+  page_type: press
   # Choose how many pages you would like to display (0 = all pages)
   count: 0
   # Filter on criteria

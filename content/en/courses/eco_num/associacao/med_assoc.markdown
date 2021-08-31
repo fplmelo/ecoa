@@ -1,5 +1,5 @@
 ---
-title: "Medidas de Associação"
+title: "Aula 2 - Medidas de Associação"
 author: Felipe Melo
 date: '2021-08-23'
 slug: 
@@ -20,9 +20,6 @@ projects: []
 ---
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
-
-*Slides*
-
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
@@ -104,7 +101,7 @@ Nesse caso até um gráfico pode nos ajudar a ter uma dimensão da importância 
 image(as.matrix(spe_na))
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" />
 
 Os valores em branco são os NAs e as cores indicam as abundâncias, sendo quanto mais vermelho, mais abundante.
 
@@ -161,13 +158,13 @@ Escreva emaicxo seus códigos e interprete os resultados escrevendo embaixo
 coldiss(spe.db, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 ``` r
 coldiss(spe.dh, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 # Comparando comunidades com dados binários (Q-mode)
 
@@ -214,7 +211,7 @@ env.de<-dist(scale(env2)) # use a função "scale" para transformar osdados em z
 corrplot(as.matrix(env.de), is.corr = FALSE) 
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 Lembrem-se que nessa matriz, os números são as amostras, que começam em 1 na nascente do rio e terminam em 30 no ponto mais distante. Conseguem ver algum padrão? tentem entender a matriz, dê exemplos de pontos muitos parecidos e outros muito dissimilares. Será que você está lendo a matriz corretamente?
 
@@ -225,7 +222,7 @@ spa.de<-dist(spa)
 coldiss(spa.de, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 ``` r
 dfs.df<-as.data.frame(env$dfs, row.names = rownames(env))
@@ -233,7 +230,7 @@ riv.de<-dist(dfs.df)
 coldiss(riv.de, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 # R mode para dados ambientais ou espécies
 
@@ -246,7 +243,7 @@ cor.env<-cor(env2)
 coldiss(cor.env, diag = T)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 Consegue ideintificar grupos de variáveis ambientais que covariam?
 
@@ -260,7 +257,7 @@ spe.t.D16 <- dist(spe.t.chi)
 coldiss(spe.t.D16, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 Consegue identificar grupos de espécies?
 
@@ -438,7 +435,7 @@ clust_rio<-hclust(jacc_dist, method = "complete")
 clust_graf<-plot(clust_rio, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 ``` r
 clust_graf
@@ -454,7 +451,7 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_rio2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
 Temos padrão?
 
@@ -616,7 +613,7 @@ clust_rio_euc<-hclust(euc_dist, method = "complete")
 clust_graf_euc<-plot(clust_rio_euc, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
 ``` r
 clust_graf_euc
@@ -639,17 +636,13 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_rio_euc2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
 Novamente, temos alguma diferença que aponta para uma certa organização das espécies, mas notem que agora parecem mais misturados que quando usamos o índice de Jaccard, mas mesmo essa “mistura” tem um certo padrão, podem perceber?
 
 Aparentemente o *médio rio* é uma interseção entre comunidades de baixo e alto rio. Será que as variáveis ambientais conseguem explicar isso?
 
 Vamos aplicar o mesmo passo-à-passo para a matriz ambiental
-
-``` r
-env[,-c(1,4,12)] # aqui eu retirei duas colunas, a que adicionamos com o trecho do rio a quarta e a primeira que eraa distancia linear entre a primeira e as demais amostras.
-```
 
     ##    ele  slo  pH har  pho  nit  amm  oxy  bod
     ## 1  934 48.0 7.9  45 0.01 0.20 0.00 12.2  2.7
@@ -681,11 +674,6 @@ env[,-c(1,4,12)] # aqui eu retirei duas colunas, a que adicionamos com o trecho 
     ## 28 195  0.3 8.3 100 0.74 4.00 0.30  8.1  4.5
     ## 29 183  0.6 7.8 110 0.45 1.62 0.10  9.0  4.2
     ## 30 172  0.2 8.2 109 0.65 1.60 0.10  8.2  4.4
-
-``` r
-env_dist<-vegdist(env[,-c(1,4,12)], method = "euclidean")
-env_dist
-```
 
     ##             1          2          3          4          5          6          7
     ## 2   45.368162                                                                  
@@ -806,27 +794,11 @@ env_dist
 
 Agora as médias totais e entre trechos do rio
 
-``` r
-mean(env_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
-```
-
     ## [1] 302.936
-
-``` r
-mean(dist_subset(env_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
-```
 
     ## [1] 79.71855
 
-``` r
-mean(dist_subset(env_dist, c(9:18))) # Agora para o médio rio
-```
-
     ## [1] 105.052
-
-``` r
-mean(dist_subset(env_dist, c(19:28))) # Agora para o baixo rio
-```
 
     ## [1] 41.48669
 
@@ -837,7 +809,7 @@ clust_env_euc<-hclust(env_dist, method = "complete")
 clust_graf_env_euc<-plot(clust_env_euc, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 
 ``` r
 clust_graf_env_euc
@@ -860,7 +832,7 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_graf_env_euc2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
 E agora? Dá pra entender?
 
@@ -872,7 +844,7 @@ Então, bora trabalhar!!!
 
 ## 1) Faça uma pergunta "hipotética sobre a organização da comunidade de peixes
 
-### **Dica**: em vez do gradiente geográfico qu usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz “env”
+### **Dica**: em vez do gradiente geográfico que usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz “env”
 
 ## 2) Calcule matrizes de distância da comunidade biológica usando índices de Sorensen ou Jaccard e alguma medida de distância (euclidiana ou outra qualquer que a função *vegdist* possa calcular)
 

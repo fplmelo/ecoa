@@ -1,5 +1,5 @@
 ---
-title: "Medidas de Associação"
+title: "Aula 2 - Medidas de Associação"
 author: Felipe Melo
 date: '2021-08-23'
 slug: 
@@ -29,7 +29,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-*Slides* 
 ```{r , echo=FALSE}
 
 xaringanExtra::embed_xaringan(url="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1", ratio = "16:9")
@@ -352,7 +351,7 @@ Aparentemente o _médio rio_ é uma interseção entre comunidades de baixo e al
 
 Vamos aplicar o mesmo passo-à-passo para a matriz ambiental
 
-```{r}
+```{r, echo=FALSE}
 env[,-c(1,4,12)] # aqui eu retirei duas colunas, a que adicionamos com o trecho do rio a quarta e a primeira que eraa distancia linear entre a primeira e as demais amostras.
 env_dist<-vegdist(env[,-c(1,4,12)], method = "euclidean")
 env_dist
@@ -360,7 +359,7 @@ env_dist
 
 Agora as médias totais e entre trechos do rio
 
-```{r}
+```{r, echo=FALSE}
 mean(env_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
 
 mean(dist_subset(env_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
@@ -403,7 +402,7 @@ Então, bora trabalhar!!!
 
 ## 1) Faça uma pergunta "hipotética sobre a organização da comunidade de peixes
 
-### **Dica**: em vez do gradiente geográfico qu usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz "env"
+### **Dica**: em vez do gradiente geográfico que usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz "env"
 
 
 ## 2) Calcule matrizes de distância da comunidade biológica usando índices de Sorensen ou Jaccard e alguma medida de distância (euclidiana ou outra qualquer que a função _vegdist_ possa calcular)

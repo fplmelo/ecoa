@@ -1,5 +1,5 @@
 ---
-title: "Medidas de Associação"
+title: "Aula 2.Medidas de Associação"
 author: "Felipe Melo"
 date: "03/03/2021"
 output: 
@@ -81,7 +81,7 @@ head(is.na(spe_na))</code></pre>
 ## 6 FALSE TRUE TRUE  TRUE TRUE FALSE TRUE TRUE TRUE FALSE TRUE TRUE TRUE</code></pre>
 <p>Nesse caso até um gráfico pode nos ajudar a ter uma dimensão da importância dos zeros NAs</p>
 <pre class="r"><code>image(as.matrix(spe_na))</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" /></p>
 <p>Os valores em branco são os NAs e as cores indicam as abundâncias, sendo quanto mais vermelho, mais abundante.</p>
 </div>
 <div id="perguntas-para-se-ter-em-mente" class="section level3">
@@ -122,9 +122,9 @@ spe.dh &lt;- dist(spe.hel) # Hellinger is the default distance</code></pre>
 <p>Tente fazer uma representação gráfica de cada uma dessas matrizes com os diferentes índices e compará-la</p>
 <p>Escreva emaicxo seus códigos e interprete os resultados escrevendo embaixo</p>
 <pre class="r"><code>coldiss(spe.db, diag = TRUE)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>coldiss(spe.dh, diag = TRUE)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
 <div id="comparando-comunidades-com-dados-binários-q-mode" class="section level1">
@@ -167,17 +167,17 @@ Neste artigo <a href="https://www.cell.com/trends/ecology-evolution/fulltext/S01
 <pre class="r"><code>env2&lt;- env[,-1] # remover &#39;dfs&#39; que é uma variável espacial, não ambiental
 env.de&lt;-dist(scale(env2)) # use a função &quot;scale&quot; para transformar osdados em z-scores, já que dados de magnitude muito diferentes podem criar disorções no cálculo de distâncias.
 corrplot(as.matrix(env.de), is.corr = FALSE) </code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Lembrem-se que nessa matriz, os números são as amostras, que começam em 1 na nascente do rio e terminam em 30 no ponto mais distante. Conseguem ver algum padrão? tentem entender a matriz, dê exemplos de pontos muitos parecidos e outros muito dissimilares. Será que você está lendo a matriz corretamente?</p>
 <div id="distâncias-geográficas" class="section level2">
 <h2>Distâncias geográficas</h2>
 <pre class="r"><code>spa.de&lt;-dist(spa)
 coldiss(spa.de, diag = TRUE)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>dfs.df&lt;-as.data.frame(env$dfs, row.names = rownames(env))
 riv.de&lt;-dist(dfs.df)
 coldiss(riv.de, diag = TRUE)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 </div>
 <div id="r-mode-para-dados-ambientais-ou-espécies" class="section level1">
@@ -187,7 +187,7 @@ coldiss(riv.de, diag = TRUE)</code></pre>
 <h2>Variáveis ambientais</h2>
 <pre class="r"><code>cor.env&lt;-cor(env2)
 coldiss(cor.env, diag = T)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Consegue ideintificar grupos de variáveis ambientais que covariam?</p>
 </div>
 <div id="espécies-que-covariam" class="section level2">
@@ -197,7 +197,7 @@ coldiss(cor.env, diag = T)</code></pre>
 spe.t.chi &lt;- decostand(spe.t, &quot;chi.square&quot;)
 spe.t.D16 &lt;- dist(spe.t.chi)
 coldiss(spe.t.D16, diag = TRUE)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Consegue identificar grupos de espécies?</p>
 </div>
 </div>
@@ -348,13 +348,13 @@ mean(dist_subset(jacc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz
 <p>Talvez a melhor maneira de visualizar esses pontos seja fazendo um dendograma</p>
 <pre class="r"><code>clust_rio&lt;-hclust(jacc_dist, method = &quot;complete&quot;)
 clust_graf&lt;-plot(clust_rio, hang=-1)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <pre class="r"><code>clust_graf</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Mas não cosigo ver se os grupos que atribui de alto, médio e baixo rio, realmente agrupam as espécies. Vamos fazer algumas modificações nas bases para poder ver se nossa ideia faz sentido, ou seja, se as espécies se agrupam entre alto, médio e baixo rio.</p>
 <p>Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e verdes do baixo rio.</p>
 <pre class="r"><code>plot(clust_rio2)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p>Temos padrão?</p>
 <p>E se usássemos em vez do índice de Jaccard, a distância euclidiana? Será que teríamos mais sensibilidade para identificar esses agrupamentos que imaginamos que existem?</p>
 <pre class="r"><code>euc_dist&lt;-vegdist(spe[,-28], method = &quot;euclidean&quot;) # agora é com a distância euclideana
@@ -488,7 +488,7 @@ mean(dist_subset(euc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz 
 <p>E agora, compare os resultados com aqueles do índice de Jaccard, alguma coisa mudou?</p>
 <pre class="r"><code>clust_rio_euc&lt;-hclust(euc_dist, method = &quot;complete&quot;)
 clust_graf_euc&lt;-plot(clust_rio_euc, hang=-1)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <pre class="r"><code>clust_graf_euc</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Agora vamos colorir o dendograma</p>
@@ -498,7 +498,7 @@ colorCode&lt;-c(alto=colors[1], medio=colors[2], baixo=colors[3])
 labels_colors(clust_rio_euc2) &lt;- colorCode[rio][order.dendrogram(clust_rio_euc2)]</code></pre>
 <p>Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.</p>
 <pre class="r"><code>plot(clust_rio_euc2)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Novamente, temos alguma diferença que aponta para uma certa organização das espécies, mas notem que agora parecem mais misturados que quando usamos o índice de Jaccard, mas mesmo essa “mistura” tem um certo padrão, podem perceber?</p>
 <p>Aparentemente o <em>médio rio</em> é uma interseção entre comunidades de baixo e alto rio. Será que as variáveis ambientais conseguem explicar isso?</p>
 <p>Vamos aplicar o mesmo passo-à-passo para a matriz ambiental</p>
@@ -663,7 +663,7 @@ env_dist</code></pre>
 <p>Tem coisa interessante aqui… o que será?</p>
 <pre class="r"><code>clust_env_euc&lt;-hclust(env_dist, method = &quot;complete&quot;)
 clust_graf_env_euc&lt;-plot(clust_env_euc, hang=-1)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <pre class="r"><code>clust_graf_env_euc</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Vamos colorir o gráfico…</p>
@@ -673,7 +673,7 @@ colorCode&lt;-c(alto=colors[1], medio=colors[2], baixo=colors[3])
 labels_colors(clust_graf_env_euc2) &lt;- colorCode[rio][order.dendrogram(clust_graf_env_euc2)]</code></pre>
 <p>Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.</p>
 <pre class="r"><code>plot(clust_graf_env_euc2)</code></pre>
-<p><img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <p>E agora? Dá pra entender?</p>
 <p>Então, bora trabalhar!!!</p>
 <p><img src="https://media.giphy.com/media/o28elTLxOjiRW/giphy.gif" /></p>
@@ -695,8 +695,8 @@ labels_colors(clust_graf_env_euc2) &lt;- colorCode[rio][order.dendrogram(clust_g
 </div>
 <div id="brinque-com-as-matrizes-ambientais-e-de-distância-e-tente-explicar-o-fenômeno-biológico-que-você-encontrou" class="section level2">
 <h2>4) Brinque com as matrizes ambientais e de distância e tente explicar o fenômeno biológico que você encontrou</h2>
+<div id="fim" class="section level3">
+<h3>Fim</h3>
 </div>
 </div>
-<div id="fim" class="section level1">
-<h1>Fim</h1>
 </div>

@@ -94,7 +94,7 @@ Esses dados são quantitativos e as abundâncias variam de zero a 5 indivíduos.
 ```{r, include=FALSE, echo=TRUE}
 # Load packages, functions and data ===============================
 library(ade4)
-library(adespatial)
+#library(adespatial)
 library(vegan)
 library(gclus)
 library(cluster)
@@ -154,7 +154,7 @@ coldiss(spe.dh, diag = TRUE)
 
 Há muitas ocasiões em que temos apenas dados de _presença_ ou _ausência_ das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser "gerados", covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.
 
-![A lógica dos índices de similaridade binários](slides/libs/simi_index.png)
+![A lógica dos índices de similaridade binários](simi_index.png)
 fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
 
 # Prós e contras de dados de abundância e presença e ausência
@@ -170,12 +170,12 @@ fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similari
 
 # Exemplos da literatura
 
-![*Homogeneização da Mata Atlântica*](images/lobo.png)
+![*Homogeneização da Mata Atlântica*](lobo.png)
 
 Neste trabalho de [*Lobo et al (2011)*](https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1472-4642.2010.00739.x) mostramos como a Mata Atlântica vem sofrendo com o processod e homogeneização biótica decorrente da perturbação antrópica. Testamos isso justamente com uma matriz de similaridade de espécies qque agrupamos em 12 tipos de fitofisionomias e em dois períodos de tempo (prá-1980 e pós-1980). Nossos dados eram apenas de presença e ausência em localidades de coleta, através de dados de herbário. Dê uma olhada no artigo e veja como dados de ocorrência foram usados.
 
 
-![Como a Beta-diversidade pode informar sobre a conservação?](images/beta.png)
+![Como a Beta-diversidade pode informar sobre a conservação?](beta.png)
 Neste artigo [Scholar et al (2016)](https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(15)00289-X) mostram como o domínio conceitua da beta-diversidade é importante para pensar e planejar a conservação da biodiversidade. Aqui não te nada de índices nem medidas mas conceitos. Esses conceitos dão sentido às perguntas que fazemos na ciência e ajudam a escolher as melhores métricas. 
 
 
@@ -235,7 +235,7 @@ Consegue identificar grupos de espécies?
 
 # Em resumo...
 
-![Tabela de decisão para uso de medidas de similaridade](images/table_simi2.png)
+![Tabela de decisão para uso de medidas de similaridade](table_simi2.png)
 
 # Exemplos sobre Medidas de associação
 

@@ -21,7 +21,7 @@ pt:
         url: '#about'
         weight: 10
       - name: Equipe
-        url: 'people/'
+        url: 'pt/people/'
         weight: 20
       - name: Blog
         url: '#posts'

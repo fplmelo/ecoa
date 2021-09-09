@@ -47,12 +47,15 @@ I have a degree in Biological Sciences from the Federal Rural University of Pern
 # Current research
 
 - Community Ecology
+
 The first chapter of my thesis will address the ecological face of the process of nutrient addition and the occupation gradient of exotic grass in plant and soil arthropod communities.
 
 - Seed Rain
+
 In the second chapter, we will investigate how different soil management strategies, the presence of an exotic grass and the addition of nutrients determine the diversity of seeds and soil arthropods as an efficient mechanism for the regeneration of dry forests.
 
 - Serviços Ecossistêmicos
+
 In the third chapter, we will examine the ecosystem services provided by exotic and native plants to local human populations, integrating ecological and ethnobiological approaches.
 
-In this way, it becomes possible to have a broad understanding of the processes of change in socio-ecological systems and  assisting in decision making for the management of the semiarid region with the local population.
+It is possible to have a broad understanding of the processes of change in socio-ecological systems and  assisting in decision making for the management of the semiarid region with the local population.

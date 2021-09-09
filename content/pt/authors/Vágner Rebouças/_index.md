@@ -58,6 +58,6 @@ Componentes do Índice de Suscetibilidade à Invasão por Espécies Exóticas pr
 
 No capítulo 3, será feita uma revisão sistemática dos usos de plantas por populações tradicionais, analisando os atributos funcionais de potencial invasor das espécies exóticas utilizadas na Caatinga. Espera-se que as espécies exóticas tenham elevados atributos de ruderalismo e competição em sistemas socioecológicos da Caatinga.
 
-{{< figure src="Fig 2.jpg" >}}
+{{< figure src="Fig 3.jpg" >}}
 Uso de plantas em sistemas socioecológicos na Caatinga está associado com os atributos funcionais das espécies exóticas e suas estratégias ecológicas que favorecem sua dominância no ambiente
 

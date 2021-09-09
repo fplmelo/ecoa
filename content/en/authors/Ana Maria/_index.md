@@ -1,6 +1,5 @@
 ---
-bio: 
-I have a degree in Biological Sciences from the Federal Rural University of Pernambuco/Academic Unit of Serra Talhada, specialist in Environmental Education and Sustainability in the semi-arid region of Pernambuco and a master's degree in Biodiversity and Conservation with an emphasis on peracarid crustacean ecology from the same institution. I am currently doing my PhD in the Postgraduate Program in Ethnobiology and Nature Conservation, at the Federal Rural University of Pernambuco, where I seek to understand the effects of the invasion of an exotic grass and nutrient availability on the plant community and of soil arthropods in a regenerating area.
+bio: I seek to understand the effects of the invasion of an exotic grass and nutrient availability on the plant community and of soil arthropods in a regenerating area od dry forest.
 education:
   courses:
   - course: BSc in Biological Sciences
@@ -30,9 +29,6 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
-- icon: twitter
-  icon_pack: fab
-  link: 
 - icon: graduation-cap
   icon_pack: fas
   link: https://scholar.google.com.br/citations?hl=pt-BR&user=cB5PZUQAAAAJ&view_op=list_works&gmla=AJsN-F6Zsux_qUN5S6GTX1efA5U7Dh2foRP6X3b0d0MiHc30dYf0_VuADE8UAapsIKPr4MuXxE0BxJy6iAfTIcWU1qVBWpZ01w # Se não tiver Google Scholar, bote o lattes ou ORCID ou o que quiser
@@ -46,17 +42,17 @@ title: Ana Maria Siqueira Quirino
 
 # Bio
 
-Sou graduada em Ciências Biológicas pela Universidade Federal Rural de Pernambuco/ Unidade Acadêmica de Serra Talhada, especialista em Educação Ambiental e Sustentabilidade no Semiárido Pernambucano e mestra em Biodiversidade e Conservação com ênfase em ecologia de crustáceos peracáridos pela mesma instituição.  Atualmente estou fazendo meu doutorado no Programa de Pós-Graduação em Etnobiologia e Conservação da Natureza, na Universidade Federal Rural de Pernambuco, onde busco entender quais são os efeitos da invasão de uma gramínea exótica e da disponibilidade de nutrientes tem sobre a comunidade de plantas e de artrópodes de solo em uma área em regeneração. 
+I have a degree in Biological Sciences from the Federal Rural University of Pernambuco/Academic Unit of Serra Talhada, specialist in Environmental Education and Sustainability in the semi-arid region of Pernambuco and a master's degree in Biodiversity and Conservation with an emphasis on peracarid crustacean ecology from the same institution. I am currently doing my PhD in the Postgraduate Program in Ethnobiology and Nature Conservation, at the Federal Rural University of Pernambuco, where I seek to understand the effects of the invasion of an exotic grass and nutrient availability on the plant community and of soil arthropods in a regenerating area.
 
-# Pesquisa Atual
+# Current research
 
--Community Ecology
+- Community Ecology
 The first chapter of my thesis will address the ecological face of the process of nutrient addition and the occupation gradient of exotic grass in plant and soil arthropod communities.
 
 - Seed Rain
 In the second chapter, we will investigate how different soil management strategies, the presence of an exotic grass and the addition of nutrients determine the diversity of seeds and soil arthropods as an efficient mechanism for the regeneration of dry forests.
 
--Serviços Ecossistêmicos
+- Serviços Ecossistêmicos
 In the third chapter, we will examine the ecosystem services provided by exotic and native plants to local human populations, integrating ecological and ethnobiological approaches.
 
 In this way, it becomes possible to have a broad understanding of the processes of change in socio-ecological systems and  assisting in decision making for the management of the semiarid region with the local population.

@@ -4,6 +4,7 @@ linkTitle: Biologia da Conservação
 summary: Teoria ecológica, política e social para lutar contra o Capitaloceno 
 title: "\U0001F4D2 Biologia da Conservação"
 type: book
+
 ---
 
 ![](/en/courses/bio_cons/_index_biocons_files/wc.png)

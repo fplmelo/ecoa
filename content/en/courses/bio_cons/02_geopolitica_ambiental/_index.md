@@ -4,7 +4,6 @@ linkTitle: Geopolítica da Biodiversidade
 summary: Como a biodiversidade entrou na agenda global 
 title: "Geopolítica da Biodiversidade"
 type: book
-
 ---
 
 <img src=https://www.ligiadeslandes.com.br/wp-content/uploads/2018/08/geopolitica_del_hambre_0-1.jpg>

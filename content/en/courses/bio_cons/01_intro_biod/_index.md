@@ -6,6 +6,9 @@ title: "Introdução à Biodiversidade"
 type: book
 ---
 
+
+## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/Intro_biodiversidade.html#1)
+
 <img src=https://www.publicdomainpictures.net/pictures/240000/velka/reptile-eye.jpg>
 
 ## O que é preciso saber sobre biodiversidade?

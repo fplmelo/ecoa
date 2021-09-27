@@ -28,6 +28,8 @@ Num [texto maravilhoso](https://www.scielo.br/j/his/a/LZyXDZjgmVh4ssHfPPNrGHd/?l
 
 1) Escolha um problema de conservação com o qual você tenha alguma familiaridade e/ou interesse. Pode ser qualquer problema, sem importar sua natureza, tipo, grupo biológico ou comunidade. Esse problema de conservação vai ser aquele que vamnos analisar durante essa disciplina e sobre o qual você deverá focar ao longo do desenrolar do nosso curso. 
 
+2) Faça uma breve descrição desse problema tentando deixar claro quais as causas do declínio e qual o indicador usado para aferir a magnitude do declínio.
+
 Exemplo: O problema que eu escolhi é: **Conflitos entre UCs e populações tradicionais na Caatinga**
 
 

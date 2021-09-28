@@ -8,7 +8,7 @@ type: book
 
 <img src=https://www.ligiadeslandes.com.br/wp-content/uploads/2018/08/geopolitica_del_hambre_0-1.jpg>
 
-## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/Intro_biodiversidade.html#1)
+## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/geopol.html#1)
 
 
 ## Como a biodiversidade entrou na agenda?

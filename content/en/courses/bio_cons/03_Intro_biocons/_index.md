@@ -6,7 +6,10 @@ title: "História da Biologia da Conservação"
 type: book
 ---
 
-<img src=https://www.ligiadeslandes.com.br/wp-content/uploads/2018/08/geopolitica_del_hambre_0-1.jpg>
+<img src=https://publisher-publish.s3.eu-central-1.amazonaws.com/pb-brasil247/swp/jtjeq9/media/20190905090940_4441febf-eca3-43c5-b909-bea9eade9f26.webp>
 
-## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/geopol.html#1)
+Vista aérea da Amazônia perto de Altamira, no Pará (Foto: REUTERS/Nacho Doce)
+
+
+## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/aula4_biocons.html#1)
 

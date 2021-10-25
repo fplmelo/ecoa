@@ -1,5 +1,5 @@
 ---
-title: "Aula 2.Medidas de Associação"
+title: "Aula 2 - Medidas de Associação"
 author: "Felipe Melo"
 date: "03/03/2021"
 output: 

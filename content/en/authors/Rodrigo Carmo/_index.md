@@ -37,7 +37,7 @@ social:
   icon_pack: fab
   link: https://github.com/rodrigofrcarmo # Se não tiver Github, deixe em branco
 superuser: false
-user_groups: ["Researchers"] # Não mexer
+user_groups: ["Post-Docs"] # Não mexer
 title: Rodrigo Carmo
 ---
 

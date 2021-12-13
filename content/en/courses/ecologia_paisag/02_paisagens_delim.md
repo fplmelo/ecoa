@@ -1,7 +1,7 @@
 ---
-date: "2021-01-01"
+date: "2022-01-01"
 highlight: true
-title: Visualization
+title: Definição e delimitação de paisagens
 type: book
 weight: 30
 ---

@@ -1,19 +1,19 @@
 ---
-date: "2021-01-01"
-title: Python basics
+date: "2022-01-01"
+title: Conceitos básicos de Ecologia de Paisagens
 type: book
 weight: 20
 ---
 
-Build a foundation in Python.
+O que é uma paisagem?
 
 <!--more-->
 
-{{< icon name="clock" pack="fas" >}} 1-2 hours per week, for 8 weeks
+{{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
 
-## Learn
+## Comece aqui
 
-{{< youtube rfscVS0vtbw >}}
+{{< youtube FilxJe3ah1E >}}
 
 ## Quiz
 

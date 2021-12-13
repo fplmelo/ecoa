@@ -1,7 +1,7 @@
 ---
-date: "2021-01-01"
+date: "2022-01-01"
 math: true
-title: Instalação básica de R
+title: Processos biológicos que podem ser medidos na escala de paisagens
 type: book
 weight: 40
 ---

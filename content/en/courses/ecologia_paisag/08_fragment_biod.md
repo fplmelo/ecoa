@@ -1,21 +1,21 @@
 ---
 date: "2022-01-01"
-title: Definição e delimitação de paisagens
+title: Efeitos da fragmentação sobre a biodiversidade
 type: book
-weight: 20
+weight: 80
 ---
 
-
+Um fenômeno importante mas muito mal compreendido
 
 <!--more-->
 
-{{< icon name="clock" pack="fas" >}} 1-2 hours per week, for 8 weeks
+{{< icon name="clock" pack="fas" >}} 2 horas de estudo
 
-## Learn
+## Comece aqui
 
 {{< youtube hSPmj7mK6ng >}}
 
-## Quiz
+## Um pequeno teste
 
 {{< spoiler text="When is a heatmap useful?" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

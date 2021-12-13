@@ -2,7 +2,7 @@
 date: "2022-01-01"
 title: Conceitos básicos de Ecologia de Paisagens
 type: book
-weight: 20
+weight: 10
 ---
 
 O que é uma paisagem?
@@ -17,20 +17,9 @@ O que é uma paisagem?
 
 ## Quiz
 
-{{< spoiler text="What is the difference between lists and tuples?" >}}
+{{< spoiler text="Quais as caracterísitca básica de uma paisagem?" >}}
 Lists
 
-- Lists are mutable - they can be changed
-- Slower than tuples
-- Syntax: `a_list = [1, 2.0, 'Hello world']`
+- Heterogeneidade
+- Delimitação espacial e temporal
 
-Tuples
-
-- Tuples are immutable - they can't be changed
-- Tuples are faster than lists 
-- Syntax: `a_tuple = (1, 2.0, 'Hello world')`
-{{< /spoiler >}}
-
-{{< spoiler text="Is Python case-sensitive?" >}}
-Yes
-{{< /spoiler >}}

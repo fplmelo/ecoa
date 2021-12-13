@@ -26,6 +26,10 @@ type: book
 
 Ecologia de paisagens é uma disciplina que aborda definições e ferramentas acerca do conceito de paisagem como uma unidades de trabalho para os estudos da biodiversidade. Está focada em apresentação de conceitos e ferramentas que permitam definir, delimitar e descrever a estrutura de paisagens como forma de abordar seu papel na estruturação da biodiversidade em ambientes modificados pelo homem. Esse é um tema novo e muito usado na ecologia atual com importantes implicações para a conservação da biodivversidade.
 
+## Horário da disciplina
+
+Quartas-feiras 14-17h (aguardando sala )
+
 ## Conteúdo programático
 
 {{< list_children >}}

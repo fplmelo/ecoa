@@ -1,8 +1,9 @@
 ---
 date: "2022-01-01"
+linkTitle: Ecologia de Paisagens
 title: Conceitos básicos de Ecologia de Paisagens
 type: book
-weight: 10
+
 ---
 
 O que é uma paisagem?

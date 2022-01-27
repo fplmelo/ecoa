@@ -44,6 +44,26 @@ Lists
 
 - A paisagem é uma "janela" pela qual observamos um fenômeno biológico
 - Dentro dessa janela é preciso haver heterogeneidade, que deve ser mensurável
-- Tem grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo
+- Ecologia de paisagens possui grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo
+
+## Para começar a leitura
+
+Texto introdutório para essa disciplina do [Dr. Jean Paul Metzger](https://www.scielo.br/j/bn/a/Jbchd6rjY35PGkY5BHPz63S/?format=pdf&lang=pt)
 
 
+Leia o verbete da [Wikipedia.org](https://pt.wikipedia.org/wiki/Ecologia_da_paisagem)
+
+## Exercício
+
+Descreva as paisagens abaixo à sua maneira tentando identificar quais seu componente e o quanto variam (200 palavras).
+
+Paisagem A
+
+<img src=https://cdn.pixabay.com/photo/2020/05/19/06/54/aerial-5189498_960_720.jpg>
+
+Paisagem B
+
+<img src=https://observatoriopantanal.org/wp-content/uploads/2019/12/Adriano-Gambarini-WWF-Brasil-4288x2144.jpg >
+
+
+FIM

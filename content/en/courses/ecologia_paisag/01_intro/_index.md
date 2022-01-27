@@ -4,15 +4,12 @@ title: Aula 1- Conceitos básicos de Paisagem
 type: book
 
 ---
-```{r echo=F}
-knitr::include_url('https://ecoaplic.org/en/courses/ecologia_paisag/slides_aulas/ecol_paisag/01_intro_landscape#1')
-
-```
-
 
 # O que é uma paisagem?
 
 <!--more-->
+
+## Os slides desta aula estão [AQUI](https://ecoaplic.org/en/courses/ecologia_paisag/slides_aulas/ecol_paisag/01_intro_landscape#1)
 
 {{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
 

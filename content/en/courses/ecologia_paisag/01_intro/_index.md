@@ -1,22 +1,7 @@
 ---
-title: Aula 1 - Conceitos básicos de ecologia de paisagens
-author: Felipe Melo
-date: '2022-02-02'
-slug:
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: '2021-05-25T11:27:16-03:00'
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+date: "2022-01-01"
+title: Aula 1- Conceitos básicos de Paisagem
+type: book
 
 ---
 ```{r echo=F}

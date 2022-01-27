@@ -19,8 +19,10 @@ image:
 projects: []
 
 ---
+```{r echo=F}
+knitr::include_url('https://ecoaplic.org/en/courses/ecologia_paisag/slides_aulas/ecol_paisag/01_intro_landscape#1')
 
-
+```
 
 
 # O que é uma paisagem?

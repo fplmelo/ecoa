@@ -1,5 +1,5 @@
 ---
-title: Aula 1 - Conceitos básicos de ecología de paisagens
+title: Aula 1 - Conceitos básicos de ecologia de paisagens
 author: Felipe Melo
 date: '2022-02-02'
 slug:
@@ -19,6 +19,9 @@ image:
 projects: []
 
 ---
+
+
+
 
 # O que é uma paisagem?
 

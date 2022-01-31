@@ -7,7 +7,6 @@ date: "`r Sys.Date()`"
 encoding: "UTF-8"
 output: 
   xaringan::moon_reader:
-    libs_dir: libs
     css: ["robot","tamu-fonts"]
     nature:
       highlightStyle: github
@@ -101,13 +100,13 @@ ggplot(acum, aes(acum.sites,acum.richness))+
 ---
 # O problema das amostras
 .center[
-<img src=http://ordination.okstate.edu/sampling_files/image026.gif width = 600>]
+<img src=image026.gif width = 600>]
 fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)
 
 ---
 # Amostras aleatórias
 .pull-left[
-<img src=http://ordination.okstate.edu/sampling_files/image027.gif>
+<img src=image027.gif>
 fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
 .pull-right[
 ### - Todos os pontos de amostra tem a mesma chance de serem escolhidos
@@ -118,7 +117,7 @@ fonte: [Sampling and Experimental Design in Community Ecology](http://ordination
 ---
 # Amostras aleatórias estratificadas
 .pull-left[
-<img src=http://ordination.okstate.edu/sampling_files/image035.gif>
+<img src=image035.gif>
 fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
 .pull-right[
 ### - Controla para amostrar aleatoriamente em função da heterogeneidade
@@ -129,7 +128,7 @@ fonte: [Sampling and Experimental Design in Community Ecology](http://ordination
 ---
 # Amostras uniformemente distribuídas
 .pull-left[
-<img src=http://ordination.okstate.edu/sampling_files/image036.gif>
+<img src=image036.gif>
 fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
 .pull-right[
 ### - Uniformdidade não é aleatoriedade e pode conter vieses

@@ -9,6 +9,11 @@ output:
   toc_depth: 2
 ---
 
+*Slides* 
+```{r , echo=FALSE}
+xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/experimentos/slide_experimento.html#1", ratio = "16:9")
+```
+
 ## Matriz de presencias e ausências
 
 As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia. No entanto, para iniciar nossas atividades, vamos contruir uma base de dados fictícia apenas para entender sua estrutura.

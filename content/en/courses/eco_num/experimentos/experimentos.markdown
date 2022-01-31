@@ -14,7 +14,7 @@ output:
 *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="http://ecoaplic.org/en/courses/slides_aulas/slides_eco_num/slide_experimento.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_experimento.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

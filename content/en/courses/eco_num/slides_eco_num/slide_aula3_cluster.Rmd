@@ -26,7 +26,6 @@ load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR
 
 ```{r xaringan-tile-view, echo=FALSE}
 xaringanExtra::use_tile_view()
-xaringanExtra::use_share_again()
 xaringanExtra::use_scribble()
 xaringanExtra::use_fit_screen()
 ```

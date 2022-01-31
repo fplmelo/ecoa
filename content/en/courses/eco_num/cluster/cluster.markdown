@@ -27,7 +27,7 @@ projects: []
 *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

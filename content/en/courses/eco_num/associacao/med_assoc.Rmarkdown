@@ -18,6 +18,7 @@ image:
   preview_only: no
 projects: []
 ---
+
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(vegan)

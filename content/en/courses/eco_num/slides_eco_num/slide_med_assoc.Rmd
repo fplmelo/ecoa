@@ -1,0 +1,152 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 2 - Medidas de Associação"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+  css: ["shinobi","tamu-fonts"]
+  nature:
+   highlightStyle: github
+   highlightLines: true
+   countIncrementalSlides: false
+   ratio: '16:9'
+   beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_share_again()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+
+# Similaridade ecológica
+
+Hoje precisamos aprender a explicar isso
+
+<img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png
+" width="600" height="420" />
+---
+# O que é similaridade ecológica?
+.pull-left[
+- A definição ecológica é simples: Quão parecidas são espécies/comunidades/indivíduos
+
+- A definição matemática
+   X = Y, então similaridade = 1
+   X ≠ Y, então similaridade = 0
+   
+- Portanto, similaridade é quando dois objetos são iguais
+]
+.pull-right[
+
+<img src="https://i.pinimg.com/originals/14/3f/80/143f800e036e71dd0dfe04c1451c7087.jpg" />
+
+]
+
+--
+# Mas como medir essa similaridade?
+---
+.pull-left[
+# Indices de similaridade
+
+- Variam de 0-1
+ - Dados qualitativos 
+ - Dados quantitativos
+- Ignoram **duplos zeros** (vamos abordar isso)
+<img src="https://i.ytimg.com/vi/Ah_4xqvS1WU/maxresdefault.jpg" />
+<img src="https://miro.medium.com/max/562/1*-pA7yjdXoLepVh3nB-LC4g.png" height= 200 />
+]
+--
+
+.pull-right[
+# Medidas de distância
+
+- Variam de 0 a INF
+- Simétricas (consideram **duplos zeros**) 
+- Assimétricas (ignoram os **duplos zeros**)
+- Há dezenas delas...
+
+
+<img src="https://miro.medium.com/max/2400/1*2J3iaDnuLhonNGvlTKthiQ.png" />
+]
+---
+# O problema dos **duplos zeros**
+- Quando uma espécies X está ausete de duas amostras elas:
+   - são similares? ou são diferentes?
+--
+   
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:double-zero-illustration.png" />
+
+
+fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
+
+---
+# Como funcionam os índices?
+
+![Os quadrantes da similaridade](libs/simi_index.png)
+
+fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
+
+
+---
+class: center
+# Como funionam as medidas de distância?
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:triangle_inequality_principle.jpg" height = 500/>
+.pull-left[fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)]
+---
+# Algumas aplicações
+```{r, include=FALSE}
+xaringanExtra::use_panelset()
+```
+.panelset[
+.panel[.panel-name[R Code]
+
+```{r}
+dist(spe[1:5,1:5], method = "euclidian")
+```
+]
+
+.panel[.panel-name[Plot]
+```{r, echo=FALSE}
+plot(hclust(dist(spe, method = "euclidian")))
+```
+
+]
+]
+---
+# Exemplos da literatura
+The role of spatial and environmental variables in shaping aquatic insect assemblages in two protected areas in the transition area between Cerrado and Amazônia _Biota Neotrop. vol.20 no.3 Campinas  2020  Epub June 24, 2020_
+http://dx.doi.org/10.1590/1676-0611-bn-2019-0923
+.center[
+<img src="https://www.scielo.br/img/revistas/bn/v20n3//1676-0611-bn-20-03-e20190932-gf03.jpg"  width="70%" />
+]
+
+---
+# Exemplos da literatura
+
+![Relações entre similaridade e gradientes ambientais e geográficos](libs/hanna.png)
+[Tumisto et al (2003)](https://is.muni.cz/el/1431/jaro2014/Bi0662/um/47273497/_Tuomisto_etal_2003_Science_floristic-variation_Amazonian-forests.pdf)
+
+---
+# Exemplos da literatura
+
+<img src="https://www.frontiersin.org/files/Articles/396937/fevo-06-00194-HTML/image_m/fevo-06-00194-g001.jpg" />
+
+- Similaridade se deve à:
+   - Troca de espécies entre comuniades
+   - Subamostras de espécies
+   - Ambos processos
+---
+class: center, middle
+# FIM

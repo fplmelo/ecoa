@@ -1,6 +1,6 @@
 ---
 title: "Ecologia Numérica"
-subtitle: "Agrupamento de cluster"
+subtitle: "Aula 3 - Agrupamento de cluster"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
 date: "`r Sys.Date()`"

@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *Slides* 
 ```{r , echo=FALSE}
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/experimentos/slide_experimento.html#1", ratio = "16:9")
+xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_experimento.html", ratio = "16:9")
 ```
 
 # Bibliografia básica

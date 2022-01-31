@@ -1,6 +1,6 @@
 ---
 title: "Ecologia Numérica"
-subtitle: "Aula 1 - Explorando dados"
+subtitle: "Explorando dados"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
 date: "`r Sys.Date()`"

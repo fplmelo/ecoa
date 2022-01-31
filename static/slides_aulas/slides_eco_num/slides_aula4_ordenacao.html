@@ -1,0 +1,134 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Métodos de ordenamento"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "2022-01-31"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/shareon/shareon.min.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/shareon/shareon.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js"></script>
+<script src="/rmarkdown-libs/fabric/fabric.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-scribble/scribble.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/panelset/panelset.js"></script>
+
+
+<div id="análise-de-componentes-principais---pca" class="section level1">
+<h1>Análise de Componentes Principais - PCA</h1>
+<p>.center[
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-1-1.png" width="672" />]</p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">.pull-left[
+# O que precisamos saber?]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"># O princípio é simples… SQN</td>
+</tr>
+<tr class="even">
+<td align="left">.center[
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:pca_algorithm_2d_legendre-legendre.jpg?cache=&w=639&h=473&tok=d5cead">]</td>
+</tr>
+</tbody>
+</table>
+<iframe width="1195" height="672" src="https://www.youtube.com/embed/HMOI_lkzW08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"># Entendeu? Não?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"># Como interpretamos?
+.panelset[
+.panel[.panel-name[ex-1]
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-7-1.png" width="400px" />]
+.panel[.panel-name[ex-2]
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-8-1.png" width="400px" />]
+.panel[.panel-name[ex-3]
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-9-1.png" width="400px" />]
+.panel[.panel-name[ex-4]
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-10-1.png" width="400px" />]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="autovetores-eigenvalues" class="section level1">
+<h1>Autovetores (eigenvalues)</h1>
+<p>.panelset[
+.panel[.panel-name[objetos ‘PCA’]]
+.panel[.panel-name[objetos prcomp]]
+.panel[.panel-name[autovetores PCA]]
+.panel[.panel-name[autovetores prcomp]]]</p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"># Resumo dos autovetores
+.pull-left[
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Eigenvectors.gif">]
+.pull-right[
+<img src="https://wiki.pathmind.com/images/wiki/mona_lisa_eigenvector.png">]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"># Resumo dos autovetores
+.pull-left[
+###- São o valor que informa quanta relação há entre variáveis</td>
+</tr>
+<tr class="even">
+<td align="left">###- Informam a direção da vairação
+<a href="https://setosa.io/ev/principal-component-analysis/">Aqui tem ums explicação maravilhosa</a>]
+.pull-right[
+<img src="https://i.stack.imgur.com/lNHqt.gif" >]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="quantos-pcs-devo-usar-para-entender-meu-fenômeno" class="section level1">
+<h1>Quantos PCs devo usar para entender meu fenômeno?</h1>
+<p>.center[]
+—
+# Qualidade da representação
+.center[]
+—
+# Qualidade da representação
+.center[
+<img src="/en/courses/slides_aulas/slides_eco_num/slides_aula4_ordenacao_files/figure-html/unnamed-chunk-17-1.png" width="672" />]</p>
+<hr />
+<p>class: center, middle
+# Dúvidas</p>
+</div>

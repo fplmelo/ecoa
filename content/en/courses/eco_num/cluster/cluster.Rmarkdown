@@ -2,21 +2,11 @@
 title: "Análise de Clusters"
 author: "Felipe Melo"
 date: "03/10/2021"
-slug: 
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
       
 ---
 ```{r setup, include=FALSE}
@@ -49,11 +39,7 @@ Se você juntar qualquer conjunto de dados, de qualquer natureza, uma análise d
 
 O "**pulo do gato**" se refere ao uso da análise cluster associado a uma *HIPÓTESE". Você precisa pensar sobre seus dados ecológicos, que geralmente são frutos de um desenho amostral guiado por uma pergunta científica. Prestem atenção no último exercício, da última aula, onde mostrei pra vocês como, à partir de uma pergunta sobre a semelhança entre as comunidades do alto, média e baixo rio, testei através de uma análise de cluster, se minha hipóitese tinha sentido. E tinha, de certa forma, mas comunidades dessas três seções do rio, são mais parecidas entre si que entre elas e outras comunidades de outras partes do rio. Mostrei isso colorindo minhas comunidades e organizando-as num cluster.
 
-**Nota de precaução**, e aqui vou citar literalmente o *Numerical Ecology with R*: 
-          "Clustering is not a typical statistical method in that it
-does not test any hypothesis. Clustering helps bring out some features hidden in the
-data; it is the user who decides if these structures are interesting and worth interpreting
-in ecological terms." (p. 54)
+**Nota de precaução**, e aqui vou citar literalmente o *Numerical Ecology with R*: "Clustering is not a typical statistical method in that it does not test any hypothesis. Clustering helps bring out some features hidden in the data; it is the user who decides if these structures are interesting and worth interpreting in ecological terms." (p. 54)
 
 Ou seja, o ordenamento via cluster não é um [**teste de hipótese**](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/teste-de-hipoteses.html) mas uma ferramenta para explorar estruturas "ocultas" nos dados, e somos nós pesquisadores, que decidimos se elas têm algum valor ecológico. Lembrem-se, qualquer dados de qalquer natureza, vai ser agrupado numa estrutura qualquer. Nós é que precisamos dar sentido à elas.
 

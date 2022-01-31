@@ -1,0 +1,200 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 5 - Análises de correspondência e canônica (CA & CCA)"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(gplots)
+pck<-c("vegan","ade4","FactoMineR","factoextra")
+lapply(pck, require, character.only=TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_share_again()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+
+---
+.pull-left[
+# O que precisamos saber?
+
+###- Uma CA é um método similar aos PCA, mas... (distância de **chi-quadrado**)
+
+###- Tem bom desempenho com matrizes com muitos zeros (presença e ausência de espécies)
+
+###- É um método para reduzir a multi-dimensionalidade dos dados
+
+###- Busca relações unimodais
+]
+
+
+.pull-right[
+<img src=libs/normal.jpg>
+
+<img src=libs/ca_plot.png>]
+---
+
+
+# Análises de correspondência - CA
+
+.left-column[
+# São uma família de análises multivaridas que procuram por relações *não lineares*
+]
+
+.rigth-column[
+```{r echo=FALSE}
+xaringanExtra::use_panelset()
+```
+.panelset[
+.panel[.panel-name[PCA]
+
+```{r echo=FALSE, out.width="400px"}
+ex1<-tibble(env=1:30, abund=11:40)
+ex1 %>% 
+  ggplot(aes(env,abund))+geom_point()+
+  labs(x="gradiente ambiental", y="abundância")+
+  theme_bw()
+
+```
+]
+
+.panel[.panel-name[CA]
+```{r, echo=FALSE, out.width="400px"}
+ex2<-tibble(env=1:30, abund=rnorm(30))
+ex2 %>% 
+  ggplot(aes(abund))+geom_density()+
+  labs(x="gradiente ambiental", y="abundância")+
+  theme_bw()
+
+```
+
+]
+.panel[.panel-name[PCA para env]
+```{r, echo=FALSE, out.width="400px"}
+pca_env<-prcomp(env[,-c(1:4)], scale. = T, center = T)
+fviz_pca(pca_env)
+
+```
+]
+.panel[.panel-name[CA para env]
+```{r, echo=FALSE, out.width="400px"}
+ca_env<-CA(env[,-c(1:4)], ncp=5, graph=FALSE)
+fviz_ca_biplot(ca_env)
+```
+]
+]
+
+]
+
+---
+# CAs são úteis para entender distribuição de espécies em gradientes
+
+.panelset[
+.panel[.panel-name[Tabela de contingência]
+
+```{r echo=FALSE, out.width="400px"}
+spe_t<-as.table(as.matrix(spe[-8,]))
+
+image(as.matrix(spe[-8,]))
+
+```
+]
+
+.panel[.panel-name[Chi-quadrado]
+```{r, echo=TRUE, out.width="400px"}
+chisq <- chisq.test(spe[-8,])
+chisq
+
+```
+
+]
+.panel[.panel-name[Autovetores]
+```{r, echo=FALSE, out.width="400px"}
+ca_spe<-CA(spe[-8,], ncp=5, graph=FALSE)
+
+eig.val <- get_eigenvalue(ca_spe)
+eig.val
+
+```
+]
+.panel[.panel-name[Plot para Variáveis]
+```{r, echo=FALSE, out.width="400px"}
+library(corrplot)
+col <- get_ca_col(ca_spe)
+corrplot(col$cos2, is.corr=FALSE)
+
+```
+]
+]
+
+---
+
+class: middle, center
+
+# Quais as Diferenças entre CAs e PCAs?
+
+
+
+
+
+---
+# O princípio das CCAs
+.center[
+<img src=libs/cca.png>]
+
+---
+## Examinando o CCA
+.panelset[
+.panel[.panel-name[Resultado do CCA]
+```{r, echo=FALSE}
+env2<- env[,-1] ## removendo 'dfs' que é uma variável espacial e não ambiental
+resultado.cca <- cca(spe[-8,], env2[-8,])
+summary(resultado.cca)
+```
+]
+
+.panel[.panel-name[PLOT CCA]
+
+```{r, echo=FALSE}
+plot(resultado.cca)
+```
+
+]
+.panel[.panel-name[Resultado CA + Envfit]
+
+```{r, echo=FALSE}
+resultado.ca<-cca(spe[-8,])
+resultado.envfit<-envfit(resultado.ca,env2[-8,]) #resultado de permutação de cada variável do env2
+resultado.envfit
+```
+]
+.panel[.panel-name[PLOt CA + Envfit]
+
+```{r, echo=FALSE}
+plot(resultado.ca)
+plot(resultado.envfit)
+```
+
+]]
+
+---
+class: center, middle
+# Dúvidas
+

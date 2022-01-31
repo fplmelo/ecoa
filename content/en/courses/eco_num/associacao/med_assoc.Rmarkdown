@@ -1,22 +1,12 @@
 ---
-title: "Aula 2 - Medidas de Associação"
+title: "Medidas de Associação"
 author: Felipe Melo
 date: '2021-08-23'
-slug: 
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}

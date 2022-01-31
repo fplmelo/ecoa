@@ -1,7 +1,7 @@
 ---
 title: "Desenho de Experimentos"
 author: "Felipe Melo"
-date: "2 de fevereriro de 2022"
+date: "2 de fevereiro de 2022"
 output: 
   html_document:
   toc: yes
@@ -20,14 +20,13 @@ library(vegan)
 library(knitr)
 library(xaringan)
 library(xaringanExtra)
-xaringanExtra::style_share_again(share_buttons = c("twitter"))
 load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 *Slides* 
 ```{r , echo=FALSE}
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/experimentos/slide_experimento.html.html#1", ratio = "16:9")
+xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/experimentos/slide_experimento.html#1", ratio = "16:9")
 ```
 
 # Bibliografia básica

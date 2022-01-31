@@ -1,5 +1,5 @@
 ---
-title: "Aula 3 - Análise de Clusters"
+title: "Análise de Clusters"
 author: "Felipe Melo"
 date: "03/10/2021"
 slug: 

@@ -1,25 +1,13 @@
 ---
-title: Aula 1 - Bases de dados ecológicos
-author: Felipe Melo
-date: '2021-08-23'
-slug: 
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+title: "Bases de dados Ecológicos"
+author: "Felipe Melo"
+date: "9 de fevereiro de 2022"
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
 ---
-
-![](/courses/eco_num/base_dados/_index_base_dados_files/database.jpg)
 
 ## Matriz de presencias e ausências
 
@@ -29,6 +17,7 @@ A estrutura básica de bases de dados biológicos é a de matrizes que contem 'n
 
 ```{r base_ficticia, echo=TRUE}
 set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+library(tidyverse)
 tibble(
   spec = paste0("sp", 1:10),
   siteA = sample(c(0:1), replace=TRUE, size=10),
@@ -124,9 +113,8 @@ Salve a pasta descompactada no diretório local correspondente ao seu repositór
 Agora é só carregar as bases de dados usando o comando "load", lembrando de colocar o caminho para o arquivo segundo 
 
 ```{r}
-
 # Vamos carregar os dados que o livro usa como exemplo
-load("~/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
+load("/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
 ```
 
 

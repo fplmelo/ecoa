@@ -1,14 +1,15 @@
 ---
 date: "2022-01-01"
-title: Aula 2- Definição e delimitação de paisagens
+title: "Aula 2- Definição e delimitação de paisagens"
 type: book
+
 ---
 
 
 
 <!--more-->
 
-{{< icon name="clock" pack="fas" >}} 1-2 por semana
+{{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
 
 
 ## {{< spoiler text="Quais perguntas devemos ter em mente para delimitar uma paisagem?" >}}
@@ -23,40 +24,38 @@ type: book
 
 Em termos ecológicos, a regeneração de uma floresta pode ser vista em diferentes escalas de tempo e espaço
 
-{{< figure src="scales.jpg" >}}
+<img src=/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/scales.jpg>
 
 Figura: [Arroyo-Rodríguez et al 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12231)
 
 
 ## Imagine **três** paisagens para diferentes organismos
 
-{{< spoiler text="O que é uma paisagem para uma formiga cortadeira (Atta sp.)?" >}}
+## O que é uma paisagem para uma formiga cortadeira (Atta sp.)?
 
-{{< figure src="atta.jpeg" >}}
+<img src=/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/atta.jpeg>
 
-{{< figure src="for_floor.jpg" >}}
 
-{{< /spoiler >}}
+<img src=../for_floor.jpg>
 
-{{< spoiler text="O que é uma paisagem para um macaco-aranha (Atteles sp.)?" >}}
 
-{{< figure src="atteles.jpeg" >}}
+## O que é uma paisagem para um macaco-aranha (Atteles sp.)?
 
-{{< figure src="canopy.jpg" >}}
+<img src=../atteles.jpeg>
 
-Figura: [Mongabay](https://rainforests.mongabay.com/0202.htm)
-
-{{< /spoiler >}}
-
-{{< spoiler text="O que é uma paisagem para um Gavião-real (Harpia harpyja)?" >}}
-
-{{< figure src="harpia.jpeg" >}}
-
-{{< figure src="trop_frag.jpg" >}}
+<img src=../canopy.jpg>
 
 Figura: [Mongabay](https://rainforests.mongabay.com/0202.htm)
 
-{{< /spoiler >}}
+## O que é uma paisagem para um Gavião-real (Harpia harpyja)?
+
+<img src=../harpia.jpeg>
+
+<img src=../trop_frag.jpg>
+
+Figura: [Mongabay](https://rainforests.mongabay.com/0202.htm)
+
+
 
 
 Portanto, uma paisgem deve ser delimitada à escala que faça sentido biologicamente. No entanto, nem sempre é possível saber qual a **melhor** escala para avaliar como uma paisagem afeta um processo biológico.

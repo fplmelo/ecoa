@@ -6,12 +6,15 @@ institute: "UFPE"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    css: metropolis
     lib_dir: libs
     nature:
-      ratio: '16:9'
-      highlightStyle: github
+      highlightStyle: rainbow
       highlightLines: true
       countIncrementalSlides: false
+      slideNumberFormat: "%current%/%total%"
+    includes:
+      in_header: header.html
 ---
 
 background-image: url(https://www.intechopen.com/media/chapter/45411/media/image1.png)

@@ -1,31 +1,30 @@
 ---
 date: "2022-01-01"
-title: Aula 1- Conceitos básicos de Paisagem
+title: "Aula 1- Conceitos básicos de Paisagem"
 type: book
 
 ---
+<!--more-->
 
 # O que é uma paisagem?
 
-<!--more-->
-
-## Os slides desta aula estão [AQUI](https://ecoaplic.org/en/courses/slides_aulas/ecol_paisag/01_intro_landscape#1)
-
 {{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
+
+
+```{r, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1")
+```
+
 
 Comece revisando o conteúdo visto em classe com essa aula maravilhosa do [Dr. Alexandre Uezu](https://scholar.google.com.br/citations?user=9IKcHR8AAAAJ&hl=pt-BR)
 
-{{< youtube FilxJe3ah1E >}}
+<iframe width="760" height="428" src="https://www.youtube.com/embed/FilxJe3ah1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Teste rápido
-
-{{< spoiler text="Quais as caracterísitcas básicas de uma paisagem?" >}}
-Lists
+## Características bścias de uma paisagem
 
 - Heterogeneidade
 - Delimitação espacial e temporal
 
-{{< /spoiler >}}
 
 ## Resumo
 

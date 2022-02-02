@@ -33,8 +33,8 @@ social:
   icon_pack: fab
   label: Follow me on Twitter
   link: https://twitter.com/FelipePLMelo
-- icon: graduation-cap
-  icon_pack: fas
+- icon: google-scholar
+  icon_pack: ai
   link: https://scholar.google.com.br/citations?user=ytoqEukAAAAJ&hl=pt-BR
 - icon: github
   icon_pack: fab

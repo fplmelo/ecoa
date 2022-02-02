@@ -18,8 +18,15 @@ background-image: url(https://www.intechopen.com/media/chapter/45411/media/image
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(xaringanExtra)
+
 ```
 
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
 ---
 # O que é preciso saber?
 

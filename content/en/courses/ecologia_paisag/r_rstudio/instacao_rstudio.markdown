@@ -18,7 +18,7 @@ type: book
 
 ## Se precisar de ajuda, veja o vídeo abaixo
 
-<iframe width="1193" height="671" src="https://www.youtube.com/embed/pXWYHpoT_iM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="700" height="400" src="https://www.youtube.com/embed/pXWYHpoT_iM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Rmarkdwon
@@ -33,7 +33,7 @@ type: book
 
 Veja mais esse vídeo tutorial (em espnhol)
 
-<iframe width="1074" height="671" src="https://www.youtube.com/embed/m4xwKXj_y0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="700" height="400" src="https://www.youtube.com/embed/m4xwKXj_y0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 

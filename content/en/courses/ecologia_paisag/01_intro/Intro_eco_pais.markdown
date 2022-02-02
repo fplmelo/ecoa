@@ -10,8 +10,6 @@ type: book
 
 # O que é uma paisagem?
 
-{{\< icon name=“clock” pack=“fas” \>}} 1-2 horas de estudo
-
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>

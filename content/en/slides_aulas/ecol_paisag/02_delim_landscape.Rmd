@@ -1,5 +1,5 @@
 ---
-title: "Aula 1 - Conceitos básicos de ecología de paisagens"
+title: "Aula 2 - Definição e delimitação de paisagens"
 subtitle: "Ecologia de Paisagens"
 author: "Felipe Melo"
 institute: "UFPE"
@@ -21,6 +21,8 @@ options(htmltools.dir.version = FALSE)
 ```
 
 ---
+<iframe width="1193" height="671" src="https://www.youtube.com/embed/8Are9dDbW24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+---
 # O que é preciso saber?
 
 ## - Definir o que é uma paisagem
@@ -30,7 +32,7 @@ options(htmltools.dir.version = FALSE)
 
 
 ---
-# O que é Ecologia de Paisagem?
+# Escala de paisagem
 .left-column[
 
 ##[J. Wu, in Encyclopedia of Ecology, 2008](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/landscape-ecology)

@@ -36,6 +36,18 @@ social:
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com.br/citations?user=ytoqEukAAAAJ&hl=pt-BR
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0002-1271-3214
+- icon: publons
+  icon_pack: ai
+  link: https://publons.com/researcher/1509340/felipe-pl-melo/
+- icon: elsevier
+  icon_pack: ai
+  link: https://www.scopus.com/authid/detail.uri?authorId=7005124694
+- icon: lattes
+  icon_pack: ai
+  link: http://lattes.cnpq.br/1637874338382368
 - icon: github
   icon_pack: fab
   link: https://github.com/fplmelo

@@ -25,7 +25,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r xaringan-tile-view, echo=FALSE}
 xaringanExtra::use_tile_view()
-xaringanExtra::use_share_again()
 xaringanExtra::use_scribble()
 xaringanExtra::use_fit_screen()
 ```

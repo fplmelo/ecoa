@@ -11,14 +11,13 @@ html_document:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 xaringanExtra::use_share_again()
-xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # *Slides* 
-
+"https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1"
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_gera2/Intro_biodiversidade.html#1")
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_gera2/Intro_biodiversidade#1")
 
 ```
 

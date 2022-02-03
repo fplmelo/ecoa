@@ -47,4 +47,4 @@ This lab is the joint effort of many people that share a common principle: Ecolo
 
 Our research team is proud of all human diversity and we welcome all interested people to join and work with us. 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/cv_felipe_eng.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/CV_FelipeMelo.pdf" "newtab" >}}CV{{< /staticref >}}.

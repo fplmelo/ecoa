@@ -1,0 +1,47 @@
+---
+title: "Descrição de comunidades biológicas"
+author: "Felipe Melo"
+date: "2 de fevereiro de 2022"
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
+---
+
+<img src = https://aestheticmag.files.wordpress.com/2013/11/original.jpg>
+
+<br>
+
+## Os atributos de uma communidade biológica são simples, em princípio
+
+1. Entidades
+1. Identidades
+1. Quantidades
+
+### Vamos examinar essa comunidade
+
+```{r warning=FALSE}
+library (vegan)
+data (BCI)
+BCI.env <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.env.txt', row.names = 1)
+BCI.soil <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.soil.txt')
+```
+
+### Estação Biológica de Barro Colorado
+
+<img src= https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:bci_loc.jpg>
+
+### Para uma descrição completa do local de estudo [clique aqui](https://www.davidzeleny.net/anadat-r/doku.php/en:data:bci)
+
+<img src = https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:barro_colorado_-_photo.jpg>
+
+- São dados de uma série de plots 50 permanentes e contíguos de 1ha (50 ha no total) onde todas as árvores maiores que 10cm DAP (diametro à altura do peito) e uma grande quantidade de variáveis ambientais têm sido monitoradas há décadas.
+
+## Vamos ver a estrutura dessa base dados
+
+```{r}
+dim(BCI) # São 50 linhas (plots de 1 ha) e 225 colunas (espécies de árvores)
+```
+
+##

@@ -2,8 +2,8 @@
 header:
   caption: ""
   image: ""
-title: Cursos
+title: Courses
 type: page
 ---
 
-Essas são as disciplinas que ministro (em permanente construção):
+I teach the following courses (in Portuguese):

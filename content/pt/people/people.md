@@ -12,20 +12,20 @@ headless: true
 # Order that this section appears on the page.
 weight: 30
 
-title: Equipe
+title: People
 subtitle:
 
 content:
   # Choose which groups/teams of users to display.
   #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
   user_groups:
-    - Coordenador
-    - Pesqusiadores associados
-    - Pós-graduação
-    - Graduação
+    - Principal Investigators
+    - Post-Docs
+    - Grad Students
+    - Undergrad Students
     - Administration
-    - Visitantes
-    - Ex-alunos
+    - Visitors
+    - Alumni
 
 design:
   # Show user's social networking links? (true/false)

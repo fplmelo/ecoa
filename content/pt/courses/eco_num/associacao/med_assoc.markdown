@@ -2,27 +2,14 @@
 title: "Medidas de Associação"
 author: Felipe Melo
 date: '2021-08-23'
-slug: 
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
 ---
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
-
-*Slides*
-
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
@@ -104,7 +91,7 @@ Nesse caso até um gráfico pode nos ajudar a ter uma dimensão da importância 
 image(as.matrix(spe_na))
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png" width="600px" />
 
 Os valores em branco são os NAs e as cores indicam as abundâncias, sendo quanto mais vermelho, mais abundante.
 
@@ -161,19 +148,19 @@ Escreva emaicxo seus códigos e interprete os resultados escrevendo embaixo
 coldiss(spe.db, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 ``` r
 coldiss(spe.dh, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 # Comparando comunidades com dados binários (Q-mode)
 
 Há muitas ocasiões em que temos apenas dados de *presença* ou *ausência* das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser “gerados,” covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.
 
-![A lógica dos índices de similaridade binários](slides/libs/simi_index.png)
+![A lógica dos índices de similaridade binários](simi_index.png)
 fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
 
 # Prós e contras de dados de abundância e presença e ausência
@@ -195,11 +182,11 @@ fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similari
 
 # Exemplos da literatura
 
-![*Homogeneização da Mata Atlântica*](images/lobo.png)
+![*Homogeneização da Mata Atlântica*](lobo.png)
 
 Neste trabalho de [*Lobo et al (2011)*](https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1472-4642.2010.00739.x) mostramos como a Mata Atlântica vem sofrendo com o processod e homogeneização biótica decorrente da perturbação antrópica. Testamos isso justamente com uma matriz de similaridade de espécies qque agrupamos em 12 tipos de fitofisionomias e em dois períodos de tempo (prá-1980 e pós-1980). Nossos dados eram apenas de presença e ausência em localidades de coleta, através de dados de herbário. Dê uma olhada no artigo e veja como dados de ocorrência foram usados.
 
-![Como a Beta-diversidade pode informar sobre a conservação?](images/beta.png)
+![Como a Beta-diversidade pode informar sobre a conservação?](beta.png)
 Neste artigo [Scholar et al (2016)](https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(15)00289-X) mostram como o domínio conceitua da beta-diversidade é importante para pensar e planejar a conservação da biodiversidade. Aqui não te nada de índices nem medidas mas conceitos. Esses conceitos dão sentido às perguntas que fazemos na ciência e ajudam a escolher as melhores métricas.
 
 Os desdrobamentos dos conceitos e aplicações da beta-diversidade são fundamentais para uma correta aplicação das métricas de assossiação. Índices de similaridade e medidas de distância são maneiras de quantificar diversidade beta entre comunidades biológicas.
@@ -214,7 +201,7 @@ env.de<-dist(scale(env2)) # use a função "scale" para transformar osdados em z
 corrplot(as.matrix(env.de), is.corr = FALSE) 
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 Lembrem-se que nessa matriz, os números são as amostras, que começam em 1 na nascente do rio e terminam em 30 no ponto mais distante. Conseguem ver algum padrão? tentem entender a matriz, dê exemplos de pontos muitos parecidos e outros muito dissimilares. Será que você está lendo a matriz corretamente?
 
@@ -225,7 +212,7 @@ spa.de<-dist(spa)
 coldiss(spa.de, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 ``` r
 dfs.df<-as.data.frame(env$dfs, row.names = rownames(env))
@@ -233,7 +220,7 @@ riv.de<-dist(dfs.df)
 coldiss(riv.de, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 # R mode para dados ambientais ou espécies
 
@@ -246,7 +233,7 @@ cor.env<-cor(env2)
 coldiss(cor.env, diag = T)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 Consegue ideintificar grupos de variáveis ambientais que covariam?
 
@@ -260,13 +247,13 @@ spe.t.D16 <- dist(spe.t.chi)
 coldiss(spe.t.D16, diag = TRUE)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 Consegue identificar grupos de espécies?
 
 # Em resumo…
 
-![Tabela de decisão para uso de medidas de similaridade](images/table_simi2.png)
+![Tabela de decisão para uso de medidas de similaridade](table_simi2.png)
 
 # Exemplos sobre Medidas de associação
 
@@ -438,7 +425,7 @@ clust_rio<-hclust(jacc_dist, method = "complete")
 clust_graf<-plot(clust_rio, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 ``` r
 clust_graf
@@ -454,7 +441,7 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_rio2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
 Temos padrão?
 
@@ -616,7 +603,7 @@ clust_rio_euc<-hclust(euc_dist, method = "complete")
 clust_graf_euc<-plot(clust_rio_euc, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
 ``` r
 clust_graf_euc
@@ -639,7 +626,7 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_rio_euc2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
 Novamente, temos alguma diferença que aponta para uma certa organização das espécies, mas notem que agora parecem mais misturados que quando usamos o índice de Jaccard, mas mesmo essa “mistura” tem um certo padrão, podem perceber?
 
@@ -837,7 +824,7 @@ clust_env_euc<-hclust(env_dist, method = "complete")
 clust_graf_env_euc<-plot(clust_env_euc, hang=-1)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 
 ``` r
 clust_graf_env_euc
@@ -860,7 +847,7 @@ Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azui
 plot(clust_graf_env_euc2)
 ```
 
-<img src="/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+<img src="/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
 E agora? Dá pra entender?
 
@@ -870,9 +857,9 @@ Então, bora trabalhar!!!
 
 # Exercício para entrega
 
-## 1) Faça uma pergunta "hipotética sobre a organização da comunidade de peixes
+## 1) Faça uma pergunta “hipotética sobre a organização da comunidade de peixes
 
-### **Dica**: em vez do gradiente geográfico qu usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz “env”
+### **Dica**: em vez do gradiente geográfico que usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz “env”
 
 ## 2) Calcule matrizes de distância da comunidade biológica usando índices de Sorensen ou Jaccard e alguma medida de distância (euclidiana ou outra qualquer que a função *vegdist* possa calcular)
 

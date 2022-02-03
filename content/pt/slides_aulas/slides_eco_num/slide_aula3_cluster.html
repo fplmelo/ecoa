@@ -1,0 +1,143 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 3 - Agrupamento de cluster"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "2022-01-31"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/fabric/fabric.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-scribble/scribble.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/panelset/panelset.js"></script>
+
+
+<div id="agrupamentos-de-cluster" class="section level1">
+<h1>Agrupamentos de cluster</h1>
+<p>Hoje precisamos aprender a explicar isso:</p>
+<p><img src="https://www.datanovia.com/en/wp-content/uploads/dn-tutorials/003-hierarchical-clustering-in-r/figures/005-visualizing-dendrograms-cutree-1.png" width="600" height="420" /></p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># Ou isso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td># Ou isso aqui</td>
+</tr>
+<tr class="even">
+<td><img src="https://analise-estatistica.pt/wp-content/uploads/2012/10/diagrama-de-dispersao-analise-de-clusters.png"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="agrupamento-por-cluster" class="section level1">
+<h1>Agrupamento por cluster</h1>
+<div id="o-que-são" class="section level3">
+<h3>O que são?</h3>
+<ul>
+<li>Técnicas que identificam objetos ou entidades “similares”
+.center[
+&lt;img src=“<a href="https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg" class="uri">https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg</a>”, height = 400&gt;]
+—
+# Agrupamento por cluster
+### pra que servem?</li>
+<li>Formar grupos/classes que possuam alta homogeneidade interna (distância interna pequena) e alta heterogeneidade (distância entre grupos grande)
+.center[
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2BjBaFQJFYCI9sS2fBoqDfchgW6WBoVBWdA&usqp=CAU">]</li>
+</ul>
+</div>
+<div id="fonte-neves-2013" class="section level2">
+<h2><a href="https://dspace.bc.uepb.edu.br/jspui/bitstream/123456789/4313/1/PDF%20-%20Reginaldo%20Ferreira%20Neves.pdf">fonte: Neves 2013</a></h2>
+</div>
+</div>
+<div id="princípios-do-agrupamnto-por-cluster" class="section level1">
+<h1>Princípios do agrupamnto por cluster</h1>
+<div id="depende-do-pesquisar" class="section level3">
+<h3>Depende do pesquisar:</h3>
+<ol style="list-style-type: lower-alpha">
+<li><p>escolher a medida de similaridade</p></li>
+<li><p>Escolher o algorítimo de agrupamento</p></li>
+<li><p>Definir a quantidade de cluster que faça sentido</p></li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td># Medidas de distância</td>
+</tr>
+<tr class="even">
+<td>.pull-left[<img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png" height="300" />]</td>
+</tr>
+<tr class="odd">
+<td>.pull-right[</td>
+</tr>
+<tr class="even">
+<td>### - Escolhidas de acrodo com a estrutura dos dados</td>
+</tr>
+<tr class="odd">
+<td>### - Precisam ser “normalizadas”</td>
+</tr>
+<tr class="even">
+<td>### - <strong>MUITO IMPORTANTE</strong> para o resultado da análise</td>
+</tr>
+<tr class="odd">
+<td>]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="algorítimos-de-agrupamento" class="section level1">
+<h1>Algorítimos de agrupamento</h1>
+<div id="métodos-hierárquicos" class="section level3">
+<h3>Métodos hierárquicos</h3>
+<p>.center[
+<img src="https://github.com/fplmelo/eco_numerica/blob/master/slides/libs/met_clust.png?raw=true" height= 450>]
+<a href="http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf">Fonte: Marcelo Louretto</a>
+—
+# Algorítimos de agrupamento
+### Métodos não hirárquicos (K-means)</p>
+<p>.panelset[
+.panel[.panel-name[R Code1]]]
+—
+# Aplicações na Ecologia
+<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-020-69925-9/MediaObjects/41598_2020_69925_Fig1_HTML.png?as=webp" height = 400></p>
+</div>
+<div id="diversidade-de-inhame-darkwa-et-al-2020" class="section level2">
+<h2><a href="https://www.nature.com/articles/s41598-020-69925-9">Diversidade de Inhame, Darkwa et al 2020</a></h2>
+</div>
+</div>
+<div id="aplicações-na-ecologia" class="section level1">
+<h1>Aplicações na Ecologia</h1>
+<p><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10021-019-00415-4/MediaObjects/10021_2019_415_Fig3_HTML.png" height = 400></p>
+<div id="vallejos-et-al-2020" class="section level2">
+<h2><a href="https://link.springer.com/article/10.1007/s10021-019-00415-4">Vallejos et al 2020</a></h2>
+</div>
+</div>
+<div id="aplicações-na-ecologia-1" class="section level1">
+<h1>Aplicações na Ecologia</h1>
+<p><img src="https://www.pnas.org/content/pnas/115/8/1837/F1.large.jpg?width=800&height=600&carousel=1" height = 400></p>
+<p><a href="https://www.pnas.org/content/115/8/1837/tab-figures-data">Slik et al 2018</a></p>
+<hr />
+<p>class: center, middle
+# FIM</p>
+</div>

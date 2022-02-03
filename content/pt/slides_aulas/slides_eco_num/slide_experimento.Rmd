@@ -1,0 +1,208 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Noções básicas de análise de comunidades biológicas"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+# O que precisamos saber sobre análises de comunidades biológicas
+.pull-left[
+- Entender como amostrar uma comunidade biológica
+- Saber identificar unidades amostrais, medidas e variáveis
+- Entender quais sãos as medidas básicas de uma comunidade biológica
+]
+.pull-right[
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/BorneoRainforest_DSC_9267.JPG" width="600" height="420" />
+]
+---
+# Vocẽ é capaz de interpretar esses dados/gráfico?
+```{r, include=FALSE}
+xaringanExtra::use_panelset()
+```
+.panelset[
+.panel[.panel-name[Matriz de dados]
+
+```{r echo=FALSE}
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0("sp", 1:10),
+  sample_1 = sample(c(0:1), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  sample_2 = floor(runif(10, min=0, max=10)), # aqui também
+  sample_3 = sample(c(0:5), replace=TRUE, size=10), # aqui também mas até 20
+  sample_4 = sample(c(0:2), replace=TRUE, size=10) # aqui também até 20
+)->comm
+comm
+```
+]
+
+.panel[.panel-name[Resultado 1]
+```{r, echo=FALSE, out.width="400px"}
+library(vegan)
+acum<-specaccum(t(comm[,-1]))
+acum
+```
+
+]
+.panel[.panel-name[Gráfico 1]
+```{r echo=FALSE, out.width="450px"}
+library(tidyverse)
+acum<-data.frame(acum$sites, acum$richness, acum$sd)
+acum<-rbind(c(0,0,0), acum)
+ggplot(acum, aes(acum.sites,acum.richness))+
+  geom_line()+geom_point(color="blue", size=2)+
+  labs(x="Amostras", y="Riqueza de espécies")+
+  theme(axis.title.x = element_text(size = rel(2)),
+        legend.text = element_text(size = rel(2)),
+        legend.title = element_text(size = rel(2)))+
+  theme_test()
+
+```
+
+]
+]
+
+---
+#Comunidades biológicas são entidades arbitrárias
+.center[
+<img src=https://www.researchgate.net/profile/Benjamin-Bergen/publication/308967379/figure/fig1/AS:415559377276929@1476088484383/Scheme-of-alpha-colours-beta-black-dotted-line-and-gamma-grey-diversity-from.png>]
+
+---
+#Comunidades biológicas são entidades arbitrárias
+.center[
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Biodiversity.png/1200px-Biodiversity.png>]
+
+---
+# Desenho amostral/experimental
+
+---
+# O problema das amostras
+.center[
+<img src=image026.gif width = 600>]
+fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)
+
+---
+# Amostras aleatórias
+.pull-left[
+<img src=image027.gif>
+fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
+.pull-right[
+### - Todos os pontos de amostra tem a mesma chance de serem escolhidos
+### - Amostras podem não ser espacilamente independentes
+###- São excelentes para estudos de biogeografia
+]
+
+---
+# Amostras aleatórias estratificadas
+.pull-left[
+<img src=image035.gif>
+fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
+.pull-right[
+### - Controla para amostrar aleatoriamente em função da heterogeneidade
+### - Amostras podem não ser espacilamente independentes
+### - São excelentes para estudos de biogeografia
+]
+
+---
+# Amostras uniformemente distribuídas
+.pull-left[
+<img src=image036.gif>
+fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
+.pull-right[
+### - Uniformdidade não é aleatoriedade e pode conter vieses
+### - Amostras SÃO espacilamente independentes
+]
+
+---
+# Vejamos com o R
+
+```{r, echo=FALSE}
+library(sp)
+# make a grid of size 50*50
+x1<-seq(1:50)-0.5
+x2<-x1
+grid<-expand.grid(x1,x2)
+names(grid)<-c("x1","x2")
+
+# make a grid a spatial object
+coordinates(grid) <- ~x1+x2
+gridded(grid) <- TRUE
+```
+
+.panelset[.panel[.panel-name[Aleatórios]
+```{r echo=FALSE}
+random.pt <- spsample(x = grid, n= 20, type = 'random')
+plot(random.pt,  col= 'red')
+```
+]
+.panel[.panel-name[Uniformes]
+```{r echo=FALSE}
+regular.pt <- spsample(x = grid, n= 20, type = 'regular')
+plot(regular.pt, col= 'blue')
+
+```
+]
+.panel[.panel-name[Agrupados]
+```{r echo=FALSE}
+# random sampling of one location 
+ori <- data.frame(spsample(x = grid, n= 1, type = 'random'))
+
+# select randomly 20 distances between 0 and 2
+n.point <- 20 
+h <- rnorm(n.point, 1:2) 
+
+# empty dataframe
+dxy <- data.frame(matrix(nrow=n.point, ncol=2))
+
+# take a random angle from the randomly selected location and make a dataframe of the new distances from the original sampling points, in a random direction
+angle <- runif(n = n.point,min=0,max=2*pi)
+dxy[,1]= h*sin(angle)
+dxy[,2]= h*cos(angle)
+cluster <- data.frame(x=rep(NA, 20), y=rep(NA, 20))
+cluster$x <- ori$coords.x1 + dxy$X1
+cluster$y <- ori$coords.x2 + dxy$X2
+
+plot(cluster, col='green')
+
+```
+]
+
+]
+
+---
+# O problema da escala
+.pull-left[
+<img src=http://ordination.okstate.edu/sampling_files/image039.gif>
+fonte: [Sampling and Experimental Design in Community Ecology](http://ordination.okstate.edu/sampling.htm)]
+
+.pull-right[
+## Vamos ver o que podemos aprender com essa figura...
+##- 
+##-
+
+]
+---
+class: center, middle
+# FIM
+
+

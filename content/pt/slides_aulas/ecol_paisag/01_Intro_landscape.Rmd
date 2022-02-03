@@ -1,0 +1,194 @@
+---
+title: "Aula 1 - Conceitos básicos de ecología de paisagens"
+subtitle: "Ecologia de Paisagens"
+author: "Felipe Melo"
+institute: "UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://www.intechopen.com/media/chapter/45411/media/image1.png)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanExtra)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+---
+# O que é preciso saber?
+
+## - Definir o que é uma paisagem
+## - Descrever uma paisagem
+## - Entender a estrutura de paisagens
+## - Entender quais processos ecológicos fazem sentido na escala de paisagem
+
+
+---
+# O que é Ecologia de Paisagem?
+.left-column[
+
+##[J. Wu, in Encyclopedia of Ecology, 2008](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/landscape-ecology)
+
+]
+
+.right-column[
+### *"... a ciência e arte de estudar e melhorar a relação entre padrão espacial e processos ecológicos em uma infinidade de escalas e níveis organizacionais... é uma nova perspectiva científica ou paradigma que é relevante para uma série de ciências ecológicas, geofísicas e sociais."*
+.center[
+<img src=https://iufrole-wp.weebly.com/uploads/1/1/2/5/112599153/published/santaana_1.jpg?1524922117 width = 400>
+]]
+
+---
+.pull-left[
+<img src=https://ars.els-cdn.com/content/image/3-s2.0-B9780080454054008648-gr2.jpg>
+
+Fonte: [Enciclopedia of Ecology](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/landscape-ecology)
+]
+.pull-right[
+## - Transdiciplinária
+## - Diversa em sua natureza
+## - Aplicação direta
+## - Contribuição teórica
+]
+
+---
+# Duas correntes:
+.pull-left[
+# Ecológica
+## - Ecologia Espacial
+## - Fluxos de energia na paisagem
+## - Dinâmica de Ecossistemas
+## - Efeitos da estrutura da paisagem sobre processos ecológicos
+
+]
+.pull-right[
+# Geográfica
+## - Sistemas socioecoógicos
+## - Ecologia Política
+## - Planejamento de paisagens
+## - Paisagem como construção cultural
+]
+
+---
+# O que é uma paisagem?
+
+<img src= https://ars.els-cdn.com/content/image/3-s2.0-B9780080454054008648-gr1.jpg>
+
+---
+class: center, middle
+
+<img src=https://www.researchgate.net/profile/Barbara-Anderson-7/publication/249963558/figure/fig1/AS:613945412952064@1523387401004/Selected-biodiversity-components-of-climate-change-refuges-at-different-spatial-and_W640.jpg width = 1000>
+
+---
+class: center, middle
+
+<img src= escala.png>
+
+---
+
+class: center, middle
+
+<img src= escala2.png>
+
+---
+# Exemplos de paisagem
+<img src= https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Landscape_Arnisee-region.JPG/800px-Landscape_Arnisee-region.JPG>
+
+---
+# Exemplos de paisagem
+
+<img src = https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-brasilia-capa2019-01.jpg>
+
+---
+class: center, middle
+
+# Você não está!
+
+---
+# Paisagem não é um "sistema"
+.pull-left[
+# Ecossistema
+## - Interconexão
+## - Relações "verticais"
+<img src=http://s2.glbimg.com/eSM2CUGvcFHmKcSWOJHm1WG8tNI=/0x0:1999x615/600x184/s.glbimg.com/po/ek/f/original/2014/02/10/mod_40_1.jpg>
+]
+
+--
+
+.pull-right[
+# Paisagem
+## - Heterogeneidade
+## - Relações "horizontais"
+<img src=paisa1.png>
+]
+
+---
+# Heterogeneidade
+.left-column[
+## Cobertura de solo
+]
+.right-column[
+<img src=https://earimediaprodweb.azurewebsites.net/Api/v1/Multimedia/68b96855-8634-4a3f-b944-12431e47bc07/Rendition/low-res/Content/Public>
+]
+
+---
+# Heterogeneidade
+.left-column[
+## Ocupação humana
+]
+.right-column[
+<img src=https://www.futurity.org/wp/wp-content/uploads/2020/01/land-use-biodiversity_1600.jpg>
+]
+
+---
+# Heterogeneidade
+.left-column[
+## Visto por um geógrafo
+]
+.right-column[
+<img src=https://www.researchgate.net/profile/Firoz-Ahmad-2/publication/319122657/figure/fig3/AS:527523903094784@1502782907347/Land-use-Land-cover-map.png>
+]
+
+---
+# Escala
+.left-column[
+## Há múliplas escalas
+## Definidas arbitrariamente ou não
+]
+.right-column[
+<img src= escala2.png width=600>
+]
+
+---
+.pull-left[
+#Formiga
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Atta.cephalotes.3.jpg/1021px-Atta.cephalotes.3.jpg>
+]
+
+.pull-right[
+#Onça-pintada
+<img src=https://i0.wp.com/biologo.com.br/bio/wp-content/uploads/2020/11/Dia-Nacional-da-Onca-Pintada.jpg?fit=631%2C351&ssl=1>
+]
+
+# Tente imaginam uma paisagem para esses animais
+
+---
+class: center, middle
+
+#Por hoje é só.
+
+
+
+

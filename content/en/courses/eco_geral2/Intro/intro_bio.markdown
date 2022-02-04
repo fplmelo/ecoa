@@ -1,7 +1,7 @@
 ---
 title: "Introdução à Biodiversidade"
 author: "Felipe Melo"
-date: "2022-02-03"
+date: "2022-02-04"
 html_document:
     df_print: paged
     toc: true
@@ -17,10 +17,8 @@ html_document:
 
 # *Slides*
 
-“https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1”
-
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/eco_gera2/Intro_biodiversidade#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://ecoaplic.org/en/slides_aulas/eco_geral2/Intro_biodiversidade.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

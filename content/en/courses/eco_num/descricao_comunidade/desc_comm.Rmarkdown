@@ -23,6 +23,7 @@ output:
 
 ```{r message=FALSE, warning=FALSE}
 library (vegan)
+library(xaringanExtra)
 data (BCI)
 BCI.env <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.env.txt', row.names = 1)
 BCI.soil <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.soil.txt')
@@ -67,4 +68,22 @@ rowSums(BCI)
 head(colSums(BCI)) # mostra somente algumas linhas, mas se remover o head(), mostra a tabela inteira
 ```
 
-## Há funçõs espećificas 
+## Há funções específicas no pacote **"vegan"** que são muito úteis para nálises de comunidades biológica. 
+
+## 1 - Curvas de acumulação de espécies {.tabset}
+
+### Base BCI
+```{r}
+sp1<-specaccum(BCI, "random")
+sp1
+```
+
+
+### Plot
+```{r}
+plot(sp1, ci.type="poly", col="blue", lwd=2, ci.lty=0, ci.col="lightblue")
+boxplot(sp1, col="yellow", add=TRUE, pch="+")
+
+```
+
+## Close

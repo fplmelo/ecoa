@@ -253,22 +253,23 @@ ggplot(spa, aes(X,Y))+
 [Porque explorar dados?](https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/)
 
 ---
-# Como é a distribuição de abundância dessa comunidade de peixes?
+# Como é a distribuição de abundância dessa comunidade de peixes? 
 
-.panelset[
-.panel[.panel-name[R Code]
+## Código
 ```{r echo=FALSE}
 spe[1:10,1:10]
 ```
-]
-.panel[.panel-name[Plot]
-```{r}
+
+---
+## Plot
+
+```{r echo=FALSE}
 data1<-rankabundance(spe)
 plot(data1)
 ```
 
-]
-.panel[.panel-name[Plot melhorado]
+---
+##Plot melhorado
 ```{r echo = FALSE}
 library(ggplot2)
 library(ggrepel)
@@ -286,10 +287,6 @@ plotgg1 <- ggplot(data=data1, aes(x = rank, y = abundance)) +
 plotgg1
 
 ```
-]
-]
-
-
 
 ---
 # Faça exercícios, sempre utilizando perguntas originais

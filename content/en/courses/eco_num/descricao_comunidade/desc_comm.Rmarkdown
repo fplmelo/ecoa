@@ -14,7 +14,7 @@ output:
 <br>
 
 
-```{r}
+```{r echo=FALSE}
 xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_desc_comm.html#1" )
 ```
 

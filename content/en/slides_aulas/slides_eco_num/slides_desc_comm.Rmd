@@ -22,6 +22,7 @@ library(tidyverse)
 library(knitr)
 library (vegan)
 library (BiodiversityR)
+library(xaringanExtra)
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
@@ -251,10 +252,47 @@ ggplot(spa, aes(X,Y))+
 
 [Porque explorar dados?](https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/)
 
+---
+# Como é a distribuição de abundância dessa comunidade de peixes?
+
+.panelset[
+.panel[.panel-name[R Code]
+```{r echo=FALSE}
+spe[1:10,1:10]
+```
+]
+.panel[.panel-name[Plot]
+```{r}
+data1<-rankabundance(spe)
+plot(data1)
+```
+
+]
+.panel[.panel-name[Plot melhorado]
+```{r echo = FALSE}
+library(ggplot2)
+library(ggrepel)
+data1<-as.data.frame(data1)
+
+plotgg1 <- ggplot(data=data1, aes(x = rank, y = abundance)) + 
+    geom_line(size=1) +
+    geom_point(size=5, alpha=0.7) +
+    geom_text_repel(data=data1, 
+        aes(label=rownames(data1)), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    labs(x = "rank", y = "abundância")
+
+plotgg1
+
+```
+]
+]
+
 
 
 ---
-# Faça exercícios, sempre utilizando pergutnas originais
+# Faça exercícios, sempre utilizando perguntas originais
 .pull-left[
 ### - Use os dados fornecidos pelo livro **Numerical Ecology with R**
 ### - Mas... Evite apenas seguir os scripts e exemplos

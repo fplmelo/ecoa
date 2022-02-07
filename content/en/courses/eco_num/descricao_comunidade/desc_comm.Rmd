@@ -169,3 +169,11 @@ plotgg2
 1. Utilize funções prontas dos pacotes msa também tente chegar so resultados esperados com funções básicas do R
 1. Comente suas análises dando uma interpretação ecológica aos gráficos
 
+
+# Bibliografia
+
+## [Ecologia de Comundiades na Wikipedia](https://pt.wikipedia.org/wiki/Ecologia_de_comunidades#Estrutura_da_comunidade)
+
+## [Conceptual Synthesis in Community Ecology por Mark Vellend](https://www.researchgate.net/profile/Mark-Vellend-2/publication/44689600_Conceptual_Synthesis_in_Community_Ecology/links/0a85e534c7a686647f000000/Conceptual-Synthesis-in-Community-Ecology.pdf)
+
+## [Ecologia de Comunidades USP](http://ecologia.ib.usp.br/bie5778/doku.php)

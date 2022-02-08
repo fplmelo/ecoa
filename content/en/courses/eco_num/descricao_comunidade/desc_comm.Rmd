@@ -9,6 +9,12 @@ output: html_document
 
 <br>
 
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_desc_comm.html#1" )
+```
+
 ## Os atributos de uma communidade biológica são simples, em princípio
 
 1. Entidades

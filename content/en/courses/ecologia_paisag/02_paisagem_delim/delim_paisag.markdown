@@ -7,21 +7,16 @@ type: book
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
 <!--more-->
-
-{{\< icon name=“clock” pack=“fas” \>}} 1-2 horas de estudo
-
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
 <iframe src="https://ecoaplic.org/en/slides_aulas/ecol_paisag/02_delim_landscape.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
-## {{\< spoiler text=“Quais perguntas devemos ter em mente para delimitar uma paisagem?” \>}}
+## Quais perguntas devemos ter em mente para delimitar uma paisagem?
 
 -   Qual a escala espacial e temporal em que meu fenômeno pode ser observado?
 -   É mensurável?
 -   Como pensar em diferentes escalas?
-
-{{\< /spoiler \>}}
 
 Em termos ecológicos, a regeneração de uma floresta pode ser vista em diferentes escalas de tempo e espaço
 

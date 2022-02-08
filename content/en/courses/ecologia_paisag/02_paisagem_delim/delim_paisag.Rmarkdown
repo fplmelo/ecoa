@@ -7,7 +7,6 @@ type: book
 
 <!--more-->
 
-{{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
 
 
 ```{r echo=FALSE}
@@ -15,14 +14,14 @@ xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/ecol_p
 ```
 
 
-## {{< spoiler text="Quais perguntas devemos ter em mente para delimitar uma paisagem?" >}}
+## Quais perguntas devemos ter em mente para delimitar uma paisagem?
 
 
 - Qual a escala espacial e temporal em que meu fenômeno pode ser observado?
 - É mensurável?
 - Como pensar em diferentes escalas?
 
-{{< /spoiler >}}
+
 
 
 Em termos ecológicos, a regeneração de uma floresta pode ser vista em diferentes escalas de tempo e espaço

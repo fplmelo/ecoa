@@ -10,6 +10,11 @@ type: book
 {{< icon name="clock" pack="fas" >}} 1-2 horas de estudo
 
 
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/ecol_paisag/02_delim_landscape.html#1")
+```
+
+
 ## {{< spoiler text="Quais perguntas devemos ter em mente para delimitar uma paisagem?" >}}
 
 

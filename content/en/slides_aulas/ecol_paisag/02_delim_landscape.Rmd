@@ -18,7 +18,9 @@ background-image: url(https://www.intechopen.com/media/chapter/45411/media/image
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+xaringanExtra::use_scribble()
 ```
+
 
 ---
 <iframe width="1193" height="671" src="https://www.youtube.com/embed/8Are9dDbW24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

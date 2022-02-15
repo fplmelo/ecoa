@@ -4,8 +4,8 @@
     <title>Ecologia Numérica</title>
     <meta charset="utf-8" />
     <meta name="author" content="Felipe Melo" />
-    <meta name="date" content="2022-02-14" />
-    <script src="slides_diversity_measures_files/header-attrs-2.10/header-attrs.js"></script>
+    <meta name="date" content="2022-02-15" />
+    <script src="slides_diversity_measures_files/header-attrs-2.11/header-attrs.js"></script>
     <link href="slides_diversity_measures_files/remark-css-0.0.1/robot.css" rel="stylesheet" />
     <link href="slides_diversity_measures_files/remark-css-0.0.1/tamu-fonts.css" rel="stylesheet" />
     <link href="slides_diversity_measures_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ## Aula 3 - Medidas de diversidade biológica
 ### Felipe Melo
 ### Laboratório de Ecologia Aplicada - UFPE
-### 2022-02-14
+### 2022-02-15
 
 ---
 
@@ -105,14 +105,14 @@ class: middle, center
 # O método mais atual
 
 ---
-#Exemplo de rarefação
+#Exemplo de rarefação - Morcegos em 3 localidades
 .panelset[.panel[.panel-name[Código]
 
 
 ```r
 library(iNEXT)
 library(devtools)
-devtools::install_github("paternogbc/ecodados")
+#devtools::install_github("paternogbc/ecodados")
 library(ecodados)
 
 dados_rarefacao &lt;- rarefacao_morcegos
@@ -131,6 +131,160 @@ ggiNEXT(resultados_morcegos, type = 1)
 
 &lt;img src="slides_diversity_measures_files/figure-html/unnamed-chunk-2-1.png" width="35%" /&gt;
 ]]
+
+---
+#Exemplo de rarefação - Morcegos em 3 localidades
+.panelset[.panel[.panel-name[Código]
+
+
+```r
+library(iNEXT)
+library(devtools)
+#devtools::install_github("paternogbc/ecodados")
+library(ecodados)
+
+dados_rarefacao &lt;- rarefacao_morcegos
+resultados_morcegos &lt;- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", endpoint = 800)
+# q refere-se a família *Hill-numbers* (Hill 1973) onde 0 = riqueza de espécies, 1 =  diversidade de Shannon, e 2 = diversidade de Simpson.
+# Veja mais detalhes sobre os números de Hill no Capítulo 7 onde tratamos de extrapolações.
+# datatype refere-se ao tipo de dados que você vai analisar (e.g. abudância, incidência).
+# endpoint refere-se ao valor de referência que você determina para a extrapolação.
+```
+]
+.panel[.panel-name[Gráfico]
+
+```r
+ggiNEXT(resultados_morcegos, type = 1)
+```
+
+&lt;img src="slides_diversity_measures_files/figure-html/unnamed-chunk-4-1.png" width="35%" /&gt;
+]]
+
+---
+#Exemplo de rarefação - Répteis em 2 localidades
+.panelset[.panel[.panel-name[Código]
+
+
+```r
+rarefacao_repteis &lt;- rarefacao_repteis
+resultados_repteis &lt;- iNEXT(rarefacao_repteis, q = 0, datatype = "abundance", endpoint = 200)
+```
+]
+.panel[.panel-name[Gráfico]
+
+```r
+ggiNEXT(resultados_repteis, type = 1)
+```
+
+&lt;img src="slides_diversity_measures_files/figure-html/unnamed-chunk-6-1.png" width="35%" /&gt;
+]]
+
+---
+class: middle, center
+
+# Índices de diversidade baseados em abundância
+
+---
+class: middle, center
+
+# São uma tentativa de ponderar a riqueza de espécies pela abundância específica das espécies
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+&lt;img src=libs/peixe.png&gt;
+
+--
+
+# Riqueza = 5
+
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+&lt;img src=libs/peixe2.png&gt;
+
+--
+
+# Riqueza = 5
+
+## A riqueza desconsidera a abundância
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+&lt;img src=libs/peixe.png&gt;
+
+--
+
+# Riqueza = 5
+
+## A riqueza desconsidera a abundância
+
+---
+# Riqueza + Abundância
+.pull-left[
+&lt;img src=libs/peixe3.png&gt;
+]
+
+.pull-right[
+## Riqueza = 5
+## Índice de Shannon = 0,94
+
+&lt;br&gt;
+&lt;br&gt;
+
+## Riqueza = 5
+## Índice de Shannon = 1,61
+]
+---
+# Exemplos
+.panelset[.panel[panel-name[Código]
+
+```r
+data(BCI)
+data("BCI.env")
+
+# Shannon
+H &lt;- diversity(BCI)
+
+# Riqueza
+richness &lt;- specnumber(BCI)  
+
+# Equitatividade de Pielou
+evenness &lt;- H/log(richness)
+  
+# Create alpha diversity dataframe including environmental data
+alpha &lt;- cbind(shannon = H, richness = richness, pielou = evenness, BCI.env)
+alpha$site&lt;-as.factor(seq(1:50))
+head(alpha)
+```
+
+```
+##    shannon richness    pielou UTM.EW  UTM.NS elevation   convex    slope
+## 1 4.018412       93 0.8865579 625754 1011569  130.2525  -7.8725 6.694828
+## 2 3.848471       84 0.8685692 625754 1011669  136.8100 -10.7000 5.086842
+## 3 3.814060       90 0.8476046 625754 1011769  143.6775 -14.6675 3.104794
+## 4 3.976563       94 0.8752597 625754 1011869  147.0075 -16.7575 1.872813
+## 5 3.969940      101 0.8602030 625754 1011969  144.3850 -12.4850 5.118725
+## 6 3.776575       85 0.8500724 625854 1011569  136.8750  -9.6850 2.945532
+##      aspectEW   aspectNS site
+## 1 -0.89108252 -0.4538413    1
+## 2 -0.21903766 -0.9757164    2
+## 3  0.03051372 -0.9995343    3
+## 4 -0.86414183 -0.5032483    4
+## 5 -0.67148116  0.7410216    5
+## 6 -0.86532324 -0.5012142    6
+```
+]
+.panel[panel-name[Plots]
+&lt;img src="slides_diversity_measures_files/figure-html/unnamed-chunk-8-1.png" width="40%" /&gt;
+]]
+
+---
+class: middle, center
+
+# Vamos treinar
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

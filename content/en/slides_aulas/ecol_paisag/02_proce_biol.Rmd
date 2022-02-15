@@ -1,0 +1,168 @@
+---
+title: "Aula 3 - Processos biológicos que podem ser medidos na escala de paissagens"
+subtitle: "Ecologia de Paisagens"
+author: "Felipe Melo"
+institute: "UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(http://www.grupoecoeco.com.br/home/images/estradas-08.jpg)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_scribble()
+```
+
+
+---
+backgroud-image: url (https://www.researchgate.net/publication/337383891/figure/fig1/AS:961886342352896@1606342983062/Landscape-resistance-to-animal-movement-and-the-framework-of-connectivity-models-A.png)
+---
+# O que é preciso saber?
+
+## - Como as espécies "enxergam" a paisagem?
+## - Processos que ocorrem numa paisagem
+## - Qual a importãncia dos processos ecológicos para a Ecologia de Paisagem?
+## - Como aplicá-los à conservação?
+
+
+---
+# Escala de paisagem
+.left-column[
+
+## Escala tem a ver com a perspectiva
+
+]
+
+.right-column[
+
+<img src=pais_proc.png>
+]
+
+---
+
+background-image: url(escala2.png)
+
+---
+# Dispersão na paisagem
+.left-column[
+## O que determina o movimento de animais numa paisagems?
+## - Qualidade do hábitat
+
+]
+
+.right-column[
+<img src=https://www.researchgate.net/profile/Andrea-Boesing/publication/354703601/figure/fig1/AS:1083545938333697@1635348891866/Location-of-the-study-area-left-upper-panel-within-the-Brazilian-Atlantic-Forest-biome.jpg width = 600>
+
+[Leite et al 2021](https://ecoevorxiv.org/bhec5/)
+]
+---
+# Dispersão na paisagem
+.left-column[
+## O que determina o movimento de animais numa paisagems?
+## - Exposição à predação
+
+]
+
+.right-column[
+<img src=https://www.researchgate.net/profile/John-Laundre/publication/236325388/figure/fig1/AS:668946252460043@1536500623461/Fig-3-Percentage-of-aspen-leaders-browsed-A-and-mean-aspen-heights-in.png width = 500>
+[Laundre et al 2010](https://benthamopen.com/ABSTRACT/TOECOLJ-3-3-1)
+]
+---
+# Dispersão na paisagem
+.left-column[
+## O que determina o movimento de animais numa paisagems?
+## - Conectividade  
+
+]
+
+.right-column[
+<img src=https://aucklandecology.files.wordpress.com/2018/09/conservation-corridor.jpg?w=676>
+[An introduction to landscape connectivity](https://aucklandecology.com/2018/09/27/an-introduction-to-landscape-connectivity/)
+]
+---
+# Dispersão na paisagem
+.left-column[
+## O que determina o movimento de animais numa paisagems?
+## - Qualidade  
+
+]
+
+.right-column[
+<img src=libs/percep2.png width = 550 >
+[Santos et al 2020](https://www.sciencedirect.com/science/article/pii/S253006442030078X#fig1035)
+]
+---
+# Dispersão na paisagem
+.left-column[
+## O que determina o movimento de animais numa paisagems?
+## - Várias variáveis de paisagem  
+
+]
+
+.right-column[
+<img src=libs/primates_lands.png width = 700>
+[Galán-Acedo et al 2019](https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12517)
+]
+---
+# Extinção na paisagem
+.left-column[
+## O que determina a extinção de espécies numa paisagems?
+## - Tamanhos pequenos de populações 
+
+]
+
+.right-column[
+<img src=http://www.sliderbase.com/images/referats/1476b/(19).PNG width = 600>
+]
+
+---
+# Extinção na paisagem
+.left-column[
+## O que determina a extinção de espécies numa paisagems?
+## - Baixa qualidade do hábitat
+
+]
+
+.right-column[
+<img src=https://ars.els-cdn.com/content/image/1-s2.0-S1679007315000109-gr1.jpg>
+]
+
+---
+# Dinâmica de Meta-populações
+.left-column[
+## Fundamento básico da ecologia de paisagem
+## [Leia esse texto](https://reader.elsevier.com/reader/sd/pii/B9780123234452500055?token=B41250D604F4002D073964B804C1D8A73731464C5A31DAA9BD9B48CB954C16E0B018E8D6F5EB105169A70FA167912160&originRegion=us-east-1&originCreation=20220215215345)
+
+]
+
+.right-column[
+<img src=libs/metapop.png width = 350>
+]
+
+---
+.left-column[
+# Dinâmica de Meta-comunidades
+## Fundamento básico da ecologia de paisagem
+## [Leia esse texto](https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.14378)
+
+]
+
+.right-column[
+<img src=https://nyaspubs.onlinelibrary.wiley.com/cms/asset/6effb788-da74-4e95-8f72-a8f4c8398c08/nyas14378-fig-0001-m.jpg>]
+---
+
+class: center, middle
+
+#Por hoje é só.
+
+
+
+

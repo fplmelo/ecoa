@@ -1,0 +1,299 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 3 - Medidas de diversidade biológica"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library (vegan)
+library (BiodiversityR)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+```
+
+# Diversidade Taxonômica 
+.center[
+<img src=libs/div.png width = 700>
+]
+
+---
+# Precisamos saber:
+
+--
+## O que é diversidade?
+
+--
+## Quais as métricas mais usadas?
+
+--
+## Quais são os prós e contras?
+
+---
+class: middle, center
+
+<img src=libs/pool.png>
+
+---
+class: middle, center
+
+<img src=libs/pool2.png>
+
+---
+class: middle, center
+# Será que amostramos todas as espécies?
+
+---
+class: middle, center
+
+<img src=libs/pool4.png>
+
+---
+class: middle, center
+
+<img src=libs/pool4.png>
+
+---
+class: middle, center
+
+<img src=libs/pool5.png>
+
+---
+
+class: middle, center
+
+<img src=libs/pool5.png>
+
+---
+
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palau_archipelago.jpg/800px-Palau_archipelago.jpg?20130206141308)
+
+---
+class: center
+background-size: contain
+background-image: url(https://mensura-r.netlify.app/post/rarefacao/index_files/figure-html/unnamed-chunk-1-1.png)
+
+---
+class: center
+background-size: contain
+background-image: url(https://media-exp1.licdn.com/dms/image/C5612AQGnHwvEoxwFkg/article-inline_image-shrink_1500_2232/0/1521073928942?e=1650499200&v=beta&t=u0Tsq1KoZSpFgwI90FmdUd27Ei6AASwIU33Oo5aTxRM)
+
+---
+class: middle, center
+
+# O método mais atual
+
+---
+#Exemplo de rarefação - Morcegos em 3 localidades
+.panelset[.panel[.panel-name[Código]
+
+```{r message=FALSE, warning=FALSE}
+
+library(iNEXT)
+library(devtools)
+#devtools::install_github("paternogbc/ecodados")
+library(ecodados)
+
+dados_rarefacao <- rarefacao_morcegos
+resultados_morcegos <- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", endpoint = 800)
+# q refere-se a família *Hill-numbers* (Hill 1973) onde 0 = riqueza de espécies, 1 =  diversidade de Shannon, e 2 = diversidade de Simpson.
+# Veja mais detalhes sobre os números de Hill no Capítulo 7 onde tratamos de extrapolações.
+# datatype refere-se ao tipo de dados que você vai analisar (e.g. abudância, incidência).
+# endpoint refere-se ao valor de referência que você determina para a extrapolação.
+
+
+```
+]
+.panel[.panel-name[Gráfico]
+```{r, echo=TRUE, out.width="35%"}
+ggiNEXT(resultados_morcegos, type = 1)
+
+```
+]]
+
+---
+#Exemplo de rarefação - Morcegos em 3 localidades
+.panelset[.panel[.panel-name[Código]
+
+```{r message=FALSE, warning=FALSE}
+
+library(iNEXT)
+library(devtools)
+#devtools::install_github("paternogbc/ecodados")
+library(ecodados)
+
+dados_rarefacao <- rarefacao_morcegos
+resultados_morcegos <- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", endpoint = 800)
+# q refere-se a família *Hill-numbers* (Hill 1973) onde 0 = riqueza de espécies, 1 =  diversidade de Shannon, e 2 = diversidade de Simpson.
+# Veja mais detalhes sobre os números de Hill no Capítulo 7 onde tratamos de extrapolações.
+# datatype refere-se ao tipo de dados que você vai analisar (e.g. abudância, incidência).
+# endpoint refere-se ao valor de referência que você determina para a extrapolação.
+
+
+```
+]
+.panel[.panel-name[Gráfico]
+```{r, echo=TRUE, out.width="35%"}
+ggiNEXT(resultados_morcegos, type = 1)
+
+```
+]]
+
+---
+#Exemplo de rarefação - Répteis em 2 localidades
+.panelset[.panel[.panel-name[Código]
+
+```{r message=FALSE, warning=FALSE}
+
+rarefacao_repteis <- rarefacao_repteis
+resultados_repteis <- iNEXT(rarefacao_repteis, q = 0, datatype = "abundance", endpoint = 200)
+
+```
+]
+.panel[.panel-name[Gráfico]
+```{r, echo=TRUE, out.width="35%"}
+ggiNEXT(resultados_repteis, type = 1)
+
+```
+]]
+
+---
+class: middle, center
+
+# Índices de diversidade baseados em abundância
+
+---
+class: middle, center
+
+# São uma tentativa de ponderar a riqueza de espécies pela abundância específica das espécies
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+<img src=libs/peixe.png>
+
+--
+
+# Riqueza = 5
+
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+<img src=libs/peixe2.png>
+
+--
+
+# Riqueza = 5
+
+## A riqueza desconsidera a abundância
+
+---
+class: center
+# Quantas espécies existem nessa figura?
+<img src=libs/peixe.png>
+
+--
+
+# Riqueza = 5
+
+## A riqueza desconsidera a abundância
+
+---
+# Riqueza + Abundância
+.pull-left[
+<img src=libs/peixe3.png>
+]
+
+.pull-right[
+## Riqueza = 5
+## Índice de Shannon = 0,94
+
+<br>
+<br>
+
+## Riqueza = 5
+## Índice de Shannon = 1,61
+]
+---
+# Exemplos
+.panelset[.panel[panel-name[Código]
+```{r}
+data(BCI)
+data("BCI.env")
+
+# Shannon
+H <- diversity(BCI)
+
+# Riqueza
+richness <- specnumber(BCI)  
+
+# Equitatividade de Pielou
+evenness <- H/log(richness)
+  
+# Create alpha diversity dataframe including environmental data
+alpha <- cbind(shannon = H, richness = richness, pielou = evenness, BCI.env)
+alpha$site<-as.factor(seq(1:50))
+head(alpha)
+```
+]
+.panel[panel-name[Plots]
+```{r echo=FALSE, out.width="40%"}
+library(viridis)
+library(cowplot)
+library(tidyverse)
+plot.shan <- ggplot(alpha, aes(x = site, y = shannon, colour = site)) +
+  geom_point(size = 3) +
+  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
+  ylab("Shannon's H'") + 
+  xlab("") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
+
+plot.rich <-ggplot(alpha, aes(x = site, y = richness, colour = site)) +
+  geom_point(size = 3) +
+  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
+  ylab("Species Richness") +
+  xlab("") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
+
+plot.even <- ggplot(alpha, aes(x = site, y = evenness, colour = site)) +
+  geom_point(size = 3) +
+  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
+  ylab("Pielou's Evenness") +
+  xlab("") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
+
+legend <- get_legend(plot.even)
+
+plot_grid(plot.shan + theme(legend.position = "none"), plot.rich + theme(legend.position = "none"), plot.even + theme(legend.position = "none"),ncol = 3)
+```
+]]
+
+---
+class: middle, center
+
+# Vamos treinar

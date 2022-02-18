@@ -2,9 +2,7 @@
 title: "Ameaças à Biodiversidade"
 author: "Felipe Melo"
 date: "`r Sys.Date()`"
-html_document:
-    df_print: paged
-    toc: true
+output: html_document
     
 ---
 

@@ -37,7 +37,7 @@ xaringanExtra::use_fit_screen()
 
 ### Como entender essas ameaças para além do *senso comum*
 
-### Comparar as ameaças atuais com as extinções do passao
+### Comparar as ameaças atuais com as extinções do passado
 
 ### Avaliar o estado atual da biodiversidade no Brasil
 ]
@@ -71,7 +71,7 @@ xaringanExtra::use_fit_screen()
 
 .pull-right[
 - ###Em 1962 A primavera silenciosa virou um clássico
-- ###O usso de DDT estava acabando com as aves dos EEUU
+- ###O uso de DDT estava acabando com as aves dos EEUU
 - ###As causas da perda da biodivesidade estavam ficando mais claras
 - ###A perda estava sendo sentida
 ]

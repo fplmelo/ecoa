@@ -14,14 +14,14 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
-      beforeInit: "macros.js"
+      
 
 ---
 ```{r setup, include=FALSE}
+
 library(tidyverse)
 library(knitr)
 library (vegan)
-library (BiodiversityR)
 library(xaringanExtra)
 xaringanExtra::use_panelset()
 knitr::opts_chunk$set(echo = TRUE)
@@ -93,8 +93,8 @@ ggplot(ex1, aes(raio, area))+geom_point()+geom_line()+theme_bw()
 # Vamos ver na prática
 .panelset[.panel[.panel-name[Duas comunidades]
 ```{r}
-community1=data.frame(t(rep(1,500))); colnames(community1)=paste("sp",1:500) # 500 espeécies
-community2=data.frame(t(c(rep(1,250)))); colnames(community2)=paste("sp",1:250) # 250 espécies
+community1=data.frame(t(rep(1,100))); colnames(community1)=paste("sp",1:100) # 500 espeécies
+community2=data.frame(t(c(rep(1,50)))); colnames(community2)=paste("sp",1:50) # 250 espécies
 ```
 ]
 
@@ -116,43 +116,6 @@ H2==0.5*H1 # Opa, então se eu quiser a metade de Shannon, não tenho a metade d
 ```
 ]
 
-panel[.panel-name[Projeção]
-```{r out.width="30%"}
-shannon=matrix(ncol=2,nrow=100)
-for(i in 1:100) {
-  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
-  shannon[i,1]=i
-  shannon[i,2]=diversity(community,index="shannon") }
-
-plot(shannon[,1],shannon[,2],xlab="Species Richness",ylab="Shannon Diversity",
-main="Shannon")
-```
-]
-
-panel[.panel-name[Projeção2]
-```{r out.width="30%"}
-HE1=exp(diversity(community1,index="shannon")); HE1 
-HE2=exp(diversity(community2,index="shannon")); HE2 
-as.character(HE2)==as.character(0.5*HE1)
-
-
-shannon_effective=matrix(ncol=2,nrow=100)
-for(i in 1:100) {
-  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
-  shannon_effective[i,1]=i
-  shannon_effective[i,2]=exp(diversity(community,index="shannon")) }
-plot(shannon_effective[,1],shannon_effective[,2],xlab="Species Richness",
-ylab="Effective Numbers of Species",main="Shannon (Effective)")
-
-```
-]
-
-.panel[.panel-name[Conclusão]
-
-.center[
-# Os índices de entropia indicam, mas não medem diversidade
-]
-]
 ]
 
 ---
@@ -166,200 +129,3 @@ ylab="Effective Numbers of Species",main="Shannon (Effective)")
 ]
 
 ---
-class: middle, center
-
-# Os princípios básiccos da diversidade verdadeira
-
----
-#P
-.panelset[.panel[.panel-name[Código]
-
-```{r message=FALSE, warning=FALSE}
-
-library(iNEXT)
-library(devtools)
-#devtools::install_github("paternogbc/ecodados")
-library(ecodados)
-
-dados_rarefacao <- rarefacao_morcegos
-resultados_morcegos <- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", endpoint = 800)
-# q refere-se a família *Hill-numbers* (Hill 1973) onde 0 = riqueza de espécies, 1 =  diversidade de Shannon, e 2 = diversidade de Simpson.
-# Veja mais detalhes sobre os números de Hill no Capítulo 7 onde tratamos de extrapolações.
-# datatype refere-se ao tipo de dados que você vai analisar (e.g. abudância, incidência).
-# endpoint refere-se ao valor de referência que você determina para a extrapolação.
-
-
-```
-]
-.panel[.panel-name[Gráfico]
-```{r, echo=TRUE, out.width="35%"}
-ggiNEXT(resultados_morcegos, type = 1)
-
-```
-]]
-
----
-#Exemplo de rarefação - Morcegos em 3 localidades
-.panelset[.panel[.panel-name[Código]
-
-```{r message=FALSE, warning=FALSE}
-
-library(iNEXT)
-library(devtools)
-#devtools::install_github("paternogbc/ecodados")
-library(ecodados)
-
-dados_rarefacao <- rarefacao_morcegos
-resultados_morcegos <- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", endpoint = 800)
-# q refere-se a família *Hill-numbers* (Hill 1973) onde 0 = riqueza de espécies, 1 =  diversidade de Shannon, e 2 = diversidade de Simpson.
-# Veja mais detalhes sobre os números de Hill no Capítulo 7 onde tratamos de extrapolações.
-# datatype refere-se ao tipo de dados que você vai analisar (e.g. abudância, incidência).
-# endpoint refere-se ao valor de referência que você determina para a extrapolação.
-
-
-```
-]
-.panel[.panel-name[Gráfico]
-```{r, echo=TRUE, out.width="35%"}
-ggiNEXT(resultados_morcegos, type = 1)
-
-```
-]]
-
----
-#Exemplo de rarefação - Répteis em 2 localidades
-.panelset[.panel[.panel-name[Código]
-
-```{r message=FALSE, warning=FALSE}
-
-rarefacao_repteis <- rarefacao_repteis
-resultados_repteis <- iNEXT(rarefacao_repteis, q = 0, datatype = "abundance", endpoint = 200)
-
-```
-]
-.panel[.panel-name[Gráfico]
-```{r, echo=TRUE, out.width="35%"}
-ggiNEXT(resultados_repteis, type = 1)
-
-```
-]]
-
----
-class: middle, center
-
-# Índices de diversidade baseados em abundância
-
----
-class: middle, center
-
-# São uma tentativa de ponderar a riqueza de espécies pela abundância específica das espécies
-
----
-class: center
-# Quantas espécies existem nessa figura?
-<img src=libs/peixe.png>
-
---
-
-# Riqueza = 5
-
-
----
-class: center
-# Quantas espécies existem nessa figura?
-<img src=libs/peixe2.png>
-
---
-
-# Riqueza = 5
-
-## A riqueza desconsidera a abundância
-
----
-class: center
-# Quantas espécies existem nessa figura?
-<img src=libs/peixe.png>
-
---
-
-# Riqueza = 5
-
-## A riqueza desconsidera a abundância
-
----
-# Riqueza + Abundância
-.pull-left[
-<img src=libs/peixe3.png>
-]
-
-.pull-right[
-## Riqueza = 5
-## Índice de Shannon = 0,94
-
-<br>
-<br>
-
-## Riqueza = 5
-## Índice de Shannon = 1,61
-]
----
-# Exemplos
-.panelset[.panel[panel-name[Código]
-```{r}
-data(BCI)
-data("BCI.env")
-
-# Shannon
-H <- diversity(BCI)
-
-# Riqueza
-richness <- specnumber(BCI)  
-
-# Equitatividade de Pielou
-evenness <- H/log(richness)
-  
-# Create alpha diversity dataframe including environmental data
-alpha <- cbind(shannon = H, richness = richness, pielou = evenness, BCI.env)
-alpha$site<-as.factor(seq(1:50))
-head(alpha)
-```
-]
-.panel[panel-name[Plots]
-```{r echo=FALSE, out.width="40%"}
-library(viridis)
-library(cowplot)
-library(tidyverse)
-plot.shan <- ggplot(alpha, aes(x = site, y = shannon, colour = site)) +
-  geom_point(size = 3) +
-  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
-  ylab("Shannon's H'") + 
-  xlab("") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
-
-plot.rich <-ggplot(alpha, aes(x = site, y = richness, colour = site)) +
-  geom_point(size = 3) +
-  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
-  ylab("Species Richness") +
-  xlab("") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
-
-plot.even <- ggplot(alpha, aes(x = site, y = evenness, colour = site)) +
-  geom_point(size = 3) +
-  scale_colour_viridis_d(option = "magma", begin = 0.2, end = 0.8) +
-  ylab("Pielou's Evenness") +
-  xlab("") +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.4))
-
-legend <- get_legend(plot.even)
-
-plot_grid(plot.shan + theme(legend.position = "none"), plot.rich + theme(legend.position = "none"), plot.even + theme(legend.position = "none"),ncol = 3)
-```
-]]
-
----
-class: middle, center
-
-# Vamos treinar

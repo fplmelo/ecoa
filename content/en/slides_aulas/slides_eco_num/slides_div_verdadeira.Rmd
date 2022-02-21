@@ -1,0 +1,67 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 4 - Medidas de diversidade verdadeira"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library (vegan)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+```
+
+# Diversidade Taxonômica 
+.center[
+<img src=libs/div.png width = 700>
+]
+
+---
+# Precisamos saber:
+
+--
+## Qual o problema dos índices de "diversidade" mais famosos?
+
+--
+## O que é número efetivo de espécies?
+
+--
+## Como calcular diversidade verdadeira
+
+---
+# O problema dos "índices de diversidade"
+```{r}
+xaringanExtra::use_panelset()
+ex1<-tibble(
+  raio=seq(1:10),
+  area=raio*raio*3.1416
+)
+ex1
+```
+
+
+```{r out.width="30%"}
+ggplot(ex1, aes(raio, area))+geom_point()+geom_line()+theme_bw()
+```
+
+---

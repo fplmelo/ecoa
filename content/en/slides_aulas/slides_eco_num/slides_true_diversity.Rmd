@@ -1,6 +1,6 @@
 ---
 title: "Ecologia Numérica"
-subtitle: "Aula 3 - Medidas de diversidade biológica"
+subtitle: "Aula 4 - Medidas de diversidade verdadeira"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
 date: "`r Sys.Date()`"
@@ -42,70 +42,136 @@ xaringanExtra::use_scribble()
 # Precisamos saber:
 
 --
-## O que é diversidade?
+## Qual o problema dos índices de "diversidade" mais famosos?
 
 --
-## Quais as métricas mais usadas?
+## O que é número efetivo de espécies?
 
 --
-## Quais são os prós e contras?
+## Como calcular diversidade verdadeira
+
+---
+# O problema dos "índices de diversidade"
+.panelset[.panel[.panel-name[Área de um Círculo]
+```{r}
+xaringanExtra::use_panelset()
+ex1<-tibble(
+  raio=seq(1:10),
+  area=raio*raio*3.1416
+)
+ex1
+```
+]
+
+.panel[.panel-name[Gráfico]
+```{r out.width="30%"}
+ggplot(ex1, aes(raio, area))+geom_point()+geom_line()+theme_bw()
+```
+]
+.panel[.panel-name[Conclusão]
+
+.center[#O raio **indica** a área do círculo, mas não É o circulo]
+]
+]
+
+---
+# Uma definião intuitiva
+.pull-left[
+<img src=libs/peixe.png width = 700>
+
+<br>
+
+<img src=libs/peixe2.png width = 700>
+]
+
+---
+# Uma definião intuitiva
+.center[
+<img src=libs/tree_2.png width = 900>]
+
+---
+# Vamos ver na prática
+.panelset[.panel[.panel-name[Duas comunidades]
+```{r}
+community1=data.frame(t(rep(1,500))); colnames(community1)=paste("sp",1:500) # 500 espeécies
+community2=data.frame(t(c(rep(1,250)))); colnames(community2)=paste("sp",1:250) # 250 espécies
+```
+]
+
+.panel[.panel-name[Riqueza]
+```{r out.width="30%"}
+S1=specnumber(community1); S1
+S2=specnumber(community2); S2
+S2==0.5*S1
+```
+]
+
+panel[.panel-name[Shannon]
+```{r out.width="30%"}
+H1=diversity(community1,index="shannon"); H1
+H2=diversity(community2,index="shannon"); H2
+
+H1==log(S1) # Máximo teórico de diversidade segundo o índice de Shannon
+H2==0.5*H1 # Opa, então se eu quiser a metade de Shannon, não tenho a metade das espećies? Não!!
+```
+]
+
+panel[.panel-name[Projeção]
+```{r out.width="30%"}
+shannon=matrix(ncol=2,nrow=100)
+for(i in 1:100) {
+  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
+  shannon[i,1]=i
+  shannon[i,2]=diversity(community,index="shannon") }
+
+plot(shannon[,1],shannon[,2],xlab="Species Richness",ylab="Shannon Diversity",
+main="Shannon")
+```
+]
+
+panel[.panel-name[Projeção2]
+```{r out.width="30%"}
+HE1=exp(diversity(community1,index="shannon")); HE1 
+HE2=exp(diversity(community2,index="shannon")); HE2 
+as.character(HE2)==as.character(0.5*HE1)
+
+
+shannon_effective=matrix(ncol=2,nrow=100)
+for(i in 1:100) {
+  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
+  shannon_effective[i,1]=i
+  shannon_effective[i,2]=exp(diversity(community,index="shannon")) }
+plot(shannon_effective[,1],shannon_effective[,2],xlab="Species Richness",
+ylab="Effective Numbers of Species",main="Shannon (Effective)")
+
+```
+]
+
+.panel[.panel-name[Conclusão]
+
+.center[
+# Os índices de entropia indicam, mas não medem diversidade
+]
+]
+]
+
+---
+# Uma definião intuitiva
+.pull-left[
+<img src=libs/peixe.png width = 700>
+
+<br>
+
+<img src=libs/peixe2.png width = 700>
+]
 
 ---
 class: middle, center
 
-<img src=libs/pool.png>
+# Os princípios básiccos da diversidade verdadeira
 
 ---
-class: middle, center
-
-<img src=libs/pool2.png>
-
----
-class: middle, center
-# Será que amostramos todas as espécies?
-
----
-class: middle, center
-
-<img src=libs/pool4.png>
-
----
-class: middle, center
-
-<img src=libs/pool4.png>
-
----
-class: middle, center
-
-<img src=libs/pool5.png>
-
----
-
-class: middle, center
-
-<img src=libs/pool5.png>
-
----
-
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palau_archipelago.jpg/800px-Palau_archipelago.jpg?20130206141308)
-
----
-class: center
-background-size: contain
-background-image: url(https://mensura-r.netlify.app/post/rarefacao/index_files/figure-html/unnamed-chunk-1-1.png)
-
----
-class: center
-background-size: contain
-background-image: url(https://media-exp1.licdn.com/dms/image/C5612AQGnHwvEoxwFkg/article-inline_image-shrink_1500_2232/0/1521073928942?e=1650499200&v=beta&t=u0Tsq1KoZSpFgwI90FmdUd27Ei6AASwIU33Oo5aTxRM)
-
----
-class: middle, center
-
-# O método mais atual
-
----
-#Exemplo de rarefação - Morcegos em 3 localidades
+#P
 .panelset[.panel[.panel-name[Código]
 
 ```{r message=FALSE, warning=FALSE}

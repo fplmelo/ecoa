@@ -22,7 +22,7 @@
 class: center, middle, inverse, title-slide
 
 # Ecologia Numérica
-## Aula 3 - Medidas de diversidade biológica
+## Aula 4 - Medidas de diversidade verdadeira
 ### Felipe Melo
 ### Laboratório de Ecologia Aplicada - UFPE
 ### 2022-02-18
@@ -42,70 +42,228 @@ class: center, middle, inverse, title-slide
 # Precisamos saber:
 
 --
-## O que é diversidade?
+## Qual o problema dos índices de "diversidade" mais famosos?
 
 --
-## Quais as métricas mais usadas?
+## O que é número efetivo de espécies?
 
 --
-## Quais são os prós e contras?
+## Como calcular diversidade verdadeira
+
+---
+# O problema dos "índices de diversidade"
+.panelset[.panel[.panel-name[Área de um Círculo]
+
+```r
+xaringanExtra::use_panelset()
+```
+
+```r
+ex1&lt;-tibble(
+  raio=seq(1:10),
+  area=raio*raio*3.1416
+)
+ex1
+```
+
+```
+## # A tibble: 10 × 2
+##     raio   area
+##    &lt;int&gt;  &lt;dbl&gt;
+##  1     1   3.14
+##  2     2  12.6 
+##  3     3  28.3 
+##  4     4  50.3 
+##  5     5  78.5 
+##  6     6 113.  
+##  7     7 154.  
+##  8     8 201.  
+##  9     9 254.  
+## 10    10 314.
+```
+]
+
+.panel[.panel-name[Gráfico]
+
+```r
+ggplot(ex1, aes(raio, area))+geom_point()+geom_line()+theme_bw()
+```
+
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-2-1.png" width="30%" /&gt;
+]
+.panel[.panel-name[Conclusão]
+
+.center[#O raio **indica** a área do círculo, mas não É o circulo]
+]
+]
+
+---
+# Uma definião intuitiva
+.pull-left[
+&lt;img src=libs/peixe.png width = 700&gt;
+
+&lt;br&gt;
+
+&lt;img src=libs/peixe2.png width = 700&gt;
+]
+
+---
+# Uma definião intuitiva
+.center[
+&lt;img src=libs/tree_2.png width = 900&gt;]
+
+---
+# Vamos ver na prática
+.panelset[.panel[.panel-name[Duas comunidades]
+
+```r
+community1=data.frame(t(rep(1,500))); colnames(community1)=paste("sp",1:500) # 500 espeécies
+community2=data.frame(t(c(rep(1,250)))); colnames(community2)=paste("sp",1:250) # 250 espécies
+```
+]
+
+.panel[.panel-name[Riqueza]
+
+```r
+S1=specnumber(community1); S1
+```
+
+```
+## [1] 500
+```
+
+```r
+S2=specnumber(community2); S2
+```
+
+```
+## [1] 250
+```
+
+```r
+S2==0.5*S1
+```
+
+```
+## [1] TRUE
+```
+]
+
+panel[.panel-name[Shannon]
+
+```r
+H1=diversity(community1,index="shannon"); H1
+```
+
+```
+## [1] 6.214608
+```
+
+```r
+H2=diversity(community2,index="shannon"); H2
+```
+
+```
+## [1] 5.521461
+```
+
+```r
+H1==log(S1) # Máximo teórico de diversidade segundo o índice de Shannon
+```
+
+```
+## [1] TRUE
+```
+
+```r
+H2==0.5*H1 # Opa, então se eu quiser a metade de Shannon, não tenho a metade das espećies? Não!!
+```
+
+```
+## [1] FALSE
+```
+]
+
+panel[.panel-name[Projeção]
+
+```r
+shannon=matrix(ncol=2,nrow=500)
+for(i in 1:500) {
+  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
+  shannon[i,1]=i
+  shannon[i,2]=diversity(community,index="shannon") }
+
+plot(shannon[,1],shannon[,2],xlab="Species Richness",ylab="Shannon Diversity",
+main="Shannon")
+```
+
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-6-1.png" width="30%" /&gt;
+]
+
+panel[.panel-name[Projeção2]
+
+```r
+HE1=exp(diversity(community1,index="shannon")); HE1 
+```
+
+```
+## [1] 500
+```
+
+```r
+HE2=exp(diversity(community2,index="shannon")); HE2 
+```
+
+```
+## [1] 250
+```
+
+```r
+as.character(HE2)==as.character(0.5*HE1)
+```
+
+```
+## [1] TRUE
+```
+
+```r
+shannon_effective=matrix(ncol=2,nrow=500)
+for(i in 1:500) {
+  community=data.frame(t(rep(1,i))); colnames(community)=paste("sp",1:i)
+  shannon_effective[i,1]=i
+  shannon_effective[i,2]=exp(diversity(community,index="shannon")) }
+plot(shannon_effective[,1],shannon_effective[,2],xlab="Species Richness",
+ylab="Effective Numbers of Species",main="Shannon (Effective)")
+```
+
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-7-1.png" width="30%" /&gt;
+]
+
+.panel[.panel-name[Conclusão]
+
+.center[
+# Os índices de entropia indicam, mas não medem diversidade
+]
+]
+]
+
+---
+# Uma definião intuitiva
+.pull-left[
+&lt;img src=libs/peixe.png width = 700&gt;
+
+&lt;br&gt;
+
+&lt;img src=libs/peixe2.png width = 700&gt;
+]
 
 ---
 class: middle, center
 
-&lt;img src=libs/pool.png&gt;
+# Os princípios básiccos da diversidade verdadeira
 
 ---
-class: middle, center
-
-&lt;img src=libs/pool2.png&gt;
-
----
-class: middle, center
-# Será que amostramos todas as espécies?
-
----
-class: middle, center
-
-&lt;img src=libs/pool4.png&gt;
-
----
-class: middle, center
-
-&lt;img src=libs/pool4.png&gt;
-
----
-class: middle, center
-
-&lt;img src=libs/pool5.png&gt;
-
----
-
-class: middle, center
-
-&lt;img src=libs/pool5.png&gt;
-
----
-
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Palau_archipelago.jpg/800px-Palau_archipelago.jpg?20130206141308)
-
----
-class: center
-background-size: contain
-background-image: url(https://mensura-r.netlify.app/post/rarefacao/index_files/figure-html/unnamed-chunk-1-1.png)
-
----
-class: center
-background-size: contain
-background-image: url(https://media-exp1.licdn.com/dms/image/C5612AQGnHwvEoxwFkg/article-inline_image-shrink_1500_2232/0/1521073928942?e=1650499200&amp;v=beta&amp;t=u0Tsq1KoZSpFgwI90FmdUd27Ei6AASwIU33Oo5aTxRM)
-
----
-class: middle, center
-
-# O método mais atual
-
----
-#Exemplo de rarefação - Morcegos em 3 localidades
+#P
 .panelset[.panel[.panel-name[Código]
 
 
@@ -129,7 +287,7 @@ resultados_morcegos &lt;- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", 
 ggiNEXT(resultados_morcegos, type = 1)
 ```
 
-&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-2-1.png" width="35%" /&gt;
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-9-1.png" width="35%" /&gt;
 ]]
 
 ---
@@ -157,7 +315,7 @@ resultados_morcegos &lt;- iNEXT(dados_rarefacao, q = 0, datatype = "abundance", 
 ggiNEXT(resultados_morcegos, type = 1)
 ```
 
-&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-4-1.png" width="35%" /&gt;
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-11-1.png" width="35%" /&gt;
 ]]
 
 ---
@@ -176,7 +334,7 @@ resultados_repteis &lt;- iNEXT(rarefacao_repteis, q = 0, datatype = "abundance",
 ggiNEXT(resultados_repteis, type = 1)
 ```
 
-&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-6-1.png" width="35%" /&gt;
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-13-1.png" width="35%" /&gt;
 ]]
 
 ---
@@ -271,12 +429,7 @@ head(alpha)
 ```
 ]
 .panel[panel-name[Plots]
-
-```
-## Carregando pacotes exigidos: viridisLite
-```
-
-&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-8-1.png" width="40%" /&gt;
+&lt;img src="slides_true_diversity_files/figure-html/unnamed-chunk-15-1.png" width="40%" /&gt;
 ]]
 
 ---

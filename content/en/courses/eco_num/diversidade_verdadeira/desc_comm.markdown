@@ -16,6 +16,8 @@ output: html_document
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
+**Texto extraído do livro Análises Ecológicas no R** (in press)
+
 # Desafios da mensuração da diversidade verdadeira
 
 Números de Hill ou Série de Hill
@@ -25,7 +27,7 @@ O próximo exemplo (modificado do website de Lou Jost; http://www.loujost.com/),
 
 Hill (1973) derivou uma equação geral para o cálculo do número efetivo de espécies ou diversidade verdadeira que depende apenas do valor de q e da abundância relativa das espécies.
 
-![](/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/qorder.png)
+<img src=https://jslefche.files.wordpress.com/2012/10/entropy.png width = 500>
 
 Onde:
 
@@ -36,3 +38,207 @@ pi = abundância relativa de cada espécie, calculada pela proporção dos indiv
 Vamos calcular o Número de Hill para as comunidades do nosso exemplo.
 
 Calculando o Número de Hill com q = 0.
+
+``` r
+library(devtools)
+```
+
+    ## Carregando pacotes exigidos: usethis
+
+    ## 
+    ## Attaching package: 'devtools'
+
+    ## The following object is masked from 'package:permute':
+    ## 
+    ##     check
+
+``` r
+library(ecodados)
+library (vegan)
+library(ggplot2)
+library(BiodiversityR)
+```
+
+    ## Carregando pacotes exigidos: tcltk
+
+    ## BiodiversityR 2.14-1: Use command BiodiversityRGUI() to launch the Graphical User Interface; 
+    ## to see changes use BiodiversityRGUI(changeLog=TRUE, backward.compatibility.messages=TRUE)
+
+``` r
+library(hillR)
+## Dados
+composicao_especies <- ecodados::composicao_anuros_div_taxonomica
+precipitacao        <- ecodados::precipitacao_div_taxonomica
+```
+
+``` r
+hill_res_q_0 <- hill_taxa(composicao_especies, q  = 0)
+hill_res_q_0
+```
+
+    ##  Com_1  Com_2  Com_3  Com_4  Com_5  Com_6  Com_7  Com_8  Com_9 Com_10 
+    ##     10     10      5      5      5      6      2      4      6      4
+
+## Número de Hill para q = 1
+
+``` r
+hill_res_q_1 <- hill_taxa(composicao_especies, q  = 1)
+hill_res_q_1
+```
+
+    ##     Com_1     Com_2     Com_3     Com_4     Com_5     Com_6     Com_7     Com_8 
+    ## 10.000000  1.649196  2.606507  4.987156  4.420220  4.762172  2.000000  3.021912 
+    ##     Com_9    Com_10 
+    ##  5.551608  3.538328
+
+## Número de Hill para q = 2
+
+``` r
+hill_res_q_2 <- hill_taxa(composicao_especies, q  = 2)
+hill_res_q_2
+```
+
+    ##     Com_1     Com_2     Com_3     Com_4     Com_5     Com_6     Com_7     Com_8 
+    ## 10.000000  1.206273  1.928571  4.974223  4.145078  4.300813  2.000000  2.409639 
+    ##     Com_9    Com_10 
+    ##  5.232558  3.270270
+
+## Resultados
+
+``` r
+res_hill <- data.frame(hill_res_q_0, hill_res_q_1, hill_res_q_2)
+colnames(res_hill) <- c("q=0", "q=1", "q=2")
+head(res_hill)
+```
+
+    ##       q=0       q=1       q=2
+    ## Com_1  10 10.000000 10.000000
+    ## Com_2  10  1.649196  1.206273
+    ## Com_3   5  2.606507  1.928571
+    ## Com_4   5  4.987156  4.974223
+    ## Com_5   5  4.420220  4.145078
+    ## Com_6   6  4.762172  4.300813
+
+# Interpretação dos resultados
+
+Como na comunidade 1 todas as espécies são igualmente abundantes, alterar os valores de q não altera o número efetivo de espécies que permanece sempre 10. Contudo, na comunidade 2, que apresenta alta dominância de uma espécie, alterar os valores de q diminui consideravelmente a estimativa da diversidade. A vantagem dos Números de Hill é que eles são de fácil interpretação e comparação entre as comunidades. Fator ausente para os índices de diversidade.
+
+# Exercício
+
+1.  Reproduza as análises acima com a base do BCI ou Outra base à sua escolha
+2.  Grafique os resutados num [“diversity profile”](https://www.google.com/search?q=diversity+profile+hill+numbers&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwqKKc75H2AhW_ErkGHcnzBfUQ_AUoAnoECAEQBA&biw=1848&bih=887&dpr=1#imgrc=urlC8AbOInzd-M)
+3.  Tente interpretar os resultados
+
+Exemplo simples para você substituir com os dados de BCI
+
+``` r
+(df <- data.frame(C1 = c(10, 10, 10, 10), C2 = c(0, 20, 35, 5), C3 = c(25, 15, 0, 2), row.names = c("sp1", "sp2", "sp3", "sp4")))
+```
+
+    ##     C1 C2 C3
+    ## sp1 10  0 25
+    ## sp2 10 20 15
+    ## sp3 10 35  0
+    ## sp4 10  5  2
+
+``` r
+library(entropart)
+mc<-MetaCommunity(df)
+plot(mc)
+```
+
+<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+``` r
+summary(DivPart(q=0, mc), Correction="None")
+```
+
+    ## HCDT diversity partitioning of order 0 of metaCommunity mc
+    ## 
+    ## Alpha diversity of communities: 
+    ## C1 C2 C3 
+    ##  4  3  3 
+    ## Total alpha diversity of the communities: 
+    ## [1] 3.333333
+    ## Beta diversity of the communities: 
+    ## None 
+    ##  1.2 
+    ## Gamma diversity of the metacommunity: 
+    ## None 
+    ##    4
+
+``` r
+summary(DivPart(q=1, mc), Correction="None")
+```
+
+    ## HCDT diversity partitioning of order 1 of metaCommunity mc
+    ## 
+    ## Alpha diversity of communities: 
+    ##       C1       C2       C3 
+    ## 4.000000 2.429521 2.273918 
+    ## Total alpha diversity of the communities: 
+    ## [1] 2.806199
+    ## Beta diversity of the communities: 
+    ##     None 
+    ## 1.358779 
+    ## Gamma diversity of the metacommunity: 
+    ##     None 
+    ## 3.813005
+
+``` r
+summary(DivPart(q=2, mc), Correction="None")
+```
+
+    ## HCDT diversity partitioning of order 2 of metaCommunity mc
+    ## 
+    ## Alpha diversity of communities: 
+    ##       C1       C2       C3 
+    ## 4.000000 2.181818 2.065574 
+    ## Total alpha diversity of the communities: 
+    ## [1] 2.515807
+    ## Beta diversity of the communities: 
+    ##     None 
+    ## 1.467046 
+    ## Gamma diversity of the metacommunity: 
+    ##     None 
+    ## 3.690806
+
+``` r
+autoplot(DivProfile(q.seq = seq(0, 2, 0.1),MC=mc, Correction = "None"))
+```
+
+<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-2.png" width="672" />
+
+``` r
+# Tem mais coisa que pode ser explorada
+
+# Estimadores de diversidade
+
+alfa.est0<-DivEst(q = 0, mc, Simulations = 100, Correction = "None")
+```
+
+``` r
+plot(alfa.est0)
+```
+
+<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-3.png" width="672" />
+
+``` r
+alfa.est1<-DivEst(q = 1, mc, Simulations = 100, Correction = "None")
+```
+
+``` r
+plot(alfa.est1)
+```
+
+<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-4.png" width="672" />
+
+``` r
+alfa.est2<-DivEst(q = 2, mc, Simulations = 100, Correction = "None")
+```
+
+``` r
+plot(alfa.est2)
+```
+
+<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-5.png" width="672" />

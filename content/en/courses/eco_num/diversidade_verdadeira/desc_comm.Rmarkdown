@@ -44,6 +44,19 @@ Vamos calcular o Número de Hill para as comunidades do nosso exemplo.
 Calculando o Número de Hill com q = 0.
 
 ```{r}
+library(devtools)
+library(ecodados)
+library (vegan)
+library(ggplot2)
+library(BiodiversityR)
+library(hillR)
+## Dados
+composicao_especies <- ecodados::composicao_anuros_div_taxonomica
+precipitacao        <- ecodados::precipitacao_div_taxonomica
+```
+
+
+```{r}
 
 hill_res_q_0 <- hill_taxa(composicao_especies, q  = 0)
 hill_res_q_0
@@ -82,7 +95,41 @@ Como na comunidade 1 todas as espécies são igualmente abundantes, alterar os v
 
 # Exercício
 
-1. Reproduza as análises acma
+1. Reproduza as análises acima com a base do BCI ou Outra base à sua escolha
 1. Grafique os resutados num ["diversity profile"](https://www.google.com/search?q=diversity+profile+hill+numbers&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwqKKc75H2AhW_ErkGHcnzBfUQ_AUoAnoECAEQBA&biw=1848&bih=887&dpr=1#imgrc=urlC8AbOInzd-M)
 1. Tente interpretar os resultados
+
+Exemplo simples para você substituir com os dados de BCI
+
+```{r message=FALSE, warning=FALSE}
+(df <- data.frame(C1 = c(10, 10, 10, 10), C2 = c(0, 20, 35, 5), C3 = c(25, 15, 0, 2), row.names = c("sp1", "sp2", "sp3", "sp4")))
+library(entropart)
+mc<-MetaCommunity(df)
+plot(mc)
+
+summary(DivPart(q=0, mc), Correction="None")
+
+summary(DivPart(q=1, mc), Correction="None")
+
+summary(DivPart(q=2, mc), Correction="None")
+
+autoplot(DivProfile(q.seq = seq(0, 2, 0.1),MC=mc, Correction = "None"))
+
+# Tem mais coisa que pode ser explorada
+
+# Estimadores de diversidade
+
+alfa.est0<-DivEst(q = 0, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est0)
+
+alfa.est1<-DivEst(q = 1, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est1)
+
+alfa.est2<-DivEst(q = 2, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est2)
+```
+
 

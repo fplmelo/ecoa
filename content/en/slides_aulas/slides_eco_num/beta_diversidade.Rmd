@@ -1,0 +1,160 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 5 - Beta-diversidade"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      
+
+---
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(knitr)
+library (vegan)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+```
+
+# Diversidade Taxonômica 
+.center[
+<img src=libs/div.png width = 700>
+]
+
+---
+# Precisamos saber:
+
+--
+## O que é Beta-diversidade?
+
+--
+## O que ela ode infromar sobre comunidades biológicas?
+
+--
+## Como calcular beta-diversidade
+
+---
+# Definindo beta-diversidade
+
+<img src=https://methodsblog.files.wordpress.com/2015/05/beta1.jpg>
+
+[Fonte: What is Beta-Diversity?](https://methodsblog.com/2015/05/27/beta_diversity/)
+
+--
+
+# A arte de medir a diferença entre comunidades biológicas
+
+---
+class: center, middle
+
+## "a magnitide da mundança na composição ou o grau de diferenciação, em relação a um gradiante ambiental"
+###R.H. Whittaker
+
+---
+class: center, middle
+
+# Gama = Alfa média * Beta
+
+# ${\gamma}$ = ${\alpha}$ * ${\beta}$
+
+---
+<img src=https://methodsblog.files.wordpress.com/2015/05/beta1.jpg>
+
+--
+
+<img src=https://methodsblog.files.wordpress.com/2015/05/beta2.jpg>
+
+---
+background-image: url('https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:jurasinsky_et_al_diversity_schema_350.png')
+background-size: contain
+
+---
+
+# Medidas de beta-diversidade
+.panelset[.panel[
+.panel-name[Índices "Standarizados" = Jaccard]
+```{r}
+data("BCI")
+vegdist(BCI, method = "jaccard")
+
+```
+]
+
+.panel[.panel-name[Sorensen]
+```{r out.width="30%"}
+betadiver(BCI, "w")
+
+```
+]
+.panel[.panel-name[plot]
+```{r}
+plot(betadiver(BCI, "w"))
+```
+
+]
+]
+
+---
+class: middle
+# Substituição de espécies
+<img src= https://methodsblog.files.wordpress.com/2015/05/beta3.jpg>
+
+---
+class: middle
+# Aninhamento
+<img src= https://methodsblog.files.wordpress.com/2015/05/beta4.jpg>
+
+---
+class: middle
+# Combinação de ambos
+<img src= https://methodsblog.files.wordpress.com/2015/05/beta5.jpg>
+
+---
+# Exemplos
+<img src=libs/beta_forest.jpg width = 800>
+[Socolar et al 2015](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X)
+
+---
+# Exemplos
+<img src=libs/beta_forest.jpg width = 800>
+[Socolar et al 2015](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X)
+
+---
+# Exemplos
+<img src=libs/ltx_land.jpg width = 600>
+[Arroyo-Rodríguez et al 2013](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X).
+
+---
+# Exemplos
+<img src=libs/ltx_land2.jpg width = 500>
+[Arroyo-Rodríguez et al 2013](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X)
+
+---
+# Exemplos
+<img src=libs/ltx_land3.jpg width = 500>
+[Arroyo-Rodríguez et al 2013](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X)
+
+---
+# Exemplos
+<img src=libs/ltx_land4.jpg width = 300>
+[Arroyo-Rodríguez et al 2013](https://linkinghub.elsevier.com/retrieve/pii/S016953471500289X)
+
+---
+#Prática no R

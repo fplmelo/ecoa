@@ -1,0 +1,25 @@
+---
+title: "Beta-diversidade"
+author: "Felipe Melo"
+date: "02 de março"
+output: html_document
+---
+
+<img src = https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:jurasinsky_et_al_diversity_schema_350.png>
+
+<br>
+
+```{r default, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(vegan)
+```
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/beta_diversidade.html#1" )
+```
+
+# Beta diversidade é medir diferença entre comunidades
+
+
+

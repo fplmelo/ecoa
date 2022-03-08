@@ -39,7 +39,7 @@ Portanto, é um gradiente ambiental de desmatamento sobre o qual testamos se ess
 Mas, para os fins desse exercício, vamos apenas *brincar* com a beta-diversidade. 
 
 ```{r}
-read.csv()
+read.delim("http://github.com/fplmelo/ecoa/blob/f6a5e0bc566f31f54e678fe93874f571cd215e9a/content/en/courses/eco_num/betadiv/com_ltx_all.csv")
 ```
 
 

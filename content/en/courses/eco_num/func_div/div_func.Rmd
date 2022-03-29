@@ -9,7 +9,7 @@ output: html_document
 
 <br>
 
-# Slides das aulas gentilmente cedidos pelo Prof. [Dr. Thiago Gonçalves Souza]() podem ser biaxados [AQUI]()
+# Slides das aulas gentilmente cedidos pelo Prof. [Dr. Thiago Gonçalves Souza](https://scholar.google.com.br/citations?user=TjaP2l8AAAAJ&hl=pt-BR) podem ser biaxados [AQUI](https://github.com/fplmelo/ecoa/blob/3ce06fc08e216ee460733559b6fa9d1284cf9989/content/en/courses/eco_num/func_div/div_func.zip)
 
 
 ## Para esse módulo é importante a seguintes leituras para entender sobre diversidade funcional e como calculá-la.

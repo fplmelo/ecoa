@@ -1,0 +1,27 @@
+---
+title: "Introdução à Ecologia da Restauração"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Definindo Ecologia da Restauração
+
+![](/en/courses/eco_rest/00-Intro/intro_files/model.jpg)
+Figura adaptada de Bradshaw 1984.
+
+
+### O que você entende por "restauração ecológica"?
+
+Segundo a [Society for Ecological Restoration](ser.org), a restauração é a aplicação de práticas e preceitos cientificamente embasados para a recuperação de ambientes degradados a um estado funcional desejado. 
+
+Para isso algumas metas precisam ser estabelecidas:
+
+- Qual a composição de espécies desejada?
+- Quão parecido deve ser com o ecossistema de referência?
+- Quais serviços ecossistêmicos devem ser recuperados?
+
+
+

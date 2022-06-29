@@ -1,5 +1,5 @@
 ---
-bio: Communityl ecoolgy, restoration and political ecology
+bio: Community ecoolgy, restoration and political ecology
 education:
   courses:
   - course: Graduation in Biological Sciences 
@@ -13,7 +13,7 @@ interests:
 organizations:
 - name: Universidade Federal de Pernambuco # não mudar
   url: "www.ufpe.br" # não mudar
-role: Undergrad Student; # Escolha um desses e apague o resto
+role: Grad Students; # Escolha um desses e apague o resto
 social:
 - icon: envelope
   icon_pack: fas

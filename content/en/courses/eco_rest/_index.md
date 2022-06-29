@@ -12,7 +12,7 @@ type: book
 
 ## Temas abordados
 
-- Conceitos básicos de {{<hl>}}Ecologia da Restuaração{{</hl>}}
+- Conceitos básicos de {{<hl>}}Ecologia da Restauração{{</hl>}}
 - Evolução das práticas e conceitos de restauração ecológica
 - Serviços Ecossistêmicos e Restauração
 - Sucessão ecológica

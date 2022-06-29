@@ -1,7 +1,7 @@
 ---
 date: "2022-07-01"
 linkTitle: Ecologia da Restauração
-summary: A restauração ecológica é um teste experimental constante para a Ecologia. Nessa disciplina, vamos entender porque? como? onde? e quando restaurar ecossistemas degradados por atividades humanas.
+summary: A restauração ecológica é um teste experimental constante para a Ecologia. 
 title: "\U0001F4D2 Ecologia da Restauração"
 type: book
 ---

@@ -1,7 +1,7 @@
 ---
-date: "2022-07-01"
+date: "2021-06-24"
 linkTitle: Ecologia da Restauração
-summary: A restauração ecológica é um teste experimental constante para a Ecologia
+summary: A ecologia através dos números
 title: "\U0001F4D2 Ecologia da Restauração"
 type: book
 ---

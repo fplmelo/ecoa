@@ -1,13 +1,12 @@
 ---
 date: "2022-07-01"
 linkTitle: Ecologia da Restauração
-summary: A restauração ecológica é um teste experimental constante para a Ecologia. 
+summary: A restauração ecológica é um teste experimental constante para a Ecologia
 title: "\U0001F4D2 Ecologia da Restauração"
 type: book
-
 ---
 
-{{< figure src="featured.png" >}}
+{{< figure src="featured.jpg" >}}
 
 {{< toc hide_on="xl" >}}
 
@@ -29,7 +28,7 @@ Ecologia da restauração oferece uma oportunidade de aplicar os conceitos de ec
 
 ## Horário da disciplina
 
-Quartas-feiras 8-11h (aguardando sala )
+Quartas-feiras 8-11h (NIATE 207)
 
 ## Conteúdo programático
 

@@ -23,7 +23,7 @@ main:
     url: 'en/publication/'
     weight: 60
   - name: Courses
-    url: courses/
+    url: 'courses/'
     weight: 70
   - name: Contact
     url: '#contact'

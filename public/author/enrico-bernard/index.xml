@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enrico Bernard | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/enrico-bernard/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/enrico-bernard/index.xml" rel="self" type="application/rss+xml" />
+    <description>Enrico Bernard</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Enrico Bernard</title>
+      <link>https://fplmelo.netlify.app/author/enrico-bernard/</link>
+    </image>
+    
+    <item>
+      <title>Habitat use and feeding behavior of domestic free-ranging goats in a seasonal tropical dry forest</title>
+      <link>https://fplmelo.netlify.app/publication/2021-01-01_habitat_use_and_feed/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2021-01-01_habitat_use_and_feed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuleco™ revisited: Football, conservation and lessons learned from the 2014 FIFA World Cup</title>
+      <link>https://fplmelo.netlify.app/publication/2019-01-01_fuleco_revisited_fo/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2019-01-01_fuleco_revisited_fo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Green versus green? Adverting potential conflicts between wind power generation and biodiversity conservation in Brazil</title>
+      <link>https://fplmelo.netlify.app/publication/2019-01-01_green_versus_green_/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2019-01-01_green_versus_green_/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Football and biodiversity conservation: FIFA and Brazil can still hit a green goal</title>
+      <link>https://fplmelo.netlify.app/publication/2014-01-01_football_and_biodive/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2014-01-01_football_and_biodive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Challenges and opportunities for biodiversity conservation in the Atlantic Forest in face of bioethanol expansion</title>
+      <link>https://fplmelo.netlify.app/publication/2011-01-01_challenges_and_oppor/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2011-01-01_challenges_and_oppor/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

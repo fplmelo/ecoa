@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/post/</link>
+      <atom:link href="https://fplmelo.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Posts</title>
+      <link>https://fplmelo.netlify.app/post/</link>
+    </image>
+    
+    <item>
+      <title>Ecologia Aplicada</title>
+      <link>https://fplmelo.netlify.app/post/ecologia-aplicada/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/post/ecologia-aplicada/</guid>
+      <description>&lt;p&gt;Bem-vind@s ao blog Ecologia Aplicada!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ecoa_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

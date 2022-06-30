@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Severino RR Pinto | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/author/severino-rr-pinto/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/author/severino-rr-pinto/index.xml" rel="self" type="application/rss+xml" />
+    <description>Severino RR Pinto</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Severino RR Pinto</title>
+      <link>https://www.ecoaplic.org/pt/author/severino-rr-pinto/</link>
+    </image>
+    
+    <item>
+      <title>Adding forests to the water--energy--food nexus</title>
+      <link>https://www.ecoaplic.org/pt/publication/2021-01-01_adding_forests_to_th/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2021-01-01_adding_forests_to_th/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Priority setting for scaling-up tropical forest restoration projects: Early lessons from the Atlantic Forest Restoration Pact</title>
+      <link>https://www.ecoaplic.org/pt/publication/2013-01-01_priority_setting_for/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2013-01-01_priority_setting_for/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Challenges and opportunities for biodiversity conservation in the Atlantic Forest in face of bioethanol expansion</title>
+      <link>https://www.ecoaplic.org/pt/publication/2011-01-01_challenges_and_oppor/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2011-01-01_challenges_and_oppor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Landscape attributes drive complex spatial microclimate configuration of Brazilian Atlantic forest fragments</title>
+      <link>https://www.ecoaplic.org/pt/publication/2010-01-01_landscape_attributes/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2010-01-01_landscape_attributes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tarciso Leao | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/tarciso-leao/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/tarciso-leao/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tarciso Leao</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Tarciso Leao</title>
+      <link>https://fplmelo.netlify.app/author/tarciso-leao/</link>
+    </image>
+    
+    <item>
+      <title>Forest fragmentation drives Atlantic forest of northeastern Brazil to biotic homogenization</title>
+      <link>https://fplmelo.netlify.app/publication/2011-01-01_forest_fragmentation/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2011-01-01_forest_fragmentation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

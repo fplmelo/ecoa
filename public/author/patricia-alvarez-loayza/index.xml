@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patricia Alvarez-Loayza | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/patricia-alvarez-loayza/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/patricia-alvarez-loayza/index.xml" rel="self" type="application/rss+xml" />
+    <description>Patricia Alvarez-Loayza</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Patricia Alvarez-Loayza</title>
+      <link>https://fplmelo.netlify.app/author/patricia-alvarez-loayza/</link>
+    </image>
+    
+    <item>
+      <title>An estimate of the number of tropical tree species</title>
+      <link>https://fplmelo.netlify.app/publication/2015-01-01_an_estimate_of_the_n/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2015-01-01_an_estimate_of_the_n/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

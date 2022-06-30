@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Janaina BP Costa | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/janaina-bp-costa/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/janaina-bp-costa/index.xml" rel="self" type="application/rss+xml" />
+    <description>Janaina BP Costa</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Janaina BP Costa</title>
+      <link>https://www.ecoaplic.org/en/author/janaina-bp-costa/</link>
+    </image>
+    
+    <item>
+      <title>Reduced availability of large seeds constrains Atlantic forest regeneration</title>
+      <link>https://www.ecoaplic.org/en/publication/2012-01-01_reduced_availability/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2012-01-01_reduced_availability/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

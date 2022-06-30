@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maria Joana Specht | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/maria-joana-specht/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/maria-joana-specht/index.xml" rel="self" type="application/rss+xml" />
+    <description>Maria Joana Specht</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Maria Joana Specht</title>
+      <link>https://www.ecoaplic.org/en/author/maria-joana-specht/</link>
+    </image>
+    
+    <item>
+      <title>Socioeconomic differences among resident, users and neighbour populations of a protected area in the Brazilian dry forest</title>
+      <link>https://www.ecoaplic.org/en/publication/2019-01-01_socioeconomic_differ/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2019-01-01_socioeconomic_differ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Burning biodiversity: Fuelwood harvesting causes forest degradation in human-dominated tropical landscapes</title>
+      <link>https://www.ecoaplic.org/en/publication/2015-01-01_burning_biodiversity/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2015-01-01_burning_biodiversity/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

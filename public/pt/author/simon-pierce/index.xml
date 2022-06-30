@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Pierce | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/author/simon-pierce/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/author/simon-pierce/index.xml" rel="self" type="application/rss+xml" />
+    <description>Simon Pierce</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Simon Pierce</title>
+      <link>https://www.ecoaplic.org/pt/author/simon-pierce/</link>
+    </image>
+    
+    <item>
+      <title>Soil-mediated filtering organizes tree assemblages in regenerating tropical forests</title>
+      <link>https://www.ecoaplic.org/pt/publication/2018-01-01_soil-mediated_filter/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2018-01-01_soil-mediated_filter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A global method for calculating plant CSR ecological strategies applied across biomes world-wide</title>
+      <link>https://www.ecoaplic.org/pt/publication/2017-01-01_a_global_method_for_/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2017-01-01_a_global_method_for_/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

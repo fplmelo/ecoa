@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Federico Escobar | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/federico-escobar/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/federico-escobar/index.xml" rel="self" type="application/rss+xml" />
+    <description>Federico Escobar</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Federico Escobar</title>
+      <link>https://fplmelo.netlify.app/author/federico-escobar/</link>
+    </image>
+    
+    <item>
+      <title>Plant $eta$-diversity in fragmented rain forests: testing floristic homogenization and differentiation hypotheses</title>
+      <link>https://fplmelo.netlify.app/publication/2013-01-01_plant_%5Cbeta-divers/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2013-01-01_plant_%5Cbeta-divers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maintenance of tree phylogenetic diversity in a highly fragmented rain forest</title>
+      <link>https://fplmelo.netlify.app/publication/2012-01-01_maintenance_of_tree_/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2012-01-01_maintenance_of_tree_/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Ecologia Geral 2 | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/courses/eco_geral2/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/courses/eco_geral2/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Ecologia Geral 2</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/pt/courses/eco_geral2/featured.jpg</url>
+      <title>📒 Ecologia Geral 2</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_geral2/</link>
+    </image>
+    
+    <item>
+      <title>Introdução à Biodiversidade</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_geral2/intro/intro_bio/</link>
+      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_geral2/intro/intro_bio/</guid>
+      <description>
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;slides&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://fplmelo.github.io/ecogeral2/slides/Intro_biodiversidade.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-que-é-preciso-saber-sobre-biodiversidade&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;O que é preciso saber sobre biodiversidade?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Aprenda a definir biodiversidade, com suas palavras e para públicos diferentes&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pt.wikipedia.org/wiki/Biodiversidade&#34;&gt;Wikipedia em Português&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Biodiversity&#34;&gt;Wikipedia em Inglês&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Consulte fontes diferentes sobre a definição de biodiversidade, tente entender como o coneito muda com o tempo e como se incorporou na agenda de conservação, disptando espaço com as mudanças climáticas e poluição (essa última historicamente dominante)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://repositorio.unb.br/bitstream/10482/28748/1/ARTIGO_ConceitoBiodiversidadeHistoria.pdf&#34;&gt;Evolução histórica do conceito de biodiversidade&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Entenda a questão dos valores ligados à biodiversidade&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://dx.doi.org/10.5380/dma.v8i0.22058&#34;&gt;O valor da biodiversidade e o impasse taxonônico&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Dimensões da diversidade biológica&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scielo.br/scielo.php?script=sci_arttext&amp;amp;pid=S1676-06032009000300008&amp;amp;lng=en&amp;amp;nrm=iso&amp;amp;tlng=pt&#34;&gt;Diversidade Filogenética&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cientistasfeministas.wordpress.com/tag/diversidade-filogenetica/&#34;&gt;Post sobre aquele artigo que vimos em aula nesse blog de cientistas feministas&lt;/a&gt;
+&lt;img src=&#34;https://cientistasfeministas.files.wordpress.com/2015/06/11348033_1127985990561521_2138220336_o1.jpg&#34; height=300/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scielo.br/scielo.php?script=sci_arttext&amp;amp;pid=S1676-06032009000300008&amp;amp;lng=en&amp;amp;nrm=iso&amp;amp;tlng=pt&#34;&gt;Diversidade Funcional&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;agora-a-tarefa&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Agora a tarefa&lt;/h1&gt;
+&lt;p&gt;Escreva um texto falando sobre a Biodiversidade de Pernambuco que cubra tanto aspectos técnicos como a magnitude da diversidade de espécies quanto de biomas e seu estado de conservação. Tente comunicar o quanto podemos estar perdendo em termos de desenvolivmento sustentável em não conhecer e valorizar nossa biodiversidade.&lt;/p&gt;
+&lt;p&gt;Tente escrever em estilo jornalístico, Ou seja, faça um texto curto, de até 800 palavras e ofereça para alguém ler antes de enviar. Veja se está claro. Vou avaliar:
+- abrangência
+- objetividade
+- impacto da mensagem&lt;/p&gt;
+&lt;p&gt;Escreva nuym &lt;a href=&#34;https://www.google.com/docs/about/&#34;&gt;google docs&lt;/a&gt; e insira na tarefa postada no &lt;a href=&#34;https://classroom.google.com/u/0/c/MzEwMjIyMDE0Njgw&#34;&gt;Googla Classrom&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

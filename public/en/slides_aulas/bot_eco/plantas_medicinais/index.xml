@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aula 3 - Plantas Medicinais | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/slides_aulas/bot_eco/plantas_medicinais/</link>
+      <atom:link href="https://www.ecoaplic.org/en/slides_aulas/bot_eco/plantas_medicinais/index.xml" rel="self" type="application/rss+xml" />
+    <description>Aula 3 - Plantas Medicinais</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/en/slides_aulas/bot_eco/plantas_medicinais/featured_med.jpg</url>
+      <title>Aula 3 - Plantas Medicinais</title>
+      <link>https://www.ecoaplic.org/en/slides_aulas/bot_eco/plantas_medicinais/</link>
+    </image>
+    
+  </channel>
+</rss>

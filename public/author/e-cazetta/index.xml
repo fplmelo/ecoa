@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E Cazetta | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/e-cazetta/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/e-cazetta/index.xml" rel="self" type="application/rss+xml" />
+    <description>E Cazetta</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>E Cazetta</title>
+      <link>https://fplmelo.netlify.app/author/e-cazetta/</link>
+    </image>
+    
+    <item>
+      <title>Effects of habitat loss on taxonomic and phylogenetic diversity of understory Rubiaceae in Atlantic forest landscapes</title>
+      <link>https://fplmelo.netlify.app/publication/2015-01-01_effects_of_habitat_l/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2015-01-01_effects_of_habitat_l/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

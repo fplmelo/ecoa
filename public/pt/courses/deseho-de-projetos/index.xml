@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Desenho de projetos | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/courses/deseho-de-projetos/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/courses/deseho-de-projetos/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Desenho de projetos</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/pt/courses/deseho-de-projetos/featured.png</url>
+      <title>📒 Desenho de projetos</title>
+      <link>https://www.ecoaplic.org/pt/courses/deseho-de-projetos/</link>
+    </image>
+    
+  </channel>
+</rss>

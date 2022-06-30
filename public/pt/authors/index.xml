@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/authors/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Authors</title>
+      <link>https://www.ecoaplic.org/pt/authors/</link>
+    </image>
+    
+  </channel>
+</rss>

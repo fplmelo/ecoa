@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Severino R Pinto | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/severino-r-pinto/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/severino-r-pinto/index.xml" rel="self" type="application/rss+xml" />
+    <description>Severino R Pinto</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Severino R Pinto</title>
+      <link>https://www.ecoaplic.org/en/author/severino-r-pinto/</link>
+    </image>
+    
+    <item>
+      <title>Governing and delivering a biome-wide restoration initiative: The case of Atlantic Forest Restoration Pact in Brazil</title>
+      <link>https://www.ecoaplic.org/en/publication/2014-01-01_governing_and_delive/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2014-01-01_governing_and_delive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

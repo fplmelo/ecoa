@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ricardo R Rodrigues | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/ricardo-r-rodrigues/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/ricardo-r-rodrigues/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ricardo R Rodrigues</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Ricardo R Rodrigues</title>
+      <link>https://www.ecoaplic.org/en/author/ricardo-r-rodrigues/</link>
+    </image>
+    
+    <item>
+      <title>Biodiversity persistence in highly human-modified tropical landscapes depends on ecological restoration</title>
+      <link>https://www.ecoaplic.org/en/publication/2013-01-01_biodiversity_persist/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2013-01-01_biodiversity_persist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Priority setting for scaling-up tropical forest restoration projects: Early lessons from the Atlantic Forest Restoration Pact</title>
+      <link>https://www.ecoaplic.org/en/publication/2013-01-01_priority_setting_for/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2013-01-01_priority_setting_for/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Restoration reserves as biodiversity safeguards in human-modified landscapes</title>
+      <link>https://www.ecoaplic.org/en/publication/2013-01-01_restoration_reserves/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2013-01-01_restoration_reserves/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

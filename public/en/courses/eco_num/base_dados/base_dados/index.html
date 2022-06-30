@@ -1,0 +1,1568 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Felipe P.L. Melo" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Slides
+ fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});  Matriz de presencias e ausências As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia." />
+
+  
+    <link rel="alternate" hreflang="pt" href="https://www.ecoaplic.org/pt/courses/eco_num/base_dados/base_dados/" />
+  
+  <link rel="alternate" hreflang="en-us" href="https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#005f73" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.d59a2db67540613cd4fc93defec0c32c.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/en/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Applied Ecology" />
+  <meta property="og:url" content="https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/" />
+  <meta property="og:title" content="Bases de dados Ecológicos | Applied Ecology" />
+  <meta property="og:description" content="Slides
+ fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});  Matriz de presencias e ausências As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia." /><meta property="og:image" content="https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+    
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Bases de dados Ecológicos | Applied Ecology</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="891d4177202b192156bcb9eb7aafbac5" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.82a2df885514d7a8250a5a85f0335ab9.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/people/"><span>People</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/blog/"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/project/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#videos"><span>Videos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/en/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/FelipePLMelo" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+           aria-haspopup="true" aria-label="Languages">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item dropdown-item-active">
+            <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://www.ecoaplic.org/pt/courses/eco_num/base_dados/base_dados/">
+            <span>Português</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Bases de dados Ecológicos</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
+<p><em>Slides</em></p>
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slied_base_dados.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+<h2 id="matriz-de-presencias-e-ausências">Matriz de presencias e ausências</h2>
+<p>As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia. No entanto, para iniciar nossas atividades, vamos contruir uma base de dados fictícia apenas para entender sua estrutura.</p>
+<p>A estrutura básica de bases de dados biológicos é a de matrizes que contem ‘n’ colunas e ‘r’ linhas (n x r). Geralmente temos espécies nas linhas e localidades nas colunas. Veja abaixo como criar uma matriz simples de 10 linhas e 4 colunas. As células serão preenchidas apenas com “1” e “0” indicando se a espécie está presente ou ausente da localidade amostrada.</p>
+<pre><code class="language-r">set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+library(tidyverse)
+</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+
+## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+## ✓ readr   2.0.2     ✓ forcats 0.5.1
+
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+</code></pre>
+<pre><code class="language-r">tibble(
+  spec = paste0(&quot;sp&quot;, 1:10),
+  siteA = sample(c(0:1), replace=TRUE, size=10),
+  siteB = sample(c(0:1), replace=TRUE, size=10),
+  siteC = sample(c(0:1), replace=TRUE, size=10),
+  siteD = sample(c(0:1), replace=TRUE, size=10)
+)
+</code></pre>
+<pre><code>## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 sp1       0     0     1     0
+##  2 sp2       1     0     0     0
+##  3 sp3       0     1     0     1
+##  4 sp4       0     0     0     1
+##  5 sp5       0     0     1     1
+##  6 sp6       1     0     1     1
+##  7 sp7       0     1     0     0
+##  8 sp8       1     1     0     0
+##  9 sp9       1     0     0     0
+## 10 sp10      1     0     0     0
+</code></pre>
+<h3 id="exercício-1">Exercício 1</h3>
+<p>Agora crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:</p>
+<ol>
+<li>20 espécies</li>
+<li>8 localidades</li>
+<li>Faça no seu computador</li>
+</ol>
+<ul>
+<li>Obviamente essas bases podem ser “subidas” ao R sem maiores problemas e o ideal é que você faça isso mesmo. Crie suas bases de dados numa planilha e salve-as em formato TXT ou CSV com muita atenção ao separadores e codificação (geralmente UTF-8)</li>
+</ul>
+<h2 id="exemplo-2-matriz-de-abundâncias">Exemplo 2 (matriz de abundâncias)</h2>
+<p>Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.</p>
+<pre><code class="language-r">set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&quot;sp&quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)
+</code></pre>
+<pre><code>## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
+</code></pre>
+<h3 id="exercício-2">Exercício 2</h3>
+<p>Novamente crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:</p>
+<ol>
+<li>30 espécies</li>
+<li>10 localidades</li>
+<li>Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades</li>
+</ol>
+<h2 id="sumários">Sumários</h2>
+<p>Qualquer análise de dados em ecologia começa com uma boa chacagem dos seu dados. Precisamos saber como se comportam os dados e para isso podemo começar com algumas funções simples como ‘summary’ (pactote base do R) ou ‘summarize’ (pacote tidyverse). Para isso, vamos pegar a matriz gerada com as abundâncias e dar a ela um nome, tranformando-a assim num objeto.</p>
+<pre><code class="language-r">set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&quot;sp&quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)-&gt; base1 # note que esse comando &quot;-&gt;&quot; apontou para um objeto de nome 'base1'
+
+
+base1 # eis a nossa base agora com as espécies como nomes das linhas
+</code></pre>
+<pre><code>## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
+</code></pre>
+<h3 id="exercício-3">Exercício 3</h3>
+<p>Abaixo temos um exemplo de resumo básico dos dados.
+Um resumo geral da tabela com a função mais simples do R que mostra apenas alguns “momentos” da distribuição dos dados organizados por colunas, nesse caso, por sítio de estudo.</p>
+<pre><code class="language-r">summary(base1)
+</code></pre>
+<pre><code>##      spec               siteA           siteB          siteC      
+##  Length:10          Min.   : 0.00   Min.   :0.00   Min.   : 3.00  
+##  Class :character   1st Qu.: 3.50   1st Qu.:1.00   1st Qu.: 7.25  
+##  Mode  :character   Median : 6.00   Median :3.50   Median :10.00  
+##                     Mean   : 5.80   Mean   :4.20   Mean   :11.10  
+##                     3rd Qu.: 8.75   3rd Qu.:7.75   3rd Qu.:16.25  
+##                     Max.   :10.00   Max.   :9.00   Max.   :20.00  
+##      siteD      
+##  Min.   : 1.00  
+##  1st Qu.: 8.25  
+##  Median :11.50  
+##  Mean   :10.90  
+##  3rd Qu.:15.75  
+##  Max.   :18.00
+</code></pre>
+<p>Existem outras funções do pacote tidyverse que podem ser utilizadas com maior objetividade e para manipulações específicas. Para um curso introdutório completo de “tidyverse” veja essa maravilha aqui do Maurício Vancine <a href="https://mauriciovancine.github.io/disciplina-analise-geoespacial-r/01_aulas/04_pres_intro_geocomp_r.html" target="_blank" rel="noopener">Introdução ao tidyverse</a></p>
+<h2 id="agora-podemos-começar-a-namorar-nosos-dados">Agora podemos começar a <em>namorar</em> nosos dados</h2>
+<h3 id="livro-numerical-ecology-with-r">Livro: Numerical Ecology with R</h3>
+<p>Vamos usar muitos exemplos desse livro durante a disciplina e para acostumar, vamos começar por tentar reproduzir os exercícios do <a href="http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip" target="_blank" rel="noopener">Capítulo 2: “Exploratpry Data Analysis”</a></p>
+<h2 id="extraindo-dados">Extraindo dados</h2>
+<p><em>Para baixar o livro <em>Numerical Ecology with R</em>, <a href="https://github.com/fplmelo/eco_numerica/raw/558d6c1302c3bff19831c0eee28f53b0a3eb1c69/data/Numerical%20Ecology%20with%20R.pdf" target="_blank" rel="noopener">clique aqui</a></em></p>
+<p><em>Para acessar os dados <a href="http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip" target="_blank" rel="noopener">clique aqui</a></em></p>
+<p>Salve a pasta descompactada no diretório local correspondente ao seu repositório do <em>GitHub</em></p>
+<p>Agora é só carregar as bases de dados usando o comando “load,” lembrando de colocar o caminho para o arquivo segundo</p>
+<pre><code class="language-r"># Vamos carregar os dados que o livro usa como exemplo
+load(&quot;/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData&quot;) # mude o caminho para o seu próprio´
+</code></pre>
+<pre><code class="language-r">spe # matriz de abundância de espécies de peixes
+</code></pre>
+<pre><code>##    Cogo Satr Phph Babl Thth Teso Chna Pato Lele Sqce Baba Albi Gogo Eslu Pefl
+## 1     0    3    0    0    0    0    0    0    0    0    0    0    0    0    0
+## 2     0    5    4    3    0    0    0    0    0    0    0    0    0    0    0
+## 3     0    5    5    5    0    0    0    0    0    0    0    0    0    1    0
+## 4     0    4    5    5    0    0    0    0    0    1    0    0    1    2    2
+## 5     0    2    3    2    0    0    0    0    5    2    0    0    2    4    4
+## 6     0    3    4    5    0    0    0    0    1    2    0    0    1    1    1
+## 7     0    5    4    5    0    0    0    0    1    1    0    0    0    0    0
+## 8     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+## 9     0    0    1    3    0    0    0    0    0    5    0    0    0    0    0
+## 10    0    1    4    4    0    0    0    0    2    2    0    0    1    0    0
+## 11    1    3    4    1    1    0    0    0    0    1    0    0    0    0    0
+## 12    2    5    4    4    2    0    0    0    0    1    0    0    0    0    0
+## 13    2    5    5    2    3    2    0    0    0    0    0    0    0    0    0
+## 14    3    5    5    4    4    3    0    0    0    1    1    0    1    1    0
+## 15    3    4    4    5    2    4    0    0    3    3    2    0    2    0    0
+## 16    2    3    3    5    0    5    0    4    5    2    2    1    2    1    1
+## 17    1    2    4    4    1    2    1    4    3    2    3    4    1    1    2
+## 18    1    1    3    3    1    1    1    3    2    3    3    3    2    1    3
+## 19    0    0    3    5    0    1    2    3    2    1    2    2    4    1    1
+## 20    0    0    1    2    0    0    2    2    2    3    4    3    4    2    2
+## 21    0    0    1    1    0    0    2    2    2    2    4    2    5    3    3
+## 22    0    0    0    1    0    0    3    2    3    4    5    1    5    3    4
+## 23    0    0    0    0    0    0    0    0    0    1    0    0    0    0    0
+## 24    0    0    0    0    0    0    1    0    0    2    0    0    1    0    0
+## 25    0    0    0    0    0    0    0    0    1    1    0    0    2    1    0
+## 26    0    0    0    1    0    0    1    0    1    2    2    1    3    2    1
+## 27    0    0    0    1    0    0    1    1    2    3    4    1    4    4    1
+## 28    0    0    0    1    0    0    1    1    2    4    3    1    4    3    2
+## 29    0    1    1    1    1    1    2    2    3    4    5    3    5    5    4
+## 30    0    0    0    0    0    0    1    2    3    3    3    5    5    4    5
+##    Rham Legi Scer Cyca Titi Abbr Icme Gyce Ruru Blbj Alal Anan
+## 1     0    0    0    0    0    0    0    0    0    0    0    0
+## 2     0    0    0    0    0    0    0    0    0    0    0    0
+## 3     0    0    0    0    0    0    0    0    0    0    0    0
+## 4     0    0    0    0    1    0    0    0    0    0    0    0
+## 5     0    0    2    0    3    0    0    0    5    0    0    0
+## 6     0    0    0    0    2    0    0    0    1    0    0    0
+## 7     0    0    0    0    0    0    0    0    0    0    0    0
+## 8     0    0    0    0    0    0    0    0    0    0    0    0
+## 9     0    0    0    0    1    0    0    0    4    0    0    0
+## 10    0    0    0    0    0    0    0    0    0    0    0    0
+## 11    0    0    0    0    0    0    0    0    0    0    0    0
+## 12    0    0    0    0    0    0    0    0    0    0    0    0
+## 13    0    0    0    0    0    0    0    0    0    0    0    0
+## 14    0    0    0    0    0    0    0    0    0    0    0    0
+## 15    0    0    0    0    1    0    0    0    0    0    0    0
+## 16    0    1    0    1    1    0    0    0    1    0    0    0
+## 17    1    1    0    1    1    0    0    0    2    0    2    1
+## 18    2    1    0    1    1    0    0    1    2    0    2    1
+## 19    2    1    1    1    2    1    0    1    5    1    3    1
+## 20    3    2    2    1    4    1    0    2    5    2    5    2
+## 21    3    2    2    2    4    3    1    3    5    3    5    2
+## 22    3    3    2    3    4    4    2    4    5    4    5    2
+## 23    0    0    0    0    0    0    0    0    1    0    2    0
+## 24    0    1    0    0    0    0    0    2    2    1    5    0
+## 25    0    0    1    0    0    0    0    1    1    0    3    0
+## 26    2    2    1    1    3    2    1    4    4    2    5    2
+## 27    3    3    1    2    5    3    2    5    5    4    5    3
+## 28    4    4    2    4    4    3    3    5    5    5    5    4
+## 29    5    5    2    3    3    4    4    5    5    4    5    4
+## 30    5    3    5    5    5    5    5    5    5    5    5    5
+</code></pre>
+<pre><code class="language-r">spa # matriz espacial
+</code></pre>
+<pre><code>##          X       Y
+## 1   85.678  20.000
+## 2   84.955  20.100
+## 3   92.301  23.796
+## 4   91.280  26.431
+## 5   92.005  29.163
+## 6   95.954  36.315
+## 7   98.201  38.799
+## 8   99.455  46.406
+## 9  109.782  55.865
+## 10 130.641  66.576
+## 11 142.748  81.258
+## 12 147.270  85.839
+## 13 156.817  89.516
+## 14 159.435  92.791
+## 15 150.820  91.084
+## 16 132.662  87.956
+## 17 128.298  93.918
+## 18 130.560 102.446
+## 19 128.459 105.428
+## 20 114.862 103.129
+## 21  97.163  90.245
+## 22  88.200  86.373
+## 23  79.596  83.508
+## 24  74.753  78.734
+## 25  67.146  74.683
+## 26  53.770  71.598
+## 27  43.637  68.673
+## 28  30.514  61.166
+## 29  20.495  43.848
+## 30   0.000  41.562
+</code></pre>
+<pre><code class="language-r">env # matriz ambiental
+</code></pre>
+<pre><code>##      dfs ele  slo   dis  pH har  pho  nit  amm  oxy  bod
+## 1    0.3 934 48.0  0.84 7.9  45 0.01 0.20 0.00 12.2  2.7
+## 2    2.2 932  3.0  1.00 8.0  40 0.02 0.20 0.10 10.3  1.9
+## 3   10.2 914  3.7  1.80 8.3  52 0.05 0.22 0.05 10.5  3.5
+## 4   18.5 854  3.2  2.53 8.0  72 0.10 0.21 0.00 11.0  1.3
+## 5   21.5 849  2.3  2.64 8.1  84 0.38 0.52 0.20  8.0  6.2
+## 6   32.4 846  3.2  2.86 7.9  60 0.20 0.15 0.00 10.2  5.3
+## 7   36.8 841  6.6  4.00 8.1  88 0.07 0.15 0.00 11.1  2.2
+## 8   49.1 792  2.5  1.30 8.1  94 0.20 0.41 0.12  7.0  8.1
+## 9   70.5 752  1.2  4.80 8.0  90 0.30 0.82 0.12  7.2  5.2
+## 10  99.0 617  9.9 10.00 7.7  82 0.06 0.75 0.01 10.0  4.3
+## 11 123.4 483  4.1 19.90 8.1  96 0.30 1.60 0.00 11.5  2.7
+## 12 132.4 477  1.6 20.00 7.9  86 0.04 0.50 0.00 12.2  3.0
+## 13 143.6 450  2.1 21.10 8.1  98 0.06 0.52 0.00 12.4  2.4
+## 14 152.2 434  1.2 21.20 8.3  98 0.27 1.23 0.00 12.3  3.8
+## 15 164.5 415  0.5 23.00 8.6  86 0.40 1.00 0.00 11.7  2.1
+## 16 185.9 375  2.0 16.10 8.0  88 0.20 2.00 0.05 10.3  2.7
+## 17 198.5 349  0.5 24.30 8.0  92 0.20 2.50 0.20 10.2  4.6
+## 18 211.0 333  0.8 25.00 8.0  90 0.50 2.20 0.20 10.3  2.8
+## 19 224.6 310  0.5 25.90 8.1  84 0.60 2.20 0.15 10.6  3.3
+## 20 247.7 286  0.8 26.80 8.0  86 0.30 3.00 0.30 10.3  2.8
+## 21 282.1 262  1.0 27.20 7.9  85 0.20 2.20 0.10  9.0  4.1
+## 22 294.0 254  1.4 27.90 8.1  88 0.20 1.62 0.07  9.1  4.8
+## 23 304.3 246  1.2 28.80 8.1  97 2.60 3.50 1.15  6.3 16.4
+## 24 314.7 241  0.3 29.76 8.0  99 1.40 2.50 0.60  5.2 12.3
+## 25 327.8 231  0.5 38.70 7.9 100 4.22 6.20 1.80  4.1 16.7
+## 26 356.9 214  0.5 39.10 7.9  94 1.43 3.00 0.30  6.2  8.9
+## 27 373.2 206  1.2 39.60 8.1  90 0.58 3.00 0.26  7.2  6.3
+## 28 394.7 195  0.3 43.20 8.3 100 0.74 4.00 0.30  8.1  4.5
+## 29 422.0 183  0.6 67.70 7.8 110 0.45 1.62 0.10  9.0  4.2
+## 30 453.0 172  0.2 69.00 8.2 109 0.65 1.60 0.10  8.2  4.4
+</code></pre>
+<h3 id="exercício-4">Exercício 4</h3>
+<p>Usando essas bases de dados, tente reproduzir alguns dos gráficos que estão nos slides, pelo menos dois.</p>
+<p>Agora, crie suas próprias perguntas e explore os dados. Lembre-se, são dados de uma comunidade de peixes amostradas em 30 localidades de um rio na Suiça Temos tanto a localização geográfica dessas amostras quanto as características ambientais do rio nessas localidades.</p>
+<p>Exemplo de perguntas:</p>
+<ul>
+<li>Onde há mais riqueza de peixes?</li>
+<li>Onde há mais abundância de peixes?</li>
+<li>Quais espécies occorrem mais na nascente?</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/&amp;text=Bases%20de%20dados%20Ecol%c3%b3gicos" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/&amp;t=Bases%20de%20dados%20Ecol%c3%b3gicos" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Bases%20de%20dados%20Ecol%c3%b3gicos&amp;body=https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/&amp;title=Bases%20de%20dados%20Ecol%c3%b3gicos" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Bases%20de%20dados%20Ecol%c3%b3gicos%20https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://www.ecoaplic.org/en/courses/eco_num/base_dados/base_dados/&amp;title=Bases%20de%20dados%20Ecol%c3%b3gicos" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://www.ecoaplic.org/"><img class="avatar mr-3 avatar-circle" src="/en/author/felipe-p.l.-melo/avatar_hue643ce1995d1a3ccdfe20853fcfe3a0f_68042_270x270_fill_q75_lanczos_center.jpg" alt="Felipe P.L. Melo"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://www.ecoaplic.org/">Felipe P.L. Melo</a></h5>
+      <h6 class="card-subtitle">Associate Professor in Applied Ecology</h6>
+      <p class="card-text">Biologist and eco-socialist. Another world is possible!</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/en/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/FelipePLMelo" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=ytoqEukAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-1271-3214" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://publons.com/researcher/1509340/felipe-pl-melo/" target="_blank" rel="noopener">
+        <i class="ai ai-publons"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=7005124694" target="_blank" rel="noopener">
+        <i class="ai ai-elsevier"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/1637874338382368" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/fplmelo" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.f722080e3339eab234747b51f20c5862.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

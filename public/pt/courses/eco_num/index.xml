@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Ecologia Numérica | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/courses/eco_num/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/courses/eco_num/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Ecologia Numérica</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/pt/courses/eco_num/featured.jpg</url>
+      <title>📒 Ecologia Numérica</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/</link>
+    </image>
+    
+    <item>
+      <title>Aula 1 - Bases de dados ecológicos</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/base_dados/_index_base_dados/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_num/base_dados/_index_base_dados/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/courses/eco_num/base_dados/_index_base_dados_files/database.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;matriz-de-presencias-e-ausências&#34;&gt;Matriz de presencias e ausências&lt;/h2&gt;
+&lt;p&gt;As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia. No entanto, para iniciar nossas atividades, vamos contruir uma base de dados fictícia apenas para entender sua estrutura.&lt;/p&gt;
+&lt;p&gt;A estrutura básica de bases de dados biológicos é a de matrizes que contem &amp;lsquo;n&amp;rsquo; colunas e &amp;lsquo;r&amp;rsquo; linhas (n x r). Geralmente temos espécies nas linhas e localidades nas colunas. Veja abaixo como criar uma matriz simples de 10 linhas e 4 colunas. As células serão preenchidas apenas com &amp;ldquo;1&amp;rdquo; e &amp;ldquo;0&amp;rdquo; indicando se a espécie está presente ou ausente da localidade amostrada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:1), replace=TRUE, size=10),
+  siteB = sample(c(0:1), replace=TRUE, size=10),
+  siteC = sample(c(0:1), replace=TRUE, size=10),
+  siteD = sample(c(0:1), replace=TRUE, size=10)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-1&#34;&gt;Exercício 1&lt;/h3&gt;
+&lt;p&gt;Agora crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;20 espécies&lt;/li&gt;
+&lt;li&gt;8 localidades&lt;/li&gt;
+&lt;li&gt;Faça no seu computador&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Obviamente essas bases podem ser &amp;ldquo;subidas&amp;rdquo; ao R sem maiores problemas e o ideal é que você faça isso mesmo. Crie suas bases de dados numa planilha e salve-as em formato TXT ou CSV com muita atenção ao separadores e codificação (geralmente UTF-8)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exemplo-2-matriz-de-abundâncias&#34;&gt;Exemplo 2 (matriz de abundâncias)&lt;/h2&gt;
+&lt;p&gt;Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-2&#34;&gt;Exercício 2&lt;/h3&gt;
+&lt;p&gt;Novamente crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;30 espécies&lt;/li&gt;
+&lt;li&gt;10 localidades&lt;/li&gt;
+&lt;li&gt;Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sumários&#34;&gt;Sumários&lt;/h2&gt;
+&lt;p&gt;Qualquer análise de dados em ecologia começa com uma boa chacagem dos seu dados. Precisamos saber como se comportam os dados e para isso podemo começar com algumas funções simples como &amp;lsquo;summary&amp;rsquo; (pactote base do R) ou &amp;lsquo;summarize&amp;rsquo; (pacote tidyverse). Para isso, vamos pegar a matriz gerada com as abundâncias e dar a ela um nome, tranformando-a assim num objeto.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)-&amp;gt; base1 # note que esse comando &amp;quot;-&amp;gt;&amp;quot; apontou para um objeto de nome &#39;base1&#39;
+
+
+base1 # eis a nossa base agora com as espécies como nomes das linhas
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-3&#34;&gt;Exercício 3&lt;/h3&gt;
+&lt;p&gt;Abaixo temos um exemplo de resumo básico dos dados.
+Um resumo geral da tabela com a função mais simples do R que mostra apenas alguns &amp;ldquo;momentos&amp;rdquo; da distribuição dos dados organizados por colunas, nesse caso, por sítio de estudo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;summary(base1)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Existem outras funções do pacote tidyverse que podem ser utilizadas com maior objetividade e para manipulações específicas. Para um curso introdutório completo de &amp;ldquo;tidyverse&amp;rdquo; veja essa maravilha aqui do Maurício Vancine &lt;a href=&#34;https://mauriciovancine.github.io/disciplina-analise-geoespacial-r/01_aulas/04_pres_intro_geocomp_r.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introdução ao tidyverse&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;agora-podemos-começar-a-namorar-nosos-dados&#34;&gt;Agora podemos começar a &lt;em&gt;namorar&lt;/em&gt; nosos dados&lt;/h2&gt;
+&lt;h3 id=&#34;livro-numerical-ecology-with-r&#34;&gt;Livro: Numerical Ecology with R&lt;/h3&gt;
+&lt;p&gt;Vamos usar muitos exemplos desse livro durante a disciplina e para acostumar, vamos começar por tentar reproduzir os exercícios do &lt;a href=&#34;http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Capítulo 2: &amp;ldquo;Exploratpry Data Analysis&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;extraindo-dados&#34;&gt;Extraindo dados&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Para baixar o livro &lt;em&gt;Numerical Ecology with R&lt;/em&gt;, &lt;a href=&#34;https://github.com/fplmelo/eco_numerica/raw/558d6c1302c3bff19831c0eee28f53b0a3eb1c69/data/Numerical%20Ecology%20with%20R.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Para acessar os dados &lt;a href=&#34;http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Salve a pasta descompactada no diretório local correspondente ao seu repositório do &lt;em&gt;GitHub&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Agora é só carregar as bases de dados usando o comando &amp;ldquo;load&amp;rdquo;, lembrando de colocar o caminho para o arquivo segundo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;
+# Vamos carregar os dados que o livro usa como exemplo
+load(&amp;quot;~/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData&amp;quot;) # mude o caminho para o seu próprio´
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;spe # matriz de abundância de espécies de peixes
+spa # matriz espacial
+env # matriz ambiental
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-4&#34;&gt;Exercício 4&lt;/h3&gt;
+&lt;p&gt;Usando essas bases de dados, tente reproduzir alguns dos gráficos que estão nos slides, pelo menos dois.&lt;/p&gt;
+&lt;p&gt;Agora, crie suas próprias perguntas e explore os dados. Lembre-se, são dados de uma comunidade de peixes amostradas em 30 localidades de um rio na Suiça Temos tanto a localização geográfica dessas amostras quanto as características ambientais do rio nessas localidades.&lt;/p&gt;
+&lt;p&gt;Exemplo de perguntas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Onde há mais riqueza de peixes?&lt;/li&gt;
+&lt;li&gt;Onde há mais abundância de peixes?&lt;/li&gt;
+&lt;li&gt;Quais espécies occorrem mais na nascente?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Medidas de Associação</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/associacao/med_assoc/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_num/associacao/med_assoc/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;Na ecologia usamos muitas medidas que fazem uma &lt;em&gt;ligação&lt;/em&gt; entre pares de dados. Esses &lt;em&gt;pares de dados&lt;/em&gt; podem ser espécies, ou locais de coleta. Há uma enorme variedade de métricas que vão nos oferecer uma medida de associação entre pares. Essas medidas são reportadas na forma de índices ou métricas que têm naturezas distintas, mas todas tem a particularidade de gerar uma matriz quadrada e simétrica de dimensões &lt;em&gt;n x n&lt;/em&gt; quando se comparam objetos ou &lt;em&gt;p x p&lt;/em&gt; quando se comparam variáveis (as letras são conveções). Essas matrizes de assossiação serão criadas e facilmente pelas análises, mas o pesquisador aqui tem um papel fundamental: &lt;strong&gt;escolher as métricas&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;q-mode--r-mode&#34;&gt;Q mode &amp;amp; R mode&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Como de constume, vamos seguir nessa disciplina o roteiro proposto pelo livro texto &lt;a href=&#34;http://jinliangliu.weebly.com/uploads/2/5/7/8/25781074/numerical_ecology_with_r.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Numerical Ecology with R&lt;/strong&gt;&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Novamente, isso é uma convenção para distinguir as comparações entre objetos &lt;strong&gt;Q-mode&lt;/strong&gt; ou variáveis &lt;strong&gt;R-mode&lt;/strong&gt;. As comparações entre objetos são geralmente feitas através de medidas de &lt;em&gt;distância&lt;/em&gt; enquanto as comparações entre variáveis são realizadas com medidas de &lt;em&gt;dependência&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;o-problema-dos-zeros&#34;&gt;O problema dos zeros&lt;/h3&gt;
+&lt;p&gt;Todas as matrizes de dados ecológicos costumam ter zeros. Esses podem ser naturais (observações) ou simplesmente ausências de dados. Mas precisamos ter ideia de quão importantes são os zeros. No livro &lt;em&gt;Numerical Ecology&lt;/em&gt; o exemplo dado para que entendamos os papel dos zeros em matrizes ecológicas é claro. Quando zeros são resultados de mediação de uma vairável, como concentroação de Oxigênio, a interpretação é clara, sem oxigênio, sem vida aeróbica e portanto zero frequência de vida aeróbica nessas condições é esperado. Agora, que tal se obtemos zeros em concetrações intermediárias de qualquer variável ambiental? As epécies &lt;em&gt;não&lt;/em&gt; ocorrem aí porque tem pouco ou muito oxigênio? Note que aí temos uma interpretação diferente para cada situação. Ainda, em ambos casos a informção de &lt;em&gt;ausência&lt;/em&gt; ou &lt;em&gt;presença&lt;/em&gt; tem um significado ecológico, mas não sabemos as causas das &lt;em&gt;ausências&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:double-zero-illustration.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Note que as amostras A, B e C não capturaram a espécie cuja presença/abundância está representada pela linha vermelha. Portano, se essa for a única diferença entre as amostras A, B e C, os índices que não são sensíveis a este problema, não caprutam essa diferenaça e consideram que a similaridade entre A e B é igual a A e C ou B E C. Mas não é. VOcê poderia dizer porque?&lt;/p&gt;
+&lt;h3 id=&#34;praticando&#34;&gt;praticando…&lt;/h3&gt;
+&lt;p&gt;Uma boa maneira é checar se há zeros provenientes de valores vazios ou &lt;strong&gt;NA&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;load(&amp;quot;/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData&amp;quot;)
+
+head(is.na(spe))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Cogo  Satr  Phph  Babl  Thth  Teso  Chna  Pato  Lele  Sqce  Baba  Albi  Gogo
+## 1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 2 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 3 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 6 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##    Eslu  Pefl  Rham  Legi  Scer  Cyca  Titi  Abbr  Icme  Gyce  Ruru  Blbj  Alal
+## 1 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 2 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 3 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 4 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 5 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 6 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##    Anan
+## 1 FALSE
+## 2 FALSE
+## 3 FALSE
+## 4 FALSE
+## 5 FALSE
+## 6 FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se os dados fossem realmente NAs então teríamos uma matriz um pouco diferente…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spe_na &amp;lt;- replace(spe, spe == 0, NA) # Mudei zeros por NAs
+head(is.na(spe_na))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Cogo  Satr  Phph  Babl Thth Teso Chna Pato  Lele  Sqce Baba Albi  Gogo  Eslu
+## 1 TRUE FALSE  TRUE  TRUE TRUE TRUE TRUE TRUE  TRUE  TRUE TRUE TRUE  TRUE  TRUE
+## 2 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE  TRUE  TRUE TRUE TRUE  TRUE  TRUE
+## 3 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE  TRUE  TRUE TRUE TRUE  TRUE FALSE
+## 4 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE  TRUE FALSE TRUE TRUE FALSE FALSE
+## 5 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE FALSE FALSE TRUE TRUE FALSE FALSE
+## 6 TRUE FALSE FALSE FALSE TRUE TRUE TRUE TRUE FALSE FALSE TRUE TRUE FALSE FALSE
+##    Pefl Rham Legi  Scer Cyca  Titi Abbr Icme Gyce  Ruru Blbj Alal Anan
+## 1  TRUE TRUE TRUE  TRUE TRUE  TRUE TRUE TRUE TRUE  TRUE TRUE TRUE TRUE
+## 2  TRUE TRUE TRUE  TRUE TRUE  TRUE TRUE TRUE TRUE  TRUE TRUE TRUE TRUE
+## 3  TRUE TRUE TRUE  TRUE TRUE  TRUE TRUE TRUE TRUE  TRUE TRUE TRUE TRUE
+## 4 FALSE TRUE TRUE  TRUE TRUE FALSE TRUE TRUE TRUE  TRUE TRUE TRUE TRUE
+## 5 FALSE TRUE TRUE FALSE TRUE FALSE TRUE TRUE TRUE FALSE TRUE TRUE TRUE
+## 6 FALSE TRUE TRUE  TRUE TRUE FALSE TRUE TRUE TRUE FALSE TRUE TRUE TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nesse caso até um gráfico pode nos ajudar a ter uma dimensão da importância dos zeros NAs&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;image(as.matrix(spe_na))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;600px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Os valores em branco são os NAs e as cores indicam as abundâncias, sendo quanto mais vermelho, mais abundante.&lt;/p&gt;
+&lt;h3 id=&#34;perguntas-para-se-ter-em-mente&#34;&gt;Perguntas para se ter em mente&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Você está comparando espécies (Q-mode) ou veriáveis ambientais (R-mode)?&lt;/li&gt;
+&lt;li&gt;Seus dados são binários (presenças e ausências), quantitativos (medidas contínuas) ou mistos (coeficientes, categorias não binárias)?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;comparando-comunidades-com-dados-de-abundância-q-mode&#34;&gt;Comparando comunidades com dados de abundância (Q-mode)&lt;/h1&gt;
+&lt;p&gt;Vamos continuar usando os dados do livro &lt;em&gt;Numerical Ecology with R&lt;/em&gt; para nossos exemplos, mas vamos mudar algumas funções de visualização.&lt;/p&gt;
+&lt;p&gt;Vamos usar os dados das espécies de peixes que já conhecemos&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spe # base dos peixes da Suiça
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Esses dados são quantitativos e as abundâncias variam de zero a 5 indivíduos. Como temos muitas espécies e muitas espécies raras, a escolha inicial dos índices é da família que consideramos &lt;em&gt;assimétrica&lt;/em&gt; como o Bray-Curtis, que pode ser calculado diretamente nas abundâncias ou na base de dados &lt;em&gt;transformada&lt;/em&gt; via funções que reduzem a diferença entre as abundâncias de espécies dominantes e raras.&lt;/p&gt;
+&lt;p&gt;só precisa fazer uma vez, depois não mais.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Remove empty site 8
+spe &amp;lt;- spe[-8, ]
+env &amp;lt;- env[-8, ]
+spa &amp;lt;- spa[-8, ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora vamos comparar as medidas de dissimilaridade aplicadas&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spe.db &amp;lt;- vegdist(spe)  # method = &amp;quot;bray&amp;quot; (default)
+
+# on log-transformed abundances
+spe.dbln &amp;lt;- vegdist(log1p(spe))
+
+# Chord distance matrix
+spe.norm &amp;lt;- decostand(spe, &amp;quot;nor&amp;quot;)
+spe.dc &amp;lt;- dist(spe.norm)
+
+# Hellinger distance matrix
+spe.hel &amp;lt;- decostand(spe, &amp;quot;hel&amp;quot;)
+spe.dh &amp;lt;- dist(spe.hel) # Hellinger is the default distance
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-q-mode&#34;&gt;Exercício Q-Mode&lt;/h3&gt;
+&lt;p&gt;Tente fazer uma representação gráfica de cada uma dessas matrizes com os diferentes índices e compará-la&lt;/p&gt;
+&lt;p&gt;Escreva emaicxo seus códigos e interprete os resultados escrevendo embaixo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;coldiss(spe.db, diag = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;coldiss(spe.dh, diag = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;comparando-comunidades-com-dados-binários-q-mode&#34;&gt;Comparando comunidades com dados binários (Q-mode)&lt;/h1&gt;
+&lt;p&gt;Há muitas ocasiões em que temos apenas dados de &lt;em&gt;presença&lt;/em&gt; ou &lt;em&gt;ausência&lt;/em&gt; das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser “gerados,” covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;simi_index.png&#34; alt=&#34;A lógica dos índices de similaridade binários&#34;&gt;
+fig by &lt;a href=&#34;https://www.davidzeleny.net/anadat-r/doku.php/en:similarity&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;David Zelený&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;prós-e-contras-de-dados-de-abundância-e-presença-e-ausência&#34;&gt;Prós e contras de dados de abundância e presença e ausência&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Dados de abundância podem se transformados em presença/ausência. Não o contrário&lt;/li&gt;
+&lt;li&gt;Abundâncias são informações valiosas para muuuuitas análises ecológicas. Sempre procure coletar abundâncias.&lt;/li&gt;
+&lt;li&gt;Abundância traz pelos menos duas informações ecológicas importantes:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- --&gt;
+&lt;ol&gt;
+&lt;li&gt;A óbvia ocorrência ou não de uma espécie num determinado gradiente ambiental, e;&lt;/li&gt;
+&lt;li&gt;O grau de adaptabilidade (fitness) que essa espécie possui. Quanto mais abundante, melhor o habitat para ela, &lt;em&gt;em tese&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;A abundância também informa sobre as interações bióticas, que provavelmente favorecem espécies abundantes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- --&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;A ocorrência é mito poderosa para testar limitação de dispesão de espécies, ou seja, a probabilidade de encontrar espécies ao longo de uma paisagem ou gradiente ambiental.&lt;/li&gt;
+&lt;li&gt;As ocorrências são poderosas para testar relações com gradientes ambientais em análises do tipo &lt;em&gt;“unconstrained”&lt;/em&gt;, que não vamos abordar muito nessa disciplina mas que eventualmente podemos precisar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;exemplos-da-literatura&#34;&gt;Exemplos da literatura&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;lobo.png&#34; alt=&#34;Homogeneização da Mata Atlântica&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Neste trabalho de &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1472-4642.2010.00739.x&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Lobo et al (2011)&lt;/em&gt;&lt;/a&gt; mostramos como a Mata Atlântica vem sofrendo com o processod e homogeneização biótica decorrente da perturbação antrópica. Testamos isso justamente com uma matriz de similaridade de espécies qque agrupamos em 12 tipos de fitofisionomias e em dois períodos de tempo (prá-1980 e pós-1980). Nossos dados eram apenas de presença e ausência em localidades de coleta, através de dados de herbário. Dê uma olhada no artigo e veja como dados de ocorrência foram usados.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;beta.png&#34; alt=&#34;Como a Beta-diversidade pode informar sobre a conservação?&#34;&gt;
+Neste artigo &lt;a href=&#34;https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347%2815%2900289-X&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scholar et al (2016)&lt;/a&gt; mostram como o domínio conceitua da beta-diversidade é importante para pensar e planejar a conservação da biodiversidade. Aqui não te nada de índices nem medidas mas conceitos. Esses conceitos dão sentido às perguntas que fazemos na ciência e ajudam a escolher as melhores métricas.&lt;/p&gt;
+&lt;p&gt;Os desdrobamentos dos conceitos e aplicações da beta-diversidade são fundamentais para uma correta aplicação das métricas de assossiação. Índices de similaridade e medidas de distância são maneiras de quantificar diversidade beta entre comunidades biológicas.&lt;/p&gt;
+&lt;h1 id=&#34;q-mode-para-dados-ambientais&#34;&gt;Q mode para dados ambientais&lt;/h1&gt;
+&lt;p&gt;As vairáveis ambientais &lt;em&gt;env&lt;/em&gt; são dados contínuos que não possuem “problema” dos duplos zeros. Potanto, as medidas de distância são perfeitamente aplicáveis a elas. Dessas, a distância euclidiana, que á a distãncia entre dois pontos medida pela clássica fórmula de Pitágoras, é a medida de escolha inicial.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;env2&amp;lt;- env[,-1] # remover &#39;dfs&#39; que é uma variável espacial, não ambiental
+env.de&amp;lt;-dist(scale(env2)) # use a função &amp;quot;scale&amp;quot; para transformar osdados em z-scores, já que dados de magnitude muito diferentes podem criar disorções no cálculo de distâncias.
+corrplot(as.matrix(env.de), is.corr = FALSE) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Lembrem-se que nessa matriz, os números são as amostras, que começam em 1 na nascente do rio e terminam em 30 no ponto mais distante. Conseguem ver algum padrão? tentem entender a matriz, dê exemplos de pontos muitos parecidos e outros muito dissimilares. Será que você está lendo a matriz corretamente?&lt;/p&gt;
+&lt;h2 id=&#34;distâncias-geográficas&#34;&gt;Distâncias geográficas&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spa.de&amp;lt;-dist(spa)
+coldiss(spa.de, diag = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dfs.df&amp;lt;-as.data.frame(env$dfs, row.names = rownames(env))
+riv.de&amp;lt;-dist(dfs.df)
+coldiss(riv.de, diag = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;r-mode-para-dados-ambientais-ou-espécies&#34;&gt;R mode para dados ambientais ou espécies&lt;/h1&gt;
+&lt;p&gt;A lógica aqui é saber quais variáveis ou espécies estão correlacionadas e não o quão similar cada par de site ou espécies pode ser. Nesse caso, usamos basicamente testes de &lt;em&gt;correlação&lt;/em&gt; ou &lt;em&gt;covariança&lt;/em&gt;. Essa informação é poderosa, pois pode tanto expressar gradientes ambientais complexos (várias variáveis ambientais se comportnaod de maneira similar) ou a co-ocorrência de espécies. Vejamos:&lt;/p&gt;
+&lt;h2 id=&#34;variáveis-ambientais&#34;&gt;Variáveis ambientais&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cor.env&amp;lt;-cor(env2)
+coldiss(cor.env, diag = T)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Consegue ideintificar grupos de variáveis ambientais que covariam?&lt;/p&gt;
+&lt;h2 id=&#34;espécies-que-covariam&#34;&gt;Espécies que covariam&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spe.t &amp;lt;- t(spe)
+# Chi-square pre-transformation followed by Euclidean distance
+spe.t.chi &amp;lt;- decostand(spe.t, &amp;quot;chi.square&amp;quot;)
+spe.t.D16 &amp;lt;- dist(spe.t.chi)
+coldiss(spe.t.D16, diag = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Consegue identificar grupos de espécies?&lt;/p&gt;
+&lt;h1 id=&#34;em-resumo&#34;&gt;Em resumo…&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;table_simi2.png&#34; alt=&#34;Tabela de decisão para uso de medidas de similaridade&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;exemplos-sobre-medidas-de-associação&#34;&gt;Exemplos sobre Medidas de associação&lt;/h1&gt;
+&lt;p&gt;As bases de dados do livro &lt;em&gt;Numerical Ecology&lt;/em&gt; estão compostas por três matrizes, uma de espécies “spe,” outra de variáveis ambientais “env” e outra de variáveis geográficas “spa.” Agora que sabemos que as medidas de associação servem para medir a similaridade entre “objetos” que podem ser de qualquer natureza, vamos fazer alguns exerícios.&lt;/p&gt;
+&lt;p&gt;Aqui vou demonstrar através de uma pergunta simples, como explorar as medidas de similaridade de modo a obter das bases de dados ecológicos algumas informações importantes para compreender a estrutura de comunidades biológicas e os processos que às mantêm.&lt;/p&gt;
+&lt;p&gt;Nesse caso, vou dividir o rio em três seções: “alto,” “médio” e “baixo.” As amostras de 1 a 10 serão o “alto rio”; as de 11-20 serão o “médio rio” e as de 21-30 serão o “baixo rio.” Para isso, vou acrescentar uma coluna com essa informação à bases de dados&lt;/p&gt;
+&lt;h2 id=&#34;pergunta-1---qual-a-similaridade-entre-as-comunidades-de-peixes-do-alto-médio-e-baixo-curso-de-rio&#34;&gt;Pergunta 1 - Qual a similaridade entre as comunidades de peixes do alto, médio e baixo curso de rio?&lt;/h2&gt;
+&lt;p&gt;método 1) Usando índices de similaridade&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;jacc_dist&amp;lt;-vegdist(spe[,-28], method = &amp;quot;jaccard&amp;quot;) # retirei somente a coluna &amp;quot;rio&amp;quot; porque a função só lê variáveis numéricas
+jacc_dist # Dê uma olhada na matriz, note que os valores estão entre 0 e 1 como previsto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            1         2         3         4         5         6         7
+## 2  0.7500000                                                            
+## 3  0.8125000 0.2500000                                                  
+## 4  0.8571429 0.5000000 0.3181818                                        
+## 5  0.9428571 0.8205128 0.8095238 0.6585366                              
+## 6  0.8571429 0.5652174 0.4583333 0.3200000 0.5897436                    
+## 7  0.8125000 0.2500000 0.2222222 0.3913043 0.7804878 0.3913043          
+## 9  1.0000000 0.8181818 0.8461538 0.7931034 0.7368421 0.7037037 0.8000000
+## 10 0.9375000 0.5555556 0.5714286 0.5416667 0.7027027 0.4090909 0.4210526
+## 11 0.7272727 0.4666667 0.5789474 0.6086957 0.8157895 0.6086957 0.5000000
+## 12 0.8333333 0.3333333 0.3809524 0.5000000 0.8181818 0.5555556 0.3000000
+## 13 0.8421053 0.4500000 0.4782609 0.6206897 0.8478261 0.7096774 0.5416667
+## 14 0.8928571 0.5714286 0.4827586 0.5151515 0.8076923 0.6000000 0.5333333
+## 15 0.9090909 0.6764706 0.6388889 0.5789474 0.7115385 0.5405405 0.5588235
+## 16 0.9250000 0.7906977 0.7272727 0.6444444 0.6296296 0.5476190 0.6976744
+## 17 0.9555556 0.8085106 0.7755102 0.6734694 0.6779661 0.6170213 0.7500000
+## 18 0.9772727 0.8510638 0.8400000 0.7400000 0.6666667 0.6875000 0.8163265
+## 19 1.0000000 0.8846154 0.8301887 0.7592593 0.6666667 0.6862745 0.8076923
+## 20 1.0000000 0.9538462 0.9411765 0.8507463 0.6567164 0.8153846 0.9253731
+## 21 1.0000000 0.9722222 0.9600000 0.8783784 0.6666667 0.8472222 0.9459459
+## 22 1.0000000 0.9879518 0.9767442 0.9058824 0.6913580 0.8795181 0.9647059
+## 23 1.0000000 1.0000000 1.0000000 0.9583333 0.9444444 0.9130435 0.9473684
+## 24 1.0000000 1.0000000 1.0000000 0.9411765 0.8863636 0.8750000 0.9666667
+## 25 1.0000000 1.0000000 0.9615385 0.8965517 0.8157895 0.8148148 0.9200000
+## 26 1.0000000 0.9814815 0.9649123 0.8771930 0.7166667 0.8148148 0.9464286
+## 27 1.0000000 0.9864865 0.9740260 0.9090909 0.7236842 0.8648649 0.9605263
+## 28 1.0000000 0.9876543 0.9761905 0.9036145 0.7317073 0.8765432 0.9638554
+## 29 0.9887640 0.9687500 0.9595960 0.8979592 0.6989247 0.8750000 0.9489796
+## 30 1.0000000 1.0000000 0.9903846 0.9320388 0.7448980 0.9108911 0.9805825
+##            9        10        11        12        13        14        15
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10 0.7272727                                                            
+## 11 0.8636364 0.6111111                                                  
+## 12 0.8148148 0.5454545 0.3888889                                        
+## 13 0.9000000 0.7307692 0.5000000 0.3181818                              
+## 14 0.8648649 0.6451613 0.6071429 0.3571429 0.3214286                    
+## 15 0.7948718 0.5757576 0.6666667 0.5000000 0.5555556 0.3947368          
+## 16 0.8260870 0.6829268 0.7857143 0.7111111 0.7446809 0.6122449 0.4130435
+## 17 0.8163265 0.6818182 0.7777778 0.7346939 0.7647059 0.6666667 0.5740741
+## 18 0.7826087 0.7272727 0.8222222 0.8000000 0.8269231 0.7500000 0.6363636
+## 19 0.8000000 0.7755102 0.9038462 0.8571429 0.8983051 0.8064516 0.7258065
+## 20 0.8135593 0.8709677 0.9531250 0.9428571 0.9583333 0.9090909 0.8289474
+## 21 0.8656716 0.8985507 0.9571429 0.9610390 0.9746835 0.9285714 0.8690476
+## 22 0.8684211 0.9250000 0.9753086 0.9772727 0.9888889 0.9473684 0.8709677
+## 23 0.8750000 0.9411765 0.9285714 0.9523810 1.0000000 0.9677419 0.9722222
+## 24 0.8400000 0.8846154 0.9600000 0.9687500 1.0000000 0.9512195 0.9333333
+## 25 0.9130435 0.8636364 0.9523810 0.9642857 1.0000000 0.9166667 0.9000000
+## 26 0.8367347 0.9038462 0.9615385 0.9661017 0.9836066 0.9242424 0.8656716
+## 27 0.8676471 0.9154930 0.9722222 0.9746835 0.9876543 0.9418605 0.8705882
+## 28 0.8648649 0.9230769 0.9746835 0.9767442 0.9886364 0.9462366 0.8804348
+## 29 0.8777778 0.9139785 0.9462366 0.9500000 0.9504950 0.9150943 0.8461538
+## 30 0.9157895 0.9489796 0.9898990 0.9905660 1.0000000 0.9646018 0.9009009
+##           16        17        18        19        20        21        22
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10                                                                      
+## 11                                                                      
+## 12                                                                      
+## 13                                                                      
+## 14                                                                      
+## 15                                                                      
+## 16                                                                      
+## 17 0.4150943                                                            
+## 18 0.5090909 0.2448980                                                  
+## 19 0.5666667 0.4745763 0.4000000                                        
+## 20 0.7368421 0.5915493 0.4923077 0.3809524                              
+## 21 0.7710843 0.6582278 0.5753425 0.4571429 0.1846154                    
+## 22 0.7956989 0.7111111 0.6428571 0.5609756 0.3157895 0.1891892          
+## 23 0.9523810 0.9090909 0.9047619 0.9130435 0.9285714 0.9354839 0.9444444
+## 24 0.9000000 0.8200000 0.7872340 0.7800000 0.7321429 0.7580645 0.7916667
+## 25 0.8666667 0.8541667 0.7954545 0.7608696 0.8035714 0.8225806 0.8472222
+## 26 0.7794118 0.7014925 0.6290323 0.4915254 0.3500000 0.3333333 0.4027778
+## 27 0.8023256 0.7261905 0.6538462 0.5466667 0.3239437 0.2394366 0.2236842
+## 28 0.8172043 0.7333333 0.6666667 0.5853659 0.3636364 0.2857143 0.2250000
+## 29 0.7904762 0.6767677 0.6129032 0.5851064 0.3932584 0.3068182 0.2134831
+## 30 0.8378378 0.7333333 0.6900000 0.6500000 0.4574468 0.3763441 0.3052632
+##           23        24        25        26        27        28        29
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10                                                                      
+## 11                                                                      
+## 12                                                                      
+## 13                                                                      
+## 14                                                                      
+## 15                                                                      
+## 16                                                                      
+## 17                                                                      
+## 18                                                                      
+## 19                                                                      
+## 20                                                                      
+## 21                                                                      
+## 22                                                                      
+## 23                                                                      
+## 24 0.7333333                                                            
+## 25 0.6363636 0.6315789                                                  
+## 26 0.9069767 0.6511628 0.7441860                                        
+## 27 0.9365079 0.7619048 0.8253968 0.3174603                              
+## 28 0.9428571 0.7857143 0.8428571 0.3857143 0.1780822                    
+## 29 0.9540230 0.8275862 0.8735632 0.5057471 0.3146067 0.2555556          
+## 30 0.9550562 0.8314607 0.8764045 0.5333333 0.3296703 0.2717391 0.2574257
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bom, uma maatriz desse tamanho e con tantas cálulas é difícil de usar para responder a nossa pergunta… mas podemos dar um jeito nisso.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(jacc_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.7540221
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(usedist)
+mean(dist_subset(jacc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.6448391
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(jacc_dist, c(9:18))) # Agora para o médio rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.6223917
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(jacc_dist, c(19:28))) # Agora para o baixo rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.5761246
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alguma diferença? Dá pra ver assim no &lt;em&gt;olhômetro&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;Talvez a melhor maneira de visualizar esses pontos seja fazendo um dendograma&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_rio&amp;lt;-hclust(jacc_dist, method = &amp;quot;complete&amp;quot;)
+clust_graf&amp;lt;-plot(clust_rio, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_graf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas não cosigo ver se os grupos que atribui de alto, médio e baixo rio, realmente agrupam as espécies. Vamos fazer algumas modificações nas bases para poder ver se nossa ideia faz sentido, ou seja, se as espécies se agrupam entre alto, médio e baixo rio.&lt;/p&gt;
+&lt;p&gt;Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e verdes do baixo rio.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(clust_rio2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Temos padrão?&lt;/p&gt;
+&lt;p&gt;E se usássemos em vez do índice de Jaccard, a distância euclidiana? Será que teríamos mais sensibilidade para identificar esses agrupamentos que imaginamos que existem?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;euc_dist&amp;lt;-vegdist(spe[,-28], method = &amp;quot;euclidean&amp;quot;) # agora é com a distância euclideana
+euc_dist
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            1         2         3         4         5         6         7
+## 2   5.385165                                                            
+## 3   7.416198  2.449490                                                  
+## 4   7.874008  4.123106  3.000000                                        
+## 5  10.816654 10.677078 10.862780  9.219544                              
+## 6   7.348469  4.582576  4.123106  2.828427  8.185353                    
+## 7   6.855655  2.449490  2.000000  3.605551 10.488088  3.605551          
+## 9   7.810250  8.717798  9.380832  8.774964  9.380832  6.708204  8.485281
+## 10  6.708204  5.099020  5.291503  5.000000  9.273618  3.605551  4.472136
+## 11  4.472136  3.316625  5.000000  5.477226 10.246951  5.291503  4.795832
+## 12  6.708204  3.162278  3.464102  4.582576 11.045361  4.795832  3.162278
+## 13  7.071068  4.358899  5.196152  6.164414 11.532563  6.633250  5.385165
+## 14  9.110434  6.324555  6.164414  6.557439 11.916375  7.000000  6.324555
+## 15  9.899495  7.810250  7.681146  7.483315 10.816654  6.633250  6.855655
+## 16 11.090537  9.899495  9.797959  9.327379 10.198039  8.426150  9.055385
+## 17 10.630146  9.486833  9.486833  8.774964  9.797959  8.062258  9.055385
+## 18  9.848858  9.591663  9.899495  8.660254  9.055385  7.810250  9.380832
+## 19 11.704700 11.135529 11.045361 10.148892  9.380832  8.888194 10.770330
+## 20 13.453624 14.212670 14.628739 13.453624 10.770330 12.206556 14.212670
+## 21 14.456832 15.362291 15.811388 14.525839 11.489125 13.601471 15.556349
+## 22 16.643317 17.663522 18.110770 16.763055 13.416408 15.779734 17.663522
+## 23  3.872983  7.483315  9.055385  9.000000 10.583005  7.937254  8.485281
+## 24  7.071068  9.539392 10.816654 10.583005 11.357817  9.486833 10.246951
+## 25  5.291503  8.306624  9.643651  9.273618  9.746794  8.246211  9.110434
+## 26 11.135529 12.609520 13.304135 12.409674 10.723805 11.224972 12.922848
+## 27 15.362291 16.462078 16.881943 15.811388 13.076697 14.696938 16.583124
+## 28 16.522712 17.549929 18.000000 16.941074 14.352700 15.905974 17.606817
+## 29 18.761663 19.364917 19.621417 18.384776 15.524175 17.776389 19.364917
+## 30 20.396078 21.377558 21.794495 20.542639 17.117243 19.849433 21.517435
+##            9        10        11        12        13        14        15
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10  6.480741                                                            
+## 11  7.549834  4.582576                                                  
+## 12  8.717798  5.477226  3.872983                                        
+## 13 10.049876  6.855655  4.000000  3.316625                              
+## 14 10.583005  7.615773  6.244998  4.242641  3.316625                    
+## 15  9.746794  6.855655  7.745967  6.403124  6.633250  5.000000          
+## 16 10.862780  8.485281 10.049876  9.591663  9.746794  8.944272  5.916080
+## 17  9.899495  8.246211  9.219544  9.273618  9.643651  9.380832  8.185353
+## 18  8.602325  7.874008  8.774964  9.380832  9.949874  9.797959  8.660254
+## 19  9.486833  9.273618 11.000000 11.313708 12.041595 11.832160 10.630146
+## 20 11.489125 12.727922 13.527749 14.422205 15.000000 14.966630 13.674794
+## 21 13.266499 14.142136 14.662878 15.684387 16.031220 16.062378 15.066519
+## 22 15.033296 16.248077 16.941074 17.832555 18.303005 18.165902 16.763055
+## 23  6.324555  6.633250  5.744563  8.366600  8.774964 10.392305 10.630146
+## 24  7.549834  8.544004  8.124038 10.148892 10.583005 11.789826 11.747340
+## 25  7.280110  7.000000  6.782330  9.110434  9.486833 10.723805 10.583005
+## 26 10.148892 11.445523 11.747340 13.000000 13.490738 13.892444 13.190906
+## 27 13.892444 15.264338 15.748016 16.703293 17.146428 17.117243 16.062378
+## 28 14.899664 16.309506 16.822604 17.720045 18.193405 18.220867 17.175564
+## 29 17.521415 18.303005 18.761663 19.416488 19.646883 19.313208 18.330303
+## 30 19.467922 20.371549 20.736441 21.610183 21.863211 21.931712 21.023796
+##           16        17        18        19        20        21        22
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10                                                                      
+## 11                                                                      
+## 12                                                                      
+## 13                                                                      
+## 14                                                                      
+## 15                                                                      
+## 16                                                                      
+## 17  6.164414                                                            
+## 18  7.615773  3.464102                                                  
+## 19  9.165151  6.633250  6.000000                                        
+## 20 12.649111  9.380832  7.615773  6.324555                              
+## 21 13.928388 11.224972  9.380832  7.874008  3.741657                    
+## 22 15.556349 13.416408 11.489125 10.583005  6.480741  4.000000          
+## 23 11.489125 10.295630  9.055385 10.488088 11.916375 13.114877 15.362291
+## 24 12.449900 10.723805  9.110434  9.746794 10.148892 11.269428 13.304135
+## 25 11.180340 10.148892  8.660254  9.539392 10.630146 11.618950 13.964240
+## 26 13.076697 10.816654  8.774964  7.810250  5.385165  5.385165  7.549834
+## 27 15.329710 13.304135 11.532563 10.246951  6.244998  4.582576  5.000000
+## 28 16.370706 14.352700 12.489996 11.489125  7.745967  6.000000  5.099020
+## 29 17.058722 14.662878 13.076697 12.767145  9.000000  7.000000  5.567764
+## 30 19.621417 17.117243 15.652476 15.000000 11.180340  9.000000  8.185353
+##           23        24        25        26        27        28        29
+## 2                                                                       
+## 3                                                                       
+## 4                                                                       
+## 5                                                                       
+## 6                                                                       
+## 7                                                                       
+## 9                                                                       
+## 10                                                                      
+## 11                                                                      
+## 12                                                                      
+## 13                                                                      
+## 14                                                                      
+## 15                                                                      
+## 16                                                                      
+## 17                                                                      
+## 18                                                                      
+## 19                                                                      
+## 20                                                                      
+## 21                                                                      
+## 22                                                                      
+## 23                                                                      
+## 24  4.358899                                                            
+## 25  3.000000  3.741657                                                  
+## 26  9.433981  7.071068  8.000000                                        
+## 27 14.035669 11.916375 12.649111  5.291503                              
+## 28 15.231546 13.076697 13.964240  7.000000  3.872983                    
+## 29 17.804494 15.874508 16.431677  9.899495  6.633250  5.567764          
+## 30 19.416488 17.832555 18.055470 11.916375  9.165151  7.280110  6.480741
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos ver como ficam os índices…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(euc_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 10.82614
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(usedist)
+mean(dist_subset(euc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6.684087
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(euc_dist, c(9:18))) # Agora para o médio rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 7.742624
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(euc_dist, c(19:28))) # Agora para o baixo rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 8.99927
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E agora, compare os resultados com aqueles do índice de Jaccard, alguma coisa mudou?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_rio_euc&amp;lt;-hclust(euc_dist, method = &amp;quot;complete&amp;quot;)
+clust_graf_euc&amp;lt;-plot(clust_rio_euc, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_graf_euc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora vamos colorir o dendograma&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_rio_euc2&amp;lt;-as.dendrogram(clust_rio_euc) # trandformando o cluster num objeto para poder editar
+colors&amp;lt;-c(&amp;quot;#E69F00&amp;quot;,&amp;quot;#56B4E9&amp;quot;, &amp;quot;#009E73&amp;quot;) # definindo as cores que serão usadas
+colorCode&amp;lt;-c(alto=colors[1], medio=colors[2], baixo=colors[3])
+labels_colors(clust_rio_euc2) &amp;lt;- colorCode[rio][order.dendrogram(clust_rio_euc2)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(clust_rio_euc2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Novamente, temos alguma diferença que aponta para uma certa organização das espécies, mas notem que agora parecem mais misturados que quando usamos o índice de Jaccard, mas mesmo essa “mistura” tem um certo padrão, podem perceber?&lt;/p&gt;
+&lt;p&gt;Aparentemente o &lt;em&gt;médio rio&lt;/em&gt; é uma interseção entre comunidades de baixo e alto rio. Será que as variáveis ambientais conseguem explicar isso?&lt;/p&gt;
+&lt;p&gt;Vamos aplicar o mesmo passo-à-passo para a matriz ambiental&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;env[,-c(1,4,12)] # aqui eu retirei duas colunas, a que adicionamos com o trecho do rio a quarta e a primeira que eraa distancia linear entre a primeira e as demais amostras.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    ele  slo  pH har  pho  nit  amm  oxy  bod
+## 1  934 48.0 7.9  45 0.01 0.20 0.00 12.2  2.7
+## 2  932  3.0 8.0  40 0.02 0.20 0.10 10.3  1.9
+## 3  914  3.7 8.3  52 0.05 0.22 0.05 10.5  3.5
+## 4  854  3.2 8.0  72 0.10 0.21 0.00 11.0  1.3
+## 5  849  2.3 8.1  84 0.38 0.52 0.20  8.0  6.2
+## 6  846  3.2 7.9  60 0.20 0.15 0.00 10.2  5.3
+## 7  841  6.6 8.1  88 0.07 0.15 0.00 11.1  2.2
+## 9  752  1.2 8.0  90 0.30 0.82 0.12  7.2  5.2
+## 10 617  9.9 7.7  82 0.06 0.75 0.01 10.0  4.3
+## 11 483  4.1 8.1  96 0.30 1.60 0.00 11.5  2.7
+## 12 477  1.6 7.9  86 0.04 0.50 0.00 12.2  3.0
+## 13 450  2.1 8.1  98 0.06 0.52 0.00 12.4  2.4
+## 14 434  1.2 8.3  98 0.27 1.23 0.00 12.3  3.8
+## 15 415  0.5 8.6  86 0.40 1.00 0.00 11.7  2.1
+## 16 375  2.0 8.0  88 0.20 2.00 0.05 10.3  2.7
+## 17 349  0.5 8.0  92 0.20 2.50 0.20 10.2  4.6
+## 18 333  0.8 8.0  90 0.50 2.20 0.20 10.3  2.8
+## 19 310  0.5 8.1  84 0.60 2.20 0.15 10.6  3.3
+## 20 286  0.8 8.0  86 0.30 3.00 0.30 10.3  2.8
+## 21 262  1.0 7.9  85 0.20 2.20 0.10  9.0  4.1
+## 22 254  1.4 8.1  88 0.20 1.62 0.07  9.1  4.8
+## 23 246  1.2 8.1  97 2.60 3.50 1.15  6.3 16.4
+## 24 241  0.3 8.0  99 1.40 2.50 0.60  5.2 12.3
+## 25 231  0.5 7.9 100 4.22 6.20 1.80  4.1 16.7
+## 26 214  0.5 7.9  94 1.43 3.00 0.30  6.2  8.9
+## 27 206  1.2 8.1  90 0.58 3.00 0.26  7.2  6.3
+## 28 195  0.3 8.3 100 0.74 4.00 0.30  8.1  4.5
+## 29 183  0.6 7.8 110 0.45 1.62 0.10  9.0  4.2
+## 30 172  0.2 8.2 109 0.65 1.60 0.10  8.2  4.4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;env_dist&amp;lt;-vegdist(env[,-c(1,4,12)], method = &amp;quot;euclidean&amp;quot;)
+env_dist
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             1          2          3          4          5          6          7
+## 2   45.368162                                                                  
+## 3   49.144527  21.706769                                                       
+## 4   95.600514  84.314332  63.288507                                            
+## 5  104.233868  94.071898  72.558676  14.249368                                 
+## 6   99.934171  88.360992  68.496496  14.988782  24.325076                      
+## 7  110.514552 102.950061  81.458626  20.913979  11.152264  28.827711           
+## 9  193.315760 186.880184 166.458846 103.740428  97.200632  98.739522  89.324667
+## 10 321.430171 317.872399 298.578252 237.327355 232.150213 230.155056 224.118340
+## 11 455.995377 452.484639 433.244515 371.782197 366.236198 364.796399 358.101683
+## 12 461.175824 457.326897 438.329546 377.269118 372.043769 369.931072 364.042598
+## 13 489.052231 485.482846 466.282653 404.841312 399.288094 397.837475 391.156129
+## 14 504.976978 501.378174 482.210173 420.819557 415.267451 413.763207 407.165085
+## 15 522.781161 519.051447 500.171434 439.233986 434.044077 431.807865 426.050069
+## 16 562.541464 559.068793 540.207230 479.274563 474.037852 471.843878 466.027362
+## 17 588.815112 585.330575 566.429054 505.419741 500.078597 498.042521 492.066428
+## 18 604.534325 601.091416 582.252673 521.322990 516.056147 513.892365 508.042397
+## 19 627.025183 623.564471 604.859126 544.146756 539.019743 536.551838 531.055718
+## 20 651.018037 647.646206 628.933131 568.186953 563.026000 560.621309 555.042265
+## 21 674.840163 671.520344 652.845315 592.160173 587.009374 584.545065 579.045464
+## 22 682.961695 679.707635 660.989382 600.230883 595.017848 592.667618 587.034056
+## 23 691.722271 688.544224 669.669927 608.737634 603.241951 601.273453 595.297225
+## 24 696.842193 693.621586 674.731431 613.733121 608.229546 606.329731 600.254256
+## 25 706.971586 703.790644 684.890365 623.907978 618.351282 616.486385 610.407704
+## 26 723.285308 720.084674 701.307169 640.454325 635.095326 632.950216 627.121370
+## 27 730.920976 727.747483 709.042364 648.289698 643.034256 640.720200 635.057974
+## 28 742.601214 739.461276 720.623443 659.626420 654.210356 652.249817 646.165135
+## 29 755.306216 752.273874 733.307386 672.091014 666.514220 664.891460 658.403232
+## 30 766.189402 763.139500 744.199991 683.023963 677.468043 675.790807 669.371847
+##             9         10         11         12         13         14         15
+## 2                                                                              
+## 3                                                                              
+## 4                                                                              
+## 5                                                                              
+## 6                                                                              
+## 7                                                                              
+## 9                                                                              
+## 10 135.548901                                                                  
+## 11 269.129677 134.875462                                                       
+## 12 275.083977 140.326487  12.006148                                            
+## 13 302.165289 167.974471  33.153039  29.558261                                 
+## 14 318.145004 183.920811  49.147104  44.660450  16.104912                      
+## 15 337.069380 202.279703  68.832986  62.025314  37.050452  22.558808           
+## 16 377.029054 242.212167 108.323739 102.049733  75.708206  59.896079  40.124463
+## 17 403.020705 268.357408 134.131018 128.186761 101.258234  85.254254  66.356537
+## 18 419.020860 284.266727 150.162545 144.081371 117.312940 101.347342  82.124235
+## 19 442.060703 307.156790 173.457783 167.033308 140.732891 124.806820 105.040004
+## 20 466.038963 331.160753 197.290142 191.028028 164.476649 148.514221 129.027129
+## 21 490.032055 355.128738 221.314798 215.036591 188.498149 172.525754 153.047444
+## 22 498.008506 363.151828 229.177825 223.040837 196.301743 180.309406 161.060670
+## 23 506.186520 371.641311 237.493921 231.761615 204.615919 188.551596 170.084692
+## 24 511.137440 376.629123 242.325566 236.660938 209.382846 193.330830 174.915122
+## 25 521.277751 386.842581 252.633185 247.021684 219.758477 203.693013 185.386845
+## 26 538.034619 403.341076 269.161396 263.274177 236.227448 220.191822 201.363182
+## 27 546.005559 411.191057 277.140697 271.108279 244.232570 228.218309 209.140455
+## 28 557.101013 422.510685 288.089090 282.407047 255.083992 239.064685 220.508629
+## 29 569.356042 435.003939 300.361237 295.001903 267.304157 251.310275 233.265400
+## 30 580.314063 445.928995 311.318378 305.901295 278.265673 262.266032 244.123376
+##            16         17         18         19         20         21         22
+## 2                                                                              
+## 3                                                                              
+## 4                                                                              
+## 5                                                                              
+## 6                                                                              
+## 7                                                                              
+## 9                                                                              
+## 10                                                                             
+## 11                                                                             
+## 12                                                                             
+## 13                                                                             
+## 14                                                                             
+## 15                                                                             
+## 16                                                                             
+## 17  26.422386                                                                  
+## 18  42.066644  16.233299                                                       
+## 19  65.145376  39.838581  23.779245                                            
+## 20  89.036636  63.313585  47.177219  24.107934                                 
+## 21 113.060614  87.292898  71.200632  48.048439  24.106431                      
+## 22 121.026298  95.099218  79.064868  56.194420  32.183494   8.604493           
+## 23 130.136697 103.906749  88.465431  66.800299  43.913466  23.816223  17.259803
+## 24 134.907570 108.622880  93.072928  71.394275  48.083885  26.850698  19.109560
+## 25 145.442645 119.180705 103.769689  82.162503  58.996664  37.470927  29.674732
+## 26 161.298126 135.149077 119.300607  96.789005  72.824425  49.176447  40.811030
+## 27 169.084028 143.058687 127.089260 104.277047  80.237834  56.302487  48.124681
+## 28 180.442274 154.230677 138.402954 116.155293  92.120918  68.696373  60.277267
+## 29 193.272216 166.980529 151.340936 129.648877 105.786090  82.864823  74.338169
+## 30 204.110130 177.829110 162.141181 140.272717 116.337838  93.155904  84.661820
+##            23         24         25         26         27         28         29
+## 2                                                                              
+## 3                                                                              
+## 4                                                                              
+## 5                                                                              
+## 6                                                                              
+## 7                                                                              
+## 9                                                                              
+## 10                                                                             
+## 11                                                                             
+## 12                                                                             
+## 13                                                                             
+## 14                                                                             
+## 15                                                                             
+## 16                                                                             
+## 17                                                                             
+## 18                                                                             
+## 19                                                                             
+## 20                                                                             
+## 21                                                                             
+## 22                                                                             
+## 23                                                                             
+## 24   7.112138                                                                  
+## 25  15.804964  12.029231                                                       
+## 26  33.047411  27.693878  20.261394                                            
+## 27  41.915898  36.713186  29.481540   9.434728                                 
+## 28  52.536959  46.787986  38.473892  20.534023  15.064103                      
+## 29  65.603654  59.725262  51.208977  35.353286  30.643872  15.843879           
+## 30  76.007467  70.243025  61.376501  44.900316  39.046261  24.816287  11.092358
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora as médias totais e entre trechos do rio&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(env_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 302.936
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(env_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 79.71855
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(env_dist, c(9:18))) # Agora para o médio rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 105.052
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(dist_subset(env_dist, c(19:28))) # Agora para o baixo rio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 41.48669
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tem coisa interessante aqui… o que será?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_env_euc&amp;lt;-hclust(env_dist, method = &amp;quot;complete&amp;quot;)
+clust_graf_env_euc&amp;lt;-plot(clust_env_euc, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_graf_env_euc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos colorir o gráfico…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_graf_env_euc2&amp;lt;-as.dendrogram(clust_env_euc) # trandformando o cluster num objeto para poder editar
+colors&amp;lt;-c(&amp;quot;#E69F00&amp;quot;,&amp;quot;#56B4E9&amp;quot;, &amp;quot;#009E73&amp;quot;) # definindo as cores que serão usadas
+colorCode&amp;lt;-c(alto=colors[1], medio=colors[2], baixo=colors[3])
+labels_colors(clust_graf_env_euc2) &amp;lt;- colorCode[rio][order.dendrogram(clust_graf_env_euc2)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(clust_graf_env_euc2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/associacao/med_assoc_files/figure-html/unnamed-chunk-31-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;E agora? Dá pra entender?&lt;/p&gt;
+&lt;p&gt;Então, bora trabalhar!!!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/o28elTLxOjiRW/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;exercício-para-entrega&#34;&gt;Exercício para entrega&lt;/h1&gt;
+&lt;h2 id=&#34;1-faça-uma-pergunta-hipotética-sobre-a-organização-da-comunidade-de-peixes&#34;&gt;1) Faça uma pergunta “hipotética sobre a organização da comunidade de peixes&lt;/h2&gt;
+&lt;h3 id=&#34;dica-em-vez-do-gradiente-geográfico-que-usei-nesse-exemplo-acima-use-um-gradiente-ambiental-expresso-por-alguma-variável-da-matriz-env&#34;&gt;&lt;strong&gt;Dica&lt;/strong&gt;: em vez do gradiente geográfico que usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz “env”&lt;/h3&gt;
+&lt;h2 id=&#34;2-calcule-matrizes-de-distância-da-comunidade-biológica-usando-índices-de-sorensen-ou-jaccard-e-alguma-medida-de-distância-euclidiana-ou-outra-qualquer-que-a-função-vegdist-possa-calcular&#34;&gt;2) Calcule matrizes de distância da comunidade biológica usando índices de Sorensen ou Jaccard e alguma medida de distância (euclidiana ou outra qualquer que a função &lt;em&gt;vegdist&lt;/em&gt; possa calcular)&lt;/h2&gt;
+&lt;h2 id=&#34;3-grafique-os-resultados-e-crie-algumas-explicações-hipotéticas-para-sua-pergunta-comente-os-resultados&#34;&gt;3) Grafique os resultados e crie algumas explicações hipotéticas para sua pergunta, comente os resultados&lt;/h2&gt;
+&lt;h2 id=&#34;4-brinque-com-as-matrizes-ambientais-e-de-distância-e-tente-explicar-o-fenômeno-biológico-que-você-encontrou&#34;&gt;4) Brinque com as matrizes ambientais e de distância e tente explicar o fenômeno biológico que você encontrou&lt;/h2&gt;
+&lt;h1 id=&#34;fim&#34;&gt;Fim&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Análise de Clusters</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/cluster/cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_num/cluster/cluster/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h1 id=&#34;análise-de-clusters&#34;&gt;Análise de Clusters&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/complex-systems-ai.com/wp-content/uploads/2020/09/Cluster-Analysis-1000x468-1.jpg?resize=1000%2C468&amp;amp;ssl=1&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Segundo os autores do livro &lt;strong&gt;Numerical Ecology&lt;/strong&gt;, a interpretação de um dendograma típíco das análises de cluster, demanda um certo grau de abstração, vejamos. Um cluster serve para particionar (i.e. criar fornteiras) conjuntos de objetos (Q mode) ou variáveis (R-mode). Dessa forma, podemos identificar o grau de semelhança (ou diferença) entre sujeitos analisados. Para isso, a análise cria uma &lt;strong&gt;tipologia&lt;/strong&gt;, que é uma estrutura completa e complexa, na forma de uma árvore ou nuvem de pontos que informa sobre essa semelhança/diferença. A &lt;a href=&#34;https://en.wikipedia.org/wiki/Cluster_analysis#:~:text=Cluster%20analysis%20or%20clustering%20is,in%20other%20groups%20%28clusters%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt; tem um verbete interssante sobre isso e vou deuxar aqui alguns tutoriais em &lt;strong&gt;R&lt;/strong&gt; paa vocês reprodizirem.&lt;/p&gt;
+&lt;h1 id=&#34;o-pulo-do-gato&#34;&gt;O pulo do gato&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/kZ1prc4j4nV84/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Se você juntar qualquer conjunto de dados, de qualquer natureza, uma análise de cluster vai gerar uma estrutura que vai parecer uma coisa que têm sentido ou até impressionar seus colegas que dirão: UAU!!!&lt;/p&gt;
+&lt;p&gt;O “&lt;strong&gt;pulo do gato&lt;/strong&gt;” se refere ao uso da análise cluster associado a uma *HIPÓTESE”. Você precisa pensar sobre seus dados ecológicos, que geralmente são frutos de um desenho amostral guiado por uma pergunta científica. Prestem atenção no último exercício, da última aula, onde mostrei pra vocês como, à partir de uma pergunta sobre a semelhança entre as comunidades do alto, média e baixo rio, testei através de uma análise de cluster, se minha hipóitese tinha sentido. E tinha, de certa forma, mas comunidades dessas três seções do rio, são mais parecidas entre si que entre elas e outras comunidades de outras partes do rio. Mostrei isso colorindo minhas comunidades e organizando-as num cluster.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota de precaução&lt;/strong&gt;, e aqui vou citar literalmente o &lt;em&gt;Numerical Ecology with R&lt;/em&gt;:
+“Clustering is not a typical statistical method in that it
+does not test any hypothesis. Clustering helps bring out some features hidden in the
+data; it is the user who decides if these structures are interesting and worth interpreting
+in ecological terms.” (p. 54)&lt;/p&gt;
+&lt;p&gt;Ou seja, o ordenamento via cluster não é um &lt;a href=&#34;https://www.inf.ufsc.br/~andre.zibetti/probabilidade/teste-de-hipoteses.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;teste de hipótese&lt;/strong&gt;&lt;/a&gt; mas uma ferramenta para explorar estruturas “ocultas” nos dados, e somos nós pesquisadores, que decidimos se elas têm algum valor ecológico. Lembrem-se, qualquer dados de qalquer natureza, vai ser agrupado numa estrutura qualquer. Nós é que precisamos dar sentido à elas.&lt;/p&gt;
+&lt;h1 id=&#34;exemplo-1&#34;&gt;Exemplo 1&lt;/h1&gt;
+&lt;p&gt;Imagine-se na sua turma da escola, com 40 alunos. Um professor de biologia pediu quefosse formados 5 grupos para a realização de um trabalho sobre a vida na Terra. Os grupos são livres, cada um fica com as companhias e o tema que desejar. Cada grupo tem que fazer um trabalho sobre um dos reinos: animal, vegetal, fungi, protista e monera. A pergunta é: Como se agrupariam os alunos? Quais seriam so critérios que vocÊ imaginaria? Eu, se me lembro bem, pois faz tempo… pensaria:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Vou fiar com meus amigos/amigas&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Vou ficar com o tema que gosto mais&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Não posso ficar só com a turma da bagunça&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quero ficar no grupo daquela “boyzinha/boyzinho”&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Então, é muito provável que um professor atento à sua turma consiga prever quase com perfeição, como será a composição dos grupos. Mas nunca 100%, tem sempre um erro associado que bagunça a estrutura esperada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  aluno = paste0(&amp;quot;aluno&amp;quot;, 1:40), # 40 alunos
+  amizade = sample(c(1:5), replace=TRUE, size=40), # grupo de amigos ao qual pertence. aqui separei em 5 grupos
+  tema = sample(c(1:5), replace=TRUE, size=40),# um dos cinco reinos, sendo 1=planta; 2=animal; 3=fungi;4=protista;5=monera
+  bagunca = sample(c(0:1), replace=TRUE, size=40),# ou se é bagunceiro =1 ou não é bagunceiro = 0
+  love = sample(c(0:1), replace=TRUE, size=40) # seu love tá lá = 1 ou não está =0
+)-&amp;gt; aula
+aula
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 40 × 5
+##    aluno   amizade  tema bagunca  love
+##    &amp;lt;chr&amp;gt;     &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;   &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+##  1 aluno1        3     2       0     0
+##  2 aluno2        4     5       0     0
+##  3 aluno3        5     1       1     1
+##  4 aluno4        1     2       1     1
+##  5 aluno5        1     5       1     1
+##  6 aluno6        2     4       1     0
+##  7 aluno7        2     5       1     1
+##  8 aluno8        3     4       1     0
+##  9 aluno9        5     2       0     1
+## 10 aluno10       3     3       0     0
+## # … with 30 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos criar uma matriz de similaridade. Nesse caso, temos variaǘeis cujos zeros são importantes (lembram?) e portanto devemos usar alguma medida de distância que seja sensível a isso. Vamos testar com a distância euclidiana mesmo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;al.dist&amp;lt;-vegdist(aula[,-1],method = &amp;quot;euclidean&amp;quot;) # retirei a coluna dos nomes dos alunos
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora é só graficar…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_alun.comp&amp;lt;-hclust(al.dist, method = &amp;quot;complete&amp;quot;)
+clust_graf_alun.com&amp;lt;-plot(clust_alun.comp, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Mas, diante dessa estrutura, qual é a informação que você extrai? Sem uma hipotese, não tem muito o que fazer a não ser observar a distribuição dos 40 alunos nos grupos e ficar pensando o que eles têm em comum e talvez, num segundo momento, pensar numa hipotese.&lt;/p&gt;
+&lt;h1 id=&#34;alguns-princípios&#34;&gt;Alguns princípios&lt;/h1&gt;
+&lt;h3 id=&#34;escolha-o-método-de-agrupamento&#34;&gt;Escolha o método de agrupamento&lt;/h3&gt;
+&lt;p&gt;No exemplo acima, é possível notar que usei o método “complete,” mas existem outos, que dão resultados diferentes. Vejamos:&lt;/p&gt;
+&lt;p&gt;Parece que ainda menos informçaõ foi gerada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_alun&amp;lt;-hclust(al.dist, method = &amp;quot;single&amp;quot;)
+clust_graf_alun&amp;lt;-plot(clust_alun, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;E se testarmos outros metodos, como “&lt;strong&gt;Ward&lt;/strong&gt;?”&lt;/p&gt;
+&lt;p&gt;Parecem consguir agrupar tão bem quanto o “complete”&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_alun&amp;lt;-hclust(al.dist, method = &amp;quot;ward.D&amp;quot;)
+clust_graf_alun&amp;lt;-plot(clust_alun, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Aqui&lt;/a&gt; Tem uma apresentção bem resumidinha sobre os métodos de agrupamento de cluster, feita por &lt;a href=&#34;http://www5.each.usp.br/web/prof/lauretto/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marcelo Lauretto&lt;/a&gt; da USP&lt;/p&gt;
+&lt;h3 id=&#34;escolha-o-método-de-distância-a-ser-usado&#34;&gt;Escolha o método de distância a ser usado&lt;/h3&gt;
+&lt;p&gt;Os métodos de distância são os mais usados para dados numéricos, mas &lt;em&gt;sofrem&lt;/em&gt; quando os dados são categóricos, mesmo quando esses são representados por zeros e uns. Qual a distância entre ser “bagunceiro” e “não-bagunceiro” (exemplo acima)? Bom, aqui representamos como zeros e uns. Igualmente, usei números quue separam os temas e a distância entre monera e planta é maior que a distância entre planta e animal.&lt;/p&gt;
+&lt;p&gt;vejamos o que acontece que realmente considerarmos nossa matriz como dados categóricos, que é o que são na realidade.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;aula %&amp;gt;% 
+  mutate_at(vars(2:5), factor)-&amp;gt;aula.fct # isso tranforma todo mundo em fatores categóricos
+
+# Ou podemos refazer a tabela propriamente
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  aluno = paste0(&amp;quot;aluno&amp;quot;, 1:40), # 40 alunos
+  amizade = sample(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;,&amp;quot;d&amp;quot;,&amp;quot;e&amp;quot;), replace=TRUE, size=40), # grupo de amigos ao qual pertence. aqui separei em 5 grupos
+  tema = sample(c(&amp;quot;planta&amp;quot;,&amp;quot;animal&amp;quot;,&amp;quot;fungo&amp;quot;,&amp;quot;protista&amp;quot;,&amp;quot;monera&amp;quot;), replace=TRUE, size=40),# com nomes
+  bagunca = sample(c(&amp;quot;bagunça&amp;quot;, &amp;quot;cdf&amp;quot;), replace=TRUE, size=40),# ou se é bagunceiro = bagunça ou não é bagunceiro = cdf
+  love = sample(c(&amp;quot;love&amp;quot;,&amp;quot;n_love&amp;quot;), replace=TRUE, size=40) # seu love tá lá = love ou não está =n_love
+)-&amp;gt; aula.fct
+
+head(aula.fct)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 5
+##   aluno  amizade tema     bagunca love  
+##   &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt; 
+## 1 aluno1 c       animal   bagunça love  
+## 2 aluno2 d       monera   bagunça love  
+## 3 aluno3 e       planta   cdf     n_love
+## 4 aluno4 a       animal   cdf     n_love
+## 5 aluno5 a       monera   cdf     n_love
+## 6 aluno6 b       protista cdf     love
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#al.dist.fct&amp;lt;-vegdist(aula.fct[,-1], method = &amp;quot;euclidian&amp;quot;)# não aceita euclidiana. na verdade a função vegdist não aceita dados categóricos.
+
+library(cluster)
+al.dist.fct&amp;lt;-daisy(aula[,-1], metric = c(&amp;quot;gower&amp;quot;)) # Essa função com a distância &amp;quot;gower&amp;quot; consegue calcular a matriz de siilaridade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in daisy(aula[, -1], metric = c(&amp;quot;gower&amp;quot;)): binary variable(s) 3, 4
+## treated as interval scaled
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;clust_alun_fct&amp;lt;-hclust(al.dist.fct, method = &amp;quot;complete&amp;quot;)
+clust_graf_alun_fact&amp;lt;-plot(clust_alun_fct, hang=-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Vamos compara os dois?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(cowplot)
+plot_grid(plot(clust_alun.comp, hang=-1), plot(clust_alun_fct, hang=-1))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;averigue-a-qualidade-do-cluster&#34;&gt;Averigue a qualidade do cluster&lt;/h3&gt;
+&lt;p&gt;A maneira mais simples de avaliar a qualidade de um cluster é saber se a distância entre os pares &lt;strong&gt;dentro&lt;/strong&gt; do grupo é menor que &lt;strong&gt;entre&lt;/strong&gt; os grupos.&lt;/p&gt;
+&lt;h1 id=&#34;tipos-de-métodos&#34;&gt;Tipos de métodos&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/516/1*qrfDH1woi77HSuzOq7ymmA.png&#34; alt=&#34;&#34;&gt;
+&lt;a href=&#34;http://uc-r.github.io/hc_clustering&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UC Business Analytics R Programming Guide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Essa figura mostra os dois grandes tipos de métodos: &lt;strong&gt;Aglomerativo&lt;/strong&gt; e &lt;strong&gt;Divisivo&lt;/strong&gt;. Eles se diferenciam basicamente na ordem em que começam a organizar os clusters, se da ponta à raíz, ou ao contrátrio. Uma descrição completa se encontra nos links que estão ao longo dessa aula.&lt;/p&gt;
+&lt;h1 id=&#34;melhorando-os-dendogramas&#34;&gt;Melhorando os dendogramas&lt;/h1&gt;
+&lt;p&gt;Nesses dendogramas que estamos gerando, o eixo Y “height” é usado para ler a dissimilaridade entre pares de objetos unidos por um mesmo “nó,” mas não podemos usar esse eixo para medir a distância entre objetos unidos por &lt;strong&gt;clusters&lt;/strong&gt;. Para isso precisamos criar os grupos ou pedir que os algorítimos &lt;em&gt;encontrem&lt;/em&gt; os grupos.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;grup_alun&amp;lt;-cutree(clust_alun_fct, k=5) # quero 5 grupos
+table(grup_alun) # vejamos o número de alunos em cada grupo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## grup_alun
+##  1  2  3  4  5 
+## 11  6 10  5  8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;plot(clust_alun_fct)
+rect.hclust(clust_alun_fct, k = 4, border = 2:5) # posse até ver quais são esses grupos
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Agora, podemos voltar para nossos dados e ver se os grupos gerados. E à partir daqui, uma infindade de análises exploratórias podem ser feitas.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;aula.fct %&amp;gt;% 
+  mutate(cluster=grup_alun)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 40 × 6
+##    aluno   amizade tema     bagunca love   cluster
+##    &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;    &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;    &amp;lt;int&amp;gt;
+##  1 aluno1  c       animal   bagunça love         1
+##  2 aluno2  d       monera   bagunça love         1
+##  3 aluno3  e       planta   cdf     n_love       2
+##  4 aluno4  a       animal   cdf     n_love       2
+##  5 aluno5  a       monera   cdf     n_love       3
+##  6 aluno6  b       protista cdf     love         4
+##  7 aluno7  b       monera   cdf     n_love       3
+##  8 aluno8  c       protista cdf     love         4
+##  9 aluno9  e       animal   bagunça n_love       5
+## 10 aluno10 c       fungo    bagunça love         1
+## # … with 30 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;método-não-hierárquico-k-means&#34;&gt;Método não hierárquico (K-means)&lt;/h1&gt;
+&lt;p&gt;Aqui o problema é quando não sabemos se a esturura dos dados permite ou não reconhecer grupos. Isso é muito comum para dados biológicos, mas pode ser aplicado por exemplo para saber se podemos dividir nosso rio (aquele do exemplo do livro, em três partes: alto, médio e baixo) de maneira embasada nos intervalos dos dados. A lógica do agrupamento não hierárquico é que ele tenta &lt;strong&gt;sempre&lt;/strong&gt; minimizar a distância intra-grupo dentro de um conjunto pré-definido de grupos a serem criados.&lt;/p&gt;
+&lt;p&gt;Vejamos como funcionaria para o nosso rio&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;k3&amp;lt;-kmeans(env[,-c(1,4,12)], centers = 3, nstart=25)
+k3 # Aqui dá pra ver muita coisa, inclusive a qual cluster (1,2 uo 3) cada amostra do rio pertence. Dá pra ver a média de cada variável entre os clusters 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## K-means clustering with 3 clusters of sizes 9, 14, 7
+## 
+## Cluster means:
+##        ele      slo       pH      har       pho      nit         amm       oxy
+## 1 857.1111 8.188889 8.044444 69.44444 0.1477778 0.320000 0.065555556  9.722222
+## 2 248.7143 0.700000 8.028571 94.57143 1.0050000 2.795714 0.402142857  8.128571
+## 3 464.4286 3.057143 8.100000 90.57143 0.1900000 1.085714 0.008571429 11.485714
+##        bod
+## 1 4.044444
+## 2 6.864286
+## 3 3.000000
+## 
+## Clustering vector:
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+##  1  1  1  1  1  1  1  1  1  3  3  3  3  3  3  3  2  2  2  2  2  2  2  2  2  2 
+## 27 28 29 30 
+##  2  2  2  2 
+## 
+## Within cluster sum of squares by cluster:
+## [1] 35819.23 40309.58 35691.36
+##  (between_SS / total_SS =  94.8 %)
+## 
+## Available components:
+## 
+## [1] &amp;quot;cluster&amp;quot;      &amp;quot;centers&amp;quot;      &amp;quot;totss&amp;quot;        &amp;quot;withinss&amp;quot;     &amp;quot;tot.withinss&amp;quot;
+## [6] &amp;quot;betweenss&amp;quot;    &amp;quot;size&amp;quot;         &amp;quot;iter&amp;quot;         &amp;quot;ifault&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora podemos graficar&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(factoextra)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;fviz_cluster(k3, data = env[,-c(1,4,12)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Será que &lt;strong&gt;3&lt;/strong&gt; é ralmente o melhor número de clusters para separar as seções do rio?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;fviz_nbclust(env[,-c(1,4,12)], kmeans, method = &amp;quot;silhouette&amp;quot;) # felizmente tem uma função que faz isso rapidinho
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Epa!!!! aparentemente são apenas duas as seções do rio que fazem sentido segundo os dados, portantom recomecemos de novo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;k2&amp;lt;-kmeans(env[,-c(1,4,12)], centers =2, nstart=25)
+fviz_cluster(k2, data = env[,-c(1,4,12)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Então, parece que temos apenas um “alto” e um “baixo” rio.&lt;/p&gt;
+&lt;h1 id=&#34;resumo&#34;&gt;Resumo&lt;/h1&gt;
+&lt;p&gt;Vocês verão, se usarem o &lt;a href=&#34;https://fplmelo.github.io/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Scripts/chap4.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;script dp capítulo 4&lt;/a&gt; do &lt;strong&gt;Numerical Ecology with R&lt;/strong&gt; verao que há uma infinidade de aplicações para agrupamentos de cluster. Na verdade são tantas que ficaria chato aqui mostrar uma por uma. Mas, o que precisam saber é:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Clusters são métodos de agrupamento que ajudam a revelar estrutura de dados&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dependem muito das escolhas do pesquisador e de sua interpretação. Não são um teste estatístico.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Podem e devem ser usados para a análise de dados ecológicos que envolvem muitas variáveis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;exercício-para-entrega&#34;&gt;Exercício para entrega&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/xUOxfd3Y6g2C2aSXkc/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Use a base “spe” e tente econtrar grupos de amostras (comunidades) que pertencem à trechos específicos do rio &lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;teste tanto medidas de distância quanto métodos de agrupamento diferentes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use métodos de K-means para encontrar quantos clusters há de fato segundo o método “silhouette”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;grafique o rio colorindo as amostras segundo seu pertencimento aos clusters gerados&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;como esse aqui
+&lt;img src=&#34;https://fplmelo.github.io/eco_numerica/images/doubs_river.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Avalie com gráficos de boxplot como os clusters são diferenciados em termos ambientais (base “env”) e comente os resltados brevemente, tentando interpretar os resultados biológicos.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;#FIM&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bases de dados Ecológicos</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/base_dados/base_dados/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_num/base_dados/base_dados/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slied_base_dados.html&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;matriz-de-presencias-e-ausências&#34;&gt;Matriz de presencias e ausências&lt;/h2&gt;
+&lt;p&gt;As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia. No entanto, para iniciar nossas atividades, vamos contruir uma base de dados fictícia apenas para entender sua estrutura.&lt;/p&gt;
+&lt;p&gt;A estrutura básica de bases de dados biológicos é a de matrizes que contem ‘n’ colunas e ‘r’ linhas (n x r). Geralmente temos espécies nas linhas e localidades nas colunas. Veja abaixo como criar uma matriz simples de 10 linhas e 4 colunas. As células serão preenchidas apenas com “1” e “0” indicando se a espécie está presente ou ausente da localidade amostrada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+
+## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
+## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
+## ✓ readr   2.0.2     ✓ forcats 0.5.1
+
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:1), replace=TRUE, size=10),
+  siteB = sample(c(0:1), replace=TRUE, size=10),
+  siteC = sample(c(0:1), replace=TRUE, size=10),
+  siteD = sample(c(0:1), replace=TRUE, size=10)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+##  1 sp1       0     0     1     0
+##  2 sp2       1     0     0     0
+##  3 sp3       0     1     0     1
+##  4 sp4       0     0     0     1
+##  5 sp5       0     0     1     1
+##  6 sp6       1     0     1     1
+##  7 sp7       0     1     0     0
+##  8 sp8       1     1     0     0
+##  9 sp9       1     0     0     0
+## 10 sp10      1     0     0     0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-1&#34;&gt;Exercício 1&lt;/h3&gt;
+&lt;p&gt;Agora crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;20 espécies&lt;/li&gt;
+&lt;li&gt;8 localidades&lt;/li&gt;
+&lt;li&gt;Faça no seu computador&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Obviamente essas bases podem ser “subidas” ao R sem maiores problemas e o ideal é que você faça isso mesmo. Crie suas bases de dados numa planilha e salve-as em formato TXT ou CSV com muita atenção ao separadores e codificação (geralmente UTF-8)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exemplo-2-matriz-de-abundâncias&#34;&gt;Exemplo 2 (matriz de abundâncias)&lt;/h2&gt;
+&lt;p&gt;Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-2&#34;&gt;Exercício 2&lt;/h3&gt;
+&lt;p&gt;Novamente crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;30 espécies&lt;/li&gt;
+&lt;li&gt;10 localidades&lt;/li&gt;
+&lt;li&gt;Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sumários&#34;&gt;Sumários&lt;/h2&gt;
+&lt;p&gt;Qualquer análise de dados em ecologia começa com uma boa chacagem dos seu dados. Precisamos saber como se comportam os dados e para isso podemo começar com algumas funções simples como ‘summary’ (pactote base do R) ou ‘summarize’ (pacote tidyverse). Para isso, vamos pegar a matriz gerada com as abundâncias e dar a ela um nome, tranformando-a assim num objeto.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0(&amp;quot;sp&amp;quot;, 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)-&amp;gt; base1 # note que esse comando &amp;quot;-&amp;gt;&amp;quot; apontou para um objeto de nome &#39;base1&#39;
+
+
+base1 # eis a nossa base agora com as espécies como nomes das linhas
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-3&#34;&gt;Exercício 3&lt;/h3&gt;
+&lt;p&gt;Abaixo temos um exemplo de resumo básico dos dados.
+Um resumo geral da tabela com a função mais simples do R que mostra apenas alguns “momentos” da distribuição dos dados organizados por colunas, nesse caso, por sítio de estudo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(base1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      spec               siteA           siteB          siteC      
+##  Length:10          Min.   : 0.00   Min.   :0.00   Min.   : 3.00  
+##  Class :character   1st Qu.: 3.50   1st Qu.:1.00   1st Qu.: 7.25  
+##  Mode  :character   Median : 6.00   Median :3.50   Median :10.00  
+##                     Mean   : 5.80   Mean   :4.20   Mean   :11.10  
+##                     3rd Qu.: 8.75   3rd Qu.:7.75   3rd Qu.:16.25  
+##                     Max.   :10.00   Max.   :9.00   Max.   :20.00  
+##      siteD      
+##  Min.   : 1.00  
+##  1st Qu.: 8.25  
+##  Median :11.50  
+##  Mean   :10.90  
+##  3rd Qu.:15.75  
+##  Max.   :18.00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Existem outras funções do pacote tidyverse que podem ser utilizadas com maior objetividade e para manipulações específicas. Para um curso introdutório completo de “tidyverse” veja essa maravilha aqui do Maurício Vancine &lt;a href=&#34;https://mauriciovancine.github.io/disciplina-analise-geoespacial-r/01_aulas/04_pres_intro_geocomp_r.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introdução ao tidyverse&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;agora-podemos-começar-a-namorar-nosos-dados&#34;&gt;Agora podemos começar a &lt;em&gt;namorar&lt;/em&gt; nosos dados&lt;/h2&gt;
+&lt;h3 id=&#34;livro-numerical-ecology-with-r&#34;&gt;Livro: Numerical Ecology with R&lt;/h3&gt;
+&lt;p&gt;Vamos usar muitos exemplos desse livro durante a disciplina e para acostumar, vamos começar por tentar reproduzir os exercícios do &lt;a href=&#34;http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Capítulo 2: “Exploratpry Data Analysis”&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;extraindo-dados&#34;&gt;Extraindo dados&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Para baixar o livro &lt;em&gt;Numerical Ecology with R&lt;/em&gt;, &lt;a href=&#34;https://github.com/fplmelo/eco_numerica/raw/558d6c1302c3bff19831c0eee28f53b0a3eb1c69/data/Numerical%20Ecology%20with%20R.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Para acessar os dados &lt;a href=&#34;http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Salve a pasta descompactada no diretório local correspondente ao seu repositório do &lt;em&gt;GitHub&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Agora é só carregar as bases de dados usando o comando “load,” lembrando de colocar o caminho para o arquivo segundo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Vamos carregar os dados que o livro usa como exemplo
+load(&amp;quot;/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData&amp;quot;) # mude o caminho para o seu próprio´
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spe # matriz de abundância de espécies de peixes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Cogo Satr Phph Babl Thth Teso Chna Pato Lele Sqce Baba Albi Gogo Eslu Pefl
+## 1     0    3    0    0    0    0    0    0    0    0    0    0    0    0    0
+## 2     0    5    4    3    0    0    0    0    0    0    0    0    0    0    0
+## 3     0    5    5    5    0    0    0    0    0    0    0    0    0    1    0
+## 4     0    4    5    5    0    0    0    0    0    1    0    0    1    2    2
+## 5     0    2    3    2    0    0    0    0    5    2    0    0    2    4    4
+## 6     0    3    4    5    0    0    0    0    1    2    0    0    1    1    1
+## 7     0    5    4    5    0    0    0    0    1    1    0    0    0    0    0
+## 8     0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+## 9     0    0    1    3    0    0    0    0    0    5    0    0    0    0    0
+## 10    0    1    4    4    0    0    0    0    2    2    0    0    1    0    0
+## 11    1    3    4    1    1    0    0    0    0    1    0    0    0    0    0
+## 12    2    5    4    4    2    0    0    0    0    1    0    0    0    0    0
+## 13    2    5    5    2    3    2    0    0    0    0    0    0    0    0    0
+## 14    3    5    5    4    4    3    0    0    0    1    1    0    1    1    0
+## 15    3    4    4    5    2    4    0    0    3    3    2    0    2    0    0
+## 16    2    3    3    5    0    5    0    4    5    2    2    1    2    1    1
+## 17    1    2    4    4    1    2    1    4    3    2    3    4    1    1    2
+## 18    1    1    3    3    1    1    1    3    2    3    3    3    2    1    3
+## 19    0    0    3    5    0    1    2    3    2    1    2    2    4    1    1
+## 20    0    0    1    2    0    0    2    2    2    3    4    3    4    2    2
+## 21    0    0    1    1    0    0    2    2    2    2    4    2    5    3    3
+## 22    0    0    0    1    0    0    3    2    3    4    5    1    5    3    4
+## 23    0    0    0    0    0    0    0    0    0    1    0    0    0    0    0
+## 24    0    0    0    0    0    0    1    0    0    2    0    0    1    0    0
+## 25    0    0    0    0    0    0    0    0    1    1    0    0    2    1    0
+## 26    0    0    0    1    0    0    1    0    1    2    2    1    3    2    1
+## 27    0    0    0    1    0    0    1    1    2    3    4    1    4    4    1
+## 28    0    0    0    1    0    0    1    1    2    4    3    1    4    3    2
+## 29    0    1    1    1    1    1    2    2    3    4    5    3    5    5    4
+## 30    0    0    0    0    0    0    1    2    3    3    3    5    5    4    5
+##    Rham Legi Scer Cyca Titi Abbr Icme Gyce Ruru Blbj Alal Anan
+## 1     0    0    0    0    0    0    0    0    0    0    0    0
+## 2     0    0    0    0    0    0    0    0    0    0    0    0
+## 3     0    0    0    0    0    0    0    0    0    0    0    0
+## 4     0    0    0    0    1    0    0    0    0    0    0    0
+## 5     0    0    2    0    3    0    0    0    5    0    0    0
+## 6     0    0    0    0    2    0    0    0    1    0    0    0
+## 7     0    0    0    0    0    0    0    0    0    0    0    0
+## 8     0    0    0    0    0    0    0    0    0    0    0    0
+## 9     0    0    0    0    1    0    0    0    4    0    0    0
+## 10    0    0    0    0    0    0    0    0    0    0    0    0
+## 11    0    0    0    0    0    0    0    0    0    0    0    0
+## 12    0    0    0    0    0    0    0    0    0    0    0    0
+## 13    0    0    0    0    0    0    0    0    0    0    0    0
+## 14    0    0    0    0    0    0    0    0    0    0    0    0
+## 15    0    0    0    0    1    0    0    0    0    0    0    0
+## 16    0    1    0    1    1    0    0    0    1    0    0    0
+## 17    1    1    0    1    1    0    0    0    2    0    2    1
+## 18    2    1    0    1    1    0    0    1    2    0    2    1
+## 19    2    1    1    1    2    1    0    1    5    1    3    1
+## 20    3    2    2    1    4    1    0    2    5    2    5    2
+## 21    3    2    2    2    4    3    1    3    5    3    5    2
+## 22    3    3    2    3    4    4    2    4    5    4    5    2
+## 23    0    0    0    0    0    0    0    0    1    0    2    0
+## 24    0    1    0    0    0    0    0    2    2    1    5    0
+## 25    0    0    1    0    0    0    0    1    1    0    3    0
+## 26    2    2    1    1    3    2    1    4    4    2    5    2
+## 27    3    3    1    2    5    3    2    5    5    4    5    3
+## 28    4    4    2    4    4    3    3    5    5    5    5    4
+## 29    5    5    2    3    3    4    4    5    5    4    5    4
+## 30    5    3    5    5    5    5    5    5    5    5    5    5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spa # matriz espacial
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          X       Y
+## 1   85.678  20.000
+## 2   84.955  20.100
+## 3   92.301  23.796
+## 4   91.280  26.431
+## 5   92.005  29.163
+## 6   95.954  36.315
+## 7   98.201  38.799
+## 8   99.455  46.406
+## 9  109.782  55.865
+## 10 130.641  66.576
+## 11 142.748  81.258
+## 12 147.270  85.839
+## 13 156.817  89.516
+## 14 159.435  92.791
+## 15 150.820  91.084
+## 16 132.662  87.956
+## 17 128.298  93.918
+## 18 130.560 102.446
+## 19 128.459 105.428
+## 20 114.862 103.129
+## 21  97.163  90.245
+## 22  88.200  86.373
+## 23  79.596  83.508
+## 24  74.753  78.734
+## 25  67.146  74.683
+## 26  53.770  71.598
+## 27  43.637  68.673
+## 28  30.514  61.166
+## 29  20.495  43.848
+## 30   0.000  41.562
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;env # matriz ambiental
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      dfs ele  slo   dis  pH har  pho  nit  amm  oxy  bod
+## 1    0.3 934 48.0  0.84 7.9  45 0.01 0.20 0.00 12.2  2.7
+## 2    2.2 932  3.0  1.00 8.0  40 0.02 0.20 0.10 10.3  1.9
+## 3   10.2 914  3.7  1.80 8.3  52 0.05 0.22 0.05 10.5  3.5
+## 4   18.5 854  3.2  2.53 8.0  72 0.10 0.21 0.00 11.0  1.3
+## 5   21.5 849  2.3  2.64 8.1  84 0.38 0.52 0.20  8.0  6.2
+## 6   32.4 846  3.2  2.86 7.9  60 0.20 0.15 0.00 10.2  5.3
+## 7   36.8 841  6.6  4.00 8.1  88 0.07 0.15 0.00 11.1  2.2
+## 8   49.1 792  2.5  1.30 8.1  94 0.20 0.41 0.12  7.0  8.1
+## 9   70.5 752  1.2  4.80 8.0  90 0.30 0.82 0.12  7.2  5.2
+## 10  99.0 617  9.9 10.00 7.7  82 0.06 0.75 0.01 10.0  4.3
+## 11 123.4 483  4.1 19.90 8.1  96 0.30 1.60 0.00 11.5  2.7
+## 12 132.4 477  1.6 20.00 7.9  86 0.04 0.50 0.00 12.2  3.0
+## 13 143.6 450  2.1 21.10 8.1  98 0.06 0.52 0.00 12.4  2.4
+## 14 152.2 434  1.2 21.20 8.3  98 0.27 1.23 0.00 12.3  3.8
+## 15 164.5 415  0.5 23.00 8.6  86 0.40 1.00 0.00 11.7  2.1
+## 16 185.9 375  2.0 16.10 8.0  88 0.20 2.00 0.05 10.3  2.7
+## 17 198.5 349  0.5 24.30 8.0  92 0.20 2.50 0.20 10.2  4.6
+## 18 211.0 333  0.8 25.00 8.0  90 0.50 2.20 0.20 10.3  2.8
+## 19 224.6 310  0.5 25.90 8.1  84 0.60 2.20 0.15 10.6  3.3
+## 20 247.7 286  0.8 26.80 8.0  86 0.30 3.00 0.30 10.3  2.8
+## 21 282.1 262  1.0 27.20 7.9  85 0.20 2.20 0.10  9.0  4.1
+## 22 294.0 254  1.4 27.90 8.1  88 0.20 1.62 0.07  9.1  4.8
+## 23 304.3 246  1.2 28.80 8.1  97 2.60 3.50 1.15  6.3 16.4
+## 24 314.7 241  0.3 29.76 8.0  99 1.40 2.50 0.60  5.2 12.3
+## 25 327.8 231  0.5 38.70 7.9 100 4.22 6.20 1.80  4.1 16.7
+## 26 356.9 214  0.5 39.10 7.9  94 1.43 3.00 0.30  6.2  8.9
+## 27 373.2 206  1.2 39.60 8.1  90 0.58 3.00 0.26  7.2  6.3
+## 28 394.7 195  0.3 43.20 8.3 100 0.74 4.00 0.30  8.1  4.5
+## 29 422.0 183  0.6 67.70 7.8 110 0.45 1.62 0.10  9.0  4.2
+## 30 453.0 172  0.2 69.00 8.2 109 0.65 1.60 0.10  8.2  4.4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;exercício-4&#34;&gt;Exercício 4&lt;/h3&gt;
+&lt;p&gt;Usando essas bases de dados, tente reproduzir alguns dos gráficos que estão nos slides, pelo menos dois.&lt;/p&gt;
+&lt;p&gt;Agora, crie suas próprias perguntas e explore os dados. Lembre-se, são dados de uma comunidade de peixes amostradas em 30 localidades de um rio na Suiça Temos tanto a localização geográfica dessas amostras quanto as características ambientais do rio nessas localidades.&lt;/p&gt;
+&lt;p&gt;Exemplo de perguntas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Onde há mais riqueza de peixes?&lt;/li&gt;
+&lt;li&gt;Onde há mais abundância de peixes?&lt;/li&gt;
+&lt;li&gt;Quais espécies occorrem mais na nascente?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Desenho de Experimentos</title>
+      <link>https://www.ecoaplic.org/pt/courses/eco_num/experimentos/experimentos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/eco_num/experimentos/experimentos/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://fplmelo.github.io/eco_numerica/slides/slide_experimento.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;bibliografia-básica&#34;&gt;Bibliografia básica&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ru.ac.bd/stat/wp-content/uploads/sites/25/2019/03/502_07_00_Lawson_Design-and-Analysis-of-Experiments-with-R-2017.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Design and Analysis of Experiments with R&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;noções-básicas-de-experimentos-ecológicos&#34;&gt;Noções básicas de Experimentos Ecológicos&lt;/h1&gt;
+&lt;p&gt;Experimentos ecológicos não diferem de qualquer outro experimento científico. Esses têm uma lógica similar que precisa ser seguida e dominada para que análises de dados ecológicos possam ser planejadas e realizadas com sucesso.&lt;/p&gt;
+&lt;h2 id=&#34;o-que-precisamos-saber&#34;&gt;O que precisamos saber?&lt;/h2&gt;
+&lt;h3 id=&#34;--definir-um-objetivo&#34;&gt;- Definir um objetivo&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Qual o objetivo do experimento? A resposta a essa pergunta é porque o experimento precisa ser realizado. Simples, mas desafiador. Tente você mesmo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;--definir-a-unidade-amostral&#34;&gt;- Definir a unidade amostral&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Aqui é preciso definir qual a unidades mínima de variação do seu experimento. É o nível sobre o qual as medições serão feitas. É nesse nível que medimos variação (quando experimentos observacionais) our impomos variação (experimentos verdadeiros).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;--definição-de-variáveis&#34;&gt;- Definição de variáveis&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Nesta fase precisamos saber quais serão as variáveis &lt;a href=&#34;https://pt.wikipedia.org/wiki/Vari%C3%A1veis_dependentes_e_independentes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;independentes e dependentes&lt;/strong&gt;&lt;/a&gt;. Ou seja, precisamos saber o que será medido como efeito e como resposta, respectivamente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;porque-precisamos-saber-disso-para-ecologia-numérica&#34;&gt;Porque precisamos saber disso para ecologia numérica?&lt;/h2&gt;
+&lt;p&gt;Ecologia numérica é uma discipina que atenta basicamente para análises que podem ser aplicadas tanto para poppulações como para comunidades, sendo essas últimas mais comuns. Portanto ée preciso saber o que vamos medir em comunidades biológicas para entender o que estamos fazendo.&lt;/p&gt;
+&lt;p&gt;Qual a unidade de análises onde mede diversidade alfa?&lt;/p&gt;
+&lt;p&gt;Qual a unidade de análises onde mede diversidade beta?&lt;/p&gt;
+&lt;p&gt;Qual a unidade de análises onde mede diversidade gamma?&lt;/p&gt;
+&lt;h2 id=&#34;há-pelo-menos-três-variáveis-básicas-a-serem-medidas-em-comunidades-biológicas&#34;&gt;Há pelo menos três variáveis básicas a serem medidas em comunidades biológicas&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Riqueza: Quantas “entidades” há numa comunidade&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Abundância: Qual a quantidade de repreentantes de cada entidade na comunidade&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Composição: Quais são as “entidades” que compõem uma comunidade biológica. Atenção! Essa faz mais sentido se comparamos a diferença entre duas comunidades.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Há outras características que podems ser medidas como biomassa, mas que devem ser aferidas em cada indivíduo da comunidade&lt;/p&gt;
+&lt;h2 id=&#34;veja-esse-exemplo&#34;&gt;Veja esse exemplo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Quantas “entidades” há nas figuras da turma do Nemo?&lt;/li&gt;
+&lt;li&gt;Qual a quantidade em cada uma delas?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=https://i.pinimg.com/originals/0b/42/aa/0b42aa0390ff7316e14f49c072acc1a8.jpg width= 400&gt;
+&lt;img src=https://images.saymedia-content.com/.image/t_share/MTc0MjIzOTA0NzE2MzY3MzU2/tankgang.jpg width= 400&gt;
+&lt;ul&gt;
+&lt;li&gt;Qual a diferença de composição entre as duas? Tente quantificar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;exercício-para-entrega&#34;&gt;Exercício para entrega&lt;/h2&gt;
+&lt;h3 id=&#34;fazer-um-pequeno-site-para-agrupar-todos-os-exercícios-da-disciplina&#34;&gt;Fazer um pequeno site para agrupar todos os exercícios da disciplina&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Crie um pequeno site para agrupar seus exerćicios dessa disciplina utilizando o &lt;a href=&#34;https://icaroagostino.github.io/post/rmd-cov19/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;seguinte tutorial sobre Rmarkdown&lt;/a&gt;, ou &lt;a href=&#34;https://jordaoalvesds.wordpress.com/2019/10/12/tutorial-relatorios-dinamicos-com-rmarkdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esse aqui&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Agora, faça o exerćicio essa aula, que consistem em:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Imagine uma paisagem, invente uma counidade biológica e alguns gradientes ambientais para descrever essa paisagem e como a biodiversidade se distribui na mesma (escreva essa parte)&lt;/li&gt;
+&lt;li&gt;Crie uma comunidade fictícia no R&lt;/li&gt;
+&lt;li&gt;Faça descrições simples dessa comunidade, como: &lt;strong&gt;riqueza e abundânica&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Tente demonstrar graficamente esses dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Publique no Rpubs através do próprio Rstudio. &lt;a href=&#34;https://www.youtube.com/watch?v=GJ36zamYVLg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Siga esse tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

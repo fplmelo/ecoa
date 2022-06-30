@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felipe Pimentel Lopes Melo | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/felipe-pimentel-lopes-melo/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/felipe-pimentel-lopes-melo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Felipe Pimentel Lopes Melo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Felipe Pimentel Lopes Melo</title>
+      <link>https://fplmelo.netlify.app/author/felipe-pimentel-lopes-melo/</link>
+    </image>
+    
+    <item>
+      <title>Changes in tree size, not species diversity, underlie the low above-ground biomass in natural forest edges</title>
+      <link>https://fplmelo.netlify.app/publication/2021-01-01_changes_in_tree_size/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2021-01-01_changes_in_tree_size/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Socioeconomic differences among resident, users and neighbour populations of a protected area in the Brazilian dry forest</title>
+      <link>https://fplmelo.netlify.app/publication/2019-01-01_socioeconomic_differ/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2019-01-01_socioeconomic_differ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extirpation of large-seeded seedlings from the edge of a large Brazilian Atlantic forest fragment</title>
+      <link>https://fplmelo.netlify.app/publication/2007-01-01_extirpation_of_large/</link>
+      <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2007-01-01_extirpation_of_large/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

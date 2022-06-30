@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Ecologia de Paisagens | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/</link>
+      <atom:link href="https://www.ecoaplic.org/en/courses/ecologia_paisag/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Ecologia de Paisagens</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/en/courses/ecologia_paisag/featured.jpg</url>
+      <title>📒 Ecologia de Paisagens</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/</link>
+    </image>
+    
+    <item>
+      <title>Aula 9 - Debate sobre fragmentação: Hipótese de Quantidade de Hábitat</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/09_frag_debate/9_frag_debate/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/ecologia_paisag/09_frag_debate/9_frag_debate/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/ecol_paisag/frag_debate.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;img src=https://conservationcorridor.org/wp-content/uploads/remnant_forest.jpg&gt;
+&lt;h2 id=&#34;qual-a-relevcia-relativa-entre-a-composição-e-configuração-da-paisagem&#34;&gt;Qual a relevcia relativa entre a composição e configuração da paisagem?&lt;/h2&gt;
+&lt;h3 id=&#34;hipótese-da-quantidade-de-hábitat-ou-hah-em-inglês&#34;&gt;Hipótese da quantidade de hábitat ou (HAH em inglês)&lt;/h3&gt;
+&lt;p&gt;#FIM&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aula 1- Conceitos básicos de Paisagem</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/01_intro/intro_eco_pais/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/ecologia_paisag/01_intro/intro_eco_pais/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h1 id=&#34;o-que-é-uma-paisagem&#34;&gt;O que é uma paisagem?&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;Comece revisando o conteúdo visto em classe com essa aula maravilhosa do &lt;a href=&#34;https://scholar.google.com.br/citations?user=9IKcHR8AAAAJ&amp;amp;hl=pt-BR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Alexandre Uezu&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width=&#34;760&#34; height=&#34;428&#34; src=&#34;https://www.youtube.com/embed/FilxJe3ah1E&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h2 id=&#34;características-bścias-de-uma-paisagem&#34;&gt;Características bścias de uma paisagem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Heterogeneidade&lt;/li&gt;
+&lt;li&gt;Delimitação espacial e temporal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;resumo&#34;&gt;Resumo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A paisagem é uma “janela” pela qual observamos um fenômeno biológico&lt;/li&gt;
+&lt;li&gt;Dentro dessa janela é preciso haver heterogeneidade, que deve ser mensurável&lt;/li&gt;
+&lt;li&gt;Ecologia de paisagens possui grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;para-começar-a-leitura&#34;&gt;Para começar a leitura&lt;/h2&gt;
+&lt;p&gt;Texto introdutório para essa disciplina do &lt;a href=&#34;https://www.scielo.br/j/bn/a/Jbchd6rjY35PGkY5BHPz63S/?format=pdf&amp;amp;lang=pt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Jean Paul Metzger&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Leia o verbete da &lt;a href=&#34;https://pt.wikipedia.org/wiki/Ecologia_da_paisagem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia.org&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;exercício&#34;&gt;Exercício&lt;/h2&gt;
+&lt;p&gt;Descreva as paisagens abaixo à sua maneira tentando identificar quais seu componente e o quanto variam (200 palavras).&lt;/p&gt;
+&lt;p&gt;Paisagem A&lt;/p&gt;
+&lt;img src=https://cdn.pixabay.com/photo/2020/05/19/06/54/aerial-5189498_960_720.jpg&gt;
+&lt;p&gt;Paisagem B&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://observatoriopantanal.org/wp-content/uploads/2019/12/Adriano-Gambarini-WWF-Brasil-4288x2144.jpg &gt;&lt;/p&gt;
+&lt;p&gt;FIM&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Aula 2- Definição e delimitação de paisagens</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/ecol_paisag/02_delim_landscape.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;quais-perguntas-devemos-ter-em-mente-para-delimitar-uma-paisagem&#34;&gt;Quais perguntas devemos ter em mente para delimitar uma paisagem?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Qual a escala espacial e temporal em que meu fenômeno pode ser observado?&lt;/li&gt;
+&lt;li&gt;É mensurável?&lt;/li&gt;
+&lt;li&gt;Como pensar em diferentes escalas?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Em termos ecológicos, a regeneração de uma floresta pode ser vista em diferentes escalas de tempo e espaço&lt;/p&gt;
+&lt;img src=https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/scales.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12231&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Arroyo-Rodríguez et al 2017&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;imagine-três-paisagens-para-diferentes-organismos&#34;&gt;Imagine &lt;strong&gt;três&lt;/strong&gt; paisagens para diferentes organismos&lt;/h2&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-uma-formiga-cortadeira-atta-sp&#34;&gt;O que é uma paisagem para uma formiga cortadeira (Atta sp.)?&lt;/h2&gt;
+&lt;img src=https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/atta.jpeg&gt;
+&lt;img src=../for_floor.jpg&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-um-macaco-aranha-atteles-sp&#34;&gt;O que é uma paisagem para um macaco-aranha (Atteles sp.)?&lt;/h2&gt;
+&lt;img src=../atteles.jpeg&gt;
+&lt;img src=../canopy.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://rainforests.mongabay.com/0202.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mongabay&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-um-gavião-real-harpia-harpyja&#34;&gt;O que é uma paisagem para um Gavião-real (Harpia harpyja)?&lt;/h2&gt;
+&lt;img src=../harpia.jpeg&gt;
+&lt;img src=../trop_frag.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://rainforests.mongabay.com/0202.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mongabay&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Portanto, uma paisagem deve ser delimitada à escala que faça sentido biologicamente. No entanto, nem sempre é possível saber qual a &lt;strong&gt;melhor&lt;/strong&gt; escala para avaliar como uma paisagem afeta um processo biológico.&lt;/p&gt;
+&lt;h2 id=&#34;escala-do-efeito&#34;&gt;Escala do efeito&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>Aula 3 - Processos biológicos que podem ser medidos na escala de paisagens</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/03_processos_biol/3_processos/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/ecologia_paisag/03_processos_biol/3_processos/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/ecol_paisag/02_proce_biol.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;img src=https://nyaspubs.onlinelibrary.wiley.com/cms/asset/6effb788-da74-4e95-8f72-a8f4c8398c08/nyas14378-fig-0001-m.jpg&gt;
+&lt;p&gt;&lt;a href=&#34;https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.14378&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chase et al 2020&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;o-que-determina-como-as-espécies-estão-numa-paisagem&#34;&gt;O que determina como as espécies “estão” numa paisagem?&lt;/h2&gt;
+&lt;h3 id=&#34;filtros-ambientais&#34;&gt;Filtros ambientais&lt;/h3&gt;
+&lt;p&gt;É a interação entre as condições dadas pela estrutura de uma paisagem e o nicho da espécies que estão tentando sobreviver nessa paisagem.&lt;/p&gt;
+&lt;img src = https://slideplayer.com/slide/16302429/95/images/8/The+quest+for+assembly+rules.jpg&gt;
+&lt;h3 id=&#34;intrações-bióticas&#34;&gt;Intrações bióticas&lt;/h3&gt;
+&lt;p&gt;Processos de predação, facilitação, mutualismos diversos vão definir quais espécies coexistem numa paisagem&lt;/p&gt;
+&lt;h3 id=&#34;dispersão&#34;&gt;Dispersão&lt;/h3&gt;
+&lt;p&gt;Refere-se ao movimento de esécies, proágulos e genes numa paisagem&lt;/p&gt;
+&lt;img src = https://www.researchgate.net/publication/328115397/figure/fig1/AS:961885369270290@1606342751621/Species-occupancy-and-dispersal-along-landscapes-can-be-affected-in-different-ways-by.png&gt;
+&lt;h2 id=&#34;exercício&#34;&gt;Exercício:&lt;/h2&gt;
+&lt;h3 id=&#34;debate-sobre-fragmentação-na-ecologia-de-paisagem&#34;&gt;Debate sobre fragmentação na ecologia de paisagem&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Vamos dividr turma em 3 (três grupos):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Filtros abientais&lt;/li&gt;
+&lt;li&gt;Interações Bióticas&lt;/li&gt;
+&lt;li&gt;Dispersão&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Cada grupo deve apresentar um seminário com slides explicando como esses processos ecológicos podem ser usados para entender a dinãmica de comunidades biológicas em paisagens&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pré-requisitos computacionais</title>
+      <link>https://www.ecoaplic.org/en/courses/ecologia_paisag/r_rstudio/instacao_rstudio/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/ecologia_paisag/r_rstudio/instacao_rstudio/</guid>
+      <description>&lt;h2 id=&#34;para-cursar-essa-disciplina-vamos-precisar-usa-a-linguagem-r-como-auxílio-do--rstudio&#34;&gt;Para cursar essa disciplina, vamos precisar usa a linguagem R como auxílio do  Rstudio&lt;/h2&gt;
+&lt;h2 id=&#34;instalar-o-r&#34;&gt;Instalar o R&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o R &lt;a href=&#34;https://cran-r.c3sl.ufpr.br/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;instalar-o-rstudio&#34;&gt;Instalar o Rstudio&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o Rstudio &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;se-precisar-de-ajuda-veja-o-vídeo-abaixo&#34;&gt;Se precisar de ajuda, veja o vídeo abaixo&lt;/h2&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/pXWYHpoT_iM&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;rmarkdwon&#34;&gt;Rmarkdwon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o Rmarkdown, &lt;a href=&#34;https://docs.microsoft.com/pt-br/visualstudio/rtvs/rmarkdown-with-r-in-visual-studio?view=vs-2017&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siga esse tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rpubs-e-rmarkdown&#34;&gt;Rpubs e Rmarkdown&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie um documento node de R markdown no Rstudio. Escolha HTML como formato de output&lt;/li&gt;
+&lt;li&gt;Edite seu documento e quando finalizado, clique em &lt;strong&gt;&amp;ldquo;Knit&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Quando seu documento aparecer em uma nova janela, clique em publicar e siga os passos para publicar em Rpubs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Veja mais esse vídeo tutorial (em espnhol)&lt;/p&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/m4xwKXj_y0o&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;FIM&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

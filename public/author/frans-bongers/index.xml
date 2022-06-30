@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frans Bongers | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/frans-bongers/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/frans-bongers/index.xml" rel="self" type="application/rss+xml" />
+    <description>Frans Bongers</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Frans Bongers</title>
+      <link>https://fplmelo.netlify.app/author/frans-bongers/</link>
+    </image>
+    
+    <item>
+      <title>Multiple successional pathways in human-modified tropical landscapes: new insights from forest succession, forest fragmentation and landscape ecology research</title>
+      <link>https://fplmelo.netlify.app/publication/2017-01-01_multiple_successiona/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2017-01-01_multiple_successiona/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

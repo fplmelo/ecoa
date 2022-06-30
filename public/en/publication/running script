@@ -1,0 +1,6 @@
+
+# Runnign the script
+my_bibfile <- "/home/felipe/Google Drive/github/ecoa/content/en/publication/scopus.bib"
+out_fold   <- "/home/felipe/Google Drive/github/ecoa/content/en/publication"
+
+bibtex_2academic(bibfile  = my_bibfile, outfold = out_fold, abstract = FALSE)

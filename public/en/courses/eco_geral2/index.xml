@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Ecologia Geral 2 | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/courses/eco_geral2/</link>
+      <atom:link href="https://www.ecoaplic.org/en/courses/eco_geral2/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Ecologia Geral 2</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/en/courses/eco_geral2/featured.jpg</url>
+      <title>📒 Ecologia Geral 2</title>
+      <link>https://www.ecoaplic.org/en/courses/eco_geral2/</link>
+    </image>
+    
+    <item>
+      <title>Introdução à Biologia da Conservação</title>
+      <link>https://www.ecoaplic.org/en/courses/eco_geral2/biocons/biocons/</link>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/eco_geral2/biocons/biocons/</guid>
+      <description>
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;slides&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://fplmelo.github.io/ecogeral2/slides/aula4_biocons.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;biologia-da-conservação&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Biologia da conservação&lt;/h1&gt;
+&lt;p&gt;Ciência interndisciplinar que tem como objetivo resolver a crise da biodiversidade. É uma disciplina nova, surgidda à partir da constatação de que a humanidade passa por uma crise tremenda de extinção de espécies. Não se restringe apenas à biologia, apesar de seu nome e de sua origem dentro do campo das ciências nauturais.&lt;/p&gt;
+&lt;div id=&#34;o-que-é-biologia-da-conservação&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://www.oeco.org.br/dicionario-ambiental/28367-o-que-e-a-biologia-da-conservacao/#:~:text=Os%20bi%C3%B3logos%20da%20conserva%C3%A7%C3%A3o%20pesquisam,bem%2Destar%20da%20sociedade%20humana.&#34;&gt;O que é biologia da conservação?&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;princípios-da-biologia-da-conservação&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://conbio.org/images/content_prof_dev/conservation_literacy_portuguese.pdf&#34;&gt;Princípios da Biologia da Conservação&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;veja-esse-video-de-dois-biólogos-que-criaram-uma-empresa-dedicada-à-biologia-da-conservação&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Veja esse video de dois biólogos que criaram uma empresa dedicada à biologia da conservação&lt;/h2&gt;
+&lt;iframe width=&#34;800&#34; height=&#34;450&#34; src=&#34;https://www.youtube.com/embed/WjJdvr12Y7Q&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div id=&#34;podcast-papagaio-de-primata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://biologiadaconservacao.com.br/papagaiodeprimata&#34;&gt;Podcast Papagaio de Primata&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;antropocene-magazine&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://www.anthropocenemagazine.org/&#34;&gt;Antropocene Magazine&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;instituto-de-pesquisa-ecológicas&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://www.ipe.org.br/?gclid=CjwKCAjw3_KIBhA2EiwAaAAliqw-yD_l6hPNXm28xmGB9VKDd6aaW1QFnUsmjCv3ZUH8Gc8PUSY0ZhoCc1IQAvD_BwE&#34;&gt;Instituto de Pesquisa Ecológicas&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;história-do-pensamento-conservacionista&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;a href=&#34;https://www.scielo.br/j/his/a/LZyXDZjgmVh4ssHfPPNrGHd/?lang=pt&#34;&gt;História do pensamento conservacionista&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exercício&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Exercício&lt;/h1&gt;
+&lt;iframe width=&#34;680&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/IrfLtP9C6K8&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Veja o filme: A próxima refeição. Um documentário de Kléber Behcara sobre os conflitos envolvidos na criação, implmentação e manejo de uma UC de proteçã integral na Amazônia, o Parque Nacional do Jaú.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A turma será dividida em dois grups.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;O primeiro fará uma apresnetação breve sobre o modelo de unidades de conservação do Brasil, seus tipos, como são criados e seus objetivos&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;O segundo grupo vai fazer uma crítica ao modelo brasieiro de Unidades de Conservação, destacando suas falhas mas també acertos.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finalmente vamos tentar fazer uma discussão geral sobre os rumos da política brasileria sobre áreas protegidas.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Essa será nossa última tarefa e aula final!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ameaças à Biodiversidade</title>
+      <link>https://www.ecoaplic.org/en/courses/eco_geral2/ameacas/amea%C3%A7as/</link>
+      <pubDate>Fri, 18 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/eco_geral2/ameacas/amea%C3%A7as/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h1 id=&#34;slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/eco_geral2/aula3_ameaças.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;leituras-sugeridas&#34;&gt;Leituras sugeridas&lt;/h1&gt;
+&lt;h2 id=&#34;panorama-global-da-biodiversidade-5httpswwwuneporgpt-brresourcesrelatoriospanorama-da-biodiversidade-global-gbo-5&#34;&gt;&lt;a href=&#34;https://www.unep.org/pt-br/resources/relatorios/panorama-da-biodiversidade-global-gbo-5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Panorama Global da Biodiversidade 5&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.ramsar.org/sites/default/files/pictures/news/gbo5-card2_0.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;especial-biota-fapesphttpsrevistapesquisafapespbrentre-desafios-conceitos-e-ameacas&#34;&gt;&lt;a href=&#34;https://revistapesquisa.fapesp.br/entre-desafios-conceitos-e-ameacas/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Especial Biota Fapesp&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://revistapesquisa.fapesp.br/wp-content/uploads/2013/03/050-055_Biota_205-1gde.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mais-um-texto-legal-da-pesquisa-fapesphttpsrevistapesquisafapespbrperda-de-biodiversidade-ameaca-bem-estar-das-geracoes-atuais-e-futuras&#34;&gt;&lt;a href=&#34;https://revistapesquisa.fapesp.br/perda-de-biodiversidade-ameaca-bem-estar-das-geracoes-atuais-e-futuras/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mais um texto legal da Pesquisa Fapesp&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;um-video-sobre-o-bpbeshttpswwwyoutubecomwatchvqefmzuyuses&#34;&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QeFMZuyUSEs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Um video sobre o BPBES&lt;/a&gt;&lt;/h2&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;420&#34; src=&#34;https://www.youtube.com/embed/QeFMZuyUSEs&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h1 id=&#34;exercício-para-entrega&#34;&gt;Exercício para entrega&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Acesso o &lt;a href=&#34;https://pp.nexojornal.com.br/parceiros/BPBES/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Portal Nexo Políticas Públicas BPBES&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Passeie pelo material disponível, se informe um pouco sobre os temas de seu interesse.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Escolha um dos seguintes formatos:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Video Pergunte a um pesquisador &lt;a href=&#34;https://pp.nexojornal.com.br/pergunte-a-um-pesquisador/2020/09/01/Ra%C3%ADsa-Vieira-unidades-de-conserva%C3%A7%C3%A3o-da-natureza-no-Brasil&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;exemplo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Texto de opnião &lt;a href=&#34;https://pp.nexojornal.com.br/opiniao/2021/Sustentabilidade-demanda-di%C3%A1logo-e-n%C3%A3o-remendos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;exemplo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bibliografia básica &lt;a href=&#34;https://pp.nexojornal.com.br/bibliografia-basica/2020/Amaz%C3%B4nia-e-queimadas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;exemplo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Perguntas que a ciência já respondeu &lt;a href=&#34;https://pp.nexojornal.com.br/perguntas-que-a-ciencia-ja-respondeu/2020/As-dimens%C3%B5es-da-%C3%A1gua-e-dos-ambientes-aqu%C3%A1ticos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;exemplo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Glossário &lt;a href=&#34;https://pp.nexojornal.com.br/glossario/Biodiversidade-e-servi%C3%A7os-ecossist%C3%AAmicos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;exemplo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Siga as instruções deste &lt;a href=&#34;https://fplmelo.github.io/ecogeral2/data/roteiros.docx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arquivo em anexo&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;bonus&#34;&gt;Bonus&lt;/h1&gt;
+&lt;p&gt;Ainda tem essa aula que eu gravei para a turma do ano passado e pode ser útil&lt;/p&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/pxyIqDbljKc&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Padrões de Distribuição e Magnitude da Biodiversidade</title>
+      <link>https://www.ecoaplic.org/en/courses/eco_geral2/magnitude/magnitude/</link>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/eco_geral2/magnitude/magnitude/</guid>
+      <description>
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;slides&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://fplmelo.github.io/ecogeral2/slides/aula2_magnitude.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;leituras-sugeridas&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Leituras sugeridas&lt;/h1&gt;
+&lt;div id=&#34;o-verbete-da-wikipedia-é-um-bom-começo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;O verbete da &lt;a href=&#34;https://pt.wikipedia.org/wiki/Biogeografia&#34;&gt;Wikipedia&lt;/a&gt; é um bom começo&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/2/27/Biogeography.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;aqui-temos-um-bom-resumo-em-português-sobre-biogeografia&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Aqui temos um bom resumo em português sobre &lt;a href=&#34;http://portal.virtual.ufpb.br/biologia/novo_site/Biblioteca/Livro_1/4-Fundamentos_de_Sistematica_e_Biogeografia.pdf&#34;&gt;biogeografia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/Wt20MEHeDKkt9GsRXo/giphy.gif&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uma-animação-sobre-os-continentes&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Uma animação sobre os continentes&lt;/h3&gt;
+&lt;iframe width=&#34;980&#34; height=&#34;520&#34; src=&#34;https://www.youtube.com/embed/BKGv740PwB0&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;assista-esse-pequeno-vídeo-sobre-a-atuação-de-um-laaboratório-de-biogeografia&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Assista esse pequeno vídeo sobre a atuação de um laaboratório de biogeografia&lt;/h3&gt;
+&lt;iframe width=&#34;980&#34; height=&#34;720&#34; src=&#34;https://www.youtube.com/embed/BiG7UqaMIYQ&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;aqui-mais-um-vídeo-muito-esclarecedor-sobre-como-a-biogeografia-pode-ajudar-na-conservação&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Aqui mais um vídeo &lt;strong&gt;muito&lt;/strong&gt; esclarecedor sobre como a biogeografia pode ajudar na conservação&lt;/h3&gt;
+&lt;iframe width=&#34;980&#34; height=&#34;520&#34; src=&#34;https://www.youtube.com/embed/s3gsP5HzwdI&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exercício&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Exercício&lt;/h1&gt;
+&lt;div id=&#34;veja-os-vídeos-e-dê-uma-lida-no-material-sugerido&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1) Veja os vídeos e dê uma lida no material sugerido&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;agora-entenda-o-que-são-e-como-são-gerados-os-mapas-de-prioridades-para-conservação-oficiais-do-mma&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2) Agora, entenda o que são e como são gerados os mapas de &lt;a href=&#34;http://areasprioritarias.mma.gov.br/metodologia&#34;&gt;&lt;strong&gt;prioridades para conservação&lt;/strong&gt;&lt;/a&gt; oficiais do MMA&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;agora-conheça-como-foi-feito-o-exercício-de-criação-de-áreas-prioritárias-para-a-caatinga&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;3) Agora, conheça como foi feito o exercício de criação de &lt;a href=&#34;http://cienciaecultura.bvs.br/scielo.php?script=sci_arttext&amp;amp;pid=S0009-67252018000400013&#34;&gt;Áreas Prioritárias para a Caatinga&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dê-uma-olhada-no-mapa-gerado-pelo-exercício&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;4) Dê uma olhada no &lt;a href=&#34;http://areasprioritarias.mma.gov.br/images/mapas/mapaBioamas/Caatinga.bmp&#34;&gt;Mapa&lt;/a&gt; gerado pelo exercício&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;faça-uma-apresentação-em-ppt-use-ppt-do-google-docs-sobre-a-importância-do-planejamento-sustemático-da-conservação-isso-que-está-descrito-nos-textos-e-vídeos-que-é-basicamente-usar-informação-biológica-disponível-para-selecionar-áreas.&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;5) Faça uma apresentação em PPT (use ppt do Google Docs) sobre a importância do planejamento sustemático da conservação (isso que está descrito nos textos e vídeos, que é basicamente usar informação biológica disponível para selecionar áreas).&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tente-explicar&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;- Tente explicar:&lt;/h3&gt;
+&lt;div id=&#34;quais-são-os-dados-usados-para-tomar-as-decisões-fazer-os-mapas&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;- Quais são os dados usados para tomar as decisões (fazer os mapas)&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-esses-dados-são-importantes&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;- Porque esses dados são importantes&lt;/h4&gt;
+&lt;/div&gt;
+&lt;div id=&#34;quais-os-resultados-atuais-que-você-conhece-na-caatinga-e-que-foram-resultados-de-algum-produto-de-planejamento&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;- Quais os resultados atuais que você conhece na Caatinga e que foram resultados de algum produto de planejamento?&lt;/h4&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introdução à Biodiversidade</title>
+      <link>https://www.ecoaplic.org/en/courses/eco_geral2/intro/intro_bio/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/courses/eco_geral2/intro/intro_bio/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/clipboard/clipboard.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/shareon/shareon.min.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h1 id=&#34;slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/eco_geral2/Intro_biodiversidade.html#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;o-que-é-preciso-saber-sobre-biodiversidade&#34;&gt;O que é preciso saber sobre biodiversidade?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Aprenda a definir biodiversidade, com suas palavras e para públicos diferentes&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pt.wikipedia.org/wiki/Biodiversidade&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia em Português&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Biodiversity&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia em Inglês&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Consulte fontes diferentes sobre a definição de biodiversidade, tente entender como o coneito muda com o tempo e como se incorporou na agenda de conservação, disptando espaço com as mudanças climáticas e poluição (essa última historicamente dominante)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://repositorio.unb.br/bitstream/10482/28748/1/ARTIGO_ConceitoBiodiversidadeHistoria.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Evolução histórica do conceito de biodiversidade&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Entenda a questão dos valores ligados à biodiversidade&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://dx.doi.org/10.5380/dma.v8i0.22058&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;O valor da biodiversidade e o impasse taxonônico&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dimensões da diversidade biológica&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scielo.br/scielo.php?script=sci_arttext&amp;amp;pid=S1676-06032009000300008&amp;amp;lng=en&amp;amp;nrm=iso&amp;amp;tlng=pt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Diversidade Filogenética&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cientistasfeministas.wordpress.com/tag/diversidade-filogenetica/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Post sobre aquele artigo que vimos em aula nesse blog de cientistas feministas&lt;/a&gt;
+&lt;img src=&#34;https://cientistasfeministas.files.wordpress.com/2015/06/11348033_1127985990561521_2138220336_o1.jpg&#34; height=300/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.scielo.br/scielo.php?script=sci_arttext&amp;amp;pid=S1676-06032009000300008&amp;amp;lng=en&amp;amp;nrm=iso&amp;amp;tlng=pt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Diversidade Funcional&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;agora-a-tarefa&#34;&gt;Agora a tarefa&lt;/h1&gt;
+&lt;p&gt;Escreva um texto falando sobre a Biodiversidade de Pernambuco que cubra tanto aspectos técnicos como a magnitude da diversidade de espécies quanto de biomas e seu estado de conservação. Tente comunicar o quanto podemos estar perdendo em termos de desenvolivmento sustentável em não conhecer e valorizar nossa biodiversidade.&lt;/p&gt;
+&lt;p&gt;Tente escrever em estilo jornalístico, Ou seja, faça um texto curto, de até 800 palavras e ofereça para alguém ler antes de enviar. Veja se está claro. Vou avaliar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;abrangência&lt;/li&gt;
+&lt;li&gt;objetividade&lt;/li&gt;
+&lt;li&gt;impacto da mensagem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Escreva num &lt;a href=&#34;https://www.google.com/docs/about/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;google docs&lt;/a&gt; e insira na tarefa postada no &lt;a href=&#34;https://classroom.google.com/c/NDU4NDUxODUzNDQ4?cjc=7uz2x5x&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Classrom&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

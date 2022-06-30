@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gerardo Ceballos | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/author/gerardo-ceballos/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/author/gerardo-ceballos/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gerardo Ceballos</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Gerardo Ceballos</title>
+      <link>https://www.ecoaplic.org/pt/author/gerardo-ceballos/</link>
+    </image>
+    
+    <item>
+      <title>Football and biodiversity conservation: FIFA and Brazil can still hit a green goal</title>
+      <link>https://www.ecoaplic.org/pt/publication/2014-01-01_football_and_biodive/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2014-01-01_football_and_biodive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forest fragmentation reduces recruitment of large-seeded tree species in a semi-deciduous tropical forest of southern Mexico</title>
+      <link>https://www.ecoaplic.org/pt/publication/2010-01-01_forest_fragmentation/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/publication/2010-01-01_forest_fragmentation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

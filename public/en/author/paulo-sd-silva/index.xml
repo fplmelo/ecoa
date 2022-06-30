@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paulo SD Silva | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/paulo-sd-silva/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/paulo-sd-silva/index.xml" rel="self" type="application/rss+xml" />
+    <description>Paulo SD Silva</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Paulo SD Silva</title>
+      <link>https://www.ecoaplic.org/en/author/paulo-sd-silva/</link>
+    </image>
+    
+    <item>
+      <title>Leaf-cutting ants alter seedling assemblages across second-growth stands of Brazilian Atlantic forest</title>
+      <link>https://www.ecoaplic.org/en/publication/2012-01-01_leaf-cutting_ants_al/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2012-01-01_leaf-cutting_ants_al/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

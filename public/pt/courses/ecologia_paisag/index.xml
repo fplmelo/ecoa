@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📒 Ecologia de Paisagens | Ecologia Aplicada</title>
+    <link>https://www.ecoaplic.org/pt/courses/ecologia_paisag/</link>
+      <atom:link href="https://www.ecoaplic.org/pt/courses/ecologia_paisag/index.xml" rel="self" type="application/rss+xml" />
+    <description>📒 Ecologia de Paisagens</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/pt/courses/ecologia_paisag/featured.jpg</url>
+      <title>📒 Ecologia de Paisagens</title>
+      <link>https://www.ecoaplic.org/pt/courses/ecologia_paisag/</link>
+    </image>
+    
+    <item>
+      <title>Aula 1- Conceitos básicos de Paisagem</title>
+      <link>https://www.ecoaplic.org/pt/courses/ecologia_paisag/01_intro/intro_eco_pais/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/ecologia_paisag/01_intro/intro_eco_pais/</guid>
+      <description>&lt;script src=&#34;https://www.ecoaplic.org/rmarkdown-libs/fitvids/fitvids.min.js&#34;&gt;&lt;/script&gt;
+&lt;h1 id=&#34;o-que-é-uma-paisagem&#34;&gt;O que é uma paisagem?&lt;/h1&gt;
+&lt;div class=&#34;shareagain&#34; style=&#34;min-width:300px;margin:1em auto;&#34;&gt;
+&lt;iframe src=&#34;https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1&#34; width=&#34;1600&#34; height=&#34;900&#34; style=&#34;border:2px solid currentColor;&#34; loading=&#34;lazy&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;script&gt;fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});&lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;Comece revisando o conteúdo visto em classe com essa aula maravilhosa do &lt;a href=&#34;https://scholar.google.com.br/citations?user=9IKcHR8AAAAJ&amp;amp;hl=pt-BR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Alexandre Uezu&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width=&#34;760&#34; height=&#34;428&#34; src=&#34;https://www.youtube.com/embed/FilxJe3ah1E&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h2 id=&#34;características-bścias-de-uma-paisagem&#34;&gt;Características bścias de uma paisagem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Heterogeneidade&lt;/li&gt;
+&lt;li&gt;Delimitação espacial e temporal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;resumo&#34;&gt;Resumo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A paisagem é uma “janela” pela qual observamos um fenômeno biológico&lt;/li&gt;
+&lt;li&gt;Dentro dessa janela é preciso haver heterogeneidade, que deve ser mensurável&lt;/li&gt;
+&lt;li&gt;Ecologia de paisagens possui grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;para-começar-a-leitura&#34;&gt;Para começar a leitura&lt;/h2&gt;
+&lt;p&gt;Texto introdutório para essa disciplina do &lt;a href=&#34;https://www.scielo.br/j/bn/a/Jbchd6rjY35PGkY5BHPz63S/?format=pdf&amp;amp;lang=pt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dr. Jean Paul Metzger&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Leia o verbete da &lt;a href=&#34;https://pt.wikipedia.org/wiki/Ecologia_da_paisagem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia.org&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;exercício&#34;&gt;Exercício&lt;/h2&gt;
+&lt;p&gt;Descreva as paisagens abaixo à sua maneira tentando identificar quais seu componente e o quanto variam (200 palavras).&lt;/p&gt;
+&lt;p&gt;Paisagem A&lt;/p&gt;
+&lt;img src=https://cdn.pixabay.com/photo/2020/05/19/06/54/aerial-5189498_960_720.jpg&gt;
+&lt;p&gt;Paisagem B&lt;/p&gt;
+&lt;p&gt;&lt;img src=https://observatoriopantanal.org/wp-content/uploads/2019/12/Adriano-Gambarini-WWF-Brasil-4288x2144.jpg &gt;&lt;/p&gt;
+&lt;p&gt;FIM&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Aula 2- Definição e delimitação de paisagens</title>
+      <link>https://www.ecoaplic.org/pt/courses/ecologia_paisag/02_paisagem_delim/delim_paisag/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/ecologia_paisag/02_paisagem_delim/delim_paisag/</guid>
+      <description>&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 horas de estudo&lt;/p&gt;
+&lt;h2 id=&#34;hahahugoshortcode-s1-hbhb&#34;&gt;&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-1&#34;&gt;
+  &lt;summary&gt;Quais perguntas devemos ter em mente para delimitar uma paisagem?&lt;/summary&gt;
+  &lt;p&gt;&lt;ul&gt;
+&lt;li&gt;Qual a escala espacial e temporal em que meu fenômeno pode ser observado?&lt;/li&gt;
+&lt;li&gt;É mensurável?&lt;/li&gt;
+&lt;li&gt;Como pensar em diferentes escalas?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;/details&gt;&lt;/h2&gt;
+&lt;p&gt;Em termos ecológicos, a regeneração de uma floresta pode ser vista em diferentes escalas de tempo e espaço&lt;/p&gt;
+&lt;img src=https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/scales.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12231&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Arroyo-Rodríguez et al 2017&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;imagine-três-paisagens-para-diferentes-organismos&#34;&gt;Imagine &lt;strong&gt;três&lt;/strong&gt; paisagens para diferentes organismos&lt;/h2&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-uma-formiga-cortadeira-atta-sp&#34;&gt;O que é uma paisagem para uma formiga cortadeira (Atta sp.)?&lt;/h2&gt;
+&lt;img src=https://www.ecoaplic.org/en/courses/ecologia_paisag/02_paisagem_delim/delim_paisag_files/atta.jpeg&gt;
+&lt;img src=../for_floor.jpg&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-um-macaco-aranha-atteles-sp&#34;&gt;O que é uma paisagem para um macaco-aranha (Atteles sp.)?&lt;/h2&gt;
+&lt;img src=../atteles.jpeg&gt;
+&lt;img src=../canopy.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://rainforests.mongabay.com/0202.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mongabay&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;o-que-é-uma-paisagem-para-um-gavião-real-harpia-harpyja&#34;&gt;O que é uma paisagem para um Gavião-real (Harpia harpyja)?&lt;/h2&gt;
+&lt;img src=../harpia.jpeg&gt;
+&lt;img src=../trop_frag.jpg&gt;
+&lt;p&gt;Figura: &lt;a href=&#34;https://rainforests.mongabay.com/0202.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mongabay&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Portanto, uma paisgem deve ser delimitada à escala que faça sentido biologicamente. No entanto, nem sempre é possível saber qual a &lt;strong&gt;melhor&lt;/strong&gt; escala para avaliar como uma paisagem afeta um processo biológico.&lt;/p&gt;
+&lt;h2 id=&#34;escala-do-efeito&#34;&gt;Escala do efeito&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pré-requisitos computacionais</title>
+      <link>https://www.ecoaplic.org/pt/courses/ecologia_paisag/r_rstudio/instacao_rstudio/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/pt/courses/ecologia_paisag/r_rstudio/instacao_rstudio/</guid>
+      <description>&lt;h2 id=&#34;para-cursar-essa-disciplina-vamos-precisar-usa-a-linguagem-r-como-auxílio-do--rstudio&#34;&gt;Para cursar essa disciplina, vamos precisar usa a linguagem R como auxílio do  Rstudio&lt;/h2&gt;
+&lt;h2 id=&#34;instalar-o-r&#34;&gt;Instalar o R&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o R &lt;a href=&#34;https://cran-r.c3sl.ufpr.br/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;instalar-o-rstudio&#34;&gt;Instalar o Rstudio&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o Rstudio &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clique aqui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;se-precisar-de-ajuda-veja-o-vídeo-abaixo&#34;&gt;Se precisar de ajuda, veja o vídeo abaixo&lt;/h2&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/pXWYHpoT_iM&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;rmarkdwon&#34;&gt;Rmarkdwon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Para instalar o Rmarkdown, &lt;a href=&#34;https://docs.microsoft.com/pt-br/visualstudio/rtvs/rmarkdown-with-r-in-visual-studio?view=vs-2017&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siga esse tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rpubs-e-rmarkdown&#34;&gt;Rpubs e Rmarkdown&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie um documento node de R markdown no Rstudio. Escolha HTML como formato de output&lt;/li&gt;
+&lt;li&gt;Edite seu documento e quando finalizado, clique em &lt;strong&gt;&amp;ldquo;Knit&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Quando seu documento aparecer em uma nova janela, clique em publicar e siga os passos para publicar em Rpubs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Veja mais esse vídeo tutorial (em espnhol)&lt;/p&gt;
+&lt;iframe width=&#34;700&#34; height=&#34;400&#34; src=&#34;https://www.youtube.com/embed/m4xwKXj_y0o&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;FIM&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

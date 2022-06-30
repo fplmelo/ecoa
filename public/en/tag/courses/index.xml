@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>courses | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/tag/courses/</link>
+      <atom:link href="https://www.ecoaplic.org/en/tag/courses/index.xml" rel="self" type="application/rss+xml" />
+    <description>courses</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>courses</title>
+      <link>https://www.ecoaplic.org/en/tag/courses/</link>
+    </image>
+    
+  </channel>
+</rss>

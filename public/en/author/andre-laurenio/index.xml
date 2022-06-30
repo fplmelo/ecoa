@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andre Laurenio | Applied Ecology</title>
+    <link>https://www.ecoaplic.org/en/author/andre-laurenio/</link>
+      <atom:link href="https://www.ecoaplic.org/en/author/andre-laurenio/index.xml" rel="self" type="application/rss+xml" />
+    <description>Andre Laurenio</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Andre Laurenio</title>
+      <link>https://www.ecoaplic.org/en/author/andre-laurenio/</link>
+    </image>
+    
+    <item>
+      <title>Introduced goats reduce diversity and biomass of herbs in Caatinga dry forest</title>
+      <link>https://www.ecoaplic.org/en/publication/2020-01-01_introduced_goats_red/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.ecoaplic.org/en/publication/2020-01-01_introduced_goats_red/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

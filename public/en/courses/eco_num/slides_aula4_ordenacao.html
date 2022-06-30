@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ecologia Numérica</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Felipe Melo" />
+    <meta name="date" content="2021-04-27" />
+    <link href="slides_aula4_ordenacao_files/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="slides_aula4_ordenacao_files/remark-css-0.0.1/tamu-fonts.css" rel="stylesheet" />
+    <link href="slides_aula4_ordenacao_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="slides_aula4_ordenacao_files/tile-view-0.2.6/tile-view.js"></script>
+    <script src="slides_aula4_ordenacao_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="slides_aula4_ordenacao_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="slides_aula4_ordenacao_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="slides_aula4_ordenacao_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="slides_aula4_ordenacao_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="slides_aula4_ordenacao_files/fabric-4.3.1/fabric.min.js"></script>
+    <link href="slides_aula4_ordenacao_files/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="slides_aula4_ordenacao_files/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script src="slides_aula4_ordenacao_files/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="slides_aula4_ordenacao_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="slides_aula4_ordenacao_files/panelset-0.2.6/panelset.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Ecologia Numérica
+## Aula 4 - Métodos de ordenamento
+### Felipe Melo
+### Laboratório de Ecologia Aplicada - UFPE
+### 2021-04-27
+
+---
+
+
+
+
+# Análise de Componentes Principais - PCA
+.center[
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+### fonte: [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:start)
+]
+
+---
+.pull-left[
+# O que precisamos saber?
+
+###- Uma PCA é um método limdear de agrupamento
+
+###- Está baseada no princípio dos *"duplos zeros"*
+
+###- É um método para reduzir a multi-dimensionalidade dos dados
+
+###- Tem um mooooonte de tutorial por aí...
+]
+
+.pull-right[
+&lt;img src="https://miro.medium.com/max/2112/1*_NK2wo5o0ngQ-MfdoXe1aw.png" height=500&gt;
+]
+---
+# O princípio é simples... SQN
+
+.center[
+&lt;img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:pca_algorithm_2d_legendre-legendre.jpg?cache=&amp;w=639&amp;h=473&amp;tok=d5cead"&gt;]
+
+---
+&lt;iframe width="1195" height="672" src="https://www.youtube.com/embed/HMOI_lkzW08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+# Entendeu? Não?
+
+.panelset[
+.panel[.panel-name[Base]
+
+```r
+head(iris) # Dados sobre três espécies de planta que diferem em algumas características
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+]
+
+.panel[.panel-name[PCA]
+
+```r
+iris.pca &lt;- PCA(iris[,-5], graph = FALSE)
+iris.pca
+```
+
+```
+## **Results for the Principal Component Analysis (PCA)**
+## The analysis was performed on 150 individuals, described by 4 variables
+## *The results are available in the following objects:
+## 
+##    name               description                          
+## 1  "$eig"             "eigenvalues"                        
+## 2  "$var"             "results for the variables"          
+## 3  "$var$coord"       "coord. for the variables"           
+## 4  "$var$cor"         "correlations variables - dimensions"
+## 5  "$var$cos2"        "cos2 for the variables"             
+## 6  "$var$contrib"     "contributions of the variables"     
+## 7  "$ind"             "results for the individuals"        
+## 8  "$ind$coord"       "coord. for the individuals"         
+## 9  "$ind$cos2"        "cos2 for the individuals"           
+## 10 "$ind$contrib"     "contributions of the individuals"   
+## 11 "$call"            "summary statistics"                 
+## 12 "$call$centre"     "mean of the variables"              
+## 13 "$call$ecart.type" "standard error of the variables"    
+## 14 "$call$row.w"      "weights for the individuals"        
+## 15 "$call$col.w"      "weights for the variables"
+```
+]
+
+.panel[.panel-name[Gráfico]
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+.panel[.panel-name[Gráfico2]
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+]
+]
+
+---
+# Como interpretamos?
+.panelset[
+.panel[.panel-name[ex-1]
+&lt;img src="slides_aula4_ordenacao_files/figure-html/unnamed-chunk-7-1.png" width="400px" /&gt;
+]
+.panel[.panel-name[ex-2]
+&lt;img src="slides_aula4_ordenacao_files/figure-html/unnamed-chunk-8-1.png" width="400px" /&gt;
+]
+.panel[.panel-name[ex-3]
+&lt;img src="slides_aula4_ordenacao_files/figure-html/unnamed-chunk-9-1.png" width="400px" /&gt;
+]
+.panel[.panel-name[ex-4]
+&lt;img src="slides_aula4_ordenacao_files/figure-html/unnamed-chunk-10-1.png" width="400px" /&gt;
+]
+]
+
+---
+# Autovetores (eigenvalues)
+.panelset[
+.panel[.panel-name[objetos 'PCA']
+
+```r
+iris.pca
+```
+
+```
+## **Results for the Principal Component Analysis (PCA)**
+## The analysis was performed on 150 individuals, described by 4 variables
+## *The results are available in the following objects:
+## 
+##    name               description                          
+## 1  "$eig"             "eigenvalues"                        
+## 2  "$var"             "results for the variables"          
+## 3  "$var$coord"       "coord. for the variables"           
+## 4  "$var$cor"         "correlations variables - dimensions"
+## 5  "$var$cos2"        "cos2 for the variables"             
+## 6  "$var$contrib"     "contributions of the variables"     
+## 7  "$ind"             "results for the individuals"        
+## 8  "$ind$coord"       "coord. for the individuals"         
+## 9  "$ind$cos2"        "cos2 for the individuals"           
+## 10 "$ind$contrib"     "contributions of the individuals"   
+## 11 "$call"            "summary statistics"                 
+## 12 "$call$centre"     "mean of the variables"              
+## 13 "$call$ecart.type" "standard error of the variables"    
+## 14 "$call$row.w"      "weights for the individuals"        
+## 15 "$call$col.w"      "weights for the variables"
+```
+]
+.panel[.panel-name[objetos prcomp]
+
+```r
+iris.prcomp&lt;-prcomp(iris[,-5], scale. = TRUE)
+iris.prcomp
+```
+
+```
+## Standard deviations (1, .., p=4):
+## [1] 1.7083611 0.9560494 0.3830886 0.1439265
+## 
+## Rotation (n x k) = (4 x 4):
+##                     PC1         PC2        PC3        PC4
+## Sepal.Length  0.5210659 -0.37741762  0.7195664  0.2612863
+## Sepal.Width  -0.2693474 -0.92329566 -0.2443818 -0.1235096
+## Petal.Length  0.5804131 -0.02449161 -0.1421264 -0.8014492
+## Petal.Width   0.5648565 -0.06694199 -0.6342727  0.5235971
+```
+]
+.panel[.panel-name[autovetores PCA]
+
+```r
+iris.pca$eig
+```
+
+```
+##        eigenvalue percentage of variance cumulative percentage of variance
+## comp 1 2.91849782             72.9624454                          72.96245
+## comp 2 0.91403047             22.8507618                          95.81321
+## comp 3 0.14675688              3.6689219                          99.48213
+## comp 4 0.02071484              0.5178709                         100.00000
+```
+]
+.panel[.panel-name[autovetores prcomp]
+
+```r
+summary(iris.prcomp)
+```
+
+```
+## Importance of components:
+##                           PC1    PC2     PC3     PC4
+## Standard deviation     1.7084 0.9560 0.38309 0.14393
+## Proportion of Variance 0.7296 0.2285 0.03669 0.00518
+## Cumulative Proportion  0.7296 0.9581 0.99482 1.00000
+```
+]]
+
+---
+# Resumo dos autovetores
+.pull-left[
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Eigenvectors.gif"&gt;
+]
+.pull-right[
+&lt;img src="https://wiki.pathmind.com/images/wiki/mona_lisa_eigenvector.png"&gt;
+]
+
+credit: [Chris Nicholson](https://wiki.pathmind.com/eigenvector)
+
+---
+# Resumo dos autovetores
+.pull-left[
+###- São o valor que informa quanta relação há entre variáveis
+
+###- Informam a direção da vairação
+[Aqui tem ums explicação maravilhosa](https://setosa.io/ev/principal-component-analysis/)]
+.pull-right[
+&lt;img src="https://i.stack.imgur.com/lNHqt.gif" &gt;
+]
+
+---
+# Quantos PCs devo usar para entender meu fenômeno?
+.center[
+
+```r
+fviz_eig(iris.prcomp)
+```
+
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+]
+---
+# Qualidade da representação
+.center[
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+]
+---
+# Qualidade da representação
+.center[
+![](slides_aula4_ordenacao_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+]
+
+---
+class: center, middle
+# Dúvidas
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,1541 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Felipe P.L. Melo" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Análise de Clusters Slides
+ fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});  Segundo os autores do livro Numerical Ecology, a interpretação de um dendograma típíco das análises de cluster, demanda um certo grau de abstração, vejamos." />
+
+  
+    <link rel="alternate" hreflang="pt" href="https://www.ecoaplic.org/pt/courses/eco_num/cluster/cluster/" />
+  
+  <link rel="alternate" hreflang="en-us" href="https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#005f73" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.d59a2db67540613cd4fc93defec0c32c.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/en/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Applied Ecology" />
+  <meta property="og:url" content="https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/" />
+  <meta property="og:title" content="Análise de Clusters | Applied Ecology" />
+  <meta property="og:description" content="Análise de Clusters Slides
+ fitvids(&#39;.shareagain&#39;, {players: &#39;iframe&#39;});  Segundo os autores do livro Numerical Ecology, a interpretação de um dendograma típíco das análises de cluster, demanda um certo grau de abstração, vejamos." /><meta property="og:image" content="https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://www.ecoaplic.org/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+    
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Análise de Clusters | Applied Ecology</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="0d5bb3e8b764f60c35e198d7d1914fda" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.82a2df885514d7a8250a5a85f0335ab9.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/people/"><span>People</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/blog/"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/project/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#videos"><span>Videos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/en/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/FelipePLMelo" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+           aria-haspopup="true" aria-label="Languages">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item dropdown-item-active">
+            <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://www.ecoaplic.org/pt/courses/eco_num/cluster/cluster/">
+            <span>Português</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Análise de Clusters</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
+<h1 id="análise-de-clusters">Análise de Clusters</h1>
+<p><em>Slides</em></p>
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+<p><img src="https://i1.wp.com/complex-systems-ai.com/wp-content/uploads/2020/09/Cluster-Analysis-1000x468-1.jpg?resize=1000%2C468&amp;ssl=1" alt=""></p>
+<p>Segundo os autores do livro <strong>Numerical Ecology</strong>, a interpretação de um dendograma típíco das análises de cluster, demanda um certo grau de abstração, vejamos. Um cluster serve para particionar (i.e. criar fornteiras) conjuntos de objetos (Q mode) ou variáveis (R-mode). Dessa forma, podemos identificar o grau de semelhança (ou diferença) entre sujeitos analisados. Para isso, a análise cria uma <strong>tipologia</strong>, que é uma estrutura completa e complexa, na forma de uma árvore ou nuvem de pontos que informa sobre essa semelhança/diferença. A <a href="https://en.wikipedia.org/wiki/Cluster_analysis#:~:text=Cluster%20analysis%20or%20clustering%20is,in%20other%20groups%20%28clusters%29" target="_blank" rel="noopener">Wikipedia</a> tem um verbete interssante sobre isso e vou deuxar aqui alguns tutoriais em <strong>R</strong> paa vocês reprodizirem.</p>
+<h1 id="o-pulo-do-gato">O pulo do gato</h1>
+<p><img src="https://media.giphy.com/media/kZ1prc4j4nV84/giphy.gif" alt=""></p>
+<p>Se você juntar qualquer conjunto de dados, de qualquer natureza, uma análise de cluster vai gerar uma estrutura que vai parecer uma coisa que têm sentido ou até impressionar seus colegas que dirão: UAU!!!</p>
+<p>O “<strong>pulo do gato</strong>” se refere ao uso da análise cluster associado a uma *HIPÓTESE”. Você precisa pensar sobre seus dados ecológicos, que geralmente são frutos de um desenho amostral guiado por uma pergunta científica. Prestem atenção no último exercício, da última aula, onde mostrei pra vocês como, à partir de uma pergunta sobre a semelhança entre as comunidades do alto, média e baixo rio, testei através de uma análise de cluster, se minha hipóitese tinha sentido. E tinha, de certa forma, mas comunidades dessas três seções do rio, são mais parecidas entre si que entre elas e outras comunidades de outras partes do rio. Mostrei isso colorindo minhas comunidades e organizando-as num cluster.</p>
+<p><strong>Nota de precaução</strong>, e aqui vou citar literalmente o <em>Numerical Ecology with R</em>:
+“Clustering is not a typical statistical method in that it
+does not test any hypothesis. Clustering helps bring out some features hidden in the
+data; it is the user who decides if these structures are interesting and worth interpreting
+in ecological terms.” (p. 54)</p>
+<p>Ou seja, o ordenamento via cluster não é um <a href="https://www.inf.ufsc.br/~andre.zibetti/probabilidade/teste-de-hipoteses.html" target="_blank" rel="noopener"><strong>teste de hipótese</strong></a> mas uma ferramenta para explorar estruturas “ocultas” nos dados, e somos nós pesquisadores, que decidimos se elas têm algum valor ecológico. Lembrem-se, qualquer dados de qalquer natureza, vai ser agrupado numa estrutura qualquer. Nós é que precisamos dar sentido à elas.</p>
+<h1 id="exemplo-1">Exemplo 1</h1>
+<p>Imagine-se na sua turma da escola, com 40 alunos. Um professor de biologia pediu quefosse formados 5 grupos para a realização de um trabalho sobre a vida na Terra. Os grupos são livres, cada um fica com as companhias e o tema que desejar. Cada grupo tem que fazer um trabalho sobre um dos reinos: animal, vegetal, fungi, protista e monera. A pergunta é: Como se agrupariam os alunos? Quais seriam so critérios que vocÊ imaginaria? Eu, se me lembro bem, pois faz tempo… pensaria:</p>
+<ol>
+<li>
+<p>Vou fiar com meus amigos/amigas</p>
+</li>
+<li>
+<p>Vou ficar com o tema que gosto mais</p>
+</li>
+<li>
+<p>Não posso ficar só com a turma da bagunça</p>
+</li>
+<li>
+<p>Quero ficar no grupo daquela “boyzinha/boyzinho”</p>
+</li>
+</ol>
+<p>Então, é muito provável que um professor atento à sua turma consiga prever quase com perfeição, como será a composição dos grupos. Mas nunca 100%, tem sempre um erro associado que bagunça a estrutura esperada.</p>
+<pre><code class="language-r">set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  aluno = paste0(&quot;aluno&quot;, 1:40), # 40 alunos
+  amizade = sample(c(1:5), replace=TRUE, size=40), # grupo de amigos ao qual pertence. aqui separei em 5 grupos
+  tema = sample(c(1:5), replace=TRUE, size=40),# um dos cinco reinos, sendo 1=planta; 2=animal; 3=fungi;4=protista;5=monera
+  bagunca = sample(c(0:1), replace=TRUE, size=40),# ou se é bagunceiro =1 ou não é bagunceiro = 0
+  love = sample(c(0:1), replace=TRUE, size=40) # seu love tá lá = 1 ou não está =0
+)-&gt; aula
+aula
+</code></pre>
+<pre><code>## # A tibble: 40 × 5
+##    aluno   amizade  tema bagunca  love
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;int&gt;
+##  1 aluno1        3     2       0     0
+##  2 aluno2        4     5       0     0
+##  3 aluno3        5     1       1     1
+##  4 aluno4        1     2       1     1
+##  5 aluno5        1     5       1     1
+##  6 aluno6        2     4       1     0
+##  7 aluno7        2     5       1     1
+##  8 aluno8        3     4       1     0
+##  9 aluno9        5     2       0     1
+## 10 aluno10       3     3       0     0
+## # … with 30 more rows
+</code></pre>
+<p>Vamos criar uma matriz de similaridade. Nesse caso, temos variaǘeis cujos zeros são importantes (lembram?) e portanto devemos usar alguma medida de distância que seja sensível a isso. Vamos testar com a distância euclidiana mesmo.</p>
+<pre><code class="language-r">al.dist&lt;-vegdist(aula[,-1],method = &quot;euclidean&quot;) # retirei a coluna dos nomes dos alunos
+</code></pre>
+<p>Agora é só graficar…</p>
+<pre><code class="language-r">clust_alun.comp&lt;-hclust(al.dist, method = &quot;complete&quot;)
+clust_graf_alun.com&lt;-plot(clust_alun.comp, hang=-1)
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Mas, diante dessa estrutura, qual é a informação que você extrai? Sem uma hipotese, não tem muito o que fazer a não ser observar a distribuição dos 40 alunos nos grupos e ficar pensando o que eles têm em comum e talvez, num segundo momento, pensar numa hipotese.</p>
+<h1 id="alguns-princípios">Alguns princípios</h1>
+<h3 id="escolha-o-método-de-agrupamento">Escolha o método de agrupamento</h3>
+<p>No exemplo acima, é possível notar que usei o método “complete,” mas existem outos, que dão resultados diferentes. Vejamos:</p>
+<p>Parece que ainda menos informçaõ foi gerada.</p>
+<pre><code class="language-r">clust_alun&lt;-hclust(al.dist, method = &quot;single&quot;)
+clust_graf_alun&lt;-plot(clust_alun, hang=-1)
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>E se testarmos outros metodos, como “<strong>Ward</strong>?”</p>
+<p>Parecem consguir agrupar tão bem quanto o “complete”</p>
+<pre><code class="language-r">clust_alun&lt;-hclust(al.dist, method = &quot;ward.D&quot;)
+clust_graf_alun&lt;-plot(clust_alun, hang=-1)
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><a href="http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf" target="_blank" rel="noopener">Aqui</a> Tem uma apresentção bem resumidinha sobre os métodos de agrupamento de cluster, feita por <a href="http://www5.each.usp.br/web/prof/lauretto/" target="_blank" rel="noopener">Marcelo Lauretto</a> da USP</p>
+<h3 id="escolha-o-método-de-distância-a-ser-usado">Escolha o método de distância a ser usado</h3>
+<p>Os métodos de distância são os mais usados para dados numéricos, mas <em>sofrem</em> quando os dados são categóricos, mesmo quando esses são representados por zeros e uns. Qual a distância entre ser “bagunceiro” e “não-bagunceiro” (exemplo acima)? Bom, aqui representamos como zeros e uns. Igualmente, usei números quue separam os temas e a distância entre monera e planta é maior que a distância entre planta e animal.</p>
+<p>vejamos o que acontece que realmente considerarmos nossa matriz como dados categóricos, que é o que são na realidade.</p>
+<pre><code class="language-r">aula %&gt;% 
+  mutate_at(vars(2:5), factor)-&gt;aula.fct # isso tranforma todo mundo em fatores categóricos
+
+# Ou podemos refazer a tabela propriamente
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  aluno = paste0(&quot;aluno&quot;, 1:40), # 40 alunos
+  amizade = sample(c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;), replace=TRUE, size=40), # grupo de amigos ao qual pertence. aqui separei em 5 grupos
+  tema = sample(c(&quot;planta&quot;,&quot;animal&quot;,&quot;fungo&quot;,&quot;protista&quot;,&quot;monera&quot;), replace=TRUE, size=40),# com nomes
+  bagunca = sample(c(&quot;bagunça&quot;, &quot;cdf&quot;), replace=TRUE, size=40),# ou se é bagunceiro = bagunça ou não é bagunceiro = cdf
+  love = sample(c(&quot;love&quot;,&quot;n_love&quot;), replace=TRUE, size=40) # seu love tá lá = love ou não está =n_love
+)-&gt; aula.fct
+
+head(aula.fct)
+</code></pre>
+<pre><code>## # A tibble: 6 × 5
+##   aluno  amizade tema     bagunca love  
+##   &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt; 
+## 1 aluno1 c       animal   bagunça love  
+## 2 aluno2 d       monera   bagunça love  
+## 3 aluno3 e       planta   cdf     n_love
+## 4 aluno4 a       animal   cdf     n_love
+## 5 aluno5 a       monera   cdf     n_love
+## 6 aluno6 b       protista cdf     love
+</code></pre>
+<pre><code class="language-r">#al.dist.fct&lt;-vegdist(aula.fct[,-1], method = &quot;euclidian&quot;)# não aceita euclidiana. na verdade a função vegdist não aceita dados categóricos.
+
+library(cluster)
+al.dist.fct&lt;-daisy(aula[,-1], metric = c(&quot;gower&quot;)) # Essa função com a distância &quot;gower&quot; consegue calcular a matriz de siilaridade
+</code></pre>
+<pre><code>## Warning in daisy(aula[, -1], metric = c(&quot;gower&quot;)): binary variable(s) 3, 4
+## treated as interval scaled
+</code></pre>
+<pre><code class="language-r">clust_alun_fct&lt;-hclust(al.dist.fct, method = &quot;complete&quot;)
+clust_graf_alun_fact&lt;-plot(clust_alun_fct, hang=-1)
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Vamos compara os dois?</p>
+<pre><code class="language-r">library(cowplot)
+plot_grid(plot(clust_alun.comp, hang=-1), plot(clust_alun_fct, hang=-1))
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-2.png" width="672" /><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-3.png" width="672" /></p>
+<h3 id="averigue-a-qualidade-do-cluster">Averigue a qualidade do cluster</h3>
+<p>A maneira mais simples de avaliar a qualidade de um cluster é saber se a distância entre os pares <strong>dentro</strong> do grupo é menor que <strong>entre</strong> os grupos.</p>
+<h1 id="tipos-de-métodos">Tipos de métodos</h1>
+<p><img src="https://miro.medium.com/max/516/1*qrfDH1woi77HSuzOq7ymmA.png" alt="">
+<a href="http://uc-r.github.io/hc_clustering" target="_blank" rel="noopener">UC Business Analytics R Programming Guide</a></p>
+<p>Essa figura mostra os dois grandes tipos de métodos: <strong>Aglomerativo</strong> e <strong>Divisivo</strong>. Eles se diferenciam basicamente na ordem em que começam a organizar os clusters, se da ponta à raíz, ou ao contrátrio. Uma descrição completa se encontra nos links que estão ao longo dessa aula.</p>
+<h1 id="melhorando-os-dendogramas">Melhorando os dendogramas</h1>
+<p>Nesses dendogramas que estamos gerando, o eixo Y “height” é usado para ler a dissimilaridade entre pares de objetos unidos por um mesmo “nó,” mas não podemos usar esse eixo para medir a distância entre objetos unidos por <strong>clusters</strong>. Para isso precisamos criar os grupos ou pedir que os algorítimos <em>encontrem</em> os grupos.</p>
+<pre><code class="language-r">grup_alun&lt;-cutree(clust_alun_fct, k=5) # quero 5 grupos
+table(grup_alun) # vejamos o número de alunos em cada grupo
+</code></pre>
+<pre><code>## grup_alun
+##  1  2  3  4  5 
+## 11  6 10  5  8
+</code></pre>
+<pre><code class="language-r">plot(clust_alun_fct)
+rect.hclust(clust_alun_fct, k = 4, border = 2:5) # posse até ver quais são esses grupos
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Agora, podemos voltar para nossos dados e ver se os grupos gerados. E à partir daqui, uma infindade de análises exploratórias podem ser feitas.</p>
+<pre><code class="language-r">aula.fct %&gt;% 
+  mutate(cluster=grup_alun)
+</code></pre>
+<pre><code>## # A tibble: 40 × 6
+##    aluno   amizade tema     bagunca love   cluster
+##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt;
+##  1 aluno1  c       animal   bagunça love         1
+##  2 aluno2  d       monera   bagunça love         1
+##  3 aluno3  e       planta   cdf     n_love       2
+##  4 aluno4  a       animal   cdf     n_love       2
+##  5 aluno5  a       monera   cdf     n_love       3
+##  6 aluno6  b       protista cdf     love         4
+##  7 aluno7  b       monera   cdf     n_love       3
+##  8 aluno8  c       protista cdf     love         4
+##  9 aluno9  e       animal   bagunça n_love       5
+## 10 aluno10 c       fungo    bagunça love         1
+## # … with 30 more rows
+</code></pre>
+<h1 id="método-não-hierárquico-k-means">Método não hierárquico (K-means)</h1>
+<p>Aqui o problema é quando não sabemos se a esturura dos dados permite ou não reconhecer grupos. Isso é muito comum para dados biológicos, mas pode ser aplicado por exemplo para saber se podemos dividir nosso rio (aquele do exemplo do livro, em três partes: alto, médio e baixo) de maneira embasada nos intervalos dos dados. A lógica do agrupamento não hierárquico é que ele tenta <strong>sempre</strong> minimizar a distância intra-grupo dentro de um conjunto pré-definido de grupos a serem criados.</p>
+<p>Vejamos como funcionaria para o nosso rio</p>
+<pre><code class="language-r">k3&lt;-kmeans(env[,-c(1,4,12)], centers = 3, nstart=25)
+k3 # Aqui dá pra ver muita coisa, inclusive a qual cluster (1,2 uo 3) cada amostra do rio pertence. Dá pra ver a média de cada variável entre os clusters 
+</code></pre>
+<pre><code>## K-means clustering with 3 clusters of sizes 9, 14, 7
+## 
+## Cluster means:
+##        ele      slo       pH      har       pho      nit         amm       oxy
+## 1 857.1111 8.188889 8.044444 69.44444 0.1477778 0.320000 0.065555556  9.722222
+## 2 248.7143 0.700000 8.028571 94.57143 1.0050000 2.795714 0.402142857  8.128571
+## 3 464.4286 3.057143 8.100000 90.57143 0.1900000 1.085714 0.008571429 11.485714
+##        bod
+## 1 4.044444
+## 2 6.864286
+## 3 3.000000
+## 
+## Clustering vector:
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+##  1  1  1  1  1  1  1  1  1  3  3  3  3  3  3  3  2  2  2  2  2  2  2  2  2  2 
+## 27 28 29 30 
+##  2  2  2  2 
+## 
+## Within cluster sum of squares by cluster:
+## [1] 35819.23 40309.58 35691.36
+##  (between_SS / total_SS =  94.8 %)
+## 
+## Available components:
+## 
+## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;     &quot;tot.withinss&quot;
+## [6] &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;         &quot;ifault&quot;
+</code></pre>
+<p>Agora podemos graficar</p>
+<pre><code class="language-r">library(factoextra)
+</code></pre>
+<pre><code>## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa
+</code></pre>
+<pre><code class="language-r">fviz_cluster(k3, data = env[,-c(1,4,12)])
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Será que <strong>3</strong> é ralmente o melhor número de clusters para separar as seções do rio?</p>
+<pre><code class="language-r">fviz_nbclust(env[,-c(1,4,12)], kmeans, method = &quot;silhouette&quot;) # felizmente tem uma função que faz isso rapidinho
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Epa!!!! aparentemente são apenas duas as seções do rio que fazem sentido segundo os dados, portantom recomecemos de novo.</p>
+<pre><code class="language-r">k2&lt;-kmeans(env[,-c(1,4,12)], centers =2, nstart=25)
+fviz_cluster(k2, data = env[,-c(1,4,12)])
+</code></pre>
+<p><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Então, parece que temos apenas um “alto” e um “baixo” rio.</p>
+<h1 id="resumo">Resumo</h1>
+<p>Vocês verão, se usarem o <a href="https://fplmelo.github.io/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Scripts/chap4.R" target="_blank" rel="noopener">script dp capítulo 4</a> do <strong>Numerical Ecology with R</strong> verao que há uma infinidade de aplicações para agrupamentos de cluster. Na verdade são tantas que ficaria chato aqui mostrar uma por uma. Mas, o que precisam saber é:</p>
+<ol>
+<li>
+<p>Clusters são métodos de agrupamento que ajudam a revelar estrutura de dados</p>
+</li>
+<li>
+<p>Dependem muito das escolhas do pesquisador e de sua interpretação. Não são um teste estatístico.</p>
+</li>
+<li>
+<p>Podem e devem ser usados para a análise de dados ecológicos que envolvem muitas variáveis.</p>
+</li>
+</ol>
+<h1 id="exercício-para-entrega">Exercício para entrega</h1>
+<p><img src="https://media.giphy.com/media/xUOxfd3Y6g2C2aSXkc/giphy.gif" alt=""></p>
+<ol>
+<li>
+<p>Use a base “spe” e tente econtrar grupos de amostras (comunidades) que pertencem à trechos específicos do rio <br></p>
+</li>
+<li>
+<p>teste tanto medidas de distância quanto métodos de agrupamento diferentes</p>
+</li>
+<li>
+<p>Use métodos de K-means para encontrar quantos clusters há de fato segundo o método “silhouette”</p>
+</li>
+<li>
+<p>grafique o rio colorindo as amostras segundo seu pertencimento aos clusters gerados</p>
+</li>
+</ol>
+<p>como esse aqui
+<img src="https://fplmelo.github.io/eco_numerica/images/doubs_river.png" alt=""></p>
+<ol start="5">
+<li>Avalie com gráficos de boxplot como os clusters são diferenciados em termos ambientais (base “env”) e comente os resltados brevemente, tentando interpretar os resultados biológicos.</li>
+</ol>
+<p>#FIM</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/en/tag/science/">science</a>
+  
+  <a class="badge badge-light" href="/en/tag/projects/">projects</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/&amp;text=An%c3%a1lise%20de%20Clusters" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/&amp;t=An%c3%a1lise%20de%20Clusters" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=An%c3%a1lise%20de%20Clusters&amp;body=https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/&amp;title=An%c3%a1lise%20de%20Clusters" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=An%c3%a1lise%20de%20Clusters%20https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://www.ecoaplic.org/en/courses/eco_num/cluster/cluster/&amp;title=An%c3%a1lise%20de%20Clusters" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://www.ecoaplic.org/"><img class="avatar mr-3 avatar-circle" src="/en/author/felipe-p.l.-melo/avatar_hue643ce1995d1a3ccdfe20853fcfe3a0f_68042_270x270_fill_q75_lanczos_center.jpg" alt="Felipe P.L. Melo"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://www.ecoaplic.org/">Felipe P.L. Melo</a></h5>
+      <h6 class="card-subtitle">Associate Professor in Applied Ecology</h6>
+      <p class="card-text">Biologist and eco-socialist. Another world is possible!</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/en/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/FelipePLMelo" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=ytoqEukAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-1271-3214" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://publons.com/researcher/1509340/felipe-pl-melo/" target="_blank" rel="noopener">
+        <i class="ai ai-publons"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=7005124694" target="_blank" rel="noopener">
+        <i class="ai ai-elsevier"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/1637874338382368" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/fplmelo" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.f722080e3339eab234747b51f20c5862.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

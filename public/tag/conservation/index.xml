@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conservation | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/tag/conservation/</link>
+      <atom:link href="https://fplmelo.netlify.app/tag/conservation/index.xml" rel="self" type="application/rss+xml" />
+    <description>conservation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>conservation</title>
+      <link>https://fplmelo.netlify.app/tag/conservation/</link>
+    </image>
+    
+    <item>
+      <title>Video produzido pela ASCOM UFPE que conta a história da ciração do RVS Tatu-Bola em Pernambuco</title>
+      <link>https://fplmelo.netlify.app/talk/video-produzido-pela-ascom-ufpe-que-conta-a-historia-da-ciracao-do-rvs-tatu-bola-em-pernambuco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/talk/video-produzido-pela-ascom-ufpe-que-conta-a-historia-da-ciracao-do-rvs-tatu-bola-em-pernambuco/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

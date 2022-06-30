@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felipe Pimentel Lopes de Melo | Applied Ecology</title>
+    <link>https://fplmelo.netlify.app/author/felipe-pimentel-lopes-de-melo/</link>
+      <atom:link href="https://fplmelo.netlify.app/author/felipe-pimentel-lopes-de-melo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Felipe Pimentel Lopes de Melo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fplmelo.netlify.app/media/logo_hu96dc7a703728a50c9c678a848a8d3c70_118717_300x300_fit_lanczos_2.png</url>
+      <title>Felipe Pimentel Lopes de Melo</title>
+      <link>https://fplmelo.netlify.app/author/felipe-pimentel-lopes-de-melo/</link>
+    </image>
+    
+    <item>
+      <title>Diversity patterns of reef fish along the Brazilian tropical coast</title>
+      <link>https://fplmelo.netlify.app/publication/2020-01-01_diversity_patterns_o/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2020-01-01_diversity_patterns_o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heterogeneidade de substratos e diversidade de herbaceas na Caatinga sedimentar e cristalina</title>
+      <link>https://fplmelo.netlify.app/publication/2018-01-01_heterogeneidade_de_s/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2018-01-01_heterogeneidade_de_s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soil-mediated filtering organizes tree assemblages in regenerating tropical forests</title>
+      <link>https://fplmelo.netlify.app/publication/2018-01-01_soil-mediated_filter/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2018-01-01_soil-mediated_filter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Secondary forests as biodiversity repositories in human-modified landscapes: insights from the Neotropics</title>
+      <link>https://fplmelo.netlify.app/publication/2012-01-01_secondary_forests_as/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://fplmelo.netlify.app/publication/2012-01-01_secondary_forests_as/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

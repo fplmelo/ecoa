@@ -13,7 +13,7 @@ interests:
 organizations:
 - name: Universidade Federal de Pernambuco # não mudar
   url: "www.ufpe.br" # não mudar
-role: Undergrad Student; # Escolha um desses e apague o resto
+role: Mestrado; # Escolha um desses e apague o resto
 social:
 - icon: envelope
   icon_pack: fas
@@ -25,7 +25,7 @@ social:
   icon_pack: fab
   link: https://github.com/Barros082
 superuser: false
-user_groups: ["Undergrad Students"] # Não mexer
+user_groups: ["Grad Students"] # Não mexer
 title: Arthur André de Barros Rodrigues
 ---
  

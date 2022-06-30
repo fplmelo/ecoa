@@ -1,5 +1,5 @@
 ---
-date: "2022-07-01"
+date: "2022-06-01"
 linkTitle: Ecologia da Restauração
 summary: A restauração ecológica é um teste experimental constante para a Ecologia
 title: "\U0001F4D2 Ecologia da Restauração"

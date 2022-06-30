@@ -14,16 +14,16 @@ main:
     url: 'blog/'
     weight: 
   - name: Projects
-    url: 'en/project/'
+    url: 'project/'
     weight: 40
   - name: Videos
     url: '#videos'
     weight: 50
   - name: Publications
-    url: 'en/publication/'
+    url: 'publication/'
     weight: 
   - name: Courses
-    url: 'courses/'
+    url: 'courses2022/'
     weight: 
   - name: Contact
     url: '#contact'

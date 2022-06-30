@@ -1,0 +1,408 @@
+---
+title: "Medidas de Associação"
+author: Felipe Melo
+date: '2021-08-23'
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(vegan)
+library(knitr)
+library(xaringan)
+library(xaringanExtra)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r , echo=FALSE}
+
+xaringanExtra::embed_xaringan(url="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1", ratio = "16:9")
+
+```
+
+
+Na ecologia usamos muitas medidas que fazem uma _ligação_ entre pares de dados. Esses _pares de dados_ podem ser espécies, ou locais de coleta. Há uma enorme variedade de métricas que vão nos oferecer uma medida de associação entre pares. Essas medidas são reportadas na forma de índices ou métricas que têm naturezas distintas, mas todas tem a particularidade de gerar uma matriz quadrada e simétrica de dimensões _n x n_ quando se comparam objetos ou _p x p_ quando se comparam variáveis (as letras são conveções). Essas matrizes de assossiação serão criadas e facilmente pelas análises, mas o pesquisador aqui tem um papel fundamental: **escolher as métricas**
+
+## Q mode & R mode
+
+_Como de constume, vamos seguir nessa disciplina o roteiro proposto pelo livro texto [**Numerical Ecology with R**](http://jinliangliu.weebly.com/uploads/2/5/7/8/25781074/numerical_ecology_with_r.pdf)._
+
+Novamente, isso é uma convenção para distinguir as comparações entre objetos _*Q-mode*_ ou variáveis _*R-mode*_. As comparações entre objetos são geralmente feitas através de medidas de _distância_ enquanto as comparações entre variáveis são realizadas com medidas de _dependência_. 
+
+### O problema dos zeros
+
+Todas as matrizes de dados ecológicos costumam ter zeros. Esses podem ser naturais (observações) ou simplesmente ausências de dados. Mas precisamos ter ideia de quão importantes são os zeros. No livro *Numerical Ecology* o exemplo dado para que entendamos os papel dos zeros em matrizes ecológicas é claro. Quando zeros são resultados de mediação de uma vairável, como concentroação de Oxigênio, a interpretação é clara, sem oxigênio, sem vida aeróbica e portanto zero frequência de vida aeróbica nessas condições é esperado. Agora, que tal se obtemos zeros em concetrações intermediárias de qualquer variável ambiental? As epécies  *não* ocorrem aí porque tem pouco ou muito oxigênio? Note que aí temos uma interpretação diferente para cada situação. Ainda, em ambos casos a informção de _ausência_ ou _presença_ tem um significado ecológico, mas não sabemos as causas das _ausências_.
+
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:double-zero-illustration.png" />
+
+Note que as amostras A, B e C não capturaram a espécie cuja presença/abundância está representada pela linha vermelha. Portano, se essa for a única diferença entre as amostras A, B e C, os índices que não são sensíveis a este problema, não caprutam essa diferenaça e consideram que a similaridade entre A e B é igual a A e C ou B E C. Mas não é. VOcê poderia dizer porque?
+
+### praticando...
+Uma boa maneira é checar se há zeros provenientes de valores vazios ou **NA**
+
+```{r  include=TRUE}
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+
+head(is.na(spe))
+```
+
+Se os dados fossem realmente NAs então teríamos uma matriz um pouco diferente...
+```{r include=TRUE}
+spe_na <- replace(spe, spe == 0, NA) # Mudei zeros por NAs
+head(is.na(spe_na))
+
+```
+Nesse caso até um gráfico pode nos ajudar a ter uma dimensão da importância dos zeros NAs
+
+```{r,  out.width="600px"}
+image(as.matrix(spe_na))
+```
+
+Os valores em branco são os NAs e as cores indicam as abundâncias, sendo quanto mais vermelho, mais abundante.
+
+### Perguntas para se ter em mente
+
+- Você está comparando espécies (Q-mode) ou veriáveis ambientais (R-mode)?
+- Seus dados são binários (presenças e ausências), quantitativos (medidas contínuas) ou mistos (coeficientes, categorias não binárias)?
+
+# Comparando comunidades com dados de abundância (Q-mode)
+
+Vamos continuar usando os dados do livro *Numerical Ecology with R* para nossos exemplos, mas vamos mudar algumas funções de visualização. 
+
+Vamos usar os dados das espécies de peixes que já conhecemos
+```{r, echo=TRUE, results='hide'}
+spe # base dos peixes da Suiça
+```
+
+Esses dados são quantitativos e as abundâncias variam de zero a 5 indivíduos. Como temos muitas espécies e muitas espécies raras, a escolha inicial dos índices é da família que consideramos *assimétrica* como o Bray-Curtis, que pode ser calculado diretamente nas abundâncias ou na base de dados *transformada* via funções que reduzem a diferença entre as abundâncias de espécies dominantes e raras.
+
+```{r, include=FALSE, echo=TRUE}
+# Load packages, functions and data ===============================
+library(ade4)
+#library(adespatial)
+library(vegan)
+library(gclus)
+library(cluster)
+library(FD)
+library(corrplot)
+source("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Functions/coldiss.R")
+source("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Functions/panelutils.R")
+```
+
+só precisa fazer uma vez, depois não mais.
+
+```{r}
+# Remove empty site 8
+spe <- spe[-8, ]
+env <- env[-8, ]
+spa <- spa[-8, ]
+```
+
+Agora vamos comparar as medidas de dissimilaridade aplicadas
+
+```{r, echo=TRUE}
+
+spe.db <- vegdist(spe)	# method = "bray" (default)
+
+# on log-transformed abundances
+spe.dbln <- vegdist(log1p(spe))
+
+# Chord distance matrix
+spe.norm <- decostand(spe, "nor")
+spe.dc <- dist(spe.norm)
+
+# Hellinger distance matrix
+spe.hel <- decostand(spe, "hel")
+spe.dh <- dist(spe.hel) # Hellinger is the default distance
+
+```
+
+### Exercício Q-Mode
+
+Tente fazer uma representação gráfica de cada uma dessas matrizes com os diferentes índices e compará-la
+
+Escreva emaicxo seus códigos e interprete os resultados escrevendo embaixo
+
+```{r}
+
+coldiss(spe.db, diag = TRUE)
+
+```
+
+```{r}
+coldiss(spe.dh, diag = TRUE)
+
+```
+
+
+# Comparando comunidades com dados binários (Q-mode)
+
+Há muitas ocasiões em que temos apenas dados de _presença_ ou _ausência_ das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser "gerados", covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.
+
+![A lógica dos índices de similaridade binários](simi_index.png)
+fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
+
+# Prós e contras de dados de abundância e presença e ausência
+
+1) Dados de abundância podem se transformados em presença/ausência. Não o contrário
+2) Abundâncias são informações valiosas para muuuuitas análises ecológicas. Sempre procure coletar abundâncias.
+3) Abundância traz pelos menos duas informações ecológicas importantes:
+  a. A óbvia ocorrência ou não de uma espécie num determinado gradiente ambiental, e;
+  b. O grau de adaptabilidade (fitness) que essa espécie possui. Quanto mais abundante, melhor o habitat para ela, _em tese_.
+  c. A abundância também informa sobre as interações bióticas, que provavelmente favorecem espécies abundantes.
+4) A ocorrência é mito poderosa para testar limitação de dispesão de espécies, ou seja, a probabilidade de encontrar espécies ao longo de uma paisagem ou gradiente ambiental.
+5) As ocorrências são poderosas para testar relações com gradientes ambientais em análises do tipo _"unconstrained"_, que não vamos abordar muito nessa disciplina mas que eventualmente podemos precisar.
+
+# Exemplos da literatura
+
+![*Homogeneização da Mata Atlântica*](lobo.png)
+
+Neste trabalho de [*Lobo et al (2011)*](https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1472-4642.2010.00739.x) mostramos como a Mata Atlântica vem sofrendo com o processod e homogeneização biótica decorrente da perturbação antrópica. Testamos isso justamente com uma matriz de similaridade de espécies qque agrupamos em 12 tipos de fitofisionomias e em dois períodos de tempo (prá-1980 e pós-1980). Nossos dados eram apenas de presença e ausência em localidades de coleta, através de dados de herbário. Dê uma olhada no artigo e veja como dados de ocorrência foram usados.
+
+
+![Como a Beta-diversidade pode informar sobre a conservação?](beta.png)
+Neste artigo [Scholar et al (2016)](https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(15)00289-X) mostram como o domínio conceitua da beta-diversidade é importante para pensar e planejar a conservação da biodiversidade. Aqui não te nada de índices nem medidas mas conceitos. Esses conceitos dão sentido às perguntas que fazemos na ciência e ajudam a escolher as melhores métricas. 
+
+
+Os desdrobamentos dos conceitos e aplicações da beta-diversidade são fundamentais para uma correta aplicação das métricas de assossiação. Índices de similaridade e medidas de distância são maneiras de quantificar diversidade beta entre comunidades biológicas. 
+
+# Q mode para dados ambientais
+
+As vairáveis ambientais _env_ são dados contínuos que não possuem "problema" dos duplos zeros. Potanto, as medidas de distância são perfeitamente aplicáveis a elas. Dessas, a distância euclidiana, que á a distãncia entre dois pontos medida pela clássica fórmula de Pitágoras, é a medida de escolha inicial.
+
+```{r}
+env2<- env[,-1] # remover 'dfs' que é uma variável espacial, não ambiental
+env.de<-dist(scale(env2)) # use a função "scale" para transformar osdados em z-scores, já que dados de magnitude muito diferentes podem criar disorções no cálculo de distâncias.
+corrplot(as.matrix(env.de), is.corr = FALSE) 
+
+```
+
+Lembrem-se que nessa matriz, os números são as amostras, que começam em 1 na nascente do rio e terminam em 30 no ponto mais distante. Conseguem ver algum padrão? tentem entender a matriz, dê exemplos de pontos muitos parecidos e outros muito dissimilares. Será que você está lendo a matriz corretamente?
+
+## Distâncias geográficas
+
+```{r}
+spa.de<-dist(spa)
+coldiss(spa.de, diag = TRUE)
+```
+
+```{r}
+dfs.df<-as.data.frame(env$dfs, row.names = rownames(env))
+riv.de<-dist(dfs.df)
+coldiss(riv.de, diag = TRUE)
+```
+
+
+# R mode para dados ambientais ou espécies
+
+A lógica aqui é saber quais variáveis ou espécies estão correlacionadas e não o quão similar cada par de site ou espécies pode ser. Nesse caso, usamos basicamente testes de _correlação_ ou _covariança_. Essa informação é poderosa, pois pode tanto expressar gradientes ambientais complexos (várias variáveis ambientais se comportnaod de maneira similar) ou a co-ocorrência de espécies. Vejamos:
+
+## Variáveis ambientais
+
+```{r}
+cor.env<-cor(env2)
+coldiss(cor.env, diag = T)
+```
+
+Consegue ideintificar grupos de variáveis ambientais que covariam?
+
+## Espécies que covariam
+
+```{r}
+spe.t <- t(spe)
+# Chi-square pre-transformation followed by Euclidean distance
+spe.t.chi <- decostand(spe.t, "chi.square")
+spe.t.D16 <- dist(spe.t.chi)
+coldiss(spe.t.D16, diag = TRUE)
+```
+
+Consegue identificar grupos de espécies?
+
+# Em resumo...
+
+![Tabela de decisão para uso de medidas de similaridade](table_simi2.png)
+
+# Exemplos sobre Medidas de associação
+
+As bases de dados do livro *Numerical Ecology* estão compostas por três matrizes, uma de espécies "spe", outra de variáveis ambientais "env" e outra de variáveis geográficas "spa". Agora que sabemos que as medidas de associação servem para medir a similaridade entre "objetos" que podem ser de qualquer natureza, vamos fazer alguns exerícios.
+
+Aqui vou demonstrar através de uma pergunta simples, como explorar as medidas de similaridade de modo a obter das bases de dados ecológicos algumas informações importantes para compreender a estrutura de comunidades biológicas e os processos que às mantêm. 
+
+Nesse caso, vou dividir o rio em três seções: "alto", "médio" e "baixo". As amostras de 1 a 10 serão o "alto rio"; as de 11-20 serão o "médio rio" e as de 21-30 serão o "baixo rio". Para isso, vou acrescentar uma coluna com essa informação à bases de dados
+
+```{r, echo=F}
+rio<-c(rep("alto", 9), rep("medio",10), rep("baixo",10)) # criei um vetor com essas ifnormaçoes na ordem desejada
+# opa, havíamos retirado uma comunidade, na linha 8, porque estava vazia. então, o pimeiro grupo temq ue ter 9 e naõ 10 linhas.
+spe$rio<-rio 
+spa$rio<-rio
+env$rio<-rio
+```
+
+
+## Pergunta 1 - Qual a similaridade entre as comunidades de peixes do alto, médio e baixo curso de rio?
+
+método 1) Usando índices de similaridade
+
+```{r}
+jacc_dist<-vegdist(spe[,-28], method = "jaccard") # retirei somente a coluna "rio" porque a função só lê variáveis numéricas
+jacc_dist # Dê uma olhada na matriz, note que os valores estão entre 0 e 1 como previsto
+```
+
+Bom, uma maatriz desse tamanho e con tantas cálulas é difícil de usar para responder a nossa pergunta... mas podemos dar um jeito nisso.
+
+```{r}
+mean(jacc_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+library(usedist)
+mean(dist_subset(jacc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+mean(dist_subset(jacc_dist, c(9:18))) # Agora para o médio rio
+
+mean(dist_subset(jacc_dist, c(19:28))) # Agora para o baixo rio
+```
+
+Alguma diferença? Dá pra ver assim no *olhômetro*?
+
+Talvez a melhor maneira de visualizar esses pontos seja fazendo um dendograma
+
+```{r}
+clust_rio<-hclust(jacc_dist, method = "complete")
+clust_graf<-plot(clust_rio, hang=-1)
+clust_graf
+```
+Mas não cosigo ver se os grupos que atribui de alto, médio e baixo rio, realmente agrupam as espécies. Vamos fazer algumas modificações nas bases para poder ver se nossa ideia faz sentido, ou seja, se as espécies se agrupam entre alto, médio e baixo rio.
+
+```{r echo=F, message=FALSE}
+require(dendextend) # Esse pacote é necessário para colorir as potnas dos ramos do dendograma
+clust_rio2<-as.dendrogram(clust_rio) # trandformando o cluter num objeto para poder editar
+colors<-c("#E69F00","#56B4E9", "#009E73") # definindo as cores que serão usadas
+colorCode<-c(alto=colors[1], medio=colors[2], baixo=colors[3])
+labels_colors(clust_rio2) <- colorCode[rio][order.dendrogram(clust_rio2)]
+
+```
+
+Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e verdes do baixo rio.
+
+```{r}
+plot(clust_rio2)
+```
+
+Temos padrão?
+
+E se usássemos em vez do índice de Jaccard, a distância euclidiana? Será que teríamos mais sensibilidade para identificar esses agrupamentos que imaginamos que existem?
+
+```{r}
+euc_dist<-vegdist(spe[,-28], method = "euclidean") # agora é com a distância euclideana
+euc_dist
+```
+
+Vamos ver como ficam os índices...
+
+```{r}
+mean(euc_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+library(usedist)
+mean(dist_subset(euc_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+mean(dist_subset(euc_dist, c(9:18))) # Agora para o médio rio
+
+mean(dist_subset(euc_dist, c(19:28))) # Agora para o baixo rio
+```
+
+E agora, compare os resultados com aqueles do índice de Jaccard, alguma coisa mudou?
+
+```{r}
+clust_rio_euc<-hclust(euc_dist, method = "complete")
+clust_graf_euc<-plot(clust_rio_euc, hang=-1)
+clust_graf_euc
+```
+
+
+Agora vamos colorir o dendograma
+
+```{r}
+clust_rio_euc2<-as.dendrogram(clust_rio_euc) # trandformando o cluster num objeto para poder editar
+colors<-c("#E69F00","#56B4E9", "#009E73") # definindo as cores que serão usadas
+colorCode<-c(alto=colors[1], medio=colors[2], baixo=colors[3])
+labels_colors(clust_rio_euc2) <- colorCode[rio][order.dendrogram(clust_rio_euc2)]
+
+```
+
+Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.
+
+```{r}
+plot(clust_rio_euc2)
+```
+
+Novamente, temos alguma diferença que aponta para uma certa organização das espécies, mas notem que agora parecem mais misturados que quando usamos o índice de Jaccard, mas mesmo essa "mistura" tem um certo padrão, podem perceber?
+
+Aparentemente o _médio rio_ é uma interseção entre comunidades de baixo e alto rio. Será que as variáveis ambientais conseguem explicar isso?
+
+Vamos aplicar o mesmo passo-à-passo para a matriz ambiental
+
+```{r}
+env[,-c(1,4,12)] # aqui eu retirei duas colunas, a que adicionamos com o trecho do rio a quarta e a primeira que eraa distancia linear entre a primeira e as demais amostras.
+env_dist<-vegdist(env[,-c(1,4,12)], method = "euclidean")
+env_dist
+```
+
+Agora as médias totais e entre trechos do rio
+
+```{r}
+mean(env_dist) # Esse é o valor médio da similaridade de jaccard entre todas as combinações possíveis
+
+mean(dist_subset(env_dist, c(1:8))) # vai pegar as primeiras 9 linhas da matriz e calcular a similaridade média. Isso equivale a similaridade de alto rio
+mean(dist_subset(env_dist, c(9:18))) # Agora para o médio rio
+
+mean(dist_subset(env_dist, c(19:28))) # Agora para o baixo rio
+```
+
+Tem coisa interessante aqui... o que será?
+
+```{r}
+clust_env_euc<-hclust(env_dist, method = "complete")
+clust_graf_env_euc<-plot(clust_env_euc, hang=-1)
+clust_graf_env_euc
+```
+
+Vamos colorir o gráfico...
+```{r}
+clust_graf_env_euc2<-as.dendrogram(clust_env_euc) # trandformando o cluster num objeto para poder editar
+colors<-c("#E69F00","#56B4E9", "#009E73") # definindo as cores que serão usadas
+colorCode<-c(alto=colors[1], medio=colors[2], baixo=colors[3])
+labels_colors(clust_graf_env_euc2) <- colorCode[rio][order.dendrogram(clust_graf_env_euc2)]
+
+```
+
+Agora podemos plotar o dendograma onde: números amarelos são do alto rio, azuis do médio rio e pretos do baixo rio.
+
+```{r}
+plot(clust_graf_env_euc2)
+```
+
+E agora? Dá pra entender?
+
+
+Então, bora trabalhar!!!
+
+![](https://media.giphy.com/media/o28elTLxOjiRW/giphy.gif)
+
+# Exercício para entrega
+
+## 1) Faça uma pergunta "hipotética sobre a organização da comunidade de peixes
+
+### **Dica**: em vez do gradiente geográfico que usei nesse exemplo acima, use um gradiente ambiental expresso por alguma variável da matriz "env"
+
+
+## 2) Calcule matrizes de distância da comunidade biológica usando índices de Sorensen ou Jaccard e alguma medida de distância (euclidiana ou outra qualquer que a função _vegdist_ possa calcular)
+
+
+## 3) Grafique os resultados e crie algumas explicações hipotéticas para sua pergunta, comente os resultados
+
+
+## 4) Brinque com as matrizes ambientais e de distância e tente explicar o fenômeno biológico que você encontrou
+
+# Fim
+

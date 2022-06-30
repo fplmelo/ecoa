@@ -1,0 +1,105 @@
+---
+title: "Beta-diversidade"
+author: "Felipe Melo"
+date: "02 de março"
+output: html_document
+---
+
+<img src = https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:jurasinsky_et_al_diversity_schema_350.png>
+
+<br>
+
+```{r default, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(vegan)
+library (entropart)
+library(betapart)
+```
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/beta_diversidade.html#1" )
+```
+
+# Beta diversidade é medir diferença entre comunidades
+
+## Exemplo
+
+## Vamos usar os dados de um artigo em que participei para medir a diverisdade beta dentro de paisagens com diferentes graus de desmatamento.
+
+### **Plant β-diversity in fragmented rain forests: testing floristic homogenization and differentiation hypotheses**
+https://doi.org/10.1111/1365-2745.12153
+
+
+
+<img src= https://besjournals.onlinelibrary.wiley.com/cms/asset/1dbf3022-ce72-4ccf-861c-2a7f691daa06/jec12153-fig-0001-m.jpg>
+
+Nessa figura vemos as paisagens estudadas. São três, LDL, IDL e HDL. Elas se diferenciam pelo grau de desmatamento que cada uma apresenta. LDL = LOW deforestain level, IDL = INTERMEDIATE deforestation level e HDL = HIGH deforestaion level. 
+
+Portanto, é um gradiente ambiental de desmatamento sobre o qual testamos se essa variável causava **homogenização** ou **dierenciaçãp** florística na paisagem. Portanto estávemos interessados sobre como a diversidade beta variava em função  desse gradiente. 
+
+Mas, para os fins desse exercício, vamos apenas *brincar* com a beta-diversidade. 
+
+```{r}
+dados<-read.csv("https://raw.githubusercontent.com/fplmelo/ecoa/main/content/en/courses/eco_num/betadiv/com_ltx_all.csv", row.names = "X")
+dados<-as.data.frame(dados)
+dim(dados) # note que em vez de 45 plots, 15 para cada paisagem, temos apenas 36 plots porque alugns forma excluídos por baixa cobertura.
+
+```
+
+Passo 1) Calcular a Alfa uando o "entropart"
+
+```{r}
+mc<-MetaCommunity(dados)
+# head(mc) descomente essa somente se quiser ver o output
+
+AlphaDiversity(mc, q=0, Correction = "None") # use sempre correction "None" para não gerar números diferentes
+AlphaDiversity(mc, q=1, Correction = "None")
+AlphaDiversity(mc, q=2, Correction = "None")
+```
+
+
+
+Passo 2) Calcular a Beta uando o "entropart"
+
+```{r}
+
+BetaDiversity(mc, q=0, Correction = "None") # use sempre correction "None" para não gerar números diferentes
+BetaDiversity(mc, q=1, Correction = "None")
+BetaDiversity(mc, q=2, Correction = "None")
+```
+
+
+Passo 3) Calcular a Gama uando o "entropart"
+
+```{r}
+
+GammaDiversity(mc, q=0, Correction = "None") # use sempre correction "None" para não gerar números diferentes
+GammaDiversity(mc, q=1, Correction = "None")
+GammaDiversity(mc, q=2, Correction = "None")
+```
+
+
+Passo 4) Gerar um perfil de diversidade
+
+```{r}
+Profile <- DivProfile(q.seq = seq(0, 2, 0.1), mc, Biased = FALSE, Correction = "None")
+plot(Profile)
+summary(Profile)
+```
+
+Passo 5) Agora é com vocês e o pacote betapart. A intenção aqui é entender a contribuição dos componentes de "aninhamento" e "substituição de espécies" de cada paisagem. Vou fazer abaixo pra uma delas, LDL
+
+```{r}
+dadosLDL<-dados[, 1:12]
+dadosLDL<-ifelse(dadosLDL=="0",0,1) # Tranformei em 0 e 1
+
+beta.core<-betapart.core(dadosLDL)
+beta.multi<-beta.multi(dadosLDL)
+beta.multi # Aquei stão os valores... interprete
+
+```
+
+Passo 6) Faça o mesmo para as outras dus paisagens, interprete e grafique como quiser. Escreva sua interpretação no seu Rmarkdown e coloque no exercício.
+
+

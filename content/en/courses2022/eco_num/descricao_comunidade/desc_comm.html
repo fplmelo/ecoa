@@ -1,0 +1,405 @@
+---
+title: "Descrição de comunidades biológicas"
+author: "Felipe Melo"
+date: "2 de fevereiro de 2022"
+output: html_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
+
+
+<p><img src = https://aestheticmag.files.wordpress.com/2013/11/original.jpg></p>
+<p><br></p>
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_desc_comm.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+<div id="os-atributos-de-uma-communidade-biológica-são-simples-em-princípio" class="section level2">
+<h2>Os atributos de uma communidade biológica são simples, em princípio</h2>
+<ol style="list-style-type: decimal">
+<li>Entidades</li>
+<li>Identidades</li>
+<li>Quantidades</li>
+</ol>
+<div id="vamos-examinar-essa-comunidade" class="section level3">
+<h3>Vamos examinar essa comunidade</h3>
+<pre class="r"><code>library (vegan)
+library(BiodiversityR)
+data (BCI)
+BCI.env &lt;- read.delim (&#39;https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.env.txt&#39;, row.names = 1)
+BCI.soil &lt;- read.delim (&#39;https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.soil.txt&#39;)</code></pre>
+</div>
+<div id="estação-biológica-de-barro-colorado" class="section level3">
+<h3>Estação Biológica de Barro Colorado</h3>
+<p><img src= https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:bci_loc.jpg></p>
+</div>
+<div id="para-uma-descrição-completa-do-local-de-estudo-clique-aqui" class="section level3">
+<h3>Para uma descrição completa do local de estudo <a href="https://www.davidzeleny.net/anadat-r/doku.php/en:data:bci">clique aqui</a></h3>
+<p><img src = https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:barro_colorado_-_photo.jpg></p>
+<p><br></p>
+<p><img src=https://www.researchgate.net/profile/Eldredge-Bermingham/publication/7666672/figure/fig1/AS:277746631626753@1443231365395/The-50-ha-permanent-Forest-Dynamics-Plot-on-Barro-Colorado-Island-with-300-S-amara_W640.jpg></p>
+<ul>
+<li>São dados de uma série de plots 50 permanentes e contíguos de 1ha (50 ha no total) onde todas as árvores maiores que 10cm DAP (diametro à altura do peito) e uma grande quantidade de variáveis ambientais têm sido monitoradas há décadas.</li>
+</ul>
+</div>
+</div>
+<div id="vamos-ver-a-estrutura-dessa-base-dados" class="section level2">
+<h2>Vamos ver a estrutura dessa base dados</h2>
+<pre class="r"><code>dim(BCI) # São 50 linhas (plots de 1 ha) e 225 colunas (espécies de árvores)</code></pre>
+<pre><code>## [1]  50 225</code></pre>
+</div>
+<div id="a-primeira-tarefa-de-um-ecólogo-é-namorar-os-dados.-saber-coisas-básicas-como" class="section level2">
+<h2>A primeira tarefa de um ecólogo é <em>namorar</em> os dados. Saber coisas básicas como:</h2>
+<ol style="list-style-type: decimal">
+<li>Quantas espécies em cada amostra?</li>
+</ol>
+<pre class="r"><code>specnumber(BCI) # Sim, existe uma função para isso no pacote &quot;vegan&quot;</code></pre>
+<pre><code>##   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 
+##  93  84  90  94 101  85  82  88  90  94  87  84  93  98  93  93  93  89 109 100 
+##  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40 
+##  99  91  99  95 105  91  99  85  86  97  77  88  86  92  83  92  88  82  84  80 
+##  41  42  43  44  45  46  47  48  49  50 
+## 102  87  86  81  81  86 102  91  91  93</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Quantos indivíduos em cada amostra?</li>
+</ol>
+<pre class="r"><code>rowSums(BCI)</code></pre>
+<pre><code>##   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 
+## 448 435 463 508 505 412 416 431 409 483 401 366 409 438 462 437 381 347 433 429 
+##  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40 
+## 408 418 340 392 442 407 417 387 364 475 421 459 436 447 601 430 435 447 424 489 
+##  41  42  43  44  45  46  47  48  49  50 
+## 402 414 407 409 444 430 425 415 427 432</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Qual a abundância de cada espécie?</li>
+</ol>
+<pre class="r"><code>head(colSums(BCI)) # mostra somente algumas linhas, mas se remover o head(), mostra a tabela inteira</code></pre>
+<pre><code>##    Abarema.macradenia Vachellia.melanoceras Acalypha.diversifolia 
+##                     1                     3                     2 
+## Acalypha.macrostachya        Adelia.triloba  Aegiphila.panamensis 
+##                     1                    92                    23</code></pre>
+</div>
+<div id="há-funções-específicas-no-pacote-vegan-que-são-muito-úteis-para-nálises-de-comunidades-biológica." class="section level2">
+<h2>Há funções específicas no pacote <strong>“vegan”</strong> que são muito úteis para nálises de comunidades biológica.</h2>
+</div>
+<div id="curvas-de-acumulação-de-espécies" class="section level2">
+<h2>1 - Curvas de acumulação de espécies</h2>
+<hr />
+<div id="código" class="section level3">
+<h3>Código</h3>
+<pre class="r"><code>sp1&lt;-specaccum(BCI, &quot;random&quot;)
+sp1</code></pre>
+<pre><code>## Species Accumulation Curve
+## Accumulation method: random, with 100 permutations
+## Call: specaccum(comm = BCI, method = &quot;random&quot;) 
+## 
+##                                                                            
+## Sites     1.0000   2.00000   3.00000   4.00000   5.0000   6.00000   7.00000
+## Richness 90.4000 121.46000 138.04000 149.71000 158.8500 165.04000 170.32000
+## sd        6.8313   7.24941   6.57961   6.31864   5.8713   5.31421   4.80295
+##                                                                               
+## Sites      8.00000   9.00000  10.00000  11.00000  12.00000  13.00000  14.00000
+## Richness 174.73000 178.15000 181.50000 184.47000 187.36000 189.86000 191.83000
+## sd         4.52793   4.38633   4.44609   4.43461   4.45067   4.44045   4.43598
+##                                                                               
+## Sites     15.00000  16.00000  17.00000  18.00000  19.00000  20.00000  21.00000
+## Richness 193.71000 195.42000 196.96000 198.47000 199.83000 201.19000 202.62000
+## sd         4.19546   4.04565   4.00232   4.17413   4.02029   4.06685   3.86849
+##                                                                           
+## Sites     22.00000  23.000  24.00000  25.000  26.00000  27.00000  28.00000
+## Richness 204.10000 205.240 206.51000 207.570 208.66000 209.57000 210.31000
+## sd         3.65563   3.548   3.66941   3.677   3.51683   3.51406   3.51819
+##                                                                              
+## Sites     29.0000  30.00000  31.00000  32.00000  33.00000  34.00000  35.00000
+## Richness 211.2600 212.43000 213.17000 213.96000 214.74000 215.41000 216.34000
+## sd         3.4337   3.34318   3.35163   3.36326   3.19602   3.11106   2.88577
+##                                                                               
+## Sites     36.00000  37.00000  38.00000  39.00000  40.00000  41.00000  42.00000
+## Richness 217.04000 217.75000 218.48000 219.21000 219.72000 220.28000 221.16000
+## sd         2.74108   2.68319   2.48828   2.35829   2.37869   2.24769   2.01369
+##                                                                               
+## Sites     43.00000  44.00000  45.00000  46.00000  47.00000  48.00000  49.00000
+## Richness 221.75000 222.26000 222.82000 223.27000 223.78000 224.21000 224.54000
+## sd         1.86068   1.66739   1.56593   1.35479   1.11537   0.92436   0.70238
+##             
+## Sites     50
+## Richness 225
+## sd         0</code></pre>
+</div>
+<div id="plot" class="section level3">
+<h3>Plot</h3>
+<pre class="r"><code>plot(sp1, ci.type=&quot;poly&quot;, col=&quot;blue&quot;, lwd=2, ci.lty=0, ci.col=&quot;lightblue&quot;)
+boxplot(sp1, col=&quot;yellow&quot;, add=TRUE, pch=&quot;+&quot;)</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+</div>
+<div id="curvas-de-rank-abunbdância" class="section level2">
+<h2>2 - Curvas de rank-abunbdância</h2>
+<hr />
+<div id="código-1" class="section level3">
+<h3>Código</h3>
+<pre class="r"><code>mod &lt;- rad.lognormal(BCI[5,])
+mod</code></pre>
+<pre><code>## 
+## RAD model: Log-Normal 
+## Family: poisson 
+## No. of species:  101 
+## Total abundance: 505 
+## 
+##     log.mu  log.sigma   Deviance        AIC        BIC 
+##   0.951926   1.165929  17.077549 317.656487 322.886728</code></pre>
+</div>
+<div id="plot-lognormal" class="section level3">
+<h3>Plot lognormal</h3>
+<pre class="r"><code>plot(mod)</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="código-para-vários-modelos" class="section level3">
+<h3>Código para vários modelos</h3>
+<pre class="r"><code>mod2 &lt;- radfit(BCI[1,])
+mod2</code></pre>
+<pre><code>## 
+## RAD models, family poisson 
+## No. of species 93, total abundance 448
+## 
+##            par1      par2     par3    Deviance AIC      BIC     
+## Null                                   39.5261 315.4362 315.4362
+## Preemption  0.042797                   21.8939 299.8041 302.3367
+## Lognormal   1.0687    1.0186           25.1528 305.0629 310.1281
+## Zipf        0.11033  -0.74705          61.0465 340.9567 346.0219
+## Mandelbrot  100.52   -2.312    24.084   4.2271 286.1372 293.7350</code></pre>
+</div>
+<div id="plot-com-vários-modelos" class="section level3">
+<h3>Plot com vários modelos</h3>
+<pre class="r"><code>plot(mod2)</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+</div>
+<div id="outro-pacote-o-biodiversityr-é-muito-interessante-e-traz-suas-funções-úteis" class="section level2">
+<h2>OUtro pacote, o “BiodiversityR” é muito interessante e traz suas funções úteis</h2>
+<div id="código-2" class="section level3">
+<h3>Código</h3>
+<pre class="r"><code>data(dune)
+data(&quot;dune.env&quot;)
+bio&lt;-rankabuncomp(dune, dune.env, factor=&#39;Management&#39;, return.data=TRUE, specnames=c(1:2), legend=FALSE)</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code>bio</code></pre>
+<pre><code>##    Grouping  species labelit rank abundance proportion plower pupper accumfreq
+## 1        BF Lolipere    TRUE    1        18       15.4    3.6   27.2      15.4
+## 2        BF Trifrepe    TRUE    2        14       12.0    6.6   17.3      27.4
+## 3        BF Scorautu   FALSE    3        13       11.1    0.7   21.5      38.5
+## 4        BF  Poaprat   FALSE    4        12       10.3    6.3   14.2      48.7
+## 5        BF  Poatriv   FALSE    5        11        9.4   -9.9   28.7      58.1
+## 6        BF Bromhord   FALSE    6         8        6.8   -5.2   18.9      65.0
+## 7        BF Achimill   FALSE    7         7        6.0   -5.0   17.0      70.9
+## 8        BF Planlanc   FALSE    8         6        5.1   -6.9   17.1      76.1
+## 9        BF Bracruta   FALSE    9         6        5.1   -9.3   19.5      81.2
+## 10       BF Bellpere   FALSE   10         5        4.3   -4.0   12.5      85.5
+## 11       BF Anthodor   FALSE   11         4        3.4  -10.6   17.4      88.9
+## 12       BF Elymrepe   FALSE   12         4        3.4  -10.8   17.6      92.3
+## 13       BF Vicilath   FALSE   13         3        2.6   -4.6    9.8      94.9
+## 14       BF Alopgeni   FALSE   14         2        1.7   -5.4    8.8      96.6
+## 15       BF Hyporadi   FALSE   15         2        1.7   -6.3    9.7      98.3
+## 16       BF Sagiproc   FALSE   16         2        1.7   -6.3    9.7     100.0
+## 17       HF  Poatriv    TRUE    1        24       11.3    8.4   14.1      11.3
+## 18       HF Lolipere    TRUE    2        20        9.4    3.7   15.1      20.7
+## 19       HF  Poaprat   FALSE    3        17        8.0    4.9   11.1      28.6
+## 20       HF Rumeacet   FALSE    4        16        7.5    1.1   13.9      36.2
+## 21       HF Planlanc   FALSE    5        15        7.0   -0.7   14.7      43.2
+## 22       HF Scorautu   FALSE    6        14        6.6    5.2    8.0      49.8
+## 23       HF Trifrepe   FALSE    7        14        6.6    3.3    9.8      56.3
+## 24       HF Bracruta   FALSE    8        14        6.6    1.9   11.2      62.9
+## 25       HF Elymrepe   FALSE    9        10        4.7   -3.6   13.0      67.6
+## 26       HF Anthodor   FALSE   10         9        4.2   -0.8    9.2      71.8
+## 27       HF Trifprat   FALSE   11         9        4.2   -1.4    9.9      76.1
+## 28       HF Alopgeni   FALSE   12         8        3.8   -3.1   10.6      79.8
+## 29       HF Juncarti   FALSE   13         8        3.8   -2.8   10.3      83.6
+## 30       HF Agrostol   FALSE   14         7        3.3   -2.6    9.1      86.9
+## 31       HF Achimill   FALSE   15         6        2.8   -0.3    5.9      89.7
+## 32       HF Juncbufo   FALSE   16         6        2.8   -2.5    8.1      92.5
+## 33       HF Eleopalu   FALSE   17         4        1.9   -3.4    7.2      94.4
+## 34       HF Sagiproc   FALSE   18         4        1.9   -1.4    5.2      96.2
+## 35       HF Bromhord   FALSE   19         4        1.9   -1.4    5.1      98.1
+## 36       HF Bellpere   FALSE   20         2        0.9   -1.7    3.5      99.1
+## 37       HF Ranuflam   FALSE   21         2        0.9   -1.7    3.6     100.0
+## 38       NM Scorautu    TRUE    1        19       12.6    6.0   19.2      12.6
+## 39       NM Bracruta    TRUE    2        17       11.3    2.6   19.9      23.8
+## 40       NM Agrostol   FALSE    3        13        8.6   -1.2   18.4      32.5
+## 41       NM Eleopalu   FALSE    4        13        8.6   -1.4   18.6      41.1
+## 42       NM Salirepe   FALSE    5        11        7.3   -0.2   14.8      48.3
+## 43       NM Trifrepe   FALSE    6        11        7.3   -2.0   16.6      55.6
+## 44       NM Anthodor   FALSE    7         8        5.3   -3.8   14.4      60.9
+## 45       NM Ranuflam   FALSE    8         8        5.3   -1.2   11.8      66.2
+## 46       NM Hyporadi   FALSE    9         7        4.6   -3.8   13.1      70.9
+## 47       NM Juncarti   FALSE   10         7        4.6   -2.7   12.0      75.5
+## 48       NM Callcusp   FALSE   11         7        4.6   -2.8   12.1      80.1
+## 49       NM Airaprae   FALSE   12         5        3.3   -2.4    9.0      83.4
+## 50       NM Planlanc   FALSE   13         5        3.3   -2.6    9.2      86.8
+## 51       NM  Poaprat   FALSE   14         4        2.6   -2.5    7.8      89.4
+## 52       NM Comapalu   FALSE   15         4        2.6   -1.8    7.1      92.1
+## 53       NM Sagiproc   FALSE   16         3        2.0   -2.9    6.9      94.0
+## 54       NM Achimill   FALSE   17         2        1.3   -2.4    5.0      95.4
+## 55       NM Bellpere   FALSE   18         2        1.3   -2.0    4.7      96.7
+## 56       NM Empenigr   FALSE   19         2        1.3   -1.9    4.6      98.0
+## 57       NM Lolipere   FALSE   20         2        1.3   -2.0    4.7      99.3
+## 58       NM Vicilath   FALSE   21         1        0.7   -1.0    2.3     100.0
+## 59       SF Agrostol    TRUE    1        28       13.7    7.8   19.7      13.7
+## 60       SF  Poatriv    TRUE    2        28       13.7    6.3   21.1      27.5
+## 61       SF Alopgeni   FALSE    3        26       12.7    4.5   21.0      40.2
+## 62       SF Lolipere   FALSE    4        18        8.8   -2.1   19.8      49.0
+## 63       SF  Poaprat   FALSE    5        15        7.4    0.5   14.2      56.4
+## 64       SF Elymrepe   FALSE    6        12        5.9   -1.0   12.8      62.3
+## 65       SF Bracruta   FALSE    7        12        5.9    0.8   10.9      68.1
+## 66       SF Sagiproc   FALSE    8        11        5.4   -0.8   11.5      73.5
+## 67       SF Eleopalu   FALSE    9         8        3.9   -6.3   14.1      77.5
+## 68       SF Scorautu   FALSE   10         8        3.9    1.4    6.4      81.4
+## 69       SF Trifrepe   FALSE   11         8        3.9    0.5    7.3      85.3
+## 70       SF Juncbufo   FALSE   12         7        3.4   -2.3    9.2      88.7
+## 71       SF Bellpere   FALSE   13         4        2.0   -0.9    4.8      90.7
+## 72       SF Ranuflam   FALSE   14         4        2.0   -1.3    5.2      92.6
+## 73       SF Juncarti   FALSE   15         3        1.5   -2.4    5.3      94.1
+## 74       SF Callcusp   FALSE   16         3        1.5   -2.4    5.3      95.6
+## 75       SF Bromhord   FALSE   17         3        1.5   -2.1    5.0      97.1
+## 76       SF Rumeacet   FALSE   18         2        1.0   -1.5    3.5      98.0
+## 77       SF Cirsarve   FALSE   19         2        1.0   -1.4    3.3      99.0
+## 78       SF Achimill   FALSE   20         1        0.5   -0.9    1.9      99.5
+## 79       SF Chenalbu   FALSE   21         1        0.5   -0.8    1.8     100.0
+##    logabun rankfreq
+## 1      1.3      6.2
+## 2      1.1     12.5
+## 3      1.1     18.8
+## 4      1.1     25.0
+## 5      1.0     31.2
+## 6      0.9     37.5
+## 7      0.8     43.8
+## 8      0.8     50.0
+## 9      0.8     56.2
+## 10     0.7     62.5
+## 11     0.6     68.8
+## 12     0.6     75.0
+## 13     0.5     81.2
+## 14     0.3     87.5
+## 15     0.3     93.8
+## 16     0.3    100.0
+## 17     1.4      4.8
+## 18     1.3      9.5
+## 19     1.2     14.3
+## 20     1.2     19.0
+## 21     1.2     23.8
+## 22     1.1     28.6
+## 23     1.1     33.3
+## 24     1.1     38.1
+## 25     1.0     42.9
+## 26     1.0     47.6
+## 27     1.0     52.4
+## 28     0.9     57.1
+## 29     0.9     61.9
+## 30     0.8     66.7
+## 31     0.8     71.4
+## 32     0.8     76.2
+## 33     0.6     81.0
+## 34     0.6     85.7
+## 35     0.6     90.5
+## 36     0.3     95.2
+## 37     0.3    100.0
+## 38     1.3      4.8
+## 39     1.2      9.5
+## 40     1.1     14.3
+## 41     1.1     19.0
+## 42     1.0     23.8
+## 43     1.0     28.6
+## 44     0.9     33.3
+## 45     0.9     38.1
+## 46     0.8     42.9
+## 47     0.8     47.6
+## 48     0.8     52.4
+## 49     0.7     57.1
+## 50     0.7     61.9
+## 51     0.6     66.7
+## 52     0.6     71.4
+## 53     0.5     76.2
+## 54     0.3     81.0
+## 55     0.3     85.7
+## 56     0.3     90.5
+## 57     0.3     95.2
+## 58     0.0    100.0
+## 59     1.4      4.8
+## 60     1.4      9.5
+## 61     1.4     14.3
+## 62     1.3     19.0
+## 63     1.2     23.8
+## 64     1.1     28.6
+## 65     1.1     33.3
+## 66     1.0     38.1
+## 67     0.9     42.9
+## 68     0.9     47.6
+## 69     0.9     52.4
+## 70     0.8     57.1
+## 71     0.6     61.9
+## 72     0.6     66.7
+## 73     0.5     71.4
+## 74     0.5     76.2
+## 75     0.5     81.0
+## 76     0.3     85.7
+## 77     0.3     90.5
+## 78     0.0     95.2
+## 79     0.0    100.0</code></pre>
+</div>
+<div id="plot-com-ggplot" class="section level3">
+<h3>Plot (com ggplot)</h3>
+<pre class="r"><code>library(ggplot2)
+library(ggrepel)
+
+plotgg1 &lt;- ggplot(data=bio, aes(x = rank, y = abundance)) + 
+    scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    geom_line(aes(colour=Grouping), size=1) +
+    geom_point(aes(colour=Grouping, shape=Grouping), size=5, alpha=0.7) +
+    geom_text_repel(data=subset(bio, labelit == TRUE), 
+        aes(colour=Grouping, label=species), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = &quot;Set1&quot;) +
+    labs(x = &quot;rank&quot;, y = &quot;abundance&quot;, colour = &quot;Management&quot;, shape = &quot;Management&quot;)
+
+plotgg1</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>RA.data &lt;- rankabuncomp(dune, y=dune.env, factor=&#39;Management&#39;, 
+    return.data=TRUE, specnames=c(1:10), legend=FALSE)</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code>plotgg2 &lt;- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
+    scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    geom_line(aes(colour=Grouping), size=1) +
+    geom_point(aes(colour=Grouping), size=5, alpha=0.7) +
+    geom_text_repel(data=subset(RA.data, labelit == TRUE), 
+        aes(label=species), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = &quot;Set1&quot;) +
+    facet_wrap(~ Grouping) +
+    labs(x = &quot;rank&quot;, y = &quot;abundance&quot;, colour = &quot;Management&quot;)
+
+plotgg2</code></pre>
+<p><img src="/en/courses/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+</div>
+</div>
+<div id="exercício" class="section level1">
+<h1>Exercício</h1>
+<ol style="list-style-type: decimal">
+<li>Faça uma análise descritiva de outra base de dados.</li>
+<li>Utilize funções prontas dos pacotes msa também tente chegar so resultados esperados com funções básicas do R</li>
+<li>Comente suas análises dando uma interpretação ecológica aos gráficos</li>
+</ol>
+</div>
+<div id="bibliografia" class="section level1">
+<h1>Bibliografia</h1>
+<div id="ecologia-de-comundiades-na-wikipedia" class="section level2">
+<h2><a href="https://pt.wikipedia.org/wiki/Ecologia_de_comunidades#Estrutura_da_comunidade">Ecologia de Comundiades na Wikipedia</a></h2>
+</div>
+<div id="conceptual-synthesis-in-community-ecology-por-mark-vellend" class="section level2">
+<h2><a href="https://www.researchgate.net/profile/Mark-Vellend-2/publication/44689600_Conceptual_Synthesis_in_Community_Ecology/links/0a85e534c7a686647f000000/Conceptual-Synthesis-in-Community-Ecology.pdf">Conceptual Synthesis in Community Ecology por Mark Vellend</a></h2>
+</div>
+<div id="ecologia-de-comunidades-usp" class="section level2">
+<h2><a href="http://ecologia.ib.usp.br/bie5778/doku.php">Ecologia de Comunidades USP</a></h2>
+</div>
+</div>

@@ -1,0 +1,61 @@
+---
+title: "Regeneração  Natural e Pertubação"
+subtitle: "Ecologa da Restauração - BO401"
+author: "Felipe Melo"
+institute: "UFPE Lab Ecologia Aplicada"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot", "tamu-fonts"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+---
+# O que é sucessão ecológica?
+.pull-left[
+###- É o processo de substituição de espécies que acontece após um disturbio.
+###- Montagem de comunidades biológicas
+<br>
+<br>
+<br>
+<br>
+<br>
+Chazdon 2014
+]
+
+.pull-right[
+<img src=libs/reg.jpg>
+
+]
+
+---
+# Mecanismo de sucessão ecológica
+.pull-left[
+###- Seres ecológicas
+###- Sentido "determinístico"
+###- Acúmulo de: ?
+###-  Clímax
+]
+
+.pull-right[
+<img src=https://content.globalforestwatch.org/wp-content/uploads/2020/05/20.05.013_Forest-Growth-1.png>
+]
+---
+class: middle, center
+
+# Sucessão sempre é precedida de pertubação
+
+---
+background-image: url("https://ecotope.org/anthromes/images/anthromes_v2_2000_plate_map.PNG")
+
+---
+class: middle, center
+
+#Por hoje é só...
+

@@ -1,0 +1,46 @@
+---
+title: "Introdução à Ecologia da Restauração"
+output: github_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# *Slides* 
+
+```{r, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_rest/intro_eco_rest.html#1", ratio = "16:9")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Definindo Ecologia da Restauração
+
+![](/en/courses/eco_rest/00-Intro/intro_files/model.jpg)
+Figura adaptada de Bradshaw 1984.
+
+
+### O que você precisa entender por "restauração ecológica"?
+
+Segundo a [Society for Ecological Restoration](ser.org), a restauração é a aplicação de práticas e preceitos cientificamente embasados para a recuperação de ambientes degradados a um estado funcional desejado. 
+
+Para isso algumas metas precisam ser estabelecidas:
+
+- Qual a composição de espécies desejada?
+- Quão parecido deve ser com o ecossistema de referência?
+- Quais serviços ecossistêmicos devem ser recuperados?
+
+![](/en/courses/eco_rest/00-Intro/intro_files/model2.jpg)
+Figura adaptada de Palmer, Falk, and Zedler 2006.
+
+
+### Para a próxima aula
+
+- Leia essa maravilhosa [cartilha](http://www.efraim.com.br/SER_Primer3_em_portugues.pdf) traduzida pelo [Efraim Rodrigues](http://ambienteporinteiro-efraim.blogspot.com/).
+- Venha preparado para discutir os conceitos apresentados. **vale nota** 
+
+
+
+

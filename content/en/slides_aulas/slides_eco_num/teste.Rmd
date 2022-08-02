@@ -1,0 +1,120 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula teste - Métodos de ordenamento"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["rladies","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+pck<-c("vegan","ade4","FactoMineR","factoextra")
+lapply(pck, require, character.only=TRUE)
+knitr::opts_chunk$set(echo = TRUE)
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_share_again()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+
+# Métodos de Ordenação Não-métricos
+
+```{r, include=FALSE}
+xaringanExtra::use_panelset()
+```
+.panelset[
+.panel[.panel-name[Codigo]
+```{r eval=TRUE, include=TRUE}
+spe2<-spe[-8,]
+rowSums(spe2)
+d_jac<-vegdist(spe2, method = "jaccard")
+?metaMDS
+mds<-metaMDS(d_jac)
+mds
+plot(mds)
+```
+]
+
+```{r, echo=FALSE}
+mds_points<-as_tibble(mds$points)
+rio<-c(rep("alto", 9), rep("medio",10), rep("baixo",10))
+amo<-seq(1:29)
+mds_points$rio<-rio
+mds_points$amo<-amo
+```
+
+.panel[.panel-name[Plot]
+.center[
+```{r, echo=FALSE}
+mds_points %>% 
+  ggplot(aes(MDS1, MDS2, color=rio))+
+  geom_text(aes(label=amo))
+```
+]]]
+
+---
+# NMDS com Bray-curtis
+```{r}
+d_bray<-metaMDS(spe2, distance = "bray")
+mds_bray<-as.tibble(d_bray$points)
+mds_bray$rio<-rio
+mds_bray$amo<-amo
+```
+
+---
+# NMDS com Bray-curtis
+```{r}
+mds_bray %>%
+ ggplot(aes(MDS1, MDS2, color=rio))+
+  geom_text(aes(label=amo))
+  
+```
+
+---
+# NMDS com Euclidiana
+```{r}
+d_euclid<-metaMDS(spe2, distance = "euclidean")
+mds_euclid<-as.tibble(d_euclid$points)
+mds_euclid$rio<-rio
+mds_euclid$amo<-amo
+```
+
+---
+# NMDS com euclid
+```{r}
+mds_euclid %>%
+ ggplot(aes(MDS1, MDS2, color=rio))+
+  geom_text(aes(label=amo))
+  
+```
+
+---
+# GRaf NMDS com euclid
+```{r message=FALSE, warning=FALSE}
+env2<-env[-8,]
+mds_bray$oxy<-env2$oxy
+mds_bray %>% 
+  ggplot(aes(oxy, MDS1))+geom_point()+
+  geom_smooth(method = "lm")
+
+```
+
+
+
+

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ecologia Numérica</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Felipe Melo" />
+    <meta name="date" content="2021-04-20" />
+    <script src="teste_files/header-attrs-2.6/header-attrs.js"></script>
+    <link href="teste_files/remark-css-0.0.1/rladies.css" rel="stylesheet" />
+    <link href="teste_files/remark-css-0.0.1/tamu-fonts.css" rel="stylesheet" />
+    <link href="teste_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="teste_files/tile-view-0.2.6/tile-view.js"></script>
+    <script src="teste_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="teste_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="teste_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="teste_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="teste_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="teste_files/fabric-4.3.1/fabric.min.js"></script>
+    <link href="teste_files/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="teste_files/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script src="teste_files/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="teste_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="teste_files/panelset-0.2.6/panelset.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Ecologia Numérica
+## Aula teste - Métodos de ordenamento
+### Felipe Melo
+### Laboratório de Ecologia Aplicada - UFPE
+### 2021-04-20
+
+---
+
+
+
+
+
+# Métodos de Ordenação Não-métricos
+
+
+.panelset[
+.panel[.panel-name[Codigo]
+
+```r
+spe2&lt;-spe[-8,]
+rowSums(spe2)
+```
+
+```
+##  1  2  3  4  5  6  7  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 
+##  3 12 16 21 34 21 16 14 14 11 18 19 28 33 40 44 42 46 56 62 72  4 15 11 43 63 
+## 28 29 30 
+## 70 87 89
+```
+
+```r
+d_jac&lt;-vegdist(spe2, method = "jaccard")
+?metaMDS
+mds&lt;-metaMDS(d_jac)
+```
+
+```
+## Run 0 stress 0.07477811 
+## Run 1 stress 0.07478421 
+## ... Procrustes: rmse 0.003635711  max resid 0.01414285 
+## Run 2 stress 0.1133731 
+## Run 3 stress 0.1139602 
+## Run 4 stress 0.07376245 
+## ... New best solution
+## ... Procrustes: rmse 0.01941517  max resid 0.09464831 
+## Run 5 stress 0.07506675 
+## Run 6 stress 0.1104316 
+## Run 7 stress 0.1141838 
+## Run 8 stress 0.1219314 
+## Run 9 stress 0.07376224 
+## ... New best solution
+## ... Procrustes: rmse 0.0003872393  max resid 0.001863262 
+## ... Similar to previous best
+## Run 10 stress 0.1121899 
+## Run 11 stress 0.0892716 
+## Run 12 stress 0.09234814 
+## Run 13 stress 0.1112156 
+## Run 14 stress 0.1127442 
+## Run 15 stress 0.08901469 
+## Run 16 stress 0.1111097 
+## Run 17 stress 0.07429344 
+## Run 18 stress 0.1235556 
+## Run 19 stress 0.1197841 
+## Run 20 stress 0.1118882 
+## *** Solution reached
+```
+
+```r
+mds
+```
+
+```
+## 
+## Call:
+## metaMDS(comm = d_jac) 
+## 
+## global Multidimensional Scaling using monoMDS
+## 
+## Data:     d_jac 
+## Distance: jaccard 
+## 
+## Dimensions: 2 
+## Stress:     0.07376224 
+## Stress type 1, weak ties
+## Two convergent solutions found after 20 tries
+## Scaling: centring, PC rotation 
+## Species: scores missing
+```
+
+```r
+plot(mds)
+```
+
+```
+## species scores not available
+```
+
+![](teste_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+]
+
+
+
+.panel[.panel-name[Plot]
+.center[
+![](teste_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+]]]
+
+---
+# NMDS com Bray-curtis
+
+```r
+d_bray&lt;-metaMDS(spe2, distance = "bray")
+```
+
+```
+## Run 0 stress 0.07477809 
+## Run 1 stress 0.1111092 
+## Run 2 stress 0.08841667 
+## Run 3 stress 0.07376228 
+## ... New best solution
+## ... Procrustes: rmse 0.01938805  max resid 0.094667 
+## Run 4 stress 0.120581 
+## Run 5 stress 0.09288416 
+## Run 6 stress 0.08841671 
+## Run 7 stress 0.1210348 
+## Run 8 stress 0.07506676 
+## Run 9 stress 0.1235536 
+## Run 10 stress 0.09234811 
+## Run 11 stress 0.07376222 
+## ... New best solution
+## ... Procrustes: rmse 0.0002593306  max resid 0.001245657 
+## ... Similar to previous best
+## Run 12 stress 0.1115868 
+## Run 13 stress 0.0880154 
+## Run 14 stress 0.1112104 
+## Run 15 stress 0.07376232 
+## ... Procrustes: rmse 0.0002877663  max resid 0.001383082 
+## ... Similar to previous best
+## Run 16 stress 0.07376245 
+## ... Procrustes: rmse 0.0003206893  max resid 0.001540707 
+## ... Similar to previous best
+## Run 17 stress 0.07376243 
+## ... Procrustes: rmse 0.0001381236  max resid 0.0006646801 
+## ... Similar to previous best
+## Run 18 stress 0.1203424 
+## Run 19 stress 0.1111673 
+## Run 20 stress 0.1235609 
+## *** Solution reached
+```
+
+```r
+mds_bray&lt;-as.tibble(d_bray$points)
+mds_bray$rio&lt;-rio
+mds_bray$amo&lt;-amo
+```
+
+---
+# NMDS com Bray-curtis
+
+```r
+mds_bray %&gt;%
+ ggplot(aes(MDS1, MDS2, color=rio))+
+  geom_text(aes(label=amo))
+```
+
+![](teste_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+# NMDS com Euclidiana
+
+```r
+d_euclid&lt;-metaMDS(spe2, distance = "euclidean")
+```
+
+```
+## Run 0 stress 0.07083535 
+## Run 1 stress 0.0616903 
+## ... New best solution
+## ... Procrustes: rmse 0.02213437  max resid 0.1116856 
+## Run 2 stress 0.07083557 
+## Run 3 stress 0.0616903 
+## ... New best solution
+## ... Procrustes: rmse 3.93897e-05  max resid 0.0001816572 
+## ... Similar to previous best
+## Run 4 stress 0.06169041 
+## ... Procrustes: rmse 0.0001564956  max resid 0.0007259592 
+## ... Similar to previous best
+## Run 5 stress 0.0616903 
+## ... New best solution
+## ... Procrustes: rmse 3.523486e-05  max resid 0.0001516705 
+## ... Similar to previous best
+## Run 6 stress 0.06169034 
+## ... Procrustes: rmse 0.0001422595  max resid 0.000666838 
+## ... Similar to previous best
+## Run 7 stress 0.07336615 
+## Run 8 stress 0.0728909 
+## Run 9 stress 0.07336609 
+## Run 10 stress 0.06169029 
+## ... New best solution
+## ... Procrustes: rmse 2.941355e-05  max resid 0.0001004767 
+## ... Similar to previous best
+## Run 11 stress 0.07289086 
+## Run 12 stress 0.06169029 
+## ... New best solution
+## ... Procrustes: rmse 4.443693e-05  max resid 0.0001317678 
+## ... Similar to previous best
+## Run 13 stress 0.07289087 
+## Run 14 stress 0.06169032 
+## ... Procrustes: rmse 6.486384e-05  max resid 0.0002836557 
+## ... Similar to previous best
+## Run 15 stress 0.06169033 
+## ... Procrustes: rmse 8.65255e-05  max resid 0.0003486393 
+## ... Similar to previous best
+## Run 16 stress 0.07083538 
+## Run 17 stress 0.07083539 
+## Run 18 stress 0.07289084 
+## Run 19 stress 0.06169029 
+## ... Procrustes: rmse 3.632674e-05  max resid 0.0001439234 
+## ... Similar to previous best
+## Run 20 stress 0.06169034 
+## ... Procrustes: rmse 9.149695e-05  max resid 0.0004058566 
+## ... Similar to previous best
+## *** Solution reached
+```
+
+```r
+mds_euclid&lt;-as.tibble(d_euclid$points)
+mds_euclid$rio&lt;-rio
+mds_euclid$amo&lt;-amo
+```
+
+---
+# NMDS com euclid
+
+```r
+mds_euclid %&gt;%
+ ggplot(aes(MDS1, MDS2, color=rio))+
+  geom_text(aes(label=amo))
+```
+
+![](teste_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+---
+# GRaf NMDS com euclid
+
+```r
+env2&lt;-env[-8,]
+mds_bray$oxy&lt;-env2$oxy
+mds_bray %&gt;% 
+  ggplot(aes(oxy, MDS1))+geom_point()+
+  geom_smooth(method = "lm")
+```
+
+![](teste_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+---
+title: "Sucessão ecológica e perturbação"
+output: github_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# *Slides* 
+
+```{r, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_rest/eco_rest_regen.html#1", ratio = "16:9")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sucessão ecológica
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://www.open.edu/openlearn/pluginfile.php/1679371/mod_oucontent/oucontent/93990/9fb0a1c5/d0688960/s397_block03_section02_f22.eps.png")
+```
+
+
+Figura [OpeanLearn](https://www.open.edu/openlearn/mod/oucontent/view.php?id=101321&extra=thumbnailfigure_idm560).
+
+
+### O que você precisa entender por Sucessão Ecológica?
+
+A [Wikipedia](https://pt.wikipedia.org/wiki/Sucess%C3%A3o_ecol%C3%B3gica) define assim: "Sucessão ecológica é a sequência de comunidades, desde a colonização até à comunidade clímax, de um determinado ecossistema. Estas comunidades vão sofrendo mudanças ordenadas e graduais."
+
+
+### Para a próxima aula
+
+- Leia este [texto](https://bityli.com/sdJuBB) produzido pelo Prof [Sérgius Gandolfi](http://www.lcb.esalq.usp.br/equipe/sergius-gandolfi).
+
+- Venha preparado para discutir os conceitos apresentados. **vale nota** 

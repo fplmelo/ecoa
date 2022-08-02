@@ -1,0 +1,144 @@
+---
+title: "Métodos Passivos de Restauração"
+subtitle: "Ecologa da Restauração - BO401"
+author: "Felipe Melo"
+institute: "UFPE Lab Ecologia Aplicada"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot", "tamu-fonts"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+---
+# O que é sucessão ecológica?
+.pull-left[
+###- É o processo de substituição de espécies que acontece após um disturbio.
+###- Montagem de comunidades biológicas
+<br>
+<br>
+<br>
+<br>
+<br>
+Chazdon 2014
+]
+
+.pull-right[
+<img src=libs/reg.jpg>
+
+]
+
+---
+# Mecanismo de sucessão ecológica
+.pull-left[
+###- Seres ecológicas
+###- Sentido "determinístico"
+###- Acúmulo de: ?
+###-  Clímax
+]
+
+.pull-right[
+<img src=https://content.globalforestwatch.org/wp-content/uploads/2020/05/20.05.013_Forest-Growth-1.png>
+]
+---
+class: middle, center
+
+# Sucessão sempre é precedida de pertubação
+
+---
+class: middle, center
+# O que são métodos passivos de restauração?
+
+---
+# Condução da regeneração natural
+.pull-left[
+##- Permitir que a sucessão ecológica aconteça
+### - Cercamento das áreas
+]
+.pull-right[
+<img src= https://www.reforestaction.com/sites/default/files/a_restoration_plot_on_the_right_degraded_land_on_left_and_background_20191028_183253_date_taken_is_2019_by_anthony_mills.jpg>
+]
+
+---
+# Cercamento
+
+<img src=https://smallfarms.cornell.edu/wp-content/uploads/2017/10/Low-Cost-Fence-Designs-3-2lq5i7m.jpg width = 700>
+
+---
+# Cercamento
+
+<img src=https://imgs.mongabay.com/wp-content/uploads/sites/20/2021/10/18124118/5-Deer-fencing-around-young-forest-plantation.jpg>
+
+---
+# Cercamento
+<img src=libs/fence.jpg width = 600>
+
+[Oliveira-Filho et al 2019](https://doi.org/10.1016/j.jaridenv.2019.03.006)
+
+---
+# Cercamento
+
+<img src=https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-017-15530-2/MediaObjects/41598_2017_15530_Fig1_HTML.jpg?as=webp>
+
+---
+# Nucleação natural
+### Utilizar estruturas naturais ou artificiais para estimular a regeneração
+
+<img src  = libs/nuclea.jpg>
+
+---
+# Nucleação natural
+
+<img src=https://i0.wp.com/www.paracaturural.com/wp-content/uploads/2019/07/insetos_cerrado_cupins-1.jpg?w=767&ssl=1>
+
+---
+#Nucleação
+
+<img src=https://paisagensdobrasil.ibb.unesp.br/images/capao1.jpg>
+
+---
+#Nucleação natural
+
+<img src= https://s01.sgp1.digitaloceanspaces.com/inline/932145-2.jpg width = 700>
+
+---
+#Nucleação natural
+
+<img src= https://static.dw.com/image/56883926_403.jpg width = 700>
+
+---
+# Nucleação artificial
+
+<img src= https://www.birdscaribbean.org/wp-content/uploads/2017/12/REV_DSCN0788-450x337.jpg>
+
+fonte:[BirdsCaribean](https://www.birdscaribbean.org/2017/12/forest-restoration-in-the-dominican-republic-how-i-got-the-birds-to-work-for-me/)
+
+---
+# Nucleação artificial
+
+<img src=libs/seed_trap.png width = 700>
+fonte: [La Mantia et al 2019](https://doi.org/10.1111/rec.13009)
+
+---
+# Efeito facilitador (nusing effect)
+
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Nurse_plant.jpg/521px-Nurse_plant.jpg?20190423054019 width = 500>
+
+---
+# Transposição de solo
+
+<img src = libs/soil.jpg width = 900>
+
+---
+class: middle, center
+
+#Por hoje é só...
+
+# mais em [ecoaplic.org](www.ecoapplic.org)
+

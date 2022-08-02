@@ -1,0 +1,69 @@
+---
+title: "Ameaças à Biodiversidade"
+author: "Felipe Melo"
+date: "`r Sys.Date()`"
+output: html_document
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket"))
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# *Slides* 
+
+```{r, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_geral2/aula3_ameaças.html#1")
+```
+
+# Leituras sugeridas
+
+## [Panorama Global da Biodiversidade 5](https://www.unep.org/pt-br/resources/relatorios/panorama-da-biodiversidade-global-gbo-5)
+
+![](https://www.ramsar.org/sites/default/files/pictures/news/gbo5-card2_0.png)
+
+## [Especial Biota Fapesp](https://revistapesquisa.fapesp.br/entre-desafios-conceitos-e-ameacas/)
+
+![](https://revistapesquisa.fapesp.br/wp-content/uploads/2013/03/050-055_Biota_205-1gde.jpg)
+
+
+## [Mais um texto legal da Pesquisa Fapesp](https://revistapesquisa.fapesp.br/perda-de-biodiversidade-ameaca-bem-estar-das-geracoes-atuais-e-futuras/)
+
+
+## [Um video sobre o BPBES](https://www.youtube.com/watch?v=QeFMZuyUSEs)
+
+
+<iframe width="700" height="420" src="https://www.youtube.com/embed/QeFMZuyUSEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+# Exercício para entrega
+
+1) Acesso o [Portal Nexo Políticas Públicas BPBES](https://pp.nexojornal.com.br/parceiros/BPBES/)
+
+2) Passeie pelo material disponível, se informe um pouco sobre os temas de seu interesse.
+
+3) Escolha um dos seguintes formatos:
+
+
+- Video Pergunte a um pesquisador [exemplo](https://pp.nexojornal.com.br/pergunte-a-um-pesquisador/2020/09/01/Ra%C3%ADsa-Vieira-unidades-de-conserva%C3%A7%C3%A3o-da-natureza-no-Brasil)
+
+- Texto de opnião [exemplo](https://pp.nexojornal.com.br/opiniao/2021/Sustentabilidade-demanda-di%C3%A1logo-e-n%C3%A3o-remendos)
+
+- Bibliografia básica [exemplo](https://pp.nexojornal.com.br/bibliografia-basica/2020/Amaz%C3%B4nia-e-queimadas)
+
+- Perguntas que a ciência já respondeu [exemplo](https://pp.nexojornal.com.br/perguntas-que-a-ciencia-ja-respondeu/2020/As-dimens%C3%B5es-da-%C3%A1gua-e-dos-ambientes-aqu%C3%A1ticos)
+
+- Glossário [exemplo](https://pp.nexojornal.com.br/glossario/Biodiversidade-e-servi%C3%A7os-ecossist%C3%AAmicos)
+
+4) Siga as instruções deste [arquivo em anexo](https://fplmelo.github.io/ecogeral2/data/roteiros.docx)
+
+# Bonus
+
+Ainda tem essa aula que eu gravei para a turma do ano passado e pode ser útil
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/pxyIqDbljKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+

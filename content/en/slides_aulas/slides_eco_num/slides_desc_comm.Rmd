@@ -1,0 +1,308 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 2 - Descrição de comunidades ecológicas"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library (vegan)
+library (BiodiversityR)
+library(xaringanExtra)
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+```
+
+# Estrutura de dados ecológicos 
+- Bases de dados ecológicos seguem uma lógica relativamente simples
+  - As bases são organizadas quse sempre na forma de matrizes com 'n' colunas e 'p' linhas
+```{r base_ficticia, echo=F}
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0("sp", 1:10),
+  siteA = sample(c(0:1), replace=TRUE, size=10),
+  siteB = sample(c(0:1), replace=TRUE, size=10),
+  siteC = sample(c(0:1), replace=TRUE, size=10),
+  siteD = sample(c(0:1), replace=TRUE, size=10)
+) 
+```
+**Todas as bases ecológicas que iremos usar serão organizadas dessa forma**
+
+---
+# Peixes de um rio na Suíça
+- Usamos a mesma lógica para organizar bas bases de dados *de espécies*
+  - Por exemplo, essa é a estrutura dos dados ambientais que usaremos nesse módulo
+### Estão no livro **Numerical Ecology with R**
+```{r, echo=FALSE}
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+spe
+```
+
+---
+# Matriz ambietal
+- Usamos a mesma lógica para organizar bas bases de dados *ambientais*
+  - Por exemplo, essa é a estrutura dos dados ambientais que usaremos nesse módulo
+### Estão no livro **Numerical Ecology with R**
+```{r, echo=FALSE}
+
+head(env)
+```
+
+---
+# Matriz espacial
+- Usamos a mesma lógica para organizar bas bases de dados *espaciais*
+  - Por exemplo, essa é a estrutura dos dados ambientais que usaremos nesse módulo
+### Estão no livro **Numerical Ecology with R**
+```{r, echo=FALSE}
+head(spa)
+```
+
+---
+# Vamos olhar mais de perto para a base de dados de **espécies**
+```{r,echo=TRUE}
+
+nrow(spe) # entendendo a base, sabemos que o número de linhas equivale ao de amostras
+ncol(spe) # o número de colunas equivale ao de espécies
+dim(spe) # esse comando já dá tudo
+colnames(spe) # aqui até os nomes abravidaos das espécies nós temos
+```
+
+---
+# Essa regra vale para todas as bases
+.pull-left[
+## Pratique com todas as bases
+### - Cheque a estrutura
+### - Confira a natureza das variáveis
+### - Não avance antes de ter certeza que você conhece seus dados
+### - Os dados são amigos, NÃO OS TORTURE
+ ]
+ 
+
+.pull-right[
+<img src="https://media.giphy.com/media/l41lZZv8nuT743mM0/giphy.gif" />
+]
+
+---
+# Faça alguns gráficos
+.pull-left[
+- Gráficos precisam estar acompanhados de pergumtas
+- Qual a distribuição de abundância das espécies?
+  
+```{r echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+
+spe %>% 
+  summarize_all(sum) %>%
+  t() %>% 
+  as.data.frame() %>% 
+  ggplot(aes(x=V1))+geom_histogram()+
+  labs(x="Abundâncias", y = "frequencia")
+  
+```
+]
+.pull-right[
+- Este é um gráfico muito útil, que auxilia muito na compreensão da diversidade biológica de comunidades
+]
+---
+# Faça mais gráficos
+.pull-left[
+- Entenda a amplitude das variáveis ambientais que possui
+  
+```{r, echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+env %>% 
+  gather(env_var, values, dfs:bod, factor_key = T) %>% 
+  ggplot(aes(x=env_var, y=values))+
+  geom_boxplot()
+```
+]
+.pull-right[
+- Note que as variáveis têm "amplitudes" diferentes, e isso é importante
+]
+---
+# Entenda também suas variáveis espaciais
+.pull-left[
+```{r,echo=F, message=FALSE, warning=FALSE, out.width="500px"}
+ggplot(spa, aes(X,Y,label = rownames(spa)))+
+  geom_path(color="red")+
+  #geom_point(size = 2)+
+  geom_text(size = 5)+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)
+```
+### Essa é uma representação do rio onde as espécies foram coletadas
+]
+
+.pull-right[
+```{r,echo=F, message=FALSE, warning=FALSE, out.width="500px"}
+ggplot(spa, aes(X,Y))+
+  geom_path(color="red")+
+  geom_point(size = spe$Satr)+
+  #geom_text(size = 5)+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=150, y=50, label="Satr",
+              color="black",size = 10)
+```
+
+]
+---
+# Misture as matrizes
+
+.pull-left[
+```{r,echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+ggplot(spa, aes(X,Y))+
+  geom_path(color="red")+
+  geom_point(size = log(env$oxy))+
+  #geom_text(data=spe, aes(spe$Satr))+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=150, y=50, label="Oxigênio",
+              color="black",size = 5)
+```
+### Espaço + Ambiente
+]
+
+.pull-right[
+```{r,echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+ggplot(spa, aes(X,Y))+
+  geom_path(color="red")+
+  geom_point(size = log(env$dfs), alpha = 0.4)+
+  geom_text(aes(label=spe$Satr), nudge_y = -5)+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)
+```
+### Espaço + Ambiente + Dados biológicos
+]
+
+---
+
+# O processo de _namoro_ dos dados nunca termina...
+.pull-left[
+```{r, echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+library(vegan)
+
+specnumber(spe)-> h_index
+# h_index
+
+ggplot(spa, aes(X,Y))+
+  geom_path(color="red")+
+  geom_point(size = h_index, alpha = 0.4)+
+  #geom_text(aes(label=spe$Satr), nudge_y = -5)+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)+
+  labs(title = "Riqueza de Espécies")
+  
+  
+```
+- note os valores de riqueza representados pelo tamanho dos pontos
+]
+--
+.pull-right[
+```{r, echo=F, message=FALSE, warning=FALSE, out.width="400px"}
+library(vegan)
+
+diversity(spe, index = "simpson")-> s_index
+# s_index
+
+ggplot(spa, aes(X,Y))+
+  geom_path(color="red")+
+  geom_point(size = s_index*5, alpha = 0.4)+
+  #geom_text(aes(label=spe$Satr), nudge_y = -5)+
+  annotate(geom="text", x=10, y=50, label="Foz do rio",
+              color="blue",size = 5)+
+  annotate(geom="text", x=80, y=15, label="Nascente do rio",
+              color="blue",size = 5)+
+  labs(title = "Divesidade de Simpson")
+
+```
+- Simpson parace menos sensível
+]
+---
+# A importância de explorar os dados
+
+![Blog Dnamic Ecology](libs/din_eco.png)
+
+[Porque explorar dados?](https://dynamicecology.wordpress.com/2013/10/16/in-praise-of-exploratory-statistics/)
+
+---
+# Como é a distribuição de abundância dessa comunidade de peixes? 
+
+## Código
+```{r echo=FALSE}
+spe[1:10,1:10]
+```
+
+---
+## Plot
+
+```{r echo=FALSE}
+data1<-rankabundance(spe)
+plot(data1)
+```
+
+---
+##Plot melhorado
+```{r echo = FALSE}
+library(ggplot2)
+library(ggrepel)
+data1<-as.data.frame(data1)
+
+plotgg1 <- ggplot(data=data1, aes(x = rank, y = abundance)) + 
+    geom_line(size=1) +
+    geom_point(size=5, alpha=0.7) +
+    geom_text_repel(data=data1, 
+        aes(label=rownames(data1)), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    labs(x = "rank", y = "abundância")
+
+plotgg1
+
+```
+
+---
+# Faça exercícios, sempre utilizando perguntas originais
+.pull-left[
+### - Use os dados fornecidos pelo livro **Numerical Ecology with R**
+### - Mas... Evite apenas seguir os scripts e exemplos
+### - Monte seu site usando o _RMarkdown_
+### - Não desista, isso é treino
+]
+
+.pull-right[
+
+<img src="https://media.giphy.com/media/a9d3bbcM3ImXe/giphy.gif" />
+
+]
+
+
+
+

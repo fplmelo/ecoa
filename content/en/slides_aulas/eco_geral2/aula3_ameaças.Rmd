@@ -1,0 +1,173 @@
+---
+title: "Ecologia Geral 2"
+subtitle: "Aula 3 - Ameaças à biodiversidade"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+
+# O que precisamos saber hoje?
+
+--
+.pull-left[
+### Quais são as principais ameaças à biodiversidade
+
+### Como entender essas ameaças para além do *senso comum*
+
+### Comparar as ameaças atuais com as extinções do passado
+
+### Avaliar o estado atual da biodiversidade no Brasil
+]
+
+--
+
+.pull-right[
+<img src="https://media.giphy.com/media/dsngJ31iGCnatIHe4w/giphy.gif"/>
+]
+---
+# Como sabemos que a biodiversidade está ameaçada?
+
+### Hoje temos todas as informações pela [**CDB**](www.cbd.int)
+.center[
+<img src="https://www.ramsar.org/sites/default/files/pictures/news/gbo5-card2_0.png" height = 400>
+]
+---
+# Sabemos mediar a velocidade das [extinções recentes](https://science.sciencemag.org/content/356/6335/270?ijkey=70196770b94bc8a3c4aa6061d20059c4e15c9acd&keytype2=tf_ipsecsha)
+.center[
+<img src="https://science.sciencemag.org/content/sci/356/6335/270/F1.large.jpg?download=true" height = 500>]
+
+---
+# Sabemos o grau de ameaças para espécies ou grupos
+
+<img src="https://www.researchgate.net/publication/352074595/figure/fig3/AS:1030479562170394@1622696881931/Current-extinction-risk-in-different-species-groups-Data-was-extracted-from-the-IUCN-Red_W640.jpg">
+---
+# Mas nem sempre foi assim...
+.pull-left[
+<img src="http://www.high50.com/wp-content/uploads/2012/09/Rachel-Carson-Silent-Spring-620.jpg">
+]
+
+.pull-right[
+- ###Em 1962 A primavera silenciosa virou um clássico
+- ###O uso de DDT estava acabando com as aves dos EEUU
+- ###As causas da perda da biodivesidade estavam ficando mais claras
+- ###A perda estava sendo sentida
+]
+---
+# Mais evidências começavam a aparecer
+.pull-left[
+<img src="https://www.nature.com/news/polopoly_fs/7.24338.1426070673!/image/whales.jpg_gen/derivatives/landscape_630/whales.jpg">
+]
+
+.pull-right[
+<img src="https://www.nature.com/news/polopoly_fs/7.24359.1426070682!/image/Whales.jpg_gen/derivatives/landscape_630/Whales.jpg">
+]
+---
+# A velocidade é impressionante
+.center[
+<img src="https://i.pinimg.com/originals/a0/18/05/a0180552681279fb112af520d0916a11.gif">
+]
+---
+# Principais ameaças: Perda de Hábitat
+.pull-left[
+<img src="https://raw.githubusercontent.com/gu-stat/forest-area/master/gif/forest_animation_pt-br.gif" height = 500>]
+
+.pull-right[
+### Brasil é um caso especial no mundo
+
+### A perda de hábitat mais rápida
+
+### Causas recentes e bem conhecidas
+]
+---
+# Principais ameaças: Perda de Hábitat
+.center[
+[Antromas: Erle Ellis](https://lh3.googleusercontent.com/proxy/85cTPGVyCx4kPBAff20K2uBB6eEwA5fnqIdPnjh07oGRgEmNImzv4rP-2GQII4VX36V2sAAwLJqxvePTK_VXu7ktVQAAdUsnHkzrnZS1xHewPSi9J8T0nre0zXjlZk7JO2borQ)
+
+<img src="https://lh3.googleusercontent.com/proxy/85cTPGVyCx4kPBAff20K2uBB6eEwA5fnqIdPnjh07oGRgEmNImzv4rP-2GQII4VX36V2sAAwLJqxvePTK_VXu7ktVQAAdUsnHkzrnZS1xHewPSi9J8T0nre0zXjlZk7JO2borQ" height = 500>
+]
+---
+# Principais ameaças: Perda e mdificação de Hábitat
+.center[
+[Antromas: Erle Ellis](http://ecotope.org/anthromes/v2/)
+
+<img src="http://ecotope.org/anthromes/images/anthromes_v2_area_change_1700_2000.png", height = 450>
+]
+---
+# Principais ameaças: Sobre exploração de espécies
+.pull-left[
+<img src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy82NDYxODEzL29yaWdpbi5qcGciLCJleHBpcmVzX2F0IjoxNjQ4MzczNDEyfQ.kQr05FvqwfMrXhJQ4W8kqWNToDdq7_1jkFMYL0BvZPo/img.jpg?width=1200&coordinates=0%2C25%2C0%2C25&height=600">
+- A maioria das espécies caçadas comercialmente declinaram
+- Algumas foram extintas
+- Muitas, sem termos sequer conhecido melhor
+]
+
+.pull-right[
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Sea_Otter_%28Enhydra_lutris%29_%2825169790524%29_crop.jpg">
+]
+---
+# Principais causas de extinção: Invasão biológica
+.center[
+<img src="https://www.researchgate.net/profile/Lee-Baumgartner/publication/317267135/figure/fig1/AS:613929663361030@1523383646177/Large-scale-initiatives-aiming-to-control-invasive-species-a-c-The-European-Union_W640.jpg" height=500>
+]
+---
+# Um gatinho é inofensivo...
+
+###[Saca esse caso](https://doi.org/10.1017/S0030605304000602)
+
+<img src="https://www.treehugger.com/thmb/7l2EARWUBpYpsm6Rr2OUP9xuFBI=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2016__05__cat-holding-mouse-a1ac25c265224d019670b86f817b31c1.jpg">
+---
+# Principais causas de extinção: Mudança climática
+.center[
+<img src="https://static.straitstimes.com.sg/s3fs-public/articles/2018/03/15/st_20180315_fdwarming_3835068.jpg" height= 500>
+]
+---
+# A sexta grande extinção?
+.center[
+<img src="https://d18x2uyjeekruj.cloudfront.net/wp-content/uploads/2020/06/massext.jpg "height = 500>
+]
+---
+# A sexta grande extinção?
+.center[
+[Ceballos et al 2015](https://advances.sciencemag.org/content/1/5/e1400253/tab-figures-data)
+
+<img src="https://advances.sciencemag.org/content/advances/1/5/e1400253/F2.large.jpg?width=800&height=600&carousel=1">
+
+]
+---
+# Antropoceno ou Capitaloceno?
+
+.center[
+<img src="https://images-na.ssl-images-amazon.com/images/I/51ZanTLVIuL._SX332_BO1,204,203,200_.jpg">
+]
+
+---
+class: center, middle
+# FIM
+
+
+
+
+

@@ -1,0 +1,135 @@
+---
+title: "Medidas de diversidade verdadeira"
+author: "Felipe Melo"
+date: "22 de fevereiro de 2022"
+output: html_document
+---
+
+<img src = https://www.researchgate.net/profile/Sabelo-Madonsela-2/publication/320402408/figure/tbl1/AS:668390758809603@1536368183123/Alpha-diversity-indices-used-in-the-study-and-their-equations.png>
+
+<br>
+
+```{r default, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(vegan)
+```
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_div_verdadeira.html#1" )
+```
+
+**Texto extraído do livro Análises Ecológicas no R** (in press)
+
+# Desafios da mensuração da diversidade verdadeira
+
+Números de Hill ou Série de Hill
+Embora os índices de Shannon-Wiener e Gini-Simpson sejam amplamente usados em estudos ecológicos e de conservação, eles sofrem de propriedades matemáticas e não representam a diversidade propriamente dita (L. Jost 2006). Portanto, quando o objetivo é avaliar a diversidade, os índices de Shannon-Wiener e Gini-Simpson não deveriam ser utilizados na sua forma padrão, mas transformados em números efetivos de espécies ou diversidade verdadeira (L. Jost 2006). O número efetivo de espécies é o número de espécies igualmente abundantes (i.e. todas as espécies com a mesma abundância) necessárias para produzir o valor observado para um determinado índice. Por exemplo, uma comunidade com índice de Shannon-Wiener estimado de 4,5 teria um número efetivo de 90 espécies igualmente abundantes. Jost et al. (2006) usam o seguinte exemplo para explicar o conceito do número efetivo de espécies - uma comunidade com 16 espécies igualmente abundantes é duas vezes mais diversa do que uma comunidade com 8 espécies igualmente abundantes. Neste caso, a diversidade deveria ser proporcional ao número de espécies. Contudo, quando aplicamos os índices de diversidade para estas comunidades com 16 e 8 espécies (cada espécie com 5 indivíduos), o índice de Shannon-Wiener é 2,772 e 2,079, respectivamente, e o índice de Gini-Simpson é 0,937 e 0,875, respectivamente. Claramente, os valores estimados pelos índices de diversidade não representam a diferença entre as comunidades porque eles carecem de uma particularidade matemática conhecida como propriedade de duplicação.
+
+O próximo exemplo (modificado do website de Lou Jost; http://www.loujost.com/), demostra a importância da transformação dos índices de diversidade em números efetivos de espécies. Imagine que você foi contratado para avaliar a diversidade de peixes em um riacho antes e depois da instalação de uma usina hidrelétrica. Suponha que os valores estimados pelo índice de Gini-Simpson foi de 0,99 antes da instalação e de 0,97 depois da instalação. A princípio, você poderia concluir que a diversidade diminuiu somente 2% e que a instalação da hidrelétrica não afetou a diversidade de peixes no riacho. Contudo, transformando os valores do índice de diversidade em números efetivos, percebemos que antes da instalação a diversidade do riacho equivale a 100 espécies igualmente abundantes, enquanto após a instalação, a diversidade equivale a 33 espécies igualmente abundantes. Portanto, a queda da diversidade foi de 66% e não 2%.
+
+Hill (1973) derivou uma equação geral para o cálculo do número efetivo de espécies ou diversidade verdadeira que depende apenas do valor de q e da abundância relativa das espécies.
+
+
+<img src=https://jslefche.files.wordpress.com/2012/10/entropy.png width = 500>
+
+Onde:
+
+q = é um parâmetro conhecido como ordem da diversidade e é usado para dar peso às espécies comuns ou raras. q = 0 não considera a frequência das espécies e representa a riqueza observada de espécies, q = 1 equivale a transformação do índice de Shannon-Wiener (i.e. exp(H’)) e atribui pesos às espécies com base na proporção das suas frequências e, q = 2 equivale à transformação do índice de Gini-Simpson (i.e. 1/(1-D)) e atribui peso às espécies mais comuns. Valores de q <1 favorecem espécies raras, enquanto valores de q > 1 favorecem espécies comuns.
+
+pi = abundância relativa de cada espécie, calculada pela proporção dos indivíduos de uma espécie pelo número total dos indivíduos na comunidade
+
+Vamos calcular o Número de Hill para as comunidades do nosso exemplo.
+
+Calculando o Número de Hill com q = 0.
+
+```{r}
+library(devtools)
+library(ecodados)
+library (vegan)
+library(ggplot2)
+library(BiodiversityR)
+library(hillR)
+## Dados
+composicao_especies <- ecodados::composicao_anuros_div_taxonomica
+precipitacao        <- ecodados::precipitacao_div_taxonomica
+```
+
+
+```{r}
+
+hill_res_q_0 <- hill_taxa(composicao_especies, q  = 0)
+hill_res_q_0
+
+```
+
+## Número de Hill para q = 1
+
+```{r}
+
+hill_res_q_1 <- hill_taxa(composicao_especies, q  = 1)
+hill_res_q_1
+
+```
+
+## Número de Hill para q = 2
+
+```{r}
+
+hill_res_q_2 <- hill_taxa(composicao_especies, q  = 2)
+hill_res_q_2
+
+```
+
+## Resultados
+
+```{r}
+res_hill <- data.frame(hill_res_q_0, hill_res_q_1, hill_res_q_2)
+colnames(res_hill) <- c("q=0", "q=1", "q=2")
+head(res_hill)
+```
+
+# Interpretação dos resultados
+
+Como na comunidade 1 todas as espécies são igualmente abundantes, alterar os valores de q não altera o número efetivo de espécies que permanece sempre 10. Contudo, na comunidade 2, que apresenta alta dominância de uma espécie, alterar os valores de q diminui consideravelmente a estimativa da diversidade. A vantagem dos Números de Hill é que eles são de fácil interpretação e comparação entre as comunidades. Fator ausente para os índices de diversidade.
+
+# Exercício
+
+1. Reproduza as análises acima com a base do BCI ou Outra base à sua escolha
+1. Grafique os resutados num ["diversity profile"](https://www.google.com/search?q=diversity+profile+hill+numbers&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjwqKKc75H2AhW_ErkGHcnzBfUQ_AUoAnoECAEQBA&biw=1848&bih=887&dpr=1#imgrc=urlC8AbOInzd-M)
+1. Tente interpretar os resultados
+
+Exemplo simples para você substituir com os dados de BCI
+
+```{r message=FALSE, warning=FALSE}
+(df <- data.frame(C1 = c(10, 10, 10, 10), C2 = c(0, 20, 35, 5), C3 = c(25, 15, 0, 2), row.names = c("sp1", "sp2", "sp3", "sp4")))
+library(entropart)
+mc<-MetaCommunity(df)
+plot(mc)
+
+summary(DivPart(q=0, mc), Correction="None")
+
+summary(DivPart(q=1, mc), Correction="None")
+
+summary(DivPart(q=2, mc), Correction="None")
+
+autoplot(DivProfile(q.seq = seq(0, 2, 0.1),MC=mc, Correction = "None"))
+
+# Tem mais coisa que pode ser explorada
+
+# Estimadores de diversidade
+
+alfa.est0<-DivEst(q = 0, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est0)
+
+alfa.est1<-DivEst(q = 1, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est1)
+
+alfa.est2<-DivEst(q = 2, mc, Simulations = 100, Correction = "None")
+
+plot(alfa.est2)
+```
+
+

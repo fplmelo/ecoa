@@ -1,0 +1,218 @@
+---
+title: "Ecologia Geral 2"
+subtitle: "Aula 2 - Padrões de distribuição e magnitude da biodiversidade"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+
+# O que precisamos saber hoje?
+
+.pull-left[
+- ### Como a biodiversidade se organiza espacial e temporalmente na Terra
+- ### Como usar essas informações para desenhar estratégias de conservação
+- ### Aprender um pouco de Biogeografia
+]
+
+.pull-right[
+<img src="https://media.giphy.com/media/S3Pe5NZqgmE8Tl3NI5/giphy.gif" height 300/>
+]
+---
+
+# A história da biodiversidade
+
+<img src="https://www.researchgate.net/profile/Dirk-Olbers/publication/263466153/figure/fig10/AS:296039673286669@1447592766800/Development-of-life-on-Earth-shown-as-a-spiralling-timeline_W640.jpg" height = 500/>
+---
+# Vivemos o período mais Biodiverso da Terra
+.pull-left[
+
+<img src="https://ars.els-cdn.com/content/image/3-s2.0-B9780123852274000055-f06-27-9780123852274.jpg?" height= 500/>
+]
+.pull-right[
+### Mas não foi suave...
+### Houve muitas extinções EM MASSA
+### Mas a vida continuou prosperando
+]
+---
+class: center, middle
+# A vida na Terra hoje é o resultado de 4,5 bilhões de anos de evolução, especiação, extinção e dispersão
+---
+# Fronteiras biológicas da Terra
+[**Províncias biogeográficas**](https://en.wikipedia.org/wiki/Biogeographic_realm)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Ecozones.svg/1920px-Ecozones.svg.png"/>
+---
+# A bidiversidade se desenvolveu em diferentes lugares
+### na terra (plantas)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Biodiversity_Global_Plant_Species.png/800px-Biodiversity_Global_Plant_Species.png"/>
+---
+# A bidiversidade se desenvolveu em diferentes lugares
+### no mar [(mamíferos)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019653)
+<img src="https://journals.plos.org/plosone/article/figure/image?size=large&id=info:doi/10.1371/journal.pone.0019653.g001"/>
+
+---
+# A própria árvore da vida é bastante desigual em termos de diversidade
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/A_Novel_Representation_Of_The_Tree_Of_Life.png/800px-A_Novel_Representation_Of_The_Tree_Of_Life.png" height = 500/>
+---
+# Padrões e mais padrões
+.pull-left[
+<img src=libs/img/purvis.jpg>
+[Purvis & Hector¨ (2000).](https://www.nature.com/articles/35012221)
+]
+
+.pull-right[
+- ### Esse padrão aninhado acontece em todos os níveis de vida
+<img src=libs/img/nested.jpg>
+]
+---
+class: center, middle
+
+# E continua...
+---
+# Qual o nosso nível de conhecimento sobre a biodiversidade entre clados?
+.pull-left[
+<img src=libs/img/pie_life.png height =400>
+[Purvis & Hector¨ (2000).](https://www.nature.com/articles/35012221)
+]
+.pull-right[
+<img src=libs/img/tree_taxa.png height =400 width= 400>
+]
+
+---
+# Alfred Russell Wallace
+.pull-left[
+<img src="http://t1.gstatic.com/images?q=tbn:ANd9GcQhehBm8LtcZpizY5ZUoZDUfhk_G7Fmza8oz_PgtEk7wokliT4iLwdFQl3woU3r" height=500>]
+
+.pull-right[
+
+- ### Considerado o fundador da Biogeografia
+<img src="https://3.bp.blogspot.com/-uFDe4oo0HYY/UlWI1AEK13I/AAAAAAAAAYA/2cU7bSxFYzI/w1200-h630-p-k-no-nu/1384303_488027757962876_524598477_n.jpg">
+Estava bastante interessado na distribuição das espécies em ilhas do Sul da Asia
+
+#### [Leitura recomnedada: Darwin, historical biogeography, and the importance of overcoming binary opposites](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2699.2009.02111.x)
+]
+---
+# Princípios da Biogeografia aplicados ao entedimento da Biodiversidade
+.pull-left[
+- ### Relação espécie-área
+- ### Nicho ecológico
+- ### Ecologia vs. História
+- ### Interação entre espécies
+]
+
+.pull-right[
+<img src=libs/img/island.jpeg>]
+---
+# Relação espécie-área
+- ### O número de espécies aumenta com a área amostrada
+.pull-left[
+### Linear
+```{r echo=FALSE, out.width="70%"}
+spe_area<-tibble(area=10:1000,
+       spe_lin=area/3) 
+spe_area%>% 
+  ggplot(aes(x=area,y=spe_lin))+geom_point()
+```
+https://en.wikipedia.org/wiki/Species%E2%80%93area_relationship
+]
+
+.pull-right[
+### Exponencial
+```{r echo=FALSE, out.width="70%"}
+spe_area_exp<-tibble(area=10:1000,
+       spe_exp=((area*100000)^0.1)) 
+spe_area_exp%>% 
+  ggplot(aes(x=area,y=spe_exp))+geom_point()
+```
+]
+---
+# Nicho ecológico ou biogeografia ecológica
+.center[
+<img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-030-51633-8_7/MediaObjects/470677_1_En_7_Figa_HTML.png" height= 500 >]
+---
+# Biogeografia Histórica
+.center[
+<img src="libs/img/landscapes.png" height= 400 >
+
+https://www.scielo.br/scielo.php?script=sci_arttext&pid=S2175-78602018000402209]
+
+---
+# Interação entre espécies
+.center[
+<img src="libs/img/bio_int.png" height=500/>
+]
+---
+# Biogeografia de ilhas
+.pull-left[
+<img src="https://coreybradshaw.files.wordpress.com/2016/05/ib.jpg" height= 400>
+[Biogeografia de ilhas em PT-BR](http://recologia.com.br/2016/06/09/biogeografia-de-ilhas/)]
+
+.pull-right[
+<img src="https://pbs.twimg.com/media/EGHJm0YW4AA67KE.jpg">
+
+[Biogeografia de Ilhas no Wikipedia](https://en.wikipedia.org/wiki/Insular_biogeography)]
+
+---
+# Tipos de raridade
+.center[
+<img src="https://www.researchgate.net/profile/Douglas-Boyes/publication/336343580/figure/fig3/AS:817566788370435@1571934520763/Rabinowitzs-1981-rarity-typology-rendered-as-a-cube-It-identifies-seven-forms-of_W640.jpg">
+]
+
+[Rabinowitz’s (1981)](https://www.esf.edu/efb/parry/Invert_Cons_14_Readings/Rabinowitz_1981.pdf)
+---
+# Aplicações na conservação da biodiversidade
+.pull-left[
+<img src="https://www.pnas.org/content/pnas/106/10/3841/F2.large.jpg?width=800&height=600&carousel=1" height=500>
+]
+.pull-right[
+A = Riqueza
+
+B = Endemismo
+
+C = Novas espécies
+
+Atenção para as cores vermelhas, que mostram onde espećies novas de mamíferos foram descobertas fora de **Hotspots**
+
+
+[Discoveries of new mammal species and their implications for conservation and ecosystem services](https://www.pnas.org/content/106/10/3841)]
+---
+# Aplicações na conservação da biodiversidade
+.pull-left[
+<img src="https://www.researchgate.net/profile/Rodrigo-Medellin-3/publication/263267294/figure/fig1/AS:669055249821707@1536526610413/Cumulative-curve-of-species-description-and-fitted-model-for-all-land-mammal-species-of_W640.jpg" height = 400>
+[Medellín & Soberon 2008](https://conbio.onlinelibrary.wiley.com/doi/abs/10.1046/j.1523-1739.1999.97315.x)
+]
+--
+.pull-right[
+<img src="libs/img/med.png">]
+---
+# Aplicações na conservação da biodiversidade
+.center[´
+<img src="https://www.researchgate.net/profile/Michael-Hoffmann-19/publication/6958884/figure/fig1/AS:280471314419712@1443880980338/Maps-of-the-nine-global-biodiversity-conservation-priority-templates-CE-crisis.png"/>]
+[Brooks et al 2006](https://science.sciencemag.org/content/313/5783/58)
+---
+class: center, middle
+# FIM
+
+

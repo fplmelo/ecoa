@@ -1,0 +1,159 @@
+---
+title: "Medidas de diversidade"
+author: "Felipe Melo"
+date: "2 de fevereiro de 2022"
+output: html_document
+---
+
+<img src = https://ib.bioninja.com.au/_Media/biodiversity_med.jpeg>
+
+<br>
+
+```{r default, message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(vegan)
+```
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_diversity_measures.html#1" )
+```
+
+# Desafios da mensuração da diversidade
+
+Vimos que as comunidades biológicas são estruturas complexas, com muitas informações. Para descrever uma comunidades biológica usamos com frequência duas dessas infromações:
+
+1. Riqueza
+1. Abundância específica (de cada espécie)
+
+A riqueza em si é uma medida de diversidade. Ela informa quantas espécies há numa comunidade mas despreza suas abundâncias.
+
+Compare as comunidades abaixo
+
+![](/en/courses/eco_num/medidas_diversidade/desc_comm_files/tree.png)
+
+Perceba que os valores de riqueza são  exatamente iguais para cada comunidade **4 espécies**.
+
+Mas, há uma desbalanço tremendo de abundâncias. A *árvore-amarela* responde por 25% da abundância da comunidade **A** enquanto que responde por 75% dos indivíduos da comunidade **B**. 
+
+# A importância das curvas de rank-abundância
+
+Se você graficar suas comunidades com uma curva de SAD (species abundance distribution) que é equivalente a uma de rank-abundância, vai perceber que o padrão de distribuição das abundâncias é bem diferente.
+
+## Comunidade A
+```{r}
+
+tibble(
+  spec= c("amarela", "verde","laranja","verdão"),
+  siteA = (rep(3,4)),
+  siteB = c(9,1,1,1),
+)->comm_ex
+comm_ex
+```
+
+## Gráfico site A
+```{r}
+ggplot(comm_ex, aes(spec, siteA, group=1))+geom_point()+geom_line()
+```
+
+## Gráfico site B
+```{r}
+ggplot(comm_ex, aes(spec, siteB, group=1))+geom_point()+geom_line()
+
+```
+
+# Índices de diversidade
+
+
+## Riqueza
+```{r}
+specnumber(comm_ex$siteA)
+
+specnumber(comm_ex$siteB)
+```
+
+## Índice de Shannon
+
+```{r}
+diversity(comm_ex$siteA) 
+
+diversity(comm_ex$siteB)
+```
+
+## ìndice de Simpson
+
+```{r}
+diversity(comm_ex$siteA, index = "simpson") 
+
+diversity(comm_ex$siteB, index = "simpson") 
+
+```
+
+### Agora dê uma lida sobre os índices de diversidade biológica clássicos e tente diferenciar pelo menos esses dois acima.
+
+[Species diversity Indexes](https://en.wikipedia.org/wiki/Diversity_index#:~:text=A%20diversity%20index%20is%20a,as%20richness%2C%20divergence%20or%20evenness.)
+
+[Qual índice de diversidade usar?](https://revistas.unifoa.edu.br/cadernos/article/view/406/441)
+
+# Exercício
+
+1. Use a base de dados 'composicao_especies' que pode baixar usando os coomandos abaixo
+```{r}
+## Pacotes
+library(devtools)
+library(ecodados) # para instalar isso é preciso o comado "devtools::install_github("paternogbc/ecodados")"
+library (vegan)
+library(ggplot2)
+library(BiodiversityR)
+
+
+## Dados
+composicao_especies <- ecodados::composicao_anuros_div_taxonomica
+precipitacao        <- ecodados::precipitacao_div_taxonomica
+```
+
+2. Explore as bases de dados "composicao_especies"
+
+
+3. Faça algumas curvas de rank-abundância como essa abaixo
+
+```{r}
+rank_com2 <- rankabundance(composicao_especies[2, composicao_especies[2,] > 0]) # Note que fiz apenas para uma comunidade, a comm 2; Faça para mais de uma repetindo várias vezes esse comando e dando nomes distintos aos objetos
+
+rankabunplot(rank_com2, scale = "logabun", specnames = c(1), 
+             pch = 19, col = "darkorange")# para fazer vários gráficos, basta repetir os comandos
+```
+
+4. Calcule índices de diversidade de espécies. Todos os que conhecer e quiser e comente os mesmos.
+
+```{r}
+riqueza_res <- specnumber(composicao_especies)
+riqueza_res
+
+shannon_res <- diversity(composicao_especies, index = "shannon", MARGIN = 1)
+shannon_res
+
+simpson_res <- diversity(composicao_especies, index = "simpson", MARGIN = 1) 
+simpson_res
+
+```
+
+5. Teste a relação  dos índices com a precipitação
+
+```{r}
+precipitacao
+
+## Juntando todos os dados em um único data frame
+dados_div <- data.frame(precipitacao$prec, riqueza_res,shannon_res, 
+                        simpson_res)
+
+## Renomeando as colunas
+colnames(dados_div) <- c("Precipitacao", "Riqueza", "Shannon", "Simpson")
+
+## ANOVA
+anova_shan <- lm(Shannon ~ Precipitacao, data = dados_div)
+anova(anova_shan)
+```
+
+6. Faça um plot para cada relação!
+

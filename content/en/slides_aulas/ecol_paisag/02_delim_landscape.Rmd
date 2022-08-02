@@ -1,0 +1,150 @@
+---
+title: "Aula 2 - Definição e delimitação de paisagens"
+subtitle: "Ecologia de Paisagens"
+author: "Felipe Melo"
+institute: "UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://www.intechopen.com/media/chapter/45411/media/image1.png)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_scribble()
+```
+
+
+---
+<iframe width="1193" height="671" src="https://www.youtube.com/embed/8Are9dDbW24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+---
+# O que é preciso saber?
+
+## - Definir o que é uma paisagem
+## - Descrever uma paisagem
+## - Entender a estrutura de paisagens
+## - Entender quais processos ecológicos fazem sentido na escala de paisagem
+
+
+---
+# Escala de paisagem
+.left-column[
+
+## Escala tem a ver com a perspectiva
+
+]
+
+.right-column[
+
+<img src=pais_proc.png>
+]
+
+---
+
+background-image: url(escala2.png)
+
+---
+# Percepção de uma paisagem
+.pull-left[
+# Binária
+## - Hábitat vs não-hábitat
+## - Dispersão
+## - Conectividade
+## - Tipo da matriz
+]
+
+--
+
+.pull-right[
+<img src=percep.jpg>
+[Nyemeier et al 2020](https://www.sciencedirect.com/science/article/pii/S0048969719352544#f0030)
+]
+---
+# Percepção de uma paisagem
+.pull-left[
+# Não-binária
+## - Gradiente de qualidade do hábitat
+## - Dispersão
+## - Conectividade
+## - Tipo da matriz
+
+]
+
+--
+
+.pull-right[
+<img src=percep2.png >
+[Santos et al 2020](https://www.sciencedirect.com/science/article/pii/S253006442030078X#fig1035)
+]
+
+
+---
+# Percepção de uma paisagem
+.pull-left[
+# Mudanças temporais
+## - Gradiente de qualidade do hábitat
+## - Dispersão
+## - Conectividade
+## - Tipo da matriz
+[Santos et al 2020](https://www.sciencedirect.com/science/article/pii/S253006442030078X#fig1035)
+]
+
+--
+
+.pull-right[
+<img src=percep3.jpg width=450>
+]
+
+---
+.pull-left[
+<img src=scale_effect.png>
+]
+
+--
+
+.pull-right[
+<img src=title.png>
+
+<img src=frog_effect.png>
+
+]
+
+---
+# Metricas de paisagens
+.pull-left[
+### ... São unidades mnensuráveis de dos componentes de uma pasiagem que são usadas como indicativos de heterogenedade e permitem a quantificação de padrões especiais e suas relações com processos ecológicos [(Turner et al., 2001)](https://link.springer.com/book/10.1007/978-1-4939-2794-4?noAccess=true)
+]
+
+.pull-right[
+<img src=metrics.png>
+]
+
+---
+# Métricas de paisagens
+
+<img src=https://gistbok.ucgis.org/sites/default/files/AM54_Fig2.png width = 1000>
+[Apostila online sobre Ecologia de Paisages](https://gistbok.ucgis.org/bok-topics/landscape-metrics)
+### 1. Classiﬁcação categórica (composição e conﬁguração)
+### 2. Representação de grafos (conectância)
+### 3. Classiﬁcação de gradientes (NDVI, EVI, geoestatística)
+
+---
+# Vamos a um exemplo
+
+
+
+---
+class: center, middle
+
+#Por hoje é só.
+
+
+
+

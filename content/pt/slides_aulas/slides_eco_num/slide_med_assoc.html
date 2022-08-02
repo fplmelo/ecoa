@@ -1,0 +1,134 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 2 - Medidas de Associação"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "2022-01-31"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/shareon/shareon.min.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/shareon/shareon.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js"></script>
+<script src="/rmarkdown-libs/fabric/fabric.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-scribble/scribble.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/panelset/panelset.js"></script>
+
+
+<div id="similaridade-ecológica" class="section level1">
+<h1>Similaridade ecológica</h1>
+<p>Hoje precisamos aprender a explicar isso</p>
+<p><img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png
+" width="600" height="420" />
+—
+# O que é similaridade ecológica?
+.pull-left[
+- A definição ecológica é simples: Quão parecidas são espécies/comunidades/indivíduos]
+.pull-right[]</p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># Mas como medir essa similaridade?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.pull-left[
+# Indices de similaridade</td>
+</tr>
+<tr class="even">
+<td>- Variam de 0-1
+- Dados qualitativos
+- Dados quantitativos
+- Ignoram <strong>duplos zeros</strong> (vamos abordar isso)
+<img src="https://i.ytimg.com/vi/Ah_4xqvS1WU/maxresdefault.jpg" />
+<img src="https://miro.medium.com/max/562/1*-pA7yjdXoLepVh3nB-LC4g.png" height= 200 />
+]</td>
+</tr>
+</tbody>
+</table>
+<p>.pull-right[
+# Medidas de distância]
+—
+# O problema dos <strong>duplos zeros</strong>
+- Quando uma espécies X está ausete de duas amostras elas:
+- são similares? ou são diferentes?
+–</p>
+<p><img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:double-zero-illustration.png" /></p>
+<p>fig by <a href="https://www.davidzeleny.net/anadat-r/doku.php/en:similarity">David Zelený</a></p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># Como funcionam os índices?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>class: center
+# Como funionam as medidas de distância?
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:triangle_inequality_principle.jpg" height = 500/>
+.pull-left[fig by <a href="https://www.davidzeleny.net/anadat-r/doku.php/en:similarity">David Zelený</a>]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="algumas-aplicações" class="section level1">
+<h1>Algumas aplicações</h1>
+<p>.panelset[
+.panel[.panel-name[R Code]]]
+—
+# Exemplos da literatura
+The role of spatial and environmental variables in shaping aquatic insect assemblages in two protected areas in the transition area between Cerrado and Amazônia <em>Biota Neotrop. vol.20 no.3 Campinas 2020 Epub June 24, 2020</em>
+<a href="http://dx.doi.org/10.1590/1676-0611-bn-2019-0923" class="uri">http://dx.doi.org/10.1590/1676-0611-bn-2019-0923</a>
+.center[
+<img src="https://www.scielo.br/img/revistas/bn/v20n3//1676-0611-bn-20-03-e20190932-gf03.jpg"  width="70%" />]</p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># Exemplos da literatura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td># Exemplos da literatura</td>
+</tr>
+<tr class="even">
+<td><img src="https://www.frontiersin.org/files/Articles/396937/fevo-06-00194-HTML/image_m/fevo-06-00194-g001.jpg" /></td>
+</tr>
+<tr class="odd">
+<td>- Similaridade se deve à:
+- Troca de espécies entre comuniades
+- Subamostras de espécies
+- Ambos processos</td>
+</tr>
+</tbody>
+</table>
+<p>class: center, middle
+# FIM</p>
+</div>

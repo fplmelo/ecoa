@@ -1,0 +1,175 @@
+---
+title: "Medidas de diversidade"
+author: "Felipe Melo"
+date: "2 de fevereiro de 2022"
+output: html_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
+
+
+<p><img src = https://ib.bioninja.com.au/_Media/biodiversity_med.jpeg></p>
+<p><br></p>
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_diversity_measures.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+<div id="desafios-da-mensuração-da-diversidade" class="section level1">
+<h1>Desafios da mensuração da diversidade</h1>
+<p>Vimos que as comunidades biológicas são estruturas complexas, com muitas informações. Para descrever uma comunidades biológica usamos com frequência duas dessas infromações:</p>
+<ol style="list-style-type: decimal">
+<li>Riqueza</li>
+<li>Abundância específica (de cada espécie)</li>
+</ol>
+<p>A riqueza em si é uma medida de diversidade. Ela informa quantas espécies há numa comunidade mas despreza suas abundâncias.</p>
+<p>Compare as comunidades abaixo</p>
+<p><img src="/en/courses/eco_num/medidas_diversidade/desc_comm_files/tree.png" /></p>
+<p>Perceba que os valores de riqueza são exatamente iguais para cada comunidade <strong>4 espécies</strong>.</p>
+<p>Mas, há uma desbalanço tremendo de abundâncias. A <em>árvore-amarela</em> responde por 25% da abundância da comunidade <strong>A</strong> enquanto que responde por 75% dos indivíduos da comunidade <strong>B</strong>.</p>
+</div>
+<div id="a-importância-das-curvas-de-rank-abundância" class="section level1">
+<h1>A importância das curvas de rank-abundância</h1>
+<p>Se você graficar suas comunidades com uma curva de SAD (species abundance distribution) que é equivalente a uma de rank-abundância, vai perceber que o padrão de distribuição das abundâncias é bem diferente.</p>
+<div id="comunidade-a" class="section level2">
+<h2>Comunidade A</h2>
+<pre class="r"><code>tibble(
+  spec= c(&quot;amarela&quot;, &quot;verde&quot;,&quot;laranja&quot;,&quot;verdão&quot;),
+  siteA = (rep(3,4)),
+  siteB = c(9,1,1,1),
+)-&gt;comm_ex
+comm_ex</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##   spec    siteA siteB
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+## 1 amarela     3     9
+## 2 verde       3     1
+## 3 laranja     3     1
+## 4 verdão      3     1</code></pre>
+</div>
+<div id="gráfico-site-a" class="section level2">
+<h2>Gráfico site A</h2>
+<pre class="r"><code>ggplot(comm_ex, aes(spec, siteA, group=1))+geom_point()+geom_line()</code></pre>
+<p><img src="/en/courses/eco_num/medidas_diversidade/desc_comm_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="gráfico-site-b" class="section level2">
+<h2>Gráfico site B</h2>
+<pre class="r"><code>ggplot(comm_ex, aes(spec, siteB, group=1))+geom_point()+geom_line()</code></pre>
+<p><img src="/en/courses/eco_num/medidas_diversidade/desc_comm_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="índices-de-diversidade" class="section level1">
+<h1>Índices de diversidade</h1>
+<div id="riqueza" class="section level2">
+<h2>Riqueza</h2>
+<pre class="r"><code>specnumber(comm_ex$siteA)</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>specnumber(comm_ex$siteB)</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="índice-de-shannon" class="section level2">
+<h2>Índice de Shannon</h2>
+<pre class="r"><code>diversity(comm_ex$siteA) </code></pre>
+<pre><code>## [1] 1.386294</code></pre>
+<pre class="r"><code>diversity(comm_ex$siteB)</code></pre>
+<pre><code>## [1] 0.8369882</code></pre>
+</div>
+<div id="ìndice-de-simpson" class="section level2">
+<h2>ìndice de Simpson</h2>
+<pre class="r"><code>diversity(comm_ex$siteA, index = &quot;simpson&quot;) </code></pre>
+<pre><code>## [1] 0.75</code></pre>
+<pre class="r"><code>diversity(comm_ex$siteB, index = &quot;simpson&quot;) </code></pre>
+<pre><code>## [1] 0.4166667</code></pre>
+<div id="agora-dê-uma-lida-sobre-os-índices-de-diversidade-biológica-clássicos-e-tente-diferenciar-pelo-menos-esses-dois-acima." class="section level3">
+<h3>Agora dê uma lida sobre os índices de diversidade biológica clássicos e tente diferenciar pelo menos esses dois acima.</h3>
+<p><a href="https://en.wikipedia.org/wiki/Diversity_index#:~:text=A%20diversity%20index%20is%20a,as%20richness%2C%20divergence%20or%20evenness.">Species diversity Indexes</a></p>
+<p><a href="https://revistas.unifoa.edu.br/cadernos/article/view/406/441">Qual índice de diversidade usar?</a></p>
+</div>
+</div>
+</div>
+<div id="exercício" class="section level1">
+<h1>Exercício</h1>
+<ol style="list-style-type: decimal">
+<li>Use a base de dados ‘composicao_especies’ que pode baixar usando os coomandos abaixo</li>
+</ol>
+<pre class="r"><code>## Pacotes
+library(devtools)</code></pre>
+<pre><code>## Carregando pacotes exigidos: usethis</code></pre>
+<pre><code>## 
+## Attaching package: &#39;devtools&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:permute&#39;:
+## 
+##     check</code></pre>
+<pre class="r"><code>library(ecodados) # para instalar isso é preciso o comado &quot;devtools::install_github(&quot;paternogbc/ecodados&quot;)&quot;
+library (vegan)
+library(ggplot2)
+library(BiodiversityR)</code></pre>
+<pre><code>## Carregando pacotes exigidos: tcltk</code></pre>
+<pre><code>## BiodiversityR 2.14-1: Use command BiodiversityRGUI() to launch the Graphical User Interface; 
+## to see changes use BiodiversityRGUI(changeLog=TRUE, backward.compatibility.messages=TRUE)</code></pre>
+<pre class="r"><code>## Dados
+composicao_especies &lt;- ecodados::composicao_anuros_div_taxonomica
+precipitacao        &lt;- ecodados::precipitacao_div_taxonomica</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Explore as bases de dados “composicao_especies”</p></li>
+<li><p>Faça algumas curvas de rank-abundância como essa abaixo</p></li>
+</ol>
+<pre class="r"><code>rank_com2 &lt;- rankabundance(composicao_especies[2, composicao_especies[2,] &gt; 0]) # Note que fiz apenas para uma comunidade, a comm 2; Faça para mais de uma repetindo várias vezes esse comando e dando nomes distintos aos objetos</code></pre>
+<pre><code>## Warning in qt(0.975, df = n - 1): NaNs produzidos</code></pre>
+<pre class="r"><code>rankabunplot(rank_com2, scale = &quot;logabun&quot;, specnames = c(1), 
+             pch = 19, col = &quot;darkorange&quot;)# para fazer vários gráficos, basta repetir os comandos</code></pre>
+<p><img src="/en/courses/eco_num/medidas_diversidade/desc_comm_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Calcule índices de diversidade de espécies. Todos os que conhecer e quiser e comente os mesmos.</li>
+</ol>
+<pre class="r"><code>riqueza_res &lt;- specnumber(composicao_especies)
+riqueza_res</code></pre>
+<pre><code>##  Com_1  Com_2  Com_3  Com_4  Com_5  Com_6  Com_7  Com_8  Com_9 Com_10 
+##     10     10      5      5      5      6      2      4      6      4</code></pre>
+<pre class="r"><code>shannon_res &lt;- diversity(composicao_especies, index = &quot;shannon&quot;, MARGIN = 1)
+shannon_res</code></pre>
+<pre><code>##     Com_1     Com_2     Com_3     Com_4     Com_5     Com_6     Com_7     Com_8 
+## 2.3025851 0.5002880 0.9580109 1.6068659 1.4861894 1.5607038 0.6931472 1.1058899 
+##     Com_9    Com_10 
+## 1.7140875 1.2636544</code></pre>
+<pre class="r"><code>simpson_res &lt;- diversity(composicao_especies, index = &quot;simpson&quot;, MARGIN = 1) 
+simpson_res</code></pre>
+<pre><code>##     Com_1     Com_2     Com_3     Com_4     Com_5     Com_6     Com_7     Com_8 
+## 0.9000000 0.1710000 0.4814815 0.7989636 0.7587500 0.7674858 0.5000000 0.5850000 
+##     Com_9    Com_10 
+## 0.8088889 0.6942149</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Teste a relação dos índices com a precipitação</li>
+</ol>
+<pre class="r"><code>precipitacao</code></pre>
+<pre><code>##        prec
+## Com_1  3200
+## Com_2  3112
+## Com_3  2800
+## Com_4  1800
+## Com_5  2906
+## Com_6  3005
+## Com_7   930
+## Com_8  1000
+## Com_9  1300
+## Com_10  987</code></pre>
+<pre class="r"><code>## Juntando todos os dados em um único data frame
+dados_div &lt;- data.frame(precipitacao$prec, riqueza_res,shannon_res, 
+                        simpson_res)
+
+## Renomeando as colunas
+colnames(dados_div) &lt;- c(&quot;Precipitacao&quot;, &quot;Riqueza&quot;, &quot;Shannon&quot;, &quot;Simpson&quot;)
+
+## ANOVA
+anova_shan &lt;- lm(Shannon ~ Precipitacao, data = dados_div)
+anova(anova_shan)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: Shannon
+##              Df  Sum Sq Mean Sq F value Pr(&gt;F)
+## Precipitacao  1 0.10989 0.10989  0.3627 0.5637
+## Residuals     8 2.42366 0.30296</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Faça um plot para cada relação!</li>
+</ol>
+</div>

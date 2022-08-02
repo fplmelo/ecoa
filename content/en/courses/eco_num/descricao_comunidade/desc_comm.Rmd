@@ -1,0 +1,185 @@
+---
+title: "Descrição de comunidades biológicas"
+author: "Felipe Melo"
+date: "2 de fevereiro de 2022"
+output: html_document
+---
+
+<img src = https://aestheticmag.files.wordpress.com/2013/11/original.jpg>
+
+<br>
+
+
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_desc_comm.html#1" )
+```
+
+## Os atributos de uma communidade biológica são simples, em princípio
+
+1. Entidades
+1. Identidades
+1. Quantidades
+
+### Vamos examinar essa comunidade
+
+```{r message=FALSE, warning=FALSE}
+library (vegan)
+library(BiodiversityR)
+data (BCI)
+BCI.env <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.env.txt', row.names = 1)
+BCI.soil <- read.delim ('https://raw.githubusercontent.com/zdealveindy/anadat-r/master/data/bci.soil.txt')
+```
+
+### Estação Biológica de Barro Colorado
+
+<img src= https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:bci_loc.jpg>
+
+### Para uma descrição completa do local de estudo [clique aqui](https://www.davidzeleny.net/anadat-r/doku.php/en:data:bci)
+
+<img src = https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:barro_colorado_-_photo.jpg>
+
+<br>
+
+<img src=https://www.researchgate.net/profile/Eldredge-Bermingham/publication/7666672/figure/fig1/AS:277746631626753@1443231365395/The-50-ha-permanent-Forest-Dynamics-Plot-on-Barro-Colorado-Island-with-300-S-amara_W640.jpg>
+
+
+- São dados de uma série de plots 50 permanentes e contíguos de 1ha (50 ha no total) onde todas as árvores maiores que 10cm DAP (diametro à altura do peito) e uma grande quantidade de variáveis ambientais têm sido monitoradas há décadas.
+
+## Vamos ver a estrutura dessa base dados
+
+```{r}
+dim(BCI) # São 50 linhas (plots de 1 ha) e 225 colunas (espécies de árvores)
+```
+
+## A primeira tarefa de um ecólogo é *namorar* os dados. Saber coisas básicas como:
+
+1. Quantas espécies em cada amostra?
+```{r}
+specnumber(BCI) # Sim, existe uma função para isso no pacote "vegan"
+
+```
+
+2. Quantos indivíduos em cada amostra?
+```{r}
+rowSums(BCI)
+```
+
+3. Qual a abundância de cada espécie?
+```{r}
+head(colSums(BCI)) # mostra somente algumas linhas, mas se remover o head(), mostra a tabela inteira
+```
+
+## Há funções específicas no pacote **"vegan"** que são muito úteis para nálises de comunidades biológica. 
+
+## 1 - Curvas de acumulação de espécies 
+***
+
+### Código
+```{r}
+sp1<-specaccum(BCI, "random")
+sp1
+```
+
+
+### Plot
+```{r}
+plot(sp1, ci.type="poly", col="blue", lwd=2, ci.lty=0, ci.col="lightblue")
+boxplot(sp1, col="yellow", add=TRUE, pch="+")
+
+```
+
+## 2 - Curvas de rank-abunbdância 
+***
+
+### Código
+```{r}
+mod <- rad.lognormal(BCI[5,])
+mod
+```
+
+
+### Plot lognormal
+```{r}
+plot(mod)
+```
+
+### Código para vários modelos
+```{r}
+mod2 <- radfit(BCI[1,])
+mod2
+```
+
+### Plot com vários modelos
+```{r}
+plot(mod2)
+
+```
+
+
+## OUtro pacote, o "BiodiversityR" é muito interessante e traz suas funções úteis
+
+### Código 
+```{r}
+
+data(dune)
+data("dune.env")
+bio<-rankabuncomp(dune, dune.env, factor='Management', return.data=TRUE, specnames=c(1:2), legend=FALSE)
+bio
+```
+
+### Plot (com ggplot) 
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+plotgg1 <- ggplot(data=bio, aes(x = rank, y = abundance)) + 
+    scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    geom_line(aes(colour=Grouping), size=1) +
+    geom_point(aes(colour=Grouping, shape=Grouping), size=5, alpha=0.7) +
+    geom_text_repel(data=subset(bio, labelit == TRUE), 
+        aes(colour=Grouping, label=species), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    labs(x = "rank", y = "abundance", colour = "Management", shape = "Management")
+
+plotgg1
+
+```
+
+
+```{r}
+RA.data <- rankabuncomp(dune, y=dune.env, factor='Management', 
+    return.data=TRUE, specnames=c(1:10), legend=FALSE)
+
+plotgg2 <- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
+    scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+    geom_line(aes(colour=Grouping), size=1) +
+    geom_point(aes(colour=Grouping), size=5, alpha=0.7) +
+    geom_text_repel(data=subset(RA.data, labelit == TRUE), 
+        aes(label=species), 
+        angle=45, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    facet_wrap(~ Grouping) +
+    labs(x = "rank", y = "abundance", colour = "Management")
+
+plotgg2
+```
+
+
+# Exercício
+
+1. Faça uma análise descritiva de outra base de dados.
+1. Utilize funções prontas dos pacotes msa também tente chegar so resultados esperados com funções básicas do R
+1. Comente suas análises dando uma interpretação ecológica aos gráficos
+
+
+# Bibliografia
+
+## [Ecologia de Comundiades na Wikipedia](https://pt.wikipedia.org/wiki/Ecologia_de_comunidades#Estrutura_da_comunidade)
+
+## [Conceptual Synthesis in Community Ecology por Mark Vellend](https://www.researchgate.net/profile/Mark-Vellend-2/publication/44689600_Conceptual_Synthesis_in_Community_Ecology/links/0a85e534c7a686647f000000/Conceptual-Synthesis-in-Community-Ecology.pdf)
+
+## [Ecologia de Comunidades USP](http://ecologia.ib.usp.br/bie5778/doku.php)

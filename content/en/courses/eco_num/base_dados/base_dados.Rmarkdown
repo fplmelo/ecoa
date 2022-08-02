@@ -1,0 +1,146 @@
+---
+title: "Bases de dados Ecológicos"
+author: "Felipe Melo"
+date: "9 de fevereiro de 2022"
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
+---
+
+*Slides* 
+```{r , echo=FALSE}
+xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slied_base_dados.html", ratio = "16:9")
+```
+
+## Matriz de presencias e ausências
+
+As bases de dados do R que serão usadas no nosso curso são reais e vêem de repositórios livres de dados e exemplos do próprio R para a área de ecologia. No entanto, para iniciar nossas atividades, vamos contruir uma base de dados fictícia apenas para entender sua estrutura.
+
+A estrutura básica de bases de dados biológicos é a de matrizes que contem 'n' colunas e 'r' linhas (n x r). Geralmente temos espécies nas linhas e localidades nas colunas. Veja abaixo como criar uma matriz simples de 10 linhas e 4 colunas. As células serão preenchidas apenas com "1" e "0" indicando se a espécie está presente ou ausente da localidade amostrada.
+
+```{r base_ficticia, echo=TRUE}
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+library(tidyverse)
+tibble(
+  spec = paste0("sp", 1:10),
+  siteA = sample(c(0:1), replace=TRUE, size=10),
+  siteB = sample(c(0:1), replace=TRUE, size=10),
+  siteC = sample(c(0:1), replace=TRUE, size=10),
+  siteD = sample(c(0:1), replace=TRUE, size=10)
+)
+```
+
+### Exercício 1
+
+Agora crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:
+
+1) 20 espécies  
+2) 8 localidades
+3) Faça no seu computador
+
+
+* Obviamente essas bases podem ser "subidas" ao R sem maiores problemas e o ideal é que você faça isso mesmo. Crie suas bases de dados numa planilha e salve-as em formato TXT ou CSV com muita atenção ao separadores e codificação (geralmente UTF-8)
+
+
+## Exemplo 2 (matriz de abundâncias)
+
+Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.
+
+
+```{r base_abund}
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0("sp", 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)
+```
+
+### Exercício 2
+
+Novamente crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:
+
+1) 30 espécies  
+2) 10 localidades  
+3) Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades
+
+
+## Sumários
+
+Qualquer análise de dados em ecologia começa com uma boa chacagem dos seu dados. Precisamos saber como se comportam os dados e para isso podemo começar com algumas funções simples como 'summary' (pactote base do R) ou 'summarize' (pacote tidyverse). Para isso, vamos pegar a matriz gerada com as abundâncias e dar a ela um nome, tranformando-a assim num objeto.
+
+```{r summary, echo=TRUE}
+set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
+tibble(
+  spec = paste0("sp", 1:10),
+  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
+  siteB = floor(runif(10, min=0, max=10)), # aqui também
+  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
+  siteD = sample.int(20, 10) # aqui também até 20
+)-> base1 # note que esse comando "->" apontou para um objeto de nome 'base1'
+
+
+base1 # eis a nossa base agora com as espécies como nomes das linhas
+```
+
+### Exercício 3
+
+Abaixo temos um exemplo de resumo básico dos dados.
+Um resumo geral da tabela com a função mais simples do R que mostra apenas alguns "momentos" da distribuição dos dados organizados por colunas, nesse caso, por sítio de estudo.
+
+```{r, echo=TRUE}
+summary(base1)
+
+```
+Existem outras funções do pacote tidyverse que podem ser utilizadas com maior objetividade e para manipulações específicas. Para um curso introdutório completo de "tidyverse" veja essa maravilha aqui do Maurício Vancine [Introdução ao tidyverse](https://mauriciovancine.github.io/disciplina-analise-geoespacial-r/01_aulas/04_pres_intro_geocomp_r.html) 
+
+## Agora podemos começar a *namorar* nosos dados
+
+### Livro: Numerical Ecology with R
+
+
+
+Vamos usar muitos exemplos desse livro durante a disciplina e para acostumar, vamos começar por tentar reproduzir os exercícios do [Capítulo 2: "Exploratpry Data Analysis"](http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip)
+
+## Extraindo dados
+
+*Para baixar o livro _Numerical Ecology with R_, [clique aqui](https://github.com/fplmelo/eco_numerica/raw/558d6c1302c3bff19831c0eee28f53b0a3eb1c69/data/Numerical%20Ecology%20with%20R.pdf)*
+
+*Para acessar os dados [clique aqui](http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip)*
+
+Salve a pasta descompactada no diretório local correspondente ao seu repositório do _GitHub_
+
+
+Agora é só carregar as bases de dados usando o comando "load", lembrando de colocar o caminho para o arquivo segundo 
+
+```{r}
+# Vamos carregar os dados que o livro usa como exemplo
+load("/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
+```
+
+
+```{r}
+spe # matriz de abundância de espécies de peixes
+spa # matriz espacial
+env # matriz ambiental
+```
+
+### Exercício 4
+
+Usando essas bases de dados, tente reproduzir alguns dos gráficos que estão nos slides, pelo menos dois.
+
+Agora, crie suas próprias perguntas e explore os dados. Lembre-se, são dados de uma comunidade de peixes amostradas em 30 localidades de um rio na Suiça Temos tanto a localização geográfica dessas amostras quanto as características ambientais do rio nessas localidades.
+
+Exemplo de perguntas:
+
+- Onde há mais riqueza de peixes?
+- Onde há mais abundância de peixes?
+- Quais espécies occorrem mais na nascente?
+
+
+
+

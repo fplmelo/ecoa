@@ -1,0 +1,171 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Aula 5 - Análises de correspondência e canônica (CA & CCA)"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "2022-01-31"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
+<script src="/rmarkdown-libs/clipboard/clipboard.min.js"></script>
+<link href="/rmarkdown-libs/shareon/shareon.min.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/shareon/shareon.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-shareagain/shareagain.js"></script>
+<script src="/rmarkdown-libs/fabric/fabric.min.js"></script>
+<link href="/rmarkdown-libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/xaringanExtra-scribble/scribble.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/panelset/panelset.js"></script>
+
+
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>.pull-left[
+# O que precisamos saber?</td>
+</tr>
+<tr class="even">
+<td>###- Uma CA é um método similar aos PCA, mas… (distância de <strong>chi-quadrado</strong>)</td>
+</tr>
+<tr class="odd">
+<td>###- Tem bom desempenho com matrizes com muitos zeros (presença e ausência de espécies)</td>
+</tr>
+<tr class="even">
+<td>###- É um método para reduzir a multi-dimensionalidade dos dados</td>
+</tr>
+<tr class="odd">
+<td>###- Busca relações unimodais
+]</td>
+</tr>
+<tr class="even">
+<td>.pull-right[
+<img src=libs/normal.jpg></td>
+</tr>
+<tr class="odd">
+<td><img src=libs/ca_plot.png>]</td>
+</tr>
+</tbody>
+</table>
+<div id="análises-de-correspondência---ca" class="section level1">
+<h1>Análises de correspondência - CA</h1>
+<p>.left-column[
+# São uma família de análises multivaridas que procuram por relações <em>não lineares</em>]</p>
+<p>.rigth-column[]</p>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td># CAs são úteis para entender distribuição de espécies em gradientes</td>
+</tr>
+<tr class="even">
+<td>.panelset[
+.panel[.panel-name[Tabela de contingência]</td>
+</tr>
+<tr class="odd">
+<td><img src="/en/courses/slides_aulas/slides_eco_num/slides_CCA_files/figure-html/unnamed-chunk-6-1.png" width="400px" />
+]</td>
+</tr>
+<tr class="even">
+<td>.panel[.panel-name[Chi-quadrado]</td>
+</tr>
+<tr class="odd">
+<td><code>r chisq &lt;- chisq.test(spe[-8,])</code></td>
+</tr>
+<tr class="even">
+<td><code>## Warning in chisq.test(spe[-8, ]): Chi-squared approximation may be incorrect</code></td>
+</tr>
+<tr class="odd">
+<td><code>r chisq</code></td>
+</tr>
+<tr class="even">
+<td><code>## ##  Pearson's Chi-squared test ## ## data:  spe[-8, ] ## X-squared = 1171.6, df = 728, p-value &lt; 2.2e-16</code></td>
+</tr>
+<tr class="odd">
+<td>]
+.panel[.panel-name[Autovetores]</td>
+</tr>
+<tr class="even">
+<td><code>##          eigenvalue variance.percent cumulative.variance.percent ## Dim.1  6.009926e-01     51.502740611                    51.50274 ## Dim.2  1.443709e-01     12.372025791                    63.87477 ## Dim.3  1.072938e-01      9.194666172                    73.06943 ## Dim.4  8.337321e-02      7.144760737                    80.21419 ## Dim.5  5.157826e-02      4.420056824                    84.63425 ## Dim.6  4.184649e-02      3.586082405                    88.22033 ## Dim.7  3.388638e-02      2.903931729                    91.12426 ## Dim.8  2.882547e-02      2.470231250                    93.59450 ## Dim.9  1.684112e-02      1.443218695                    95.03771 ## Dim.10 1.082639e-02      0.927779708                    95.96549 ## Dim.11 1.014213e-02      0.869141057                    96.83463 ## Dim.12 7.885549e-03      0.675760978                    97.51040 ## Dim.13 6.123133e-03      0.524728790                    98.03512 ## Dim.14 4.867260e-03      0.417105325                    98.45223 ## Dim.15 4.606481e-03      0.394757532                    98.84699 ## Dim.16 3.843808e-03      0.329399420                    99.17639 ## Dim.17 3.067492e-03      0.262872192                    99.43926 ## Dim.18 1.823032e-03      0.156226746                    99.59549 ## Dim.19 1.641868e-03      0.140701719                    99.73619 ## Dim.20 1.295163e-03      0.110990456                    99.84718 ## Dim.21 8.775034e-04      0.075198638                    99.92238 ## Dim.22 4.217149e-04      0.036139335                    99.95852 ## Dim.23 2.148505e-04      0.018411852                    99.97693 ## Dim.24 1.527935e-04      0.013093815                    99.99002 ## Dim.25 8.948679e-05      0.007668671                    99.99769 ## Dim.26 2.695049e-05      0.002309553                   100.00000</code>
+]
+.panel[.panel-name[Plot para Variáveis]</td>
+</tr>
+<tr class="odd">
+<td><code>## corrplot 0.90 loaded</code></td>
+</tr>
+<tr class="even">
+<td><img src="/en/courses/slides_aulas/slides_eco_num/slides_CCA_files/figure-html/unnamed-chunk-9-1.png" width="400px" />
+]
+]</td>
+</tr>
+</tbody>
+</table>
+<p>class: middle, center</p>
+</div>
+<div id="quais-as-diferenças-entre-cas-e-pcas" class="section level1">
+<h1>Quais as Diferenças entre CAs e PCAs?</h1>
+<table style="width:6%;">
+<colgroup>
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># O princípio das CCAs
+.center[
+<img src=libs/cca.png>]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>## Examinando o CCA
+.panelset[
+.panel[.panel-name[Resultado do CCA]</td>
+</tr>
+<tr class="even">
+<td><code>## ## Call: ## cca(X = spe[-8, ], Y = env2[-8, ]) ## ## Partitioning of scaled Chi-square: ##               Inertia Proportion ## Total          1.1669     1.0000 ## Constrained    0.8119     0.6957 ## Unconstrained  0.3550     0.3043 ## ## Eigenvalues, and their contribution to the scaled Chi-square ## ## Importance of components: ##                         CCA1   CCA2    CCA3    CCA4    CCA5    CCA6     CCA7 ## Eigenvalue            0.5238 0.1174 0.06467 0.04353 0.02766 0.01304 0.010291 ## Proportion Explained  0.4489 0.1006 0.05542 0.03730 0.02370 0.01118 0.008819 ## Cumulative Proportion 0.4489 0.5495 0.60489 0.64219 0.66590 0.67708 0.685894 ##                           CCA8     CCA9    CCA10     CA1     CA2     CA3 ## Eigenvalue            0.006444 0.003301 0.001739 0.11112 0.06492 0.05298 ## Proportion Explained  0.005523 0.002828 0.001491 0.09522 0.05563 0.04541 ## Cumulative Proportion 0.691417 0.694245 0.695736 0.79096 0.84659 0.89200 ##                           CA4     CA5     CA6      CA7      CA8      CA9 ## Eigenvalue            0.03283 0.02666 0.01846 0.009778 0.008924 0.007580 ## Proportion Explained  0.02813 0.02284 0.01582 0.008379 0.007648 0.006496 ## Cumulative Proportion 0.92013 0.94297 0.95880 0.967177 0.974824 0.981321 ##                           CA10     CA11     CA12     CA13     CA14     CA15 ## Eigenvalue            0.006050 0.004378 0.003488 0.003046 0.002280 0.001718 ## Proportion Explained  0.005184 0.003752 0.002989 0.002610 0.001954 0.001472 ## Cumulative Proportion 0.986505 0.990257 0.993246 0.995856 0.997810 0.999282 ##                            CA16      CA17      CA18 ## Eigenvalue            0.0004838 0.0003296 2.431e-05 ## Proportion Explained  0.0004146 0.0002824 2.084e-05 ## Cumulative Proportion 0.9996967 0.9999792 1.000e+00 ## ## Accumulated constrained eigenvalues ## Importance of components: ##                         CCA1   CCA2    CCA3    CCA4    CCA5    CCA6    CCA7 ## Eigenvalue            0.5238 0.1174 0.06467 0.04353 0.02766 0.01304 0.01029 ## Proportion Explained  0.6452 0.1446 0.07966 0.05362 0.03407 0.01606 0.01268 ## Cumulative Proportion 0.6452 0.7898 0.86943 0.92304 0.95712 0.97318 0.98585 ##                           CCA8     CCA9    CCA10 ## Eigenvalue            0.006444 0.003301 0.001739 ## Proportion Explained  0.007938 0.004065 0.002143 ## Cumulative Proportion 0.993792 0.997857 1.000000 ## ## Scaling 2 for species and site scores ## * Species are scaled proportional to eigenvalues ## * Sites are unscaled: weighted dispersion equal on all dimensions ## ## ## Species scores ## ##          CCA1      CCA2     CCA3      CCA4     CCA5      CCA6 ## Cogo  1.22828  1.342555 -0.10906 -0.100159  0.18534 -0.074317 ## Satr  1.52022 -0.421716  0.32612 -0.478415 -0.13070 -0.152732 ## Phph  1.20045 -0.161518 -0.02017  0.142390  0.01173  0.175138 ## Babl  0.97743 -0.255475 -0.05499  0.221357 -0.02155  0.075746 ## Thth  1.29443  1.453249 -0.05728 -0.279764  0.33355  0.254947 ## Teso  0.85559  1.127382 -0.06573  0.084079  0.08054 -0.245575 ## Chna -0.46100  0.183183 -0.06858  0.060764 -0.35952 -0.046001 ## Pato -0.14056  0.342522  0.05341  0.360135 -0.47087 -0.060211 ## Lele  0.09107 -0.053870 -0.19916  0.110481  0.05680 -0.179387 ## Sqce  0.01177 -0.117150 -0.36500  0.059876  0.19580 -0.149331 ## Baba -0.31689  0.259956  0.14240  0.117877 -0.24005 -0.063566 ## Albi -0.32755  0.229336  0.23308  0.157160 -0.22305  0.179066 ## Gogo -0.26665  0.018880 -0.11623 -0.061712 -0.12414  0.002118 ## Eslu -0.18252 -0.277660 -0.03434  0.037586  0.14606  0.137742 ## Pefl -0.12659 -0.176025  0.03020  0.252790  0.12590  0.023888 ## Rham -0.57446  0.084305  0.32200  0.053609 -0.08985  0.057710 ## Legi -0.62007  0.065743  0.18508  0.005399 -0.02495  0.013164 ## Scer -0.52162 -0.148838 -0.01142 -0.153528  0.19238  0.076606 ## Cyca -0.58647  0.108430  0.36280  0.023499  0.08189 -0.068617 ## Titi -0.29270 -0.189259  0.04018  0.161322  0.04980 -0.067383 ## Abbr -0.70893  0.019004  0.36327 -0.067807  0.09745 -0.036085 ## Icme -0.79079 -0.011847  0.59621 -0.187170  0.44436  0.105730 ## Gyce -0.76105 -0.041287 -0.01602 -0.210332  0.04596  0.003539 ## Ruru -0.35856 -0.190255 -0.33418  0.087879  0.09814 -0.064540 ## Blbj -0.74241  0.004951  0.25289 -0.085053  0.07711 -0.086048 ## Alal -0.64710  0.040949 -0.51840 -0.445714 -0.18001  0.136457 ## Anan -0.65036  0.038946  0.37834 -0.017452  0.06610  0.067195 ## ## ## Site scores (weighted averages of species scores) ## ##        CCA1     CCA2     CCA3      CCA4    CCA5      CCA6 ## 1   2.90231 -3.59248  5.04291 -10.99019 -4.7248 -11.71188 ## 2   2.43975 -2.49959  1.78469  -2.21766 -2.0220   1.04881 ## 3   2.18453 -2.38056  1.17956  -0.76922 -1.2574   3.01218 ## 4   1.43681 -2.01477  0.35299   0.70591  0.1610   2.74653 ## 5   0.20167 -1.48734 -1.39453   1.51318  2.4144  -1.22925 ## 6   1.16771 -1.81747 -0.50115   1.21480  0.5871   0.39246 ## 7   2.07534 -2.23779  0.68700  -0.78303 -1.0432  -0.06277 ## 9   0.33610 -1.49928 -3.65227   2.65603  3.5337  -3.66883 ## 10  1.38696 -1.46817 -1.34646   2.06022  0.5451   1.07074 ## 11  2.23445  0.39648  0.43772  -2.01398  1.1436   2.43572 ## 12  2.26655  0.80356  0.54321  -2.08926  1.0862   1.92474 ## 13  2.37228  2.63296  0.73116  -2.54974  1.7019   1.56827 ## 14  1.92196  2.78951  0.10116  -1.48364  1.8443   1.10118 ## 15  1.40666  1.98480 -0.63527   0.01651  1.1403  -3.26118 ## 16  0.76550  1.33943 -0.34052   1.87765 -1.2416  -4.47936 ## 17  0.32806  0.88913 -0.09699   1.67765 -2.2357   0.21434 ## 18  0.07578  0.72095 -0.25536   1.48245 -1.6099   0.49089 ## 19 -0.18799  0.02658 -0.62065   1.35897 -2.0108   0.52679 ## 20 -0.59914 -0.07126 -0.46679   0.47383 -1.3946   0.31426 ## 21 -0.71162 -0.09092  0.07444   0.12993 -0.6527   0.21050 ## 22 -0.76850 -0.07165  0.21576   0.06105 -0.1062  -0.86912 ## 23 -0.78322 -0.48026 -6.71095  -4.27093 -0.5972   1.13190 ## 24 -0.95982 -0.12488 -3.88562  -3.72811 -1.5708   0.74052 ## 25 -0.72816 -0.51767 -3.86269  -3.19230 -0.1748   1.66079 ## 26 -0.83048 -0.23803 -0.30332  -0.92216  0.1731   0.51909 ## 27 -0.82212 -0.18147  0.29192  -0.40338  0.3721  -0.21440 ## 28 -0.85978 -0.14338  0.69694  -0.47506  0.9519  -0.23143 ## 29 -0.66734  0.15806  0.81062  -0.17811  0.4473   0.40004 ## 30 -0.87414 -0.08059  1.23436  -0.16784  1.0382   0.77144 ## ## ## Site constraints (linear combinations of constraining variables) ## ##        CCA1     CCA2      CCA3       CCA4    CCA5    CCA6 ## 1   3.58349 -4.69241  5.163034 -10.460392 -4.2174 -8.3382 ## 2   1.17112 -3.52071  0.990473   0.626423 -1.9289  1.7325 ## 3   1.79427 -2.22123  0.885357  -0.722446 -0.1247  1.2824 ## 4   1.68327 -1.52358  0.015228   1.484626  0.1233  0.1003 ## 5   0.82882 -1.73051 -1.628064   0.694959  2.0643 -0.4130 ## 6   1.84781 -1.63584  0.226144  -0.274405 -0.1881  2.1801 ## 7   2.05060 -0.73235 -0.279140   0.359418  1.3796 -1.2164 ## 9   0.02952 -1.80313 -1.786407   2.216371  2.1408 -1.5175 ## 10  1.06995 -1.04385  0.003823  -0.562023 -0.6249 -1.3263 ## 11  1.55367  1.02910  0.286770   0.003986  0.5823 -0.4513 ## 12  1.47097  1.04413 -0.163614  -0.053012 -0.6944  1.1969 ## 13  1.56138  1.74457 -0.476732  -0.116590  0.3382 -0.1656 ## 14  1.95600  2.32296 -0.102909  -0.851082  1.0895  0.5512 ## 15  1.30132  1.49028  0.291083  -0.643518  0.6949 -0.9058 ## 16  0.30360  0.47553 -0.284330   1.131299 -0.5654 -1.0797 ## 17  0.28929  0.70902 -0.267014   0.176291 -0.4042  0.8460 ## 18  0.13731  0.43204 -0.370799   0.877752 -0.9081 -0.3490 ## 19  0.44286  0.73917  0.096677   0.178506 -1.0103  0.2019 ## 20 -0.25350  0.16247  0.023660   0.602872 -1.7329  0.2290 ## 21 -0.66014 -0.09817 -0.086573   0.817861 -1.1078 -0.4347 ## 22 -0.44750  0.46080 -0.330861  -0.129368 -0.3505 -1.0452 ## 23 -0.04201  1.04957 -4.149278  -4.927474 -0.1723  1.9115 ## 24 -1.34040 -0.07807 -3.032487  -1.554081  0.8112 -0.4967 ## 25 -1.01887 -0.85119 -4.848035  -3.778175 -1.4930  2.3199 ## 26 -0.89500 -0.33984 -0.703386  -0.241858  0.3915  0.1520 ## 27 -1.27686 -0.57971  0.131121  -0.310433 -0.1965 -0.4644 ## 28 -0.85592  0.07735  0.636200   0.193984  0.4874 -0.4986 ## 29 -0.61651  0.03421  1.078781  -0.107326  0.3596  1.4882 ## 30 -0.83933  0.01874  1.139485  -0.643621  1.3816  0.1496 ## ## ## Biplot scores for constraining variables ## ##        CCA1     CCA2    CCA3    CCA4     CCA5      CCA6 ## ele  0.8049 -0.53385 -0.1640  0.1433  0.09700 -0.031190 ## slo  0.4534 -0.40316  0.2016 -0.4500 -0.20564 -0.472915 ## dis -0.6962  0.23321  0.4344 -0.2407  0.26281  0.274195 ## pH   0.1538  0.28892  0.1238 -0.1355  0.37016 -0.300204 ## har -0.5533  0.49784  0.1044 -0.1189  0.46852  0.104247 ## pho -0.4297 -0.03666 -0.5085 -0.4939  0.06424  0.225592 ## nit -0.6912  0.18509 -0.2099 -0.1266 -0.28415  0.001309 ## amm -0.4139 -0.11510 -0.6225 -0.3978 -0.17178  0.209148 ## oxy  0.7861  0.38111  0.3241  0.2001 -0.24654 -0.013469 ## bod -0.4582 -0.18403 -0.6361 -0.4922  0.14534  0.167807</code>
+]</td>
+</tr>
+<tr class="odd">
+<td>.panel[.panel-name[PLOT CCA]</td>
+</tr>
+<tr class="even">
+<td><img src="/en/courses/slides_aulas/slides_eco_num/slides_CCA_files/figure-html/unnamed-chunk-11-1.png" width="672" /></td>
+</tr>
+<tr class="odd">
+<td>]
+.panel[.panel-name[Resultado CA + Envfit]</td>
+</tr>
+<tr class="even">
+<td><code>## ## ***VECTORS ## ##          CA1      CA2     r2 Pr(&gt;r) ## ele  0.81159  0.58423 0.8078  0.001 *** ## slo  0.73753  0.67531 0.2976  0.006 ** ## dis -0.92837 -0.37166 0.4440  0.002 ** ## pH   0.50723 -0.86181 0.0908  0.248 ## har -0.71728 -0.69678 0.4722  0.004 ** ## pho -0.99897  0.04533 0.1757  0.070 . ## nit -0.94906 -0.31511 0.4510  0.001 *** ## amm -0.97495  0.22241 0.1762  0.068 . ## oxy  0.93352 -0.35854 0.6263  0.001 *** ## bod -0.94094  0.33857 0.2237  0.032 * ## --- ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 ## Permutation: free ## Number of permutations: 999</code>
+]
+.panel[.panel-name[PLOt CA + Envfit]</td>
+</tr>
+<tr class="odd">
+<td><img src="/en/courses/slides_aulas/slides_eco_num/slides_CCA_files/figure-html/unnamed-chunk-13-1.png" width="672" /></td>
+</tr>
+<tr class="even">
+<td>]]</td>
+</tr>
+</tbody>
+</table>
+<p>class: center, middle
+# Dúvidas</p>
+</div>

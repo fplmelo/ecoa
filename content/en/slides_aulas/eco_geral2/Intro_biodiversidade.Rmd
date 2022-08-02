@@ -1,0 +1,211 @@
+---
+title: "Ecologia Geral 2"
+subtitle: "Aula 1 - Introdução à Biodiversidade"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+encoding: "UTF-8"
+output: 
+  xaringan::moon_reader:
+    libs_dir: libs
+    css: ["robot","tamu-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "macros.js"
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+---
+class: center, middle
+
+# O que é biodiversidade?
+---
+# Definições
+
+[Wikipedia](https://pt.wikipedia.org/wiki/Biodiversidade): Toda a variedade da terra, dos genes aos ecossistemas e todos os processos que os mantêm
+
+.pull-left[<img src="https://evolutionarygenetics.weebly.com/uploads/4/9/7/3/49734699/6911442_orig.jpg", height = 300/>]
+
+.pull-right[
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Marine_fish_%26_coral_%285791779828%29.jpg/1920px-Marine_fish_%26_coral_%285791779828%29.jpg" height = 300/>]
+
+---
+# Diversidade taxonômica
+
+- É a diversidade mais conhecida, aquela que se refere ao número de espécies diferentes que habitatm uma localidade, ou que compõem um clado, por exemplo.
+
+
+<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-11308-4/MediaObjects/41467_2019_11308_Fig1_HTML.png?as=webp" height = 400/>
+
+[Mackintosh et al (2019) Nature Communications](https://www.nature.com/articles/s41467-019-11308-4#Fig1)
+
+---
+# Diversidade filogenética
+
+.pull-left[
+<img src="libs/img/grab.jpeg" height = 500/>
+[Grab et al 2019](https://science.sciencemag.org/content/363/6424/282)]
+
+.pull-right[
+- #### Mede a quantidade de informação filogenética dentro de uma comunidade biológica
+- #### Há várias maneiras de medir, mas nenhuma é muito intuitiva.
+- pode ser resumida como a distância entre as pontas dos ramos de uma árvore filogenética
+]
+---
+# Diversidade funcional
+
+- ### Segundo a [Enciclopédia da Biodiversidade](https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/functional-diversity)
+  - ###"Refere-se ais componentes da biodiversidade que influenciam *como* um ecossistema funciona
+.center[
+<img src="https://www.researchgate.net/publication/339060020/figure/fig1/AS:1010239474262023@1617871268330/Representation-of-the-functional-diversity-metrics-a-functional-richness-b.png" height = 350/>]
+---
+
+# Diversidade de Ecossistemas
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Vegetation.png"/>
+By Ville Koistinen 
+---
+# exemplo: Mata Atlântica
+.pull-left[
+<img src="http://3.bp.blogspot.com/-7E6u3_Igek8/UVnRxZwlsdI/AAAAAAAAAIQ/r5vNMudBmhA/s1600/Foto01_.jpg" height = 500/>
+]
+
+.pull-right[
+- ### Quanto mais diversidade épossível encontrar?
+- ### Em que níuveis?
+- ### Qual a sua importância?
+]
+---
+# Distribuição irregular da biodiversidade
+<a title="Issempa, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Biodiversity_Global_Plant_Species.png"><img alt="Biodiversity Global Plant Species" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Biodiversity_Global_Plant_Species.png/512px-Biodiversity_Global_Plant_Species.png" height = 500></a>
+---
+# Quantas espécies existem na Terra?
+
+.pull-left[
+<img src="https://media.giphy.com/media/iFz5frbRETvCKki1j1/giphy.gif"/>]
+--
+.pull-right[
+- [Estimativas atuais sugerem 8,7 milhões de Eucariotos](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001127)
+- 3-100 milhões eram as estimativas mais conhecidas
+- 86% e 91% das espécies terrestres e marinhas, respectivamente, são ainda **desconhecidas**
+
+  <img src="https://media.nationalgeographic.org/assets/photos/359/524/1b0c2ebd-4ed4-4377-9b4c-cf447e2e6d33.jpg" height = 300/>
+]
+
+---
+# Diversidade entre grupos de organismos
+.pull-left[
+<img src="https://www.researchgate.net/profile/Ben-Slater/publication/275330606/figure/fig5/AS:668304582651920@1536347637562/Pie-chart-showing-estimated-proportions-of-different-groups-of-organisms-on-Earth-today_W640.jpg"/>]
+.pull-right[
+- A maior parte da diversidade é **animal**
+- Desses, a maior pate é invertebrado, especificamente **insetos**
+- As plantas, em sua maioria, possuem flores
+## O que esses padrões informam sobre a diversidade da vida na Terra?
+]
+---
+# Por que a biodiversidade é importante?
+.pull-left[
+- ### Importância = valor
+- ### Como definimos valores?
+  - ###Utilitários vs. intrínsecos
+]
+.pull-right[
+<img src="https://d3i71xaburhd42.cloudfront.net/a90b62b1c7f95aa579d60ba23ac867b00c89c826/3-Figure1-1.png" height 300/>
+
+[The value of biodiversity: Where ecology and economy blend](https://www.sciencedirect.com/science/article/abs/pii/S0006320797001419?via%3Dihub)
+]
+---
+# Porque medir a biodiversidade?
+.pull-left[
+- É a única maneira de comunicar seu estado
+- Biólogos devem manejar alguns conceitos básicos
+- **Técnicas** de mensuração da biodiversidade não podem ser confundidas com o **conceito**
+
+- # Riqueza
+- # Abundância
+- # Composição
+
+[R.k. Colwell](https://www.researchgate.net/profile/S_Sarvade/post/What_does_a_rarefraction_curve_depicts_and_how_to_interpret_it_in_diversity_analysis/attachment/59d62ff779197b807798e16a/AS%3A360510013886465%401462963693452/download/s3_8879.pdf) fez um guia rápido do **básico** qua qualquer biólogo deve saber
+]
+
+.pull-right[
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSV7EfBMzJWoaeFPS8h_vmAZSpAFv8dmX_sxt4Rmvaesf3l9-RjHlAq2bZ5IblldnPXoQ&usqp=CAU" height= 400/>
+]
+---
+# Níveis de diversidade
+.pull-left[
+- ## alfa; beta e gama
+
+<img src="https://ecointelligent.files.wordpress.com/2016/10/diversity-perspectives6484617583604949733.jpeg"/ height = 500>
+]
+.pull-right[
+<img src="https://oxfordre.com/environmentalscience/doc/10.1093/acrefore/9780199389414.001.0001/acrefore-9780199389414-e-33-graphic-005-full.gif">]
+---
+# Diversidade Alfa
+.pull-left[
+- ### É a diversidade que costumamos medir quando:
+  - contamos espécies num local
+  - listamos espécies de ambiente
+  - ### Nunca contamos todas as espécies
+]
+.pull-right[
+<img src="https://www.researchgate.net/profile/William-Carvalho-6/publication/330737731/figure/fig1/AS:720759659978752@1548853902088/Species-accumulation-curves-for-the-three-habitat-types-campinarana-terra-firme-forest_W640.jpg">
+]
+
+Para brincar com curvas de extrapolação/interpolação veja o site da [Anne Chao](https://chao.shinyapps.io/iNEXTOnline/)
+---
+
+# Diversidade beta
+.pull-left[
+- ### É a diferença na *composição* entre duas comunidades
+- ### Tem grande poder de infromação acerca de processos de montagem das comunidades biológicas
+- ### Pode ser calculado de diferentes formas
+]
+
+.pull-right[
+<img src="https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/2119039158/2088385057/gr1.jpg">´
+[Socolar et al 2015](https://www.cell.com/trends/ecology-evolution/fulltext/S0169-5347(15)00289-X)]
+
+---
+# Diversidade gamma
+.pull-left[
+- ### É a diversidade regional
+- ### resultado de alfa*beta
+- ### é mais informativa quando usada em conjunto com alfa e beta
+]
+.pull-right[
+<img src="https://www.davidzeleny.net/anadat-r/lib/exe/fetch.php/obrazky:jurasinsky_et_al_diversity_schema_350.png" height = 500>
+]
+
+---
+# Aplicações para a conservação da biodiversidade
+
+<img src="https://www.pnas.org/content/pnas/114/29/7641/F1.large.jpg" height=500/>
+[Brum et al 2017](https://www.pnas.org/content/114/29/7641)
+---
+# Aplicações para a conservação da biodiversidade
+
+<img src="https://www.pnas.org/content/pnas/114/29/7641/F8.large.jpg" height=500/>
+[Brum et al 2017](https://www.pnas.org/content/114/29/7641)
+---
+# Aplicações para a conservação da biodiversidade
+.center[´
+<img src="https://www.researchgate.net/profile/Michael-Hoffmann-19/publication/6958884/figure/fig1/AS:280471314419712@1443880980338/Maps-of-the-nine-global-biodiversity-conservation-priority-templates-CE-crisis.png"/>]
+[Brooks et al 2006](https://science.sciencemag.org/content/313/5783/58)
+---
+class: center, middle
+# FIM
+---

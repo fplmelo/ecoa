@@ -1,0 +1,161 @@
+---
+title: "Regeneração  Natural e Pertubação"
+subtitle: "Ecologa da Restauração - BO401"
+author: "Felipe Melo"
+institute: "UFPE Lab Ecologia Aplicada"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot", "tamu-fonts"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+---
+# O que é sucessão ecológica?
+.pull-left[
+###- É o processo de substituição de espécies que acontece após um disturbio.
+###- Montagem de comunidades biológicas
+<br>
+<br>
+<br>
+<br>
+<br>
+Chazdon 2014
+]
+
+.pull-right[
+<img src=libs/reg.jpg>
+
+]
+
+---
+# Mecanismo de sucessão ecológica
+.pull-left[
+###- Seres ecológicas
+###- Sentido "determinístico"
+###- Acúmulo de: ?
+###-  Clímax
+]
+
+.pull-right[
+<img src=https://content.globalforestwatch.org/wp-content/uploads/2020/05/20.05.013_Forest-Growth-1.png>
+]
+---
+class: middle, center
+
+# Sucessão sempre é precedida de pertubação
+
+---
+background-image: url("https://ecotope.org/anthromes/images/anthromes_v2_2000_plate_map.PNG")
+
+---
+background-image: url("https://www.researchgate.net/profile/Katharina-Schulze-3/publication/328282381/figure/fig2/AS:681935407939584@1539597479128/Global-patterns-of-forest-classes-for-the-year-2000-The-map-shows-the-distribution-of.jpg")
+[Schulze et al (2019)](http://dx.doi.org/10.1016/j.foreco.2018.10.001)
+
+---
+
+background-image: url("https://fccf.lu/wp-content/uploads/2022/03/FCCF-forest-landscape.png")
+background-size: 100%
+
+---
+
+.left-column[
+# Fontes de perturbação
+## - Agricultura de subsistência
+]
+
+.right-column[
+[Schmidt et al 2021](https://www.frontiersin.org/articles/10.3389/ffgc.2021.605925/full)
+<img src = libs/fallow.jpg width = 400>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Agricultura intensiva
+]
+
+.right-column[
+<img src = https://www.greenpeace.org/usa/wp-content/uploads/2016/05/126220_218506.jpg width = 800>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Fogo
+]
+
+.right-column[
+<img src = https://thehill.com/wp-content/uploads/sites/2/2021/11/ca_amazon_getty_0.jpg?w=1440&h=880&crop=1 width = 800>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Fogo de sub-bosque
+]
+
+.right-column[
+<img src = https://earthobservatory.nasa.gov/ContentFeature/AmazonFire/Images/ground_fire.jpg width = 800>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Efeitos diferenciais do fogo
+]
+
+.right-column[
+[Pivello et al (2021)](https://www.perspectecolconserv.com/en-understanding-brazils-catastrophic-fires-causes-articulo-S2530064421000560)
+<img src = https://multimedia.elsevier.es/PublicationsMultimediaV1/item/multimedia/S2530064421000560:fx1.jpeg?xkr=ue/ImdikoIMrsJoerZ+w919ntTu5tW9DzsDCEq8w9Fw= width = 550>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Defaunação
+]
+
+.right-column[
+[Gardner et al (2019)](https://doi.org/10.1038/s41467-019-12539-1)
+<br>
+<br><br>
+
+<img src = libs/defa.jpg width = 750>
+]
+
+---
+.left-column[
+# Fontes de perturbação
+## - Pastoreio
+]
+
+.right-column[
+
+<br><br>
+
+<img src = https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1616754408000/photosp/49352e6a-2422-4970-96c9-0ef0623237ff/stock-photo-animal-grass-grazing-herd-village-buffalo-bushes-feed-dry-field-49352e6a-2422-4970-96c9-0ef0623237ff.jpg width = 750>
+]
+
+---
+# Estados alternativos
+.center[
+<img src=https://d3i71xaburhd42.cloudfront.net/bad02361de608d633e16f5c8bb135c30b65f103b/68-Figure3.1-1.png>]
+
+---
+.center[
+<img src=libs/suc_path.png>]
+
+---
+class: middle, center
+
+#Por hoje é só...
+
+# mais em [ecoaplic.org](www.ecoapplic.org)
+

@@ -82,7 +82,7 @@ class: middle, center
 [Oliveira-Filho et al 2019](https://doi.org/10.1016/j.jaridenv.2019.03.006)
 
 ---
-# Cercamento
+# Cercamento 
 
 <img src=https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-017-15530-2/MediaObjects/41598_2017_15530_Fig1_HTML.jpg?as=webp>
 

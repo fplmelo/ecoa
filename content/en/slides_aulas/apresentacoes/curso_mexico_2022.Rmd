@@ -224,6 +224,31 @@ background-image: url("libs/cdeep_result.png")
 .right[.content-box-gray[Carmo et al (under review)]]
 
 ---
+#Invasão Biológica vs. Comunidade de Plantas
+.left-column[
+# Modifica drasticamente a composição taxonômica
+]
+.right-column[
+<img src= libs/nmds.png width = 650>
+]
+
+---
+#Invasão Biológica vs. Comunidade de Plantas
+.left-column[
+# Reduz Diversidade Funcional (FDis)
+# Reduz Regularidad Funcional (FEve)
+]
+.right-column[
+<img src= libs/fdiv.png width = 650>
+]
+
+---
+# Qual o estratégia funcional das espécies invasoras em comparação com as especies comuns da Caatinga?
+
+<img src=libs/csr2.png>
+
+
+---
 background-position: center
 background-size: cover
 background-image: url("libs/homen_caatinga.jpg")

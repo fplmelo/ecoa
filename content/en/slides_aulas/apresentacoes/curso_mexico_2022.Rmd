@@ -215,7 +215,7 @@ class: center, middle
 ]
 
 ---
-<iframe width="1080" height="715" src="libs/video.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1080" height="715" src="libs/video.mp4" frameborder="0" allowfullscreen></iframe>
 
 ---
 background-size: cover

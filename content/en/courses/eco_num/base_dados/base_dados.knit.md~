@@ -10,8 +10,12 @@ output:
 ---
 
 *Slides* 
-```{r , echo=FALSE}
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html", ratio = "16:9")
+
+```{=html}
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
 ```
 
 ## Matriz de presencias e ausências
@@ -20,9 +24,30 @@ As bases de dados do R que serão usadas no nosso curso são reais e vêem de re
 
 A estrutura básica de bases de dados biológicos é a de matrizes que contem 'n' colunas e 'r' linhas (n x r). Geralmente temos espécies nas linhas e localidades nas colunas. Veja abaixo como criar uma matriz simples de 10 linhas e 4 colunas. As células serão preenchidas apenas com "1" e "0" indicando se a espécie está presente ou ausente da localidade amostrada.
 
-```{r base_ficticia, echo=TRUE}
+
+```r
 set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
 library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+```
+
+```
+## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1
+```
+
+```
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+```
+
+```r
 tibble(
   spec = paste0("sp", 1:10),
   siteA = sample(c(0:1), replace=TRUE, size=10),
@@ -30,6 +55,22 @@ tibble(
   siteC = sample(c(0:1), replace=TRUE, size=10),
   siteD = sample(c(0:1), replace=TRUE, size=10)
 )
+```
+
+```
+## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    <chr> <int> <int> <int> <int>
+##  1 sp1       0     0     1     0
+##  2 sp2       1     0     0     0
+##  3 sp3       0     1     0     1
+##  4 sp4       0     0     0     1
+##  5 sp5       0     0     1     1
+##  6 sp6       1     0     1     1
+##  7 sp7       0     1     0     0
+##  8 sp8       1     1     0     0
+##  9 sp9       1     0     0     0
+## 10 sp10      1     0     0     0
 ```
 
 ### Exercício 1
@@ -49,7 +90,8 @@ Agora crie a sua base de dados, modificando os parâmetros do código acima para
 Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.
 
 
-```{r base_abund}
+
+```r
 set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
 tibble(
   spec = paste0("sp", 1:10),
@@ -58,6 +100,22 @@ tibble(
   siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
   siteD = sample.int(20, 10) # aqui também até 20
 )
+```
+
+```
+## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    <chr> <int> <dbl> <int> <int>
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
 ```
 
 ### Exercício 2
@@ -73,7 +131,8 @@ Novamente crie a sua base de dados, modificando os parâmetros do código acima 
 
 Qualquer análise de dados em ecologia começa com uma boa chacagem dos seu dados. Precisamos saber como se comportam os dados e para isso podemo começar com algumas funções simples como 'summary' (pactote base do R) ou 'summarize' (pacote tidyverse). Para isso, vamos pegar a matriz gerada com as abundâncias e dar a ela um nome, tranformando-a assim num objeto.
 
-```{r summary, echo=TRUE}
+
+```r
 set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
 tibble(
   spec = paste0("sp", 1:10),
@@ -87,14 +146,47 @@ tibble(
 base1 # eis a nossa base agora com as espécies como nomes das linhas
 ```
 
+```
+## # A tibble: 10 × 5
+##    spec  siteA siteB siteC siteD
+##    <chr> <int> <dbl> <int> <int>
+##  1 sp1      10     0     4    15
+##  2 sp2       3     9    18    16
+##  3 sp3       6     1    11    11
+##  4 sp4       8     7     8     2
+##  5 sp5       0     1    20     9
+##  6 sp6       9     8    17     1
+##  7 sp7       9     1     9    18
+##  8 sp8       5     0    14    17
+##  9 sp9       2     9     3     8
+## 10 sp10      6     6     7    12
+```
+
 ### Exercício 3
 
 Abaixo temos um exemplo de resumo básico dos dados.
 Um resumo geral da tabela com a função mais simples do R que mostra apenas alguns "momentos" da distribuição dos dados organizados por colunas, nesse caso, por sítio de estudo.
 
-```{r, echo=TRUE}
-summary(base1)
 
+```r
+summary(base1)
+```
+
+```
+##      spec               siteA           siteB          siteC      
+##  Length:10          Min.   : 0.00   Min.   :0.00   Min.   : 3.00  
+##  Class :character   1st Qu.: 3.50   1st Qu.:1.00   1st Qu.: 7.25  
+##  Mode  :character   Median : 6.00   Median :3.50   Median :10.00  
+##                     Mean   : 5.80   Mean   :4.20   Mean   :11.10  
+##                     3rd Qu.: 8.75   3rd Qu.:7.75   3rd Qu.:16.25  
+##                     Max.   :10.00   Max.   :9.00   Max.   :20.00  
+##      siteD      
+##  Min.   : 1.00  
+##  1st Qu.: 8.25  
+##  Median :11.50  
+##  Mean   :10.90  
+##  3rd Qu.:15.75  
+##  Max.   :18.00
 ```
 Existem outras funções do pacote tidyverse que podem ser utilizadas com maior objetividade e para manipulações específicas. Para um curso introdutório completo de "tidyverse" veja essa maravilha aqui do Maurício Vancine [Introdução ao tidyverse](https://mauriciovancine.github.io/disciplina-analise-geoespacial-r/01_aulas/04_pres_intro_geocomp_r.html) 
 
@@ -117,29 +209,6 @@ Salve a pasta descompactada no diretório local correspondente ao seu repositór
 
 Agora é só carregar as bases de dados usando o comando "load", lembrando de colocar o caminho para o arquivo segundo 
 
-```{r}
-# Vamos carregar os dados que o livro usa como exemplo
-load("/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
-```
-
-
-```{r}
-spe # matriz de abundância de espécies de peixes
-spa # matriz espacial
-env # matriz ambiental
-```
-
-### Exercício 4
-
-Usando essas bases de dados, tente reproduzir alguns dos gráficos que estão nos slides, pelo menos dois.
-
-Agora, crie suas próprias perguntas e explore os dados. Lembre-se, são dados de uma comunidade de peixes amostradas em 30 localidades de um rio na Suiça Temos tanto a localização geográfica dessas amostras quanto as características ambientais do rio nessas localidades.
-
-Exemplo de perguntas:
-
-- Onde há mais riqueza de peixes?
-- Onde há mais abundância de peixes?
-- Quais espécies occorrem mais na nascente?
 
 
 

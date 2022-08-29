@@ -1,7 +1,7 @@
 ---
 title: "Medidas de Associação"
 author: Felipe Melo
-date: '2021-08-23'
+date: '2022-08-23'
 output: 
   html_document:
   toc: yes
@@ -11,7 +11,7 @@ output:
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slide_med_assoc.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -158,16 +158,16 @@ coldiss(spe.dh, diag = TRUE)
 
 # Comparando comunidades com dados binários (Q-mode)
 
-Há muitas ocasiões em que temos apenas dados de *presença* ou *ausência* das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser “gerados,” covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.
+Há muitas ocasiões em que temos apenas dados de *presença* ou *ausência* das espécies que estudamos. Isso é muito comum para grupos biológicos onde as abundâncias não podem ser medidas com precisão, como briófitas ou grandes mamíferos. Os dados de presença e ausência também podem ser “gerados”, covnertendo à partir das abundâncias. Há perguntas especpíficas e áreas de conhecimento como a Biogeografia, onde a presença/ausência pode ser mais informativa que as abundâncias. Esses dados são geralmente tratados com índices em vez de medidas distância porque justamente, eles não cumprem com os pré-requisitos para serem considerados simétricos.
 
 ![A lógica dos índices de similaridade binários](simi_index.png)
 fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similarity)
 
 # Prós e contras de dados de abundância e presença e ausência
 
-1.  Dados de abundância podem se transformados em presença/ausência. Não o contrário
-2.  Abundâncias são informações valiosas para muuuuitas análises ecológicas. Sempre procure coletar abundâncias.
-3.  Abundância traz pelos menos duas informações ecológicas importantes:
+1)  Dados de abundância podem se transformados em presença/ausência. Não o contrário
+2)  Abundâncias são informações valiosas para muuuuitas análises ecológicas. Sempre procure coletar abundâncias.
+3)  Abundância traz pelos menos duas informações ecológicas importantes:
 
 <!-- -->
 
@@ -177,8 +177,8 @@ fig by [David Zelený](https://www.davidzeleny.net/anadat-r/doku.php/en:similari
 
 <!-- -->
 
-4.  A ocorrência é mito poderosa para testar limitação de dispesão de espécies, ou seja, a probabilidade de encontrar espécies ao longo de uma paisagem ou gradiente ambiental.
-5.  As ocorrências são poderosas para testar relações com gradientes ambientais em análises do tipo *“unconstrained”*, que não vamos abordar muito nessa disciplina mas que eventualmente podemos precisar.
+4)  A ocorrência é mito poderosa para testar limitação de dispesão de espécies, ou seja, a probabilidade de encontrar espécies ao longo de uma paisagem ou gradiente ambiental.
+5)  As ocorrências são poderosas para testar relações com gradientes ambientais em análises do tipo *“unconstrained”*, que não vamos abordar muito nessa disciplina mas que eventualmente podemos precisar.
 
 # Exemplos da literatura
 
@@ -257,11 +257,11 @@ Consegue identificar grupos de espécies?
 
 # Exemplos sobre Medidas de associação
 
-As bases de dados do livro *Numerical Ecology* estão compostas por três matrizes, uma de espécies “spe,” outra de variáveis ambientais “env” e outra de variáveis geográficas “spa.” Agora que sabemos que as medidas de associação servem para medir a similaridade entre “objetos” que podem ser de qualquer natureza, vamos fazer alguns exerícios.
+As bases de dados do livro *Numerical Ecology* estão compostas por três matrizes, uma de espécies “spe”, outra de variáveis ambientais “env” e outra de variáveis geográficas “spa”. Agora que sabemos que as medidas de associação servem para medir a similaridade entre “objetos” que podem ser de qualquer natureza, vamos fazer alguns exerícios.
 
 Aqui vou demonstrar através de uma pergunta simples, como explorar as medidas de similaridade de modo a obter das bases de dados ecológicos algumas informações importantes para compreender a estrutura de comunidades biológicas e os processos que às mantêm.
 
-Nesse caso, vou dividir o rio em três seções: “alto,” “médio” e “baixo.” As amostras de 1 a 10 serão o “alto rio”; as de 11-20 serão o “médio rio” e as de 21-30 serão o “baixo rio.” Para isso, vou acrescentar uma coluna com essa informação à bases de dados
+Nesse caso, vou dividir o rio em três seções: “alto”, “médio” e “baixo”. As amostras de 1 a 10 serão o “alto rio”; as de 11-20 serão o “médio rio” e as de 21-30 serão o “baixo rio”. Para isso, vou acrescentar uma coluna com essa informação à bases de dados
 
 ## Pergunta 1 - Qual a similaridade entre as comunidades de peixes do alto, médio e baixo curso de rio?
 

@@ -14,7 +14,7 @@ output:
 *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slied_base_dados.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -31,14 +31,14 @@ library(tidyverse)
 
     ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 
-    ## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-    ## ✓ tibble  3.1.5     ✓ dplyr   1.0.7
-    ## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-    ## ✓ readr   2.0.2     ✓ forcats 0.5.1
+    ## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+    ## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+    ## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+    ## ✔ readr   2.1.2     ✔ forcats 0.5.1
 
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
 
 ``` r
 tibble(
@@ -68,9 +68,9 @@ tibble(
 
 Agora crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:
 
-1.  20 espécies  
-2.  8 localidades
-3.  Faça no seu computador
+1)  20 espécies  
+2)  8 localidades
+3)  Faça no seu computador
 
 -   Obviamente essas bases podem ser “subidas” ao R sem maiores problemas e o ideal é que você faça isso mesmo. Crie suas bases de dados numa planilha e salve-as em formato TXT ou CSV com muita atenção ao separadores e codificação (geralmente UTF-8)
 
@@ -107,9 +107,9 @@ tibble(
 
 Novamente crie a sua base de dados, modificando os parâmetros do código acima para atender aos seguintes requisitos:
 
-1.  30 espécies  
-2.  10 localidades  
-3.  Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades
+1)  30 espécies  
+2)  10 localidades  
+3)  Abundâncias devem variar entre 0-20 em 5 localidades e entre 0-50 em outras 5 localidades
 
 ## Sumários
 
@@ -183,7 +183,7 @@ Vamos usar muitos exemplos desse livro durante a disciplina e para acostumar, va
 
 Salve a pasta descompactada no diretório local correspondente ao seu repositório do *GitHub*
 
-Agora é só carregar as bases de dados usando o comando “load,” lembrando de colocar o caminho para o arquivo segundo
+Agora é só carregar as bases de dados usando o comando “load”, lembrando de colocar o caminho para o arquivo segundo
 
 ``` r
 # Vamos carregar os dados que o livro usa como exemplo

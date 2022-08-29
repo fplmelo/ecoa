@@ -1,5 +1,5 @@
 ---
-title: "Métodos de restauração passiva" 
+title: "Métodos de restauração passiva " 
 output: github_document
 
 ---
@@ -14,7 +14,7 @@ output: github_document
 # *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/eco_rest/03_rest_passivos.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://ecoaplic.org/en/slides_aulas/eco_rest/03_metodos_passivos.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

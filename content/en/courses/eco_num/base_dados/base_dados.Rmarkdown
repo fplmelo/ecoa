@@ -10,9 +10,11 @@ output:
 ---
 
 *Slides* 
-```{r , echo=FALSE}
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slied_base_dados.html", ratio = "16:9")
+```{r, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html", ratio = "16:9")
+knitr::opts_chunk$set(echo = TRUE)
 ```
+
 
 ## Matriz de presencias e ausências
 

@@ -1,6 +1,6 @@
 ---
 title: "Métodos Passivos de Restauração"
-subtitle: "Ecologa da Restauração - BO401"
+subtitle: "Ecologa da Restauração - BO401 "
 author: "Felipe Melo"
 institute: "UFPE Lab Ecologia Aplicada"
 date: "`r Sys.Date()`"

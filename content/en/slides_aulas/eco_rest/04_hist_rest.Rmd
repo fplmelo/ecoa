@@ -1,0 +1,125 @@
+---
+title: "História da Restauração Ecológica no Brasil"
+subtitle: "Ecologa da Restauração - BO401"
+author: "Felipe Melo"
+institute: "UFPE Lab Ecologia Aplicada"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot","tamu-fonts", "custom_slides.css"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+---
+# Uma ciência em plano desenvolvimento...
+.pull-left[
+# Restoration Ecology
+
+## Ciência ecológica por trás da restauração
+
+<img src=https://onlinelibrary.wiley.com/cover/1526100x/29/S1>
+]
+
+.pull-right[
+# Ecological Restoration
+
+## Prática da restauração  baseada em princípios científicos
+
+<img src=https://images-na.ssl-images-amazon.com/images/I/91vc8GfsMLL.jpg>
+]
+
+---
+# Fase 1 = antes de 1982
+.left-column[
+## Sem critério para escolha de espécies
+## Foco na recuperação de serviços ecossistêmicos
+]
+.right-column[
+.center[
+<img src=https://vitruvius.com.br/media/images/magazines/grid_9/56dc66ff78e9_fig1rugendas_defrichement_dune_foret.jpg>
+]]
+
+---
+# A floresta da Tijuca (RJ)
+.pull-left[
+<img src=http://s.glbimg.com/og/rg/f/original/2011/05/27/panorama_cristo_606x455.jpg>
+]
+
+.pull-right[
+### Projeto iniciado em 1861
+### Dom Pedro I
+### Recuperar água para a cidade do Rio de Janeiro
+### Encostas haviam sifo tomadas por plantações de café
+]
+
+---
+background-image: url("http://s.glbimg.com/og/rg/f/original/2011/05/27/291_218_mocke_stanley_owen_1874.jpg")
+background-size: 80%
+---
+background-image: url("http://s.glbimg.com/og/rg/f/original/2011/05/27/291_218_entrada_da_floresta_da_tijuca_1865.jpg")
+background-size: 80%
+
+---
+background-image: url("https://i.ytimg.com/vi/zYgQrK69lHY/maxresdefault.jpg")
+background-size: cover
+class: center
+--
+.content-box-gray[
+# Muitas espécies exóticas =  Jacas
+]
+
+---
+background-image: url("https://www.amda.org.br/images/cr%C3%A9dito_evandro_ferreira.jpg")
+background-size: cover
+class: center
+--
+.content-box-gray[
+# Muitas espécies exóticas =  Bambus
+]
+
+---
+background-image: url("https://4.bp.blogspot.com/-upprh02cVlE/VolOaDgTSCI/AAAAAAAARCo/ujmjTbMxe0o/s1600/2.jpg")
+background-size: cover
+class: center
+--
+.content-box-gray[
+# Muitas espécies exóticas =  Dendês
+]
+---
+# Fase 2 = 1982 - 1985
+.left-column[
+## Sucessão ecológica como modelo
+### Foco na recuperação de fitofisionomias
+### Uso de pioneiras de crescimento rápido
+]
+.right-column[
+.center[
+<img src=https://previews.agefotostock.com/previewimage/medibigoff/710b1eb15e548a83896dd46bc226360c/vd7-3216822.jpg>
+]]
+
+---
+# Desenvolvimento de plantios com > 30 spp
+.pull-left[
+##- Desenvolvmento da silvicultura
+##- Primeiras leis florestais (1981)
+##- Noções de competição entre espécies
+]
+
+.pull-right[
+<img src=https://imagens.ebc.com.br/TgAbRUWd4iPyPAiAt7rYn1kELHQ=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/50127177276_c73f25e5f6_o.jpg?itok=sWbsZX6L>
+]
+
+---
+
+class: middle, center
+
+#Por hoje é só...
+
+# mais em [ecoaplic.org](www.ecoapplic.org)
+

@@ -15,8 +15,105 @@ output:
       countIncrementalSlides: false
 
 ---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Terrace_field_yunnan_china_denoised.jpg/1920px-Terrace_field_yunnan_china_denoised.jpg)
+class: center, middle
+.content-box-grey[
+#"Political ecology is a field within environmental studies focusing on power relations as well as the coproduction of nature and society."
+]
+.content-box-grey[
+Tor A. Benjaminsen, Hanne Svarstad, in Encyclopedia of Ecology (Second Edition), 2019
+]
 
+---
+background-image: url(https://www.anthroencyclopedia.com/sites/www.anthroencyclopedia.com/files/styles/full-article-style/public/political_ecology_pic_enhanced_.jpeg?itok=uAsYAswC)
+background-size: cover
 
+.content-box-grey[
+# Politizar problemas ambientales
+]
+
+.content-box-grey[
+.pull-left[
+## Principios básicos
+###- Los efectos de los problemas ambientales no son iguales ante la sociedad
+###- Cambios ambientales mueven estructuras de políticas y económicas
+###- Costos y beneficios de las soluciones a los problemas afectan las relaciones de poder
+]
+
+.pull-right[
+<img src=https://international-partnerships.ec.europa.eu/sites/default/files/2019-07/project_17_picture.jpg>]
+
+]
+
+---
+background-image: url(https://recartografias.files.wordpress.com/2016/10/ecolpol.jpg)
+background-size: cover
+.content-box-grey[
+# Ecología *apolítica*
+]
+.content-box-grey[
+.pull-left[
+## Manejo del água
+###- Cierre la llave
+###- Reutilice água de la lavadora
+###- Capture água de la lluvia
+]
+
+.pull-right[
+<img src=https://vertassets.blob.core.windows.net/image/56590ce4/56590ce4-8c85-4fac-9b97-f50ac4183083/375_250-engie_sm.jpg>]
+
+]
+
+---
+background-image: url(https://img.freepik.com/premium-photo/eucalyptus-field_39396-4.jpg?w=1380)
+background-size: cover
+class: center, middle
+.content-box-grey[
+# Porque necesitamos una *ecología política* para la restauración?
+]
+---
+background-image: url(https://img.freepik.com/premium-photo/group-volunteers-planting-new-trees_53876-53316.jpg?w=1380)
+background-size: cover
+
+--
+.center[
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Forbidden_Symbol_Transparent.svg/2048px-Forbidden_Symbol_Transparent.svg.png  width = 600>]
+
+---
+background-image: url(https://newforestresearch.files.wordpress.com/2020/01/wood-3199682_1920.jpg)
+background-size: cover
+
+--
+.center[
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Forbidden_Symbol_Transparent.svg/2048px-Forbidden_Symbol_Transparent.svg.png  width = 600>]
+---
+background-image: url(https://static.todamateria.com.br/upload/ch/ic/chicomendes2-cke.jpg)
+background-size: cover
+class: center, bottom
+
+--
+.content-box-grey[
+# "Ecología sin lucha de clases es jardinería"
+para saber más: [lea este texto](https://jacobin.com.br/2020/12/ecologia-sem-luta-de-classes-e-jardinagem/)
+]
+
+---
+background-image: url(https://www.redebrasilatual.com.br/wp-content/uploads/2018/12/a2c897a9-3021-4aca-99ba-22bc8c0f44b2.jpeg)
+background-size: cover
+class: center
+--
+
+.content-box-grey[
+# "Pueblos del bosque"
+]
+---
+background-image: url(https://recreio.uol.com.br/media/_versions/aleatorio/indio_capa_widelg.jpg)
+background-size: cover
+class: center
+
+.content-box-grey[
+# "Pueblos del bosque"
+]
 ---
 class: center, middle
 # FIM

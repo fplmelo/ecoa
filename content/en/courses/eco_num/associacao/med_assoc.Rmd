@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r}
+```{r, echo=FALSE}
 
 xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slide_med_assoc.html#1", ratio = "16:9")
 

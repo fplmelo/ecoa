@@ -4,8 +4,8 @@
     <title>Ecologia Numérica</title>
     <meta charset="utf-8" />
     <meta name="author" content="Felipe Melo" />
-    <meta name="date" content="2022-08-23" />
-    <script src="slied_base_dados_files/header-attrs-2.14/header-attrs.js"></script>
+    <meta name="date" content="2022-02-07" />
+    <script src="slied_base_dados_files/header-attrs-2.10/header-attrs.js"></script>
     <link href="slied_base_dados_files/remark-css-0.0.1/robot.css" rel="stylesheet" />
     <link href="slied_base_dados_files/remark-css-0.0.1/tamu-fonts.css" rel="stylesheet" />
     <link href="slied_base_dados_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
@@ -24,21 +24,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-.title[
 # Ecologia Numérica
-]
-.subtitle[
 ## Explorando dados
-]
-.author[
 ### Felipe Melo
-]
-.institute[
 ### Laboratório de Ecologia Aplicada - UFPE
-]
-.date[
-### 2022-08-23
-]
+### 2022-02-07
 
 ---
 
@@ -147,8 +137,8 @@ colnames(spe) # aqui até os nomes abravidaos das espécies nós temos
 ```
 
 ```
-##  [1] "Cogo" "Satr" "Phph" "Babl" "Thth" "Teso" "Chna" "Pato" "Lele" "Sqce" "Baba" "Albi" "Gogo" "Eslu" "Pefl" "Rham" "Legi" "Scer" "Cyca"
-## [20] "Titi" "Abbr" "Icme" "Gyce" "Ruru" "Blbj" "Alal" "Anan"
+##  [1] "Cogo" "Satr" "Phph" "Babl" "Thth" "Teso" "Chna" "Pato" "Lele" "Sqce" "Baba" "Albi" "Gogo" "Eslu" "Pefl" "Rham" "Legi" "Scer" "Cyca" "Titi" "Abbr" "Icme"
+## [23] "Gyce" "Ruru" "Blbj" "Alal" "Anan"
 ```
 
 ---
@@ -297,19 +287,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
-// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
-// screen reader (see PR #262)
-(function(d) {
-  let res = {};
-  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
-    const t = tr.querySelector('td:nth-child(2)').innerText;
-    tr.querySelectorAll('td:first-child .key').forEach(key => {
-      const k = key.innerText;
-      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
-    });
-  });
-  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
-})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

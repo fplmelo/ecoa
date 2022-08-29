@@ -31,14 +31,14 @@ library(tidyverse)
 
     ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 
-    ## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-    ## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
-    ## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
-    ## ✔ readr   2.1.2     ✔ forcats 0.5.1
+    ## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+    ## ✓ tibble  3.1.1     ✓ dplyr   1.0.5
+    ## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+    ## ✓ readr   1.4.0     ✓ forcats 0.5.1
 
     ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
 
 ``` r
 tibble(
@@ -50,7 +50,7 @@ tibble(
 )
 ```
 
-    ## # A tibble: 10 × 5
+    ## # A tibble: 10 x 5
     ##    spec  siteA siteB siteC siteD
     ##    <chr> <int> <int> <int> <int>
     ##  1 sp1       0     0     1     0
@@ -89,7 +89,7 @@ tibble(
 )
 ```
 
-    ## # A tibble: 10 × 5
+    ## # A tibble: 10 x 5
     ##    spec  siteA siteB siteC siteD
     ##    <chr> <int> <dbl> <int> <int>
     ##  1 sp1      10     0     4    15
@@ -129,7 +129,7 @@ tibble(
 base1 # eis a nossa base agora com as espécies como nomes das linhas
 ```
 
-    ## # A tibble: 10 × 5
+    ## # A tibble: 10 x 5
     ##    spec  siteA siteB siteC siteD
     ##    <chr> <int> <dbl> <int> <int>
     ##  1 sp1      10     0     4    15

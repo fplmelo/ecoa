@@ -114,6 +114,44 @@ class: center
 .content-box-grey[
 # "Pueblos del bosque"
 ]
+
+---
+background-image: url(https://cdn.nossofuturoroubado.com.br/wp-content/uploads/2021/12/08100926/pirarucu-702x526.jpg)
+background-size: cover
+
+--
+.content-box-grey[
+# Sociobiodiversidad
+]
+.content-box-grey[
+.pull-left[
+## Reconocimiento de los pueblos
+## Participación política
+## Planeación
+## Decisión
+]
+
+.pull-right[
+<img src=https://minews.com.br/arquivos/853/conteudo/posts/1018267.jpg>
+]]
+
+
+---
+# Soluciones técnicas
+
+--
+.pull-left[
+## La técnica es *neutral*
+## Está embasada en ciencia
+## La gente no tiene dominio técnico
+## Los datos no *mienten*
+]
+
+.pull-right[
+<img src=https://conceitos.com/wp-content/uploads/T%C3%A9cnica.jpg>]
+
+---
+
 ---
 class: center, middle
 # FIM

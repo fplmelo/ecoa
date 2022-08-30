@@ -2,11 +2,7 @@
 title: "Medidas de Associação"
 author: Felipe Melo
 date: '2022-08-23'
-output: 
-  html_document:
-  toc: yes
-  toc_float: true
-  toc_depth: 2
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

@@ -151,7 +151,72 @@ background-size: cover
 <img src=https://conceitos.com/wp-content/uploads/T%C3%A9cnica.jpg>]
 
 ---
+# Trampas de pobreza-ambiente
+.center[
+<img src=https://www.researchgate.net/publication/316713692/figure/fig1/AS:493810444898304@1494744992042/Solving-the-poverty-environment-puzzle-Using-resilience-thinking-we-integrate-complex.png width = 650>
+]
 
+---
+# Conflictos de conservación
+
+<img src=libs/conflicts.jpg width = 1000>
+
+[Cusack et al 2020](https://conbio.onlinelibrary.wiley.com/doi/full/10.1111/conl.12783)
+
+---
+# Conservacion convivial
+<img src=https://i.ytimg.com/vi/pXRhftD0384/maxresdefault.jpg>
+
+---
+<iframe width="1241" height="698" src="https://www.youtube.com/embed/fI_IYLHv96o" title="The Case for Convivial Conservation | Español" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+# ¿Y la restauración?
+
+<img src= libs/title_paper.png width= 800>
+
+###[Osborne et al (2021)](https://www.sciencedirect.com/science/article/pii/S0959378021000996#f0005) propone 10 principios
+
+---
+#1 - Paisajes socioecológicos
+.pull-left[
+### Paisajes son construcciones humanas
+### Reflejan estructuras de poder
+### Personas y paisajes coevolucionan
+]
+
+--
+.pull-right[
+<img src=https://storage.googleapis.com/afs-prod/media/4e032bf9469e4168a449c0f15bce4971/1000.jpeg width = 700>
+]
+---
+background-image: url(https://gdb.voanews.com/040DAC50-44D1-416D-9223-75C2AE4A0559_w1023_r1_s.jpg)
+background-size: cover
+
+--
+background-image: url(https://i.guim.co.uk/img/media/d2e7693e8059f694f1db06bc198481a4bbdc8e0a/0_0_4200_2800/master/4200.jpg?width=1020&quality=85&fit=max&s=021789c9524f50165eb9497d7354b1f5)
+background-size: cover
+
+--
+background-image: url(https://cdn.theatlantic.com/thumbor/VLXqZCoU14SrcHUHRyxEbdxMUDY=/0x376:8254x5019/976x549/media/img/mt/2020/02/NN11597074/original.jpg)
+background-size: cover
+
+--
+background-image: url(https://www.mindenpictures.com/cache/pcache2/80043997.jpg)
+background-size: cover
+---
+#2 - Poderes son asimétricos
+.pull-left[
+### Paisajes están inmersas en estructuras de poder asiméticos
+### Desigualdad
+### Reproducción?
+]
+.pull-right[
+<img src=https://interactioninstitute.org/wp-content/uploads/2016/01/IISC_EqualityEquity.png>
+]
+
+---
+#-3, 4, 5...
 ---
 class: center, middle
 # FIM

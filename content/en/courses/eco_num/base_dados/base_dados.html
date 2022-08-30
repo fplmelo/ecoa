@@ -2,11 +2,7 @@
 title: "Bases de dados Ecológicos"
 author: "Felipe Melo"
 date: "9 de fevereiro de 2022"
-output: 
-  html_document:
-  toc: yes
-  toc_float: true
-  toc_depth: 2
+output: html_document
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
@@ -69,14 +65,6 @@ library(tidyverse)</code></pre>
 <div id="exemplo-2-matriz-de-abundâncias" class="section level2">
 <h2>Exemplo 2 (matriz de abundâncias)</h2>
 <p>Agora podemos usar os mesmos comandos para gear uma matriz dessa vez com abundâncias fictícias. Portanto no lugar de zeros e uns, teremos números inteiros entre zero e infinito (em tese). Essas matrizes são mais realistas pois dão ideia da representatividade de cada espécie nas comunidades biológicas amostradas.</p>
-<pre class="r"><code>set.seed(999) # vai gerar sempre o mesmo resultado com as funções abaixo
-tibble(
-  spec = paste0(&quot;sp&quot;, 1:10),
-  siteA = sample(c(0:10), replace=TRUE, size=10), #agora vai ter números aleatórios entre 0 e 10
-  siteB = floor(runif(10, min=0, max=10)), # aqui também
-  siteC = sample(c(0:20), replace=FALSE, size=10), # aqui também mas até 20
-  siteD = sample.int(20, 10) # aqui também até 20
-)</code></pre>
 <pre><code>## # A tibble: 10 x 5
 ##    spec  siteA siteB siteC siteD
 ##    &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt;
@@ -164,9 +152,6 @@ Um resumo geral da tabela com a função mais simples do R que mostra apenas alg
 <p><em>Para acessar os dados <a href="http://adn.biol.umontreal.ca/~numericalecology/numecolR/NEwR-2ed_code_data.zip">clique aqui</a></em></p>
 <p>Salve a pasta descompactada no diretório local correspondente ao seu repositório do <em>GitHub</em></p>
 <p>Agora é só carregar as bases de dados usando o comando “load”, lembrando de colocar o caminho para o arquivo segundo</p>
-<pre class="r"><code># Vamos carregar os dados que o livro usa como exemplo
-load(&quot;/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData&quot;) # mude o caminho para o seu próprio´</code></pre>
-<pre class="r"><code>spe # matriz de abundância de espécies de peixes</code></pre>
 <pre><code>##    Cogo Satr Phph Babl Thth Teso Chna Pato Lele Sqce Baba Albi Gogo Eslu Pefl
 ## 1     0    3    0    0    0    0    0    0    0    0    0    0    0    0    0
 ## 2     0    5    4    3    0    0    0    0    0    0    0    0    0    0    0
@@ -229,7 +214,6 @@ load(&quot;/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_da
 ## 28    4    4    2    4    4    3    3    5    5    5    5    4
 ## 29    5    5    2    3    3    4    4    5    5    4    5    4
 ## 30    5    3    5    5    5    5    5    5    5    5    5    5</code></pre>
-<pre class="r"><code>spa # matriz espacial</code></pre>
 <pre><code>##          X       Y
 ## 1   85.678  20.000
 ## 2   84.955  20.100
@@ -261,7 +245,6 @@ load(&quot;/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_da
 ## 28  30.514  61.166
 ## 29  20.495  43.848
 ## 30   0.000  41.562</code></pre>
-<pre class="r"><code>env # matriz ambiental</code></pre>
 <pre><code>##      dfs ele  slo   dis  pH har  pho  nit  amm  oxy  bod
 ## 1    0.3 934 48.0  0.84 7.9  45 0.01 0.20 0.00 12.2  2.7
 ## 2    2.2 932  3.0  1.00 8.0  40 0.02 0.20 0.10 10.3  1.9

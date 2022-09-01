@@ -1,21 +1,21 @@
 ---
-title: "Ecología Política"
+title: "Restauración como movimiento social"
 output: github_document
 ---
 
- 
+# en construcción
 
 ```{r, echo=FALSE}
 xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/restor_unam/01_ecol_politca.html#1", ratio = "16:9")
 ```
 
-## Definindo Ecologia Política
+## ¿Cómo podemos entender la restauración como movimiento social?
 
-![](https://1.bp.blogspot.com/-mbFye_F8Upg/YQvGzPFEZOI/AAAAAAAA7c8/xdARNkeCaMI8zlBp_VQ-uaIXEklXZyHnQCLcBGAsYHQ/s320/ecolpol.jpg)
-Fuente: [Sur-Sul](https://www.sul-sur.com/2021/08/notas-esquematicas-sobre-ecologia.html)
+![](https://www.trilliontreecampaign.org/tenants/ttc/logo.png)
+Fuente: [Trillion Tree Campaign](https://www.trilliontreecampaign.org/)
 
 
-### ¿Qué necesitas saber sobre **Ecología Política**?
+### Movimientos nacionales y locales de restauración
 
 Según la [wikipedia.org](https://es.wikipedia.org/wiki/Ecolog%C3%ADa_pol%C3%ADtica), ecológia política es:
 
@@ -25,7 +25,7 @@ La Ecología Política es por lo tanto, una manera de evaluar problemas ambienta
 
 
 
-### Lecturas recomenadadas
+### Movimientos internacionales de restauración
 
 - El mismo verbete de wikipedia es muy interesante y trae el básico del concepto de [Ecología Política](https://es.wikipedia.org/wiki/Ecolog%C3%ADa_pol%C3%ADtica) 
 
@@ -33,7 +33,7 @@ La Ecología Política es por lo tanto, una manera de evaluar problemas ambienta
 
 - [¿Qué es la ecología política? Una vía para la esperanza en el siglo XXI](https://we.riseup.net/assets/568565/ecopol.pdf) de Florest Marcellesi
 
-### Videos
+### Agendas Geopolíticas de la Restauración
 
 - [Un video largo](https://youtu.be/w4JF1pEdr5w) de un seminario en el IIS de la UNAM sobre manejo sustentable del água
 

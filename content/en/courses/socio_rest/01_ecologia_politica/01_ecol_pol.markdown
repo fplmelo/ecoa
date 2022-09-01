@@ -9,7 +9,7 @@ output: github_document
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
-## Definindo Ecologia da Restauração
+## Definindo Ecologia Política
 
 ![](https://1.bp.blogspot.com/-mbFye_F8Upg/YQvGzPFEZOI/AAAAAAAA7c8/xdARNkeCaMI8zlBp_VQ-uaIXEklXZyHnQCLcBGAsYHQ/s320/ecolpol.jpg)
 Fuente: [Sur-Sul](https://www.sul-sur.com/2021/08/notas-esquematicas-sobre-ecologia.html)

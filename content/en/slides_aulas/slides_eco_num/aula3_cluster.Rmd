@@ -1,0 +1,138 @@
+---
+title: "Ecologia Numérica"
+subtitle: "Agrupamento de cluster"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+load("/home/felipe/Google Drive/github/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+# Agrupamentos de cluster
+
+Hoje precisamos aprender a explicar isso:
+
+<img src="https://www.datanovia.com/en/wp-content/uploads/dn-tutorials/003-hierarchical-clustering-in-r/figures/005-visualizing-dendrograms-cutree-1.png" width="600" height="420" />
+
+---
+# Ou isso
+
+<img src="https://1.bp.blogspot.com/-sxbeFY-yzCo/TgTJsykT0kI/AAAAAAAAC5o/hZ5zF45pzs4/s1600/heatmap_cluster1.png">
+
+---
+# Ou isso aqui
+
+<img src="https://analise-estatistica.pt/wp-content/uploads/2012/10/diagrama-de-dispersao-analise-de-clusters.png">
+---
+# Agrupamento por cluster
+### O que são?
+- Técnicas que identificam objetos ou entidades "similares"
+.center[
+<img src="https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg", height = 400>]
+---
+# Agrupamento por cluster
+### pra que servem?
+- Formar grupos/classes que possuam alta homogeneidade interna (distância interna pequena) e alta heterogeneidade (distância entre grupos grande)
+.center[
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2BjBaFQJFYCI9sS2fBoqDfchgW6WBoVBWdA&usqp=CAU">]
+
+[fonte: Neves 2013](https://dspace.bc.uepb.edu.br/jspui/bitstream/123456789/4313/1/PDF%20-%20Reginaldo%20Ferreira%20Neves.pdf)
+---
+# Princípios do agrupamnto por cluster
+### Depende do pesquisador/pesquisadora:
+
+a) Escolher a medida de similaridade
+
+b) Escolher o algorítimo de agrupamento
+
+c) Definir a quantidade de cluster que faça sentido para sua hipótese
+
+---
+# Medidas de distância
+.pull-left[<img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png" height="300" />]
+.pull-right[
+### - Escolhidas de acrodo com a estrutura dos dados
+### - Precisam ser "normalizadas"
+### - **MUITO IMPORTANTE** para o resultado da análise
+]
+---
+
+# Algorítimos de agrupamento
+### Métodos hierárquicos
+.center[
+<img src="https://github.com/fplmelo/eco_numerica/blob/master/slides/libs/met_clust.png?raw=true" height= 450>]
+[Fonte: Marcelo Louretto](http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf)
+---
+# Algorítimos de agrupamento
+### Métodos não hirárquicos (K-means)
+```{r, include=FALSE}
+xaringanExtra::use_panelset()
+```
+.panelset[
+.panel[.panel-name[R Code1]
+
+```{r}
+k3<-kmeans(env[,-c(1,4,12)], centers = 3, nstart=25)
+k3 
+library(factoextra)
+```
+]
+
+.panel[.panel-name[Plot1]
+```{r, echo=FALSE, out.width="400px"}
+fviz_cluster(k3, data = env[,-c(1,4,12)])
+```
+
+]
+.panel[.panel-name[R Code2]
+```{r}
+k2<-kmeans(env[,-c(1,4,12)], centers = 2, nstart=25)
+k2 
+```
+]
+.panel[.panel-name[Plot2]
+```{r, echo=FALSE, out.width="400px"}
+fviz_cluster(k2, data = env[,-c(1,4,12)])
+```
+]
+]
+---
+# Aplicações na Ecologia
+<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-020-69925-9/MediaObjects/41598_2020_69925_Fig1_HTML.png?as=webp" height = 400>
+
+[Diversidade de Inhame, Darkwa et al 2020](https://www.nature.com/articles/s41598-020-69925-9)
+---
+# Aplicações na Ecologia
+<img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10021-019-00415-4/MediaObjects/10021_2019_415_Fig3_HTML.png" height = 400>
+
+[Vallejos et al 2020](https://link.springer.com/article/10.1007/s10021-019-00415-4)
+---
+# Aplicações na Ecologia
+
+<img src="https://www.pnas.org/content/pnas/115/8/1837/F1.large.jpg?width=800&height=600&carousel=1" height = 400>
+
+[Slik et al 2018](https://www.pnas.org/content/115/8/1837/tab-figures-data)
+
+---
+class: center, middle
+# FIM
+
+

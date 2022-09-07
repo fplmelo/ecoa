@@ -1,8 +1,12 @@
 ---
 title: "Medidas de Associação"
-author: "Felipe Melo"
-date: '2022-08-23'
-output: html_document
+author: Felipe Melo
+date: '2021-08-23'
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -11,13 +15,14 @@ library(vegan)
 library(knitr)
 library(xaringan)
 library(xaringanExtra)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
 
-```{r, echo=FALSE}
+```{r , echo=FALSE}
 
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slide_med_assoc.html#1")
+xaringanExtra::embed_xaringan(url="https://fplmelo.github.io/eco_numerica/slides/slide_med_assoc.html#1", ratio = "16:9")
 
 ```
 

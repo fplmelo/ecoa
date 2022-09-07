@@ -2,13 +2,17 @@
 title: "Bases de dados Ecológicos"
 author: "Felipe Melo"
 date: "9 de fevereiro de 2022"
-output: html_document
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
 ---
 
 *Slides* 
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html#1")
-
+xaringanExtra::embed_xaringan(url = "http://ecoaplic.org/en/slides_aulas/slides_eco_num/slied_base_dados.html", ratio = "16:9")
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 

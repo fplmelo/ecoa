@@ -1,0 +1,136 @@
+---
+title: "Dimensiones Sociales de la Restauración"
+subtitle: "Clase 2 - Instroducción a los Bosques Secos"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot","tamu-fonts", "custom_slides.css", "xaringan-themer.css"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+      
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+
+---
+background-image: url(https://i2.wp.com/globaltrees.org/wp-content/uploads/2020/04/Dry-Forest-of-Madagascar-Malin-Rivers.jpg?resize=560%2C260&ssl=1)
+background-size: cover
+class: center, middle
+
+--
+.content-box-grey[
+#"Es un bosque tropical con una estación seca larga."
+### fuente: [wikipedia](https://es.wikipedia.org/wiki/Bosque_seco)
+]
+
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Biome_map_02.svg/1920px-Biome_map_02.svg.png)
+background-size: cover
+class: center
+# Distribución de los bosques secos
+
+---
+background-image: url(https://eoimages.gsfc.nasa.gov/images/imagerecords/90000/90635/drylandforest_tamo_2015.png)
+background-size: cover
+class: center
+# Distribución de los bosques secos
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Bastin el al 2017](http://dx.doi.org/10.1126/science.aam6527)
+
+---
+background-image: url(https://www.mdpi.com/forests/forests-10-00443/article_deploy/html/images/forests-10-00443-g001.png)
+background-size: 70%
+
+[Stan & Sánchez-Azofeifa 2019](https://www.mdpi.com/1999-4907/10/5/443/htm)
+
+---
+```{r, echo=FALSE, include=FALSE}
+style_xaringan(colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF"))
+```
+
+class: center, middle
+# .red[Hay mucho ruido] en la definición biogeográfica de lo que es un Bosque Tropical Seco
+
+---
+background-image: url(libs/lit_df.png)
+background-size: cover
+
+[Marcelo Tabarelli](https://scholar.google.com/citations?user=Q2l5wHAAAAAJ&hl=en)
+
+---
+background-image: url(libs/map_lit.png)
+background-size: cover
+[Marcelo Tabarelli](https://scholar.google.com/citations?user=Q2l5wHAAAAAJ&hl=en)
+
+---
+background-image: url(https://live.staticflickr.com/4327/35835284176_5bbff0477d_b.jpg)
+background-size: cover
+
+--
+background-image: url(https://gardendrum.com/wp-content/uploads/2012/10/Spiny_Forest_Ifaty_Madagascar-Photo-by-JialiangGao.jpeg)
+background-size: cover
+
+--
+background-image: url(http://www.dryflor.info/sys/imageserver/index.php?id=1478789887::1554866007625)
+background-size: cover
+
+--
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Dry_Chaco.jpg/800px-Dry_Chaco.jpg?20121216232051)
+background-size: cover
+
+--
+background-image: url(https://www.embrapa.br/bme_images/m/224040160m.jpg)
+background-size: cover
+
+--
+background-image: url(https://vecea.vegetationmap4africa.org/docs/Wm/original_image.jpg)
+background-size: cover
+
+--
+background-image: url(http://yapdryforests.weebly.com/uploads/2/7/2/4/27244149/2638907_orig.jpg)
+background-size: cover
+
+--
+background-image: url(https://www.anbg.gov.au/images/photo_cd/103_FAGG/0056_2.jpg)
+background-size: cover
+
+---
+class: middle, center
+# ¿Bosques o Savanas?
+
+---
+background-image: url(libs/pessoas.png)
+background-size: cover
+class:center, middle
+--
+.content-box-grey[
+#Sociodiversidad
+]
+
+---
+
+
+---
+class: center, middle
+# FIM

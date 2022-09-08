@@ -215,5 +215,13 @@ background-image: url(https://live.staticflickr.com/719/32363510775_5b34b8a885_o
 background-size: 80%
 
 ---
+background-image: url(libs/mag_cronic.png)
+[Marcelo Tabarelli](https://scholar.google.com/citations?user=Q2l5wHAAAAAJ&hl=en)
+
+---
+background-image: url(libs/novel_df.png)
+[Marcelo Tabarelli](https://scholar.google.com/citations?user=Q2l5wHAAAAAJ&hl=en)
+
+---
 class: center, middle
 # FIM

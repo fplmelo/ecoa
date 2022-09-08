@@ -1,6 +1,6 @@
 ---
 title: "Dimensiones Sociales de la Restauración"
-subtitle: "Clase 2 - Instroducción a los Bosques Secos"
+subtitle: "Clase 2 - Introducción a los Bosques Secos"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
 date: "`r Sys.Date()`"

@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: ["robot","tamu-fonts", "custom_slides.css", "xaringan-themer.css"]
+    css: ["xaringan-themer.css", "custom_slides.css"]
     nature:
       ratio: '16:9'
       highlightStyle: github
@@ -28,6 +28,13 @@ style_mono_accent(
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono")
 )
+
+xaringanthemer::style_xaringan(colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF"))
 ```
 
 ---
@@ -45,6 +52,7 @@ class: center, middle
 class: center,  middle
 
 #La história del movimiento de Restauración
+##Esta clase está inspirada en [este artículo](https://journals.sagepub.com/doi/10.1177/1086026609338165)
 
 ---
 # Orígenes elitistas de la restauración
@@ -61,6 +69,135 @@ class: center,  middle
 ]
 
 ---
+class: center,  middle
+# "Restoration ecology is an expensive self-indulgence for the upper classes, a New age substitute for psychiatry . . ." 
+###.red[[Kirby, 1994](https://books.google.com.br/books?hl=pt-BR&lr=&id=E7rAnipB8i8C&oi=fnd&pg=PA234&dq=he+political+economy+of+restoration+ecology&ots=6yo85K_7Pm&sig=exfhu36jkjQPkc1_R4-VmQ8PIt0#v=onepage&q=he%20political%20economy%20of%20restoration%20ecology&f=false)]
+
+---
+# La gran ruptura de la restauración
+.left-column[
+## La naturaleza se conoce trabajándola
+]
+.right-column[
+
+<img src = https://www.iucn.org/sites/default/files/2022-07/tech4nature-iucngreenlist.org-aprs-16-traditional-scientists-scotttrageser-scaled-e1648457889597-1024x509.jpg>
+]
+
+---
+# Superando las dicotomías
+
+## - Conservación vs. Preservación
+## - Cultura vs. Naturaleza
+## - Intervención vs. Auto-recuperación
+## - Tecnología vs. Cnociientos tradicionales
+
+---
+# Vision 1: Restauración Holísitca
+.pull-left[
+### - El mito de la naturaleza intocada
+### - Retaurar para patrones pre-colombinos
+### - Desprecio hacia la urbe
+]
+.pull-right[
+<img src=https://img2.chinadaily.com.cn/images/201903/13/5c886494a3106c65ffff006c.jpeg>
+]
+
+---
+background-image: url("libs/vsn.png")
+background-size: 90%
+
+--
+background-image: url("libs/vol.png")
+background-size: 75%
+
+---
+# Todo es ambiente
+.left-column[
+### Ciudades
+### Parques
+### Zonas de cultivo
+### Zonas de turismo
+]
+.right-column[
+<img src=https://www.jll.co.in/images/architecture/exterior/From-blight-to-city-highlight-Urban-renewal-projects.jpg width = 800>
+]
+
+---
+class: middle, center
+# Al rechazar la "naturaleza salvaje" la ideia de .red[restauración holísitca] rompe con el ambientalismo dominante
+
+---
+# Visión 2: Restauración Indígena
+.pull-left[
+### - Restauración es cultura
+### - Conocmientos tradicionales
+### - Autogobierno
+]
+.pull-right[
+<img src=https://site-antigo.socioambiental.org/sites/blog.socioambiental.org/files/styles/nsa-paisagem/public/nsa/mulheres_e_criancas_da_aldeia_ikpeng_colhem_sementes_de_carvoeiro_que_caem_no_chao_derrubadas_pelo_vento_em_uma_floresta_proximo_a_aldeia._ayrton_vignola.jpg?itok=YXs6dLkz>
+]
+---
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/QFvHTVTD_rU" title="O que é a Rede de Sementes do Xingu? | What is the Xingu Seed Network?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+class: center
+<img src= https://onlinelibrary.wiley.com/cms/asset/8be49905-8fdb-4c2f-8a60-9c80535a0039/rec13381-fig-0001-m.jpg>
+.content-box-grey[[Traditional ecological knowledge in restoration ecology: a call to listen deeply, to engage with, and respect Indigenous voices](https://onlinelibrary.wiley.com/doi/full/10.1111/rec.13381)]
+
+---
+<img src=https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2022/08/39387.jpg>
+
+---
+class: middle, center
+# Especies .red[culturalmente importates]
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bertholletia_excelsa_compose.jpg/1200px-Bertholletia_excelsa_compose.jpg)
+background-size: 75%
+
+--
+background-image: url(https://i.etsystatic.com/29088823/r/il/97ee0a/3608994726/il_fullxfull.3608994726_sgsa.jpg)
+background-size:100%    
+
+--
+background-image: url(https://cdn.shopify.com/s/files/1/1608/5569/articles/mesquite-tree_1000x.jpg?v=1488917731)
+background-size:100%   
+
+--
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c7/Erythroxylum_novogranatense_var._Novogranatense_%28retouched%29.jpg)
+background-size:100%   
+
+--
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Lama_glama_01_by_Line1.jpg)
+background-size:90%   
+
+--
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/a0/Bison_bison_Wichita_Mountain_Oklahoma.jpg)
+background-size:90% 
+
+---
+class:middle, center
+# .red[Especies culturalmente importantes] deben guiar la restauración
+
+---
+#Visión 3: Justicia Ambiental 
+.pull-left[
+### - Ecología política
+### - Desarrollo rural comunitario
+### - Neoecosistemas
+### - [Paisajes Socioecológicos Productivos](https://www.bioversityinternational.org/fileadmin/user_upload/online_library/publications/pdfs/Indicators_of_Resilience_in_Socio-ecological_Production_Landscapes__SEPLs__1676.pdf)
+]
+.pull-right[
+<img src=https://i.unu.edu/media/ourworld.unu.edu-en/article/4313/Revitalising-socio-ecological-production-landscapes.jpg>
+]
+
+---
+# Geopolítica de la restauración
+### - [UNEP](https://www.unep.org/explore-topics/ecosystems-and-biodiversity?gclid=EAIaIQobChMIkZmUivmh-gIVSClMCh3PSQGFEAAYASAAEgIzAPD_BwE)
+###- [Rewildin Europe](https://rewildingeurope.com/rewilding-in-action/wilder-nature/?gclid=EAIaIQobChMIkZmUivmh-gIVSClMCh3PSQGFEAAYBCAAEgJzOvD_BwE)
+###- [trillionTrees](https://trilliontrees.org/)
+###- [1t.org](https://www.1t.org/)
+###- [Década de la Restauración](https://www.decadeonrestoration.org/)
 
 
 ---

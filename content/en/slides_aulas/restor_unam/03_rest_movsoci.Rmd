@@ -1,0 +1,68 @@
+---
+title: "Restauración Ecológica con Participación Social"
+subtitle: "Clase 3 - Movimientos Sociales y Restauración"
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot","tamu-fonts", "custom_slides.css", "xaringan-themer.css"]
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r include=FALSE}
+xaringanExtra::use_scribble()
+```   
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+library(xaringanthemer)
+style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+---
+background-image: url(https://orionmagazine.org/wp-content/uploads/2014/01/rewilding-1-768x524.jpg)
+background-size: cover
+class: center, middle
+
+--
+.content-box-grey[
+#"Rewilding or Restore?"
+### fuente: [Orion](https://orionmagazine.org/article/the-great-rewilding/)
+]
+
+---
+class: center,  middle
+
+#La história del movimiento de Restauración
+
+---
+# Orígenes elitistas de la restauración
+
+.pull-left[
+## Clases medias
+## Consumo
+## Negación de la "urbe"
+## Naturaleza "ideal"
+]
+
+.pull-right[
+<img src=https://minsblogweb.files.wordpress.com/2018/01/rhodopi-colour.jpg?w=1140&h=803>
+]
+
+---
+
+
+---
+class: center, middle
+# FIM

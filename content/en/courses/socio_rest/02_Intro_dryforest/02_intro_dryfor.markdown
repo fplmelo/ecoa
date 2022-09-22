@@ -4,7 +4,7 @@ output: github_document
 ---
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
 <iframe src="https://ecoaplic.org/en/slides_aulas/restor_unam/02_intro_dryfor.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
@@ -38,3 +38,7 @@ Bosques tropicales son la mitad de los bosques tropicales y subtropicales del mu
 -   [The structure and function of tropical dry forests: Jennifer Powers](https://www.youtube.com/watch?v=e-OXYOzBXI8)
 
 -   [ATBC 2020 Webinar Series in Tropical Ecology and Conservation](https://tropicalbiology.org/webinars/atbc2020series/structure-and-function/)
+
+### Aula Grabada
+
+[Aqui](https://youtu.be/QQ4aloezO3k)

@@ -39,6 +39,6 @@ Bosques tropicales son la mitad de los bosques tropicales y subtropicales del mu
 
 -   [ATBC 2020 Webinar Series in Tropical Ecology and Conservation](https://tropicalbiology.org/webinars/atbc2020series/structure-and-function/)
 
-### Aula Grabada
+### Clase Grabada
 
 [Aqui](https://youtu.be/QQ4aloezO3k)

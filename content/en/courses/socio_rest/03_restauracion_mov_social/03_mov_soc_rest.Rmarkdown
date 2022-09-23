@@ -3,7 +3,6 @@ title: "Restauración como movimiento social"
 output: github_document
 ---
 
-# en construcción
 
 ```{r, echo=FALSE}
 xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/restor_unam/03_rest_movsoci.html#1", ratio = "16:9")

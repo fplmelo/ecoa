@@ -1,143 +1,314 @@
----
-title: "Ecologia Numérica"
-subtitle: "Aula 3 - Agrupamento de cluster"
-author: "Felipe Melo"
-institute: "Laboratório de Ecologia Aplicada - UFPE"
-date: "2022-01-31"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ecologia Numérica</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Felipe Melo" />
+    <meta name="date" content="2022-09-29" />
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <script src="libs/fabric-4.3.1/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Ecologia Numérica
+]
+.subtitle[
+## Aula 3 - Agrupamento de cluster
+]
+.author[
+### Felipe Melo
+]
+.institute[
+### Laboratório de Ecologia Aplicada - UFPE
+]
+.date[
+### 2022-09-29
+]
 
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-<link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
-<script src="/rmarkdown-libs/fabric/fabric.min.js"></script>
-<link href="/rmarkdown-libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/xaringanExtra-scribble/scribble.js"></script>
-<script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
-<script src="/rmarkdown-libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-<link href="/rmarkdown-libs/panelset/panelset.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/panelset/panelset.js"></script>
 
 
-<div id="agrupamentos-de-cluster" class="section level1">
-<h1>Agrupamentos de cluster</h1>
-<p>Hoje precisamos aprender a explicar isso:</p>
-<p><img src="https://www.datanovia.com/en/wp-content/uploads/dn-tutorials/003-hierarchical-clustering-in-r/figures/005-visualizing-dendrograms-cutree-1.png" width="600" height="420" /></p>
-<table style="width:6%;">
-<colgroup>
-<col width="5%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th># Ou isso</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td># Ou isso aqui</td>
-</tr>
-<tr class="even">
-<td><img src="https://analise-estatistica.pt/wp-content/uploads/2012/10/diagrama-de-dispersao-analise-de-clusters.png"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="agrupamento-por-cluster" class="section level1">
-<h1>Agrupamento por cluster</h1>
-<div id="o-que-são" class="section level3">
-<h3>O que são?</h3>
-<ul>
-<li>Técnicas que identificam objetos ou entidades “similares”
-.center[
-&lt;img src=“<a href="https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg" class="uri">https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg</a>”, height = 400&gt;]
-—
+
+# Agrupamentos de cluster
+
+Hoje precisamos aprender a explicar isso:
+
+&lt;img src="https://www.datanovia.com/en/wp-content/uploads/dn-tutorials/003-hierarchical-clustering-in-r/figures/005-visualizing-dendrograms-cutree-1.png" width="600" height="420" /&gt;
+
+---
+# Ou isso
+
+&lt;img src="https://1.bp.blogspot.com/-sxbeFY-yzCo/TgTJsykT0kI/AAAAAAAAC5o/hZ5zF45pzs4/s1600/heatmap_cluster1.png"&gt;
+
+---
+# Ou isso aqui
+
+&lt;img src="https://analise-estatistica.pt/wp-content/uploads/2012/10/diagrama-de-dispersao-analise-de-clusters.png"&gt;
+---
 # Agrupamento por cluster
-### pra que servem?</li>
-<li>Formar grupos/classes que possuam alta homogeneidade interna (distância interna pequena) e alta heterogeneidade (distância entre grupos grande)
+### O que são?
+- Técnicas que identificam objetos ou entidades "similares"
 .center[
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2BjBaFQJFYCI9sS2fBoqDfchgW6WBoVBWdA&usqp=CAU">]</li>
-</ul>
-</div>
-<div id="fonte-neves-2013" class="section level2">
-<h2><a href="https://dspace.bc.uepb.edu.br/jspui/bitstream/123456789/4313/1/PDF%20-%20Reginaldo%20Ferreira%20Neves.pdf">fonte: Neves 2013</a></h2>
-</div>
-</div>
-<div id="princípios-do-agrupamnto-por-cluster" class="section level1">
-<h1>Princípios do agrupamnto por cluster</h1>
-<div id="depende-do-pesquisar" class="section level3">
-<h3>Depende do pesquisar:</h3>
-<ol style="list-style-type: lower-alpha">
-<li><p>escolher a medida de similaridade</p></li>
-<li><p>Escolher o algorítimo de agrupamento</p></li>
-<li><p>Definir a quantidade de cluster que faça sentido</p></li>
-</ol>
-<table>
-<tbody>
-<tr class="odd">
-<td># Medidas de distância</td>
-</tr>
-<tr class="even">
-<td>.pull-left[<img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png" height="300" />]</td>
-</tr>
-<tr class="odd">
-<td>.pull-right[</td>
-</tr>
-<tr class="even">
-<td>### - Escolhidas de acrodo com a estrutura dos dados</td>
-</tr>
-<tr class="odd">
-<td>### - Precisam ser “normalizadas”</td>
-</tr>
-<tr class="even">
-<td>### - <strong>MUITO IMPORTANTE</strong> para o resultado da análise</td>
-</tr>
-<tr class="odd">
-<td>]</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="algorítimos-de-agrupamento" class="section level1">
-<h1>Algorítimos de agrupamento</h1>
-<div id="métodos-hierárquicos" class="section level3">
-<h3>Métodos hierárquicos</h3>
-<p>.center[
-<img src="https://github.com/fplmelo/eco_numerica/blob/master/slides/libs/met_clust.png?raw=true" height= 450>]
-<a href="http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf">Fonte: Marcelo Louretto</a>
-—
+&lt;img src="https://i.pinimg.com/originals/fc/60/55/fc6055ddb5fa9d6f5aeed0ea6201ef77.jpg", height = 400&gt;]
+---
+# Agrupamento por cluster
+### pra que servem?
+- Formar grupos/classes que possuam alta homogeneidade interna (distância interna pequena) e alta heterogeneidade (distância entre grupos grande)
+.center[
+&lt;img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2BjBaFQJFYCI9sS2fBoqDfchgW6WBoVBWdA&amp;usqp=CAU"&gt;]
+
+[fonte: Neves 2013](https://dspace.bc.uepb.edu.br/jspui/bitstream/123456789/4313/1/PDF%20-%20Reginaldo%20Ferreira%20Neves.pdf)
+---
+# Princípios do agrupamnto por cluster
+### Depende do pesquisar:
+
+a) escolher a medida de similaridade
+
+b) Escolher o algorítimo de agrupamento
+
+c) Definir a quantidade de cluster que faça sentido
+
+---
+# Medidas de distância
+.pull-left[&lt;img src="https://bigdata-madesimple.com/wp-content/uploads/2015/06/Five-most-popular-similarity-measures-implementation-in-python-1.png" height="300" /&gt;]
+.pull-right[
+### - Escolhidas de acrodo com a estrutura dos dados
+### - Precisam ser "normalizadas"
+### - **MUITO IMPORTANTE** para o resultado da análise
+]
+---
+
 # Algorítimos de agrupamento
-### Métodos não hirárquicos (K-means)</p>
-<p>.panelset[
-.panel[.panel-name[R Code1]]]
-—
+### Métodos hierárquicos
+.center[
+&lt;img src="https://github.com/fplmelo/eco_numerica/blob/master/slides/libs/met_clust.png?raw=true" height= 450&gt;]
+[Fonte: Marcelo Louretto](http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf)
+---
+# Algorítimos de agrupamento
+### Métodos não hirárquicos (K-means)
+
+.panelset[
+.panel[.panel-name[R Code1]
+
+
+```r
+k3&lt;-kmeans(env[,-c(1,4,12)], centers = 3, nstart=25)
+k3 
+```
+
+```
+## K-means clustering with 3 clusters of sizes 7, 14, 9
+## 
+## Cluster means:
+##        ele      slo       pH      har       pho      nit         amm       oxy      bod
+## 1 464.4286 3.057143 8.100000 90.57143 0.1900000 1.085714 0.008571429 11.485714 3.000000
+## 2 248.7143 0.700000 8.028571 94.57143 1.0050000 2.795714 0.402142857  8.128571 6.864286
+## 3 857.1111 8.188889 8.044444 69.44444 0.1477778 0.320000 0.065555556  9.722222 4.044444
+## 
+## Clustering vector:
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 
+##  3  3  3  3  3  3  3  3  3  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2 
+## 
+## Within cluster sum of squares by cluster:
+## [1] 35691.36 40309.58 35819.23
+##  (between_SS / total_SS =  94.8 %)
+## 
+## Available components:
+## 
+## [1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss" "betweenss"    "size"         "iter"         "ifault"
+```
+
+```r
+library(factoextra)
+```
+]
+
+.panel[.panel-name[Plot1]
+&lt;img src="slide_aula3_cluster_files/figure-html/unnamed-chunk-3-1.png" width="400px" /&gt;
+
+]
+.panel[.panel-name[R Code2]
+
+```r
+k2&lt;-kmeans(env[,-c(1,4,12)], centers = 2, nstart=25)
+k2 
+```
+
+```
+## K-means clustering with 2 clusters of sizes 10, 20
+## 
+## Cluster means:
+##     ele   slo   pH  har   pho    nit   amm  oxy  bod
+## 1 833.1 8.360 8.01 70.7 0.139 0.3630 0.060 9.75 4.07
+## 2 305.8 1.065 8.07 93.8 0.767 2.2995 0.284 9.21 5.64
+## 
+## Clustering vector:
+##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 
+##  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2 
+## 
+## Within cluster sum of squares by cluster:
+## [1]  87852.16 200947.72
+##  (between_SS / total_SS =  86.5 %)
+## 
+## Available components:
+## 
+## [1] "cluster"      "centers"      "totss"        "withinss"     "tot.withinss" "betweenss"    "size"         "iter"         "ifault"
+```
+]
+.panel[.panel-name[Plot2]
+&lt;img src="slide_aula3_cluster_files/figure-html/unnamed-chunk-5-1.png" width="400px" /&gt;
+]
+]
+---
 # Aplicações na Ecologia
-<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-020-69925-9/MediaObjects/41598_2020_69925_Fig1_HTML.png?as=webp" height = 400></p>
-</div>
-<div id="diversidade-de-inhame-darkwa-et-al-2020" class="section level2">
-<h2><a href="https://www.nature.com/articles/s41598-020-69925-9">Diversidade de Inhame, Darkwa et al 2020</a></h2>
-</div>
-</div>
-<div id="aplicações-na-ecologia" class="section level1">
-<h1>Aplicações na Ecologia</h1>
-<p><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10021-019-00415-4/MediaObjects/10021_2019_415_Fig3_HTML.png" height = 400></p>
-<div id="vallejos-et-al-2020" class="section level2">
-<h2><a href="https://link.springer.com/article/10.1007/s10021-019-00415-4">Vallejos et al 2020</a></h2>
-</div>
-</div>
-<div id="aplicações-na-ecologia-1" class="section level1">
-<h1>Aplicações na Ecologia</h1>
-<p><img src="https://www.pnas.org/content/pnas/115/8/1837/F1.large.jpg?width=800&height=600&carousel=1" height = 400></p>
-<p><a href="https://www.pnas.org/content/115/8/1837/tab-figures-data">Slik et al 2018</a></p>
-<hr />
-<p>class: center, middle
-# FIM</p>
-</div>
+&lt;img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-020-69925-9/MediaObjects/41598_2020_69925_Fig1_HTML.png?as=webp" height = 400&gt;
+
+[Diversidade de Inhame, Darkwa et al 2020](https://www.nature.com/articles/s41598-020-69925-9)
+---
+# Aplicações na Ecologia
+&lt;img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10021-019-00415-4/MediaObjects/10021_2019_415_Fig3_HTML.png" height = 400&gt;
+
+[Vallejos et al 2020](https://link.springer.com/article/10.1007/s10021-019-00415-4)
+---
+# Aplicações na Ecologia
+
+&lt;img src="https://www.pnas.org/content/pnas/115/8/1837/F1.large.jpg?width=800&amp;height=600&amp;carousel=1" height = 400&gt;
+
+[Slik et al 2018](https://www.pnas.org/content/115/8/1837/tab-figures-data)
+
+---
+class: center, middle
+# FIM
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

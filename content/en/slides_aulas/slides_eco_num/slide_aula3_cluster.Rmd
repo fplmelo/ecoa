@@ -9,9 +9,6 @@ output:
     lib_dir: libs
     nature:
       ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
 
 ---
 ```{r setup, include=FALSE}

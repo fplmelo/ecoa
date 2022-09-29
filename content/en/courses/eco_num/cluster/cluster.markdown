@@ -2,21 +2,11 @@
 title: "Análise de Clusters"
 author: "Felipe Melo"
 date: "03/10/2021"
-slug: 
-categories: []
-tags:
-  - science
-  - projects
-subtitle: ''
-summary: ''
-authors: []
-lastmod: ''
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+output: 
+  html_document:
+  toc: yes
+  toc_float: true
+  toc_depth: 2
       
 ---
 
@@ -26,7 +16,7 @@ projects: []
 
 *Slides*
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
 <iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
@@ -43,11 +33,7 @@ Se você juntar qualquer conjunto de dados, de qualquer natureza, uma análise d
 
 O “**pulo do gato**” se refere ao uso da análise cluster associado a uma \*HIPÓTESE”. Você precisa pensar sobre seus dados ecológicos, que geralmente são frutos de um desenho amostral guiado por uma pergunta científica. Prestem atenção no último exercício, da última aula, onde mostrei pra vocês como, à partir de uma pergunta sobre a semelhança entre as comunidades do alto, média e baixo rio, testei através de uma análise de cluster, se minha hipóitese tinha sentido. E tinha, de certa forma, mas comunidades dessas três seções do rio, são mais parecidas entre si que entre elas e outras comunidades de outras partes do rio. Mostrei isso colorindo minhas comunidades e organizando-as num cluster.
 
-**Nota de precaução**, e aqui vou citar literalmente o *Numerical Ecology with R*:
-“Clustering is not a typical statistical method in that it
-does not test any hypothesis. Clustering helps bring out some features hidden in the
-data; it is the user who decides if these structures are interesting and worth interpreting
-in ecological terms.” (p. 54)
+**Nota de precaução**, e aqui vou citar literalmente o *Numerical Ecology with R*: “Clustering is not a typical statistical method in that it does not test any hypothesis. Clustering helps bring out some features hidden in the data; it is the user who decides if these structures are interesting and worth interpreting in ecological terms.” (p. 54)
 
 Ou seja, o ordenamento via cluster não é um [**teste de hipótese**](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/teste-de-hipoteses.html) mas uma ferramenta para explorar estruturas “ocultas” nos dados, e somos nós pesquisadores, que decidimos se elas têm algum valor ecológico. Lembrem-se, qualquer dados de qalquer natureza, vai ser agrupado numa estrutura qualquer. Nós é que precisamos dar sentido à elas.
 
@@ -55,13 +41,13 @@ Ou seja, o ordenamento via cluster não é um [**teste de hipótese**](https://w
 
 Imagine-se na sua turma da escola, com 40 alunos. Um professor de biologia pediu quefosse formados 5 grupos para a realização de um trabalho sobre a vida na Terra. Os grupos são livres, cada um fica com as companhias e o tema que desejar. Cada grupo tem que fazer um trabalho sobre um dos reinos: animal, vegetal, fungi, protista e monera. A pergunta é: Como se agrupariam os alunos? Quais seriam so critérios que vocÊ imaginaria? Eu, se me lembro bem, pois faz tempo… pensaria:
 
-1.  Vou fiar com meus amigos/amigas
+1)  Vou fiar com meus amigos/amigas
 
-2.  Vou ficar com o tema que gosto mais
+2)  Vou ficar com o tema que gosto mais
 
-3.  Não posso ficar só com a turma da bagunça
+3)  Não posso ficar só com a turma da bagunça
 
-4.  Quero ficar no grupo daquela “boyzinha/boyzinho”
+4)  Quero ficar no grupo daquela “boyzinha/boyzinho”
 
 Então, é muito provável que um professor atento à sua turma consiga prever quase com perfeição, como será a composição dos grupos. Mas nunca 100%, tem sempre um erro associado que bagunça a estrutura esperada.
 
@@ -113,7 +99,7 @@ Mas, diante dessa estrutura, qual é a informação que você extrai? Sem uma hi
 
 ### Escolha o método de agrupamento
 
-No exemplo acima, é possível notar que usei o método “complete,” mas existem outos, que dão resultados diferentes. Vejamos:
+No exemplo acima, é possível notar que usei o método “complete”, mas existem outos, que dão resultados diferentes. Vejamos:
 
 Parece que ainda menos informçaõ foi gerada.
 
@@ -124,7 +110,7 @@ clust_graf_alun<-plot(clust_alun, hang=-1)
 
 <img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
-E se testarmos outros metodos, como “**Ward**?”
+E se testarmos outros metodos, como “**Ward**”?
 
 Parecem consguir agrupar tão bem quanto o “complete”
 
@@ -209,7 +195,7 @@ Essa figura mostra os dois grandes tipos de métodos: **Aglomerativo** e **Divis
 
 # Melhorando os dendogramas
 
-Nesses dendogramas que estamos gerando, o eixo Y “height” é usado para ler a dissimilaridade entre pares de objetos unidos por um mesmo “nó,” mas não podemos usar esse eixo para medir a distância entre objetos unidos por **clusters**. Para isso precisamos criar os grupos ou pedir que os algorítimos *encontrem* os grupos.
+Nesses dendogramas que estamos gerando, o eixo Y “height” é usado para ler a dissimilaridade entre pares de objetos unidos por um mesmo “nó”, mas não podemos usar esse eixo para medir a distância entre objetos unidos por **clusters**. Para isso precisamos criar os grupos ou pedir que os algorítimos *encontrem* os grupos.
 
 ``` r
 grup_alun<-cutree(clust_alun_fct, k=5) # quero 5 grupos
@@ -324,27 +310,27 @@ Então, parece que temos apenas um “alto” e um “baixo” rio.
 
 Vocês verão, se usarem o [script dp capítulo 4](https://fplmelo.github.io/eco_numerica/data/NEwR-2ed_code_data/NEwR2-Scripts/chap4.R) do **Numerical Ecology with R** verao que há uma infinidade de aplicações para agrupamentos de cluster. Na verdade são tantas que ficaria chato aqui mostrar uma por uma. Mas, o que precisam saber é:
 
-1.  Clusters são métodos de agrupamento que ajudam a revelar estrutura de dados
+1)  Clusters são métodos de agrupamento que ajudam a revelar estrutura de dados
 
-2.  Dependem muito das escolhas do pesquisador e de sua interpretação. Não são um teste estatístico.
+2)  Dependem muito das escolhas do pesquisador e de sua interpretação. Não são um teste estatístico.
 
-3.  Podem e devem ser usados para a análise de dados ecológicos que envolvem muitas variáveis.
+3)  Podem e devem ser usados para a análise de dados ecológicos que envolvem muitas variáveis.
 
 # Exercício para entrega
 
 ![](https://media.giphy.com/media/xUOxfd3Y6g2C2aSXkc/giphy.gif)
 
-1.  Use a base “spe” e tente econtrar grupos de amostras (comunidades) que pertencem à trechos específicos do rio <br>
+1)  Use a base “spe” e tente econtrar grupos de amostras (comunidades) que pertencem à trechos específicos do rio <br>
 
-2.  teste tanto medidas de distância quanto métodos de agrupamento diferentes
+2)  teste tanto medidas de distância quanto métodos de agrupamento diferentes
 
-3.  Use métodos de K-means para encontrar quantos clusters há de fato segundo o método “silhouette”
+3)  Use métodos de K-means para encontrar quantos clusters há de fato segundo o método “silhouette”
 
-4.  grafique o rio colorindo as amostras segundo seu pertencimento aos clusters gerados
+4)  grafique o rio colorindo as amostras segundo seu pertencimento aos clusters gerados
 
 como esse aqui
 ![](https://fplmelo.github.io/eco_numerica/images/doubs_river.png)
 
-5.  Avalie com gráficos de boxplot como os clusters são diferenciados em termos ambientais (base “env”) e comente os resltados brevemente, tentando interpretar os resultados biológicos.
+5)  Avalie com gráficos de boxplot como os clusters são diferenciados em termos ambientais (base “env”) e comente os resltados brevemente, tentando interpretar os resultados biológicos.
 
-#FIM
+\#FIM

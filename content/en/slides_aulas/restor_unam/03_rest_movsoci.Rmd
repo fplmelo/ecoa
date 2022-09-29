@@ -3,7 +3,6 @@ title: "Restauración Ecológica con Participación Social"
 subtitle: "Clase 3 - Movimientos Sociales y Restauración"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs

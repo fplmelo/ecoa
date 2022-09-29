@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # *Slides* 
 
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_rest/04_hist_rest.html#1", ratio = "16:9")
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_rest/04_rest_biocultural.html#1", ratio = "16:9")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

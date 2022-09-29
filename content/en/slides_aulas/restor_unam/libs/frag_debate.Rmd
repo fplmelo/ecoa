@@ -1,0 +1,167 @@
+---
+title: "Fragmentação & Biodiversidade"
+subtitle: "Ecologia de Paisagens"
+author: "Felipe Melo"
+institute: "UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+background-image: url(https://www.intechopen.com/media/chapter/45411/media/image1.png)
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringanExtra::use_scribble()
+```
+
+
+---
+# O que é preciso saber?
+
+## - Entender porque o debate sobre fragementação é importante
+## - Desenvolver um entendimento geral sobre a fragemtnação e seus efeitos sobre a biodiversidade
+## - Localizar os argumentos em decisões práticas
+
+
+---
+# A hipótese da quantidade de hábitat
+.left-column[
+
+## O problema da quantidade de habitat
+
+]
+
+.right-column[
+
+<img src=https://onlinelibrary.wiley.com/cms/asset/7ba63f90-c40f-4b1b-a7a7-c3c86e3616d8/jbi12130-fig-0002-m.jpg width = 700>
+]
+
+---
+class: center, middle
+# Qual o principal determinante da quantidade de espécies numa paisagem?
+
+---
+# Um teste lógico
+.pull-left[
+# Quando a quantidade de hábitat prevalece
+## - Configuração não importaria
+## - Tipo da matriz não importaria
+]
+
+.pull-right[
+<img src=https://onlinelibrary.wiley.com/cms/asset/cbe334d0-8490-4633-9381-857c8d8320b7/jbi12130-fig-0005-m.jpg>
+]
+---
+# Isolamento
+.pull-left[
+## - Depende não apenas da distância
+## - Probabilístico
+## - Taxas de imigração
+
+]
+
+
+.pull-right[
+<img src=https://onlinelibrary.wiley.com/cms/asset/5c9f6a16-ae1a-443f-a252-92332a7b037c/jbi12130-fig-0006-m.jpg >
+]
+
+
+---
+# Fragmento vs. Paisagem
+.pull-left[
+## A quantidade de hábitat impera na paisagem
+## Efeitos de tamanho de fragemento são despresíveis no contexto da paisagem
+]
+
+.pull-right[
+<img src=https://onlinelibrary.wiley.com/cms/asset/4f8507f3-fd4a-4403-a6b0-fb5494063b88/jbi12130-fig-0007-m.jpg width=850>
+]
+
+---
+# Definião de hábitat
+.pull-left[
+## Importante controlar para os grupos ecológicos
+## COmparação entre grupos podem gerar resultados confusos
+]
+
+.pull-right[
+<img src=https://onlinelibrary.wiley.com/cms/asset/ede9fc88-5070-4b29-9a61-794acf5fd61d/jbi12130-fig-0008-m.jpg width=850>
+]
+
+
+---
+# O probelma da escala
+.pull-left[
+## As respostas biológicas podem ser muito diferentes entre grupos
+## Impossivel saber com antecipação
+]
+
+.pull-right[
+<img src=https://onlinelibrary.wiley.com/cms/asset/fc8bf006-10b0-4082-bead-9ebe5e631554/jbi12130-fig-0009-m.jpg width=850>
+]
+
+---
+class: center, middle
+# Vejamos as evidências
+
+---
+# Quando a configuração importa?
+.pull-left[
+## As respostas biológicas podem ser muito diferentes entre grupos
+## Impossivel saber com antecipação
+]
+
+.pull-right[
+<img src=https://besjournals.onlinelibrary.wiley.com/cms/asset/7c65ad15-497b-4b17-af07-0a2ef759adc4/jpe12190-fig-0002-m.jpg width=850>
+[Villard & Metzger 2013](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2664.12190)
+]
+
+---
+class: center, middle
+<img src=https://besjournals.onlinelibrary.wiley.com/cms/asset/81ec817e-add8-4929-8fc8-3e6c6d00fe56/jpe12190-fig-0004-m.jpg>
+
+<br>
+
+[Villard & Metzger 2013](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2664.12190)
+
+---
+class: center, middle
+
+<img src=https://besjournals.onlinelibrary.wiley.com/cms/asset/fa69a75c-edd8-4198-9429-7f5fca0cf6f5/jpe12190-fig-0006-m.jpg width = 6000>
+
+
+
+---
+class: center, middle
+
+<img src=https://besjournals.onlinelibrary.wiley.com/cms/asset/fa69a75c-edd8-4198-9429-7f5fca0cf6f5/jpe12190-fig-0006-m.jpg width = 450>
+
+---
+# Quantidade de hábitat e mamíferos [Rabelo et al 2019](https://onlinelibrary.wiley.com/doi/full/10.1111/btp.12615)
+
+<img src=https://onlinelibrary.wiley.com/cms/asset/776b9706-bdcc-4eae-ab21-f78c68a45b17/btp12615-fig-0004-m.jpg width = 900>
+
+---
+# Escala do efeito em mamíferos [Cudney-Valenzuela et al 2022](https://link.springer.com/article/10.1007/s10980-022-01440-w)
+
+<img src=https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs10980-022-01440-w/MediaObjects/10980_2022_1440_Fig2_HTML.png?as=webp width = 900>
+
+---
+# HAH refutada [Saura 2020](https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.13958)
+
+<img src=https://onlinelibrary.wiley.com/cms/asset/cf8f3b8c-e6c1-4b27-8886-adf003414c16/jbi13958-fig-0006-m.jpg width = 550>
+---
+class: center, middle
+
+#Por hoje é só.
+
+
+
+

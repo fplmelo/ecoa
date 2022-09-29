@@ -1,20 +1,9 @@
 ---
 title: Restauración Biocultural
 author: Felipe Melo
-date: '2022-09-29'
 slug: restauracion-biocultural
-categories: []
-tags: []
-subtitle: ''
-summary: ''
-authors: []
 lastmod: '2022-09-29T08:21:55-03:00'
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+output: github_document
 ---
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>

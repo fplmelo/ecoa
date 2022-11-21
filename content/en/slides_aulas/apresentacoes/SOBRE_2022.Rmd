@@ -1,0 +1,429 @@
+---
+title: "Restauração Biocultural da Caatinga e Mudanças Climáticas"
+subtitle: ""
+author: "Felipe Melo"
+institute: "Laboratório de Ecologia Aplicada - UFPE"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["robot","tamu-fonts", "custom_slides.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      beforeInit: "macros.js"
+      
+---
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+#xaringanExtra::use_scribble()
+xaringanExtra::use_fit_screen()
+```
+background-position: center
+background-size: cover
+background-image: url("libs/caat_verde.jpg")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/caat_seca.jpg")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/caat_verde2.jpg")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/caat_seca2.jpg")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/lear.jpg")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/tatu2.png")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/vaqueiro.png")
+class: center, middle
+
+--
+background-position: center
+background-size: cover
+background-image: url("libs/pessoas.png")
+class: center, middle
+
+
+--
+.content-box-gray[
+# A paisagem socioecológica Caatinga
+]
+
+---
+.right[
+# Grupos sociais vulneráveis]
+
+.pull-left[
+<img src="libs/sovi.png" width= 900>
+[Hummel 2016](Social Vulnerability to Natural Hazards in Brazil)
+
+]
+
+.pull-right[
+<img src="libs/bolsa_fam.png" width= 900>
+]
+
+---
+background-position: center
+background-size: cover
+background-image: url("libs/mapbiom_caat.jpg")
+class: center, middle
+
+---
+background-position: center
+background-size: cover
+background-image: url("libs/desmat_caat.jpg")
+class: center, middle
+
+---
+.right[
+# O  que é  uma abodagem sociocultural?]
+
+.pull-left[
+
+##- Reconhecer os atores afetados
+
+
+##- Combater desigualdades de acesso á  recursos
+
+
+##- Valorizar conhecimentos locias
+
+
+##- Recuperar/Conservar a diversidade socioecológica
+]
+
+.pull-right[
+<img src= https://estudiosnuevaeconomia.cl/wp-content/uploads/2017/11/ecologia-politica-900x444.jpg>
+]
+
+---
+
+background-position: center
+background-size: cover
+background-image: url("libs/roca_caat.jpg")
+class: center, middle
+
+--
+.content-box-gray[
+# Como criar paisagens socioecológicos sustentáveis na Caatinga?
+]
+
+
+---
+
+# Pertubação Crônica
+.center[<img src="libs/chronic.png" width= 600> ]
+
+### fuente: [Antongiovanni et al (2020)](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2664.13686)
+
+---
+.right[
+# Bodes e Caatinga]
+.pull-left[
+<img src="libs/bodes.png" width= 900>
+]
+
+.pull-right[
+### - Áreas de uso de 100ha
+### - Hábito generalista
+### - Reduzem biomassa de herbáceas
+### - Preferência por hábitats abertos
+### fuentes: [Jamelli et al 2021](https://www.sciencedirect.com/science/article/abs/pii/S0140196321000987) e [Menezes et al 2020](https://onlinelibrary.wiley.com/doi/epdf/10.1002/ldr.3693)
+]
+
+---
+.right[
+# Bodes e Caatinga]
+.left[
+<img src="libs/herb_biomass.png" width= 700> [Menezes et al 2020](https://onlinelibrary.wiley.com/doi/epdf/10.1002/ldr.3693)
+]
+
+---
+.right[
+# Bodes e Caatinga]
+.pull-left[
+<img src="libs/jameli2.jpg" width= 350>
+
+fuente: [Jamelli et al 2021](https://www.sciencedirect.com/science/article/abs/pii/S0140196321000987)
+]
+
+.pull-right[
+<img src="https://m.psecn.photoshelter.com/img-get/I00008tRJ91.xu58/s/900/900/PZ08-18570.jpg" width= 700>
+]
+
+---
+.left-column[
+# Respostas da Vegetação ao Clima e Fertilidade
+### Pinho et al 2019]
+
+.right-column[
+.center[
+<img src=libs/pinho_fig3.png width = 650>]
+]
+
+---
+.left-column[
+# Respuestas de la vegetación al disturbio
+### Pinho et al 2019]
+
+.right-column[
+.center[
+<img src=libs/pinho_fig2.png width = 750>]
+]
+
+---
+background-position: center
+background-size: cover
+background-image: url("libs/drone.png")
+class: center, middle
+
+--
+
+.content-box-gray[
+# cDEEP - Caatinga Dry Ecosystem Ecological Program
+]
+
+---
+<iframe width="1080" height="715" src="libs/video.mp4" frameborder="0" allowfullscreen></iframe>
+
+---
+background-size: cover
+background-image: url("libs/cdeep_result.png")
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+.right[.content-box-gray[Carmo et al (under review)]]
+
+---
+#Invasão Biológica vs. Comunidade de Plantas
+.left-column[
+# Modifica drasticamente a composição taxonômica
+]
+.right-column[
+<img src= libs/nmds.png width = 650>
+]
+
+---
+#Invasão Biológica vs. Comunidade de Plantas
+.left-column[
+# Reduz Diversidade Funcional (FDis)
+# Reduz Regularidad Funcional (FEve)
+]
+.right-column[
+<img src= libs/fdiv.png width = 650>
+]
+
+---
+# Qual o estratégia funcional das espécies invasoras em comparação com as especies comuns da Caatinga?
+
+<img src=libs/csr2.png>
+
+
+---
+background-position: center
+background-size: cover
+background-image: url("libs/homen_caatinga.jpg")
+class: center, middle
+--
+.content-box-gray[
+# Caatinga e bem-estar humano
+]
+
+
+---
+background-position: center
+background-size: 90%
+background-image: url("libs/wef.png")
+
+###[Melo et al. 2021](https://www.nature.com/articles/s41893-020-00608-z)
+
+---
+.right[
+# Segurança Alimentar e Caatinga]
+.pull-left[
+<img src="libs/drought.png" width= 900>
+]
+
+.pull-right[
+##  Caatinga + Bodes = Conservação?
+<img src="libs/correlog.png" width= 900>
+
+Fonte: Alencar et al (2021)
+]
+
+
+---
+.left-column[
+# Segurança hídrica e Caatinga
+### - Acesso à água
+### - Problema multidimensional
+### - Variaveis socioeconômicas
+### fonte: Alencar et al 2021)
+]
+
+.right-column[
+<img src="libs/water.jpg" width= 900>
+]
+
+---
+.left-column[
+# Segurança energética e Caatinga
+### - Importante fonte de energía
+### - Extração de lenha
+#### fonte: Alencar et al (2021)
+]
+
+.right-column[
+<img src="libs/energy.png" width= 900>
+]
+
+---
+
+.pull-left[
+<img src="libs/biocult.png" width= 720>
+]
+
+.pull-right[
+# Restauração biocultural
+### - Conhecimento tradicional
+### - Aumenta a participação
+### - Reproduz características originais do sistema
+### fonte: [Sena et al 2021]()
+
+]
+
+---
+.left-column[
+## Floresta~Desenvolvimento
+## Boom-and-bust development
+####Alencar et al (in prep)
+
+<img src=libs/caat.jpg>
+]
+.right-column[
+.center[
+<img src=libs/forest_poverty.png width = 750>]]
+
+---
+.right[
+# Caatinga é energía
+]
+
+.pull-left[
+<img src="https://www.oeco.org.br/wp-content/uploads/2019/09/Chato.jpg" width= 420>
+
+## 85% da energia eólica do Brasil
+
+[Neri et al 2019](https://www.sciencedirect.com/science/article/pii/S2530064419300537)
+]
+
+.pull-right[
+<img src="https://imagens-cdn.canalrural.com.br/wp-content/uploads/lenha-nordeste-640x480.jpeg" width= 400>
+## Mercado de R$ 2Bi/ano
+fonte: [Canal Rural](https://www.canalrural.com.br/noticias/mercado-lenha-nordeste/)
+]
+
+---
+class: center, middle
+<img src=libs/eolic_graf.png>
+.left[
+[Neri et al (2019)](https://www.sciencedirect.com/science/article/pii/S2530064419300537)
+]
+
+---
+background-position: center
+background-size: 100%
+background-image: url("libs/land_tenure.png")
+# Acceso à tera e restauração
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+### Melo et al (under review)
+
+
+---
+background-position: center
+background-size: cover
+background-image: url("libs/tatu2.png")
+# El parque del Armadillo
+
+--
+.pull-left[
+<img src= libs/fuleco1.png width = 400>
+<img src= libs/fuleco2.png  width = 400>
+]
+
+--
+.pull-right[
+
+<img src= libs/rvs.png width = 700>
+
+]
+
+---
+
+# Lições aprendidas
+<br><br>
+
+--
+## - A Caatinga pode se converter num laboratório de restauração inclusiva
+
+--
+## - Monitorar indicadores socioeconômicos e ambientales em conjunto
+
+--
+## - Mover o foco do carbono para serviços de provisão e bem-estar humano
+
+
+---
+class: center, middle
+
+# A URSENE vai dominar o Brasil
+
+<img src=https://s2.glbimg.com/VOV85wCoMJw9Z6w15j6V3FOZTTw=/0x0:2000x1194/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/6/c/9Lw14BTLutZCybhZjslA/arte-82-.png width = 1000>
+
+---
+# Agradecimentos:
+.pull-left[
+### - Dra. Adriana Pelegrinni
+### - Dra. Cristina Baldauf
+### - Dra. Gislene Ganade
+### - Dr. Luke Parry
+### - Dr. Marcelo Tabarelli
+### - Dr. Severino R.R. Pinto
+]
+.pull-right[
+```{r, echo=FALSE, out.width="120%"}
+knitr::include_graphics("libs/unis.png")
+```
+]
+
+---
+class: center, middle
+
+# Obrigado
+## [ecoaplic.org](www.ecoaplic.org)
+
+

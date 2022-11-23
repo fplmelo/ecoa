@@ -1,5 +1,5 @@
 ---
-title: "Restauração Biocultural da Caatinga frente às Mudanças Climáticas"
+title: "Ecologia Política da Restauração da Caatinga"
 subtitle: ""
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
@@ -347,12 +347,26 @@ class: center, middle
 ]
 
 ---
-background-position: center
-background-size: 100%
-background-image: url("libs/land_tenure.png")
-# Acceso à tera e restauração
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-### Melo et al (under review)
+# Acceso à terra e restauração
+
+Tipo de propriedade | N  | Vegetação (Mi de ha) | Deficit (ha) | N Prop c/ Deficit
+--------|---------|---------
+Grandes | 21104 | 10.5	| -139644 | 2986
+Pequenas | 975078 | 9.2 | -143501 | 141144
+.center[
+<img src=libs/land_tenure1.png width=700>]
+
+---
+# Acceso à terra e restauração
+
+Tipo de propriedade | N de mun  | Deficit médio (ha) | Deficit total (ha) 
+--------|---------|---------
+Restauração para grandes | 187 | 589 ± 877	| -110,066
+Estratṕegia mista | 227 | 423 ± 556 | -95917
+Restauração para Pequenas | 735 | 146 ± 258 | -107544
+.center[
+<img src=libs/land_tenure2.png width=650>]
+
 
 
 ---

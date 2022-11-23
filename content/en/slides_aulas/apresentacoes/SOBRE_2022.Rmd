@@ -1,5 +1,5 @@
 ---
-title: "Restauração Biocultural da Caatinga e Mudanças Climáticas"
+title: "Restauração Biocultural da Caatinga frente às Mudanças Climáticas"
 subtitle: ""
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
@@ -13,9 +13,9 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
-      beforeInit: "macros.js"
-      
+     
 ---
+
 ```{r xaringan-tile-view, echo=FALSE}
 xaringanExtra::use_tile_view()
 #xaringanExtra::use_scribble()
@@ -209,38 +209,30 @@ class: center, middle
 # cDEEP - Caatinga Dry Ecosystem Ecological Program
 ]
 
----
-<iframe width="1080" height="715" src="libs/video.mp4" frameborder="0" allowfullscreen></iframe>
-
----
-background-size: cover
-background-image: url("libs/cdeep_result.png")
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-.right[.content-box-gray[Carmo et al (under review)]]
 
 ---
 #Invasão Biológica vs. Comunidade de Plantas
 .left-column[
-# Modifica drasticamente a composição taxonômica
+# Modifica a composição taxonômica
 ]
 .right-column[
-<img src= libs/nmds.png width = 650>
+<img src= libs/nmds_vag.png width = 650>
 ]
 
 ---
 #Invasão Biológica vs. Comunidade de Plantas
 .left-column[
-# Reduz Diversidade Funcional (FDis)
-# Reduz Regularidad Funcional (FEve)
+## Reduz Riqueza Funcional (FRic)
+## Ainda sem efeitos claros para outras métricas
 ]
 .right-column[
-<img src= libs/fdiv.png width = 650>
+<img src= libs/vag_cdeep.png width = 650>
 ]
 
 ---
 # Qual o estratégia funcional das espécies invasoras em comparação com as especies comuns da Caatinga?
 
-<img src=libs/csr2.png>
+<img src=libs/csr_vag.png>
 
 
 ---

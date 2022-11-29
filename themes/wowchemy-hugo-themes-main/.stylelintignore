@@ -1,8 +1,0 @@
-**/*.min.css
-**/vendor/
-**/_vendor/
-**/libs/
-public/
-
-wowchemy/assets/scss/main.scss
-wowchemy/assets/css/reveal_custom.css

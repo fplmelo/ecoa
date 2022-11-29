@@ -367,18 +367,17 @@ Tipo de propriedade | N  | Vegetação (Mi de ha) | Deficit (ha) | N Prop c/ Def
 Grandes | 21104 | 10.5	| -139644 | 2986
 Pequenas | 975078 | 9.2 | -143501 | 141144
 .center[
-<img src=libs/land_tenure1.png width=700>]
+<img src=libs/land_tenure1.png width=600>]
 
 ---
 # Acceso à terra e restauração
-
 Tipo de propriedade | N de mun  | Deficit médio (ha) | Deficit total (ha) 
 --------|---------|---------
 Restauração para grandes | 187 | 589 ± 877	| -110,066
-Estratṕegia mista | 227 | 423 ± 556 | -95917
+Estratégia mista | 227 | 423 ± 556 | -95917
 Restauração para Pequenas | 735 | 146 ± 258 | -107544
 .center[
-<img src=libs/land_tenure2.png width=650>]
+<img src=libs/land_tenure2.png width=600>]
 
 
 
@@ -407,7 +406,7 @@ background-image: url("libs/tatu2.png")
 ]
 .pull-right[
 # Mudanças climáticas
-##- Evitar a política do "menos"?
+##- Evitar a política do "menos"
 ##- Tomar o controle de processos econômicos ligados à natureza
 ##- Restauração como ferramenta de transformação social
 
